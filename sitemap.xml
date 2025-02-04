@@ -1,75 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/01-introduction.html</loc>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/01-introduction.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/404.html</loc>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/404.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/CODE_OF_CONDUCT.html</loc>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/LICENSE.html</loc>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/aio.html</loc>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/aio.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/images.html</loc>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/basics.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/index.html</loc>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/creation.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/01-introduction.html</loc>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/images.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/404.html</loc>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/index.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/CODE_OF_CONDUCT.html</loc>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/01-introduction.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/LICENSE.html</loc>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/404.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/aio.html</loc>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/images.html</loc>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/index.html</loc>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/aio.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/instructor-notes.html</loc>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/basics.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/introduction.html</loc>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/creation.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/key-points.html</loc>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/images.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/profiles.html</loc>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/index.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/reference.html</loc>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/instructor-notes.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor-notes.html</loc>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/introduction.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/introduction.html</loc>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/key-points.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/key-points.html</loc>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/profiles.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/profiles.html</loc>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/publication.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/reference.html</loc>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/sparql.html</loc>
+  </url>
+  <url>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/key-points.html</loc>
+  </url>
+  <url>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/profiles.html</loc>
+  </url>
+  <url>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/publication.html</loc>
+  </url>
+  <url>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/sparql.html</loc>
   </url>
 </urlset>
