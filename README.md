@@ -13,7 +13,7 @@ This lesson is being developed as part of the joint project [HERMES](https://her
 
 
 ## Authors
-- [Julia Tolksdorf](https://github.com/jutol) (Maintainer)
+- [Julia Tolksdorf](https://github.com/jutol)
 - [Golnaz Sarkar Farshi](https://github.com/Goli-SF)
 - [Robert Zwick](https://github.com/robertzwick)
 - [Corinna Berg](https://github.com/KassieBee)
