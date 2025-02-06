@@ -7,12 +7,7 @@ the data sets the Learner needs to have installed.
 
 ## Data Sets
 
-<!--
-FIXME: place any data you want learners to use in `episodes/data` and then use
-       a relative link ( [data zip file](data/lesson-data.zip) ) to provide a
-       link to it, replacing the example.com link.
--->
-Download the [data zip file](https://example.com/FIXME) and unzip it to your Desktop
+The Dataset we will use in this lesson is a subset from the Collection of the [Metropolitan Museum of Art](https://www.metmuseum.org/de). If you are interested in the whole data you can find and use it in their database [here](https://www.metmuseum.org/de/art/collection). The subset we are using can be downloaded [here]()
 
 ## Software Setup
 
@@ -20,10 +15,7 @@ Download the [data zip file](https://example.com/FIXME) and unzip it to your Des
 
 ### Details
 
-Setup for different systems can be presented in dropdown menus via a `spoiler`
-tag. They will join to this discussion block, so you can give a general overview
-of the software used in this lesson here and fill out the individual operating
-systems (and potentially add more, e.g. online setup) in the solutions blocks.
+The only software you need for doing this workshop is Open Refine with the extension rdf-transform. OpenRefine is actually a tool for data cleaning. However, with various extensions, the tool can be customised and extended to convert data into other formats just as easily. If you are interested in the other functionalities of Open Refine, we are developing a lesson to this aswell, where you learn more of the fundamental functionalities of OpenRefine. 
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -48,7 +40,12 @@ Use Terminal.app
 
 ### Linux
 
-Use Terminal
+1. Click this [link](https://openrefine.org/post_download?version=3.9-beta1&platform=linux) to download OpenRefine. 
+2. Unzip the folder to a place of your choice. We recommend using your personal space.
+3. Open your terminal and navigate into the new OpenRefine folder.
+4. Write "./refine" into your terminal to install OpenRefine. This should start the program in your browser. Close the browser and close OpenRefine in your terminaml with "Strg+C".
+5. Download the extension [rdf-transform](https://github.com/AtesComp/rdf-transform/releases/download/v2.2.4/rdf-transform-2.2.4.zip).
+6. Unzip the folder into your OpenRefine workspace. The workspace is not the folder you downloaded and unzipped in step 2. By default your workspace is located here: "~/.local/share/openrefine/". In this workspace, if not already there, create a folder "extensions". Unzip the folder into this new folder.
+7. Open your terminal again, navigate again into your OpenRefine folder and start it with "./refine".
 
 ::::::::::::::::::::::::
-
