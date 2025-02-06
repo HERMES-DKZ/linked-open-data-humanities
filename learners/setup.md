@@ -28,9 +28,9 @@ The only software you need for doing this workshop is Open Refine with the exten
 3. In the unzipped folder doubeclick "openrefine.exe" to install and start OpenRefine. 
 4. Download the extension [rdf-transform](https://github.com/AtesComp/rdf-transform/releases/download/v2.2.4/rdf-transform-2.2.4.zip).
 5. In the next step you need to unzip this folder into your OpenRefine Workspace. Depending on your Windows version the path for this can be different. You can find your path by:
-       5. launchING OpenRefine and click Open Project in the sidebar
-       5. At the bottom of the screen, click Browse workspace directory
-       5. A file-explorer or finder window will open in your workspace. Note that path
+5.     launchING OpenRefine and click Open Project in the sidebar
+5.     At the bottom of the screen, click Browse workspace directory
+5.     A file-explorer or finder window will open in your workspace. Note that path
 6. In the workspace folder, if not already there, create a new folder called "extensions" Unzip rdf-transform into that folder
 7. Close OpenRefine and reopen it.
 
