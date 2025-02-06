@@ -333,12 +333,11 @@ any links that you are not going to use.
 </section><section id="setup"><p>FIXME: Setup instructions live in this document. Please specify the
 tools and the data sets the Learner needs to have installed.</p>
 <section><h2 class="section-heading" id="data-sets">Data Sets<a class="anchor" aria-label="anchor" href="#data-sets"></a></h2>
-<hr class="half-width"><!--
-FIXME: place any data you want learners to use in `episodes/data` and then use
-       a relative link ( [data zip file](data/lesson-data.zip) ) to provide a
-       link to it, replacing the example.com link.
---><p>Download the <a href="https://example.com/FIXME" class="external-link">data zip file</a>
-and unzip it to your Desktop</p>
+<hr class="half-width"><p>The Dataset we will use in this lesson is a subset from the
+Collection of the <a href="https://www.metmuseum.org/de" class="external-link">Metropolitan
+Museum of Art</a>. If you are interested in the whole data you can find
+and use it in their database <a href="https://www.metmuseum.org/de/art/collection" class="external-link">here</a>. The subset
+we are using can be downloaded <a href="">here</a></p>
 </section><section><h2 class="section-heading" id="software-setup">Software Setup<a class="anchor" aria-label="anchor" href="#software-setup"></a></h2>
 <hr class="half-width"><div id="details" class="callout discussion">
 <div class="callout-square">
@@ -347,11 +346,13 @@ and unzip it to your Desktop</p>
 <div id="details" class="callout-inner">
 <h3 class="callout-title">Details</h3>
 <div class="callout-content">
-<p>Setup for different systems can be presented in dropdown menus via a
-<code>spoiler</code> tag. They will join to this discussion block, so
-you can give a general overview of the software used in this lesson here
-and fill out the individual operating systems (and potentially add more,
-e.g. online setup) in the solutions blocks.</p>
+<p>The only software you need for doing this workshop is Open Refine
+with the extension rdf-transform. OpenRefine is actually a tool for data
+cleaning. However, with various extensions, the tool can be customised
+and extended to convert data into other formats just as easily. If you
+are interested in the other functionalities of Open Refine, we are
+developing a lesson to this aswell, where you learn more of the
+fundamental functionalities of OpenRefine.</p>
 </div>
 </div>
 </div>
@@ -395,8 +396,23 @@ e.g. online setup) in the solutions blocks.</p>
 </button>
 <div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
-<p>Use Terminal</p>
-</div>
+<ol style="list-style-type: decimal"><li>Click this <a href="https://openrefine.org/post_download?version=3.9-beta1&amp;platform=linux" class="external-link">link</a>
+to download OpenRefine.</li>
+<li>Unzip the folder to a place of your choice. We recommend using your
+personal space.</li>
+<li>Open your terminal and navigate into the new OpenRefine folder.</li>
+<li>Write “./refine” into your terminal to install OpenRefine. This
+should start the program in your browser. Close the browser and close
+OpenRefine in your terminaml with “Strg+C”.</li>
+<li>Download the extension <a href="https://github.com/AtesComp/rdf-transform/releases/download/v2.2.4/rdf-transform-2.2.4.zip" class="external-link">rdf-transform</a>.</li>
+<li>Unzip the folder into your OpenRefine workspace. The workspace is
+not the folder you downloaded and unzipped in step 2. By default your
+workspace is located here: “~/.local/share/openrefine/”. In this
+workspace, if not already there, create a folder “extensions”. Unzip the
+folder into this new folder.</li>
+<li>Open your terminal again, navigate again into your OpenRefine folder
+and start it with “./refine”.</li>
+</ol></div>
 </div>
 </div>
 </div>
@@ -453,8 +469,8 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/linked-open-data-humanities/index.html",
   "identifier": "https://HERMES-DKZ.github.io/linked-open-data-humanities/index.html",
   "dateCreated": "2025-02-04",
-  "dateModified": "2025-02-04",
-  "datePublished": "2025-02-04"
+  "dateModified": "2025-02-06",
+  "datePublished": "2025-02-06"
 }
 
   </script><script>
