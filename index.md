@@ -7,6 +7,14 @@ areas, which means that this course is also aimed at all interested learnes who 
 
 The concept behind a carpentry lesson is very practical, so this course will give you different hands-on tasks to solve to learn the theoretical concepts to provide an inclusive and interesting learning experience.
 
+## Learning objectives
+
+By the end of this lesson, you will be able to:
+
+- Model your research data with RDF.
+- Identify the advantages and disadvantages of Linked Data.
+- Use RDF in your own research practice.
+
 
 ## What is Linked Open Data?
 
