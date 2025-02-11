@@ -1,5 +1,5 @@
 ---
-title: "Publish your data"
+title: "Publish your Linked Data"
 teaching: 10
 exercises: 2
 ---
