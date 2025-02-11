@@ -1,5 +1,5 @@
 ---
-title: "The Resource Description Framework"
+title: "Introduction to the Concept of Linked Data"
 teaching: 10
 exercises: 2
 ---
