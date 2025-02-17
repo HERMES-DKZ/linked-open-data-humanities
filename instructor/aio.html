@@ -244,7 +244,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="introduction.html">1. Introduction to the Concept of Linked Data</a>
+        <a href="introduction.html">1. Introduction to Linked Open Data in the Humanities</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -256,7 +256,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="model.html">2. Model Linked Data</a>
+        <a href="rdf.html">2. Introduction to RDF and Basic Modeling</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -268,7 +268,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="creation.html">3. Create Linked Data</a>
+        <a href="model.html">3. Model Linked Data</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -280,7 +280,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="sparql.html">4. Query Linked Data with SPARQL</a>
+        <a href="creation.html">4. Create Linked Data</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -292,7 +292,19 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="publication.html">5. Publish your Linked Data</a>
+        <a href="sparql.html">5. Query Linked Data with SPARQL</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush7">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading7">
+        <a href="publication.html">6. Publish your Linked Data</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -356,12 +368,12 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         
         
-<section id="aio-introduction"><p>Content from <a href="introduction.html">Introduction to the Concept of Linked Data</a></p>
+<section id="aio-introduction"><p>Content from <a href="introduction.html">Introduction to Linked Open Data in the Humanities</a></p>
 <hr>
-<p>Last updated on 2025-02-11 |
+<p>Last updated on 2025-02-17 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 22 minutes</p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -373,9 +385,13 @@
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>What is linked data?</li>
-<li>What is RDF?</li>
-<li>What is a URI?</li>
+<li>What is Linked Open Data, and how does it differ from other data
+models?</li>
+<li>Why are standardized identifiers (e.g., URIs) essential for
+LOD?</li>
+<li>What is the subject-predicate-object model?</li>
+<li>How can the subject-predicate-object model be used to describe
+LOD?</li>
 </ul>
 </div>
 </div>
@@ -385,9 +401,12 @@
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Explain the key-features of a URI</li>
-<li>Explain the basic concept of linked data</li>
-<li>Write a statement in RDF</li>
+<li>Explain the concept of Linked Open Data (LOD).</li>
+<li>Differentiate between ‘Linked Data’ and ‘Linked Open Data’.</li>
+<li>Describe the importance of standardized identifiers (e.g., URIs) for
+data linking.</li>
+<li>Create Linked Open Data relationships using the
+subject-predicate-object model.</li>
 </ul>
 </div>
 </div>
@@ -400,7 +419,45 @@
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- --></section></section><section id="aio-model"><p>Content from <a href="model.html">Model Linked Data</a></p>
+ --></section></section><section id="aio-rdf"><p>Content from <a href="rdf.html">Introduction to RDF and Basic Modeling</a></p>
+<hr>
+<p>Last updated on 2025-02-17 |
+
+        <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/rdf.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 22 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>What is RDF, and why is it used in Linked Open Data?</li>
+<li>How does RDF structure information using triples?</li>
+<li>How can we represent real-world relationships using RDF?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Explain the purpose and structure of RDF.</li>
+<li>Model basic relationships using the
+<strong>subject-predicate-object</strong> structure.</li>
+<li>Explain limitations of RDF</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div></section><section id="aio-model"><p>Content from <a href="model.html">Model Linked Data</a></p>
 <hr>
 <p>Last updated on 2025-02-11 |
 
@@ -578,8 +635,8 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/aio.html",
   "identifier": "https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/aio.html",
   "dateCreated": "2025-02-04",
-  "dateModified": "2025-02-11",
-  "datePublished": "2025-02-11"
+  "dateModified": "2025-02-17",
+  "datePublished": "2025-02-17"
 }
 
   </script><script>
