@@ -217,6 +217,12 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#introduction">Introduction</a></li>
+<li><a href="#the-challenge-ambiguity-in-art-titles">The Challenge: Ambiguity in Art Titles</a></li>
+<li><a href="#how-uris-solve-ambiguity">How URIs Solve Ambiguity</a></li>
+<li><a href="#what-is-linked-open-data-lod">What is Linked Open Data (LOD)?</a></li>
+<li><a href="#real-world-examples-of-linked-open-data-in-the-humanities">Real-world examples of Linked Open Data in the humanities</a></li>
+<li><a href="#exercise-identifying-ambiguous-art-data">Exercise: Identifying Ambiguous Art Data</a></li>
+<li><a href="#summary">Summary</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -326,7 +332,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introduction to Linked Open Data in the Humanities</h1>
-        <p>Last updated on 2025-02-17 |
+        <p>Last updated on 2025-02-19 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -373,10 +379,132 @@ subject-predicate-object model.</li>
 </div>
 </div>
 <section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a></h2>
-<hr class="half-width"><!--
+<hr class="half-width"><p>In this episode we want to understand the basics of <strong>Linked
+Open Data</strong>. What is this and why should I use it? To do this, we
+will split the term <strong>Linked Open Data</strong>, because the first
+thing we need to understand is: What kind of data we are talking
+about?</p>
+<p>Imagine you are a researcher studying <strong>Vincent van
+Gogh</strong> and you want to build a collection about this person with,
+for example, paintings, friends, visited places and so on. Best case
+scenario would be, if you could use data from other researchers as well
+to connect the knowledge you collected.</p>
+<p>One way to express these knowledge is by breaking it down into
+relationships using a **subject-predicate-object structure:</p>
+<ul><li>
+<strong>Subject</strong>: The entity being described.</li>
+<li>
+<strong>Predicate</strong>: The relationship or property.</li>
+<li>
+<strong>Object</strong>: The value or linked entity.</li>
+</ul><p>But what does this mean in the case of a person? One example would
+be, if you want to express that the picture “Bouqet of Sunflowers” were
+painted by Vincent van Gogh.</p>
+<div class="section level3">
+<h3 id="example-triple-for-van-goghs-painting">Example triple for Van Gogh’s painting:<a class="anchor" aria-label="anchor" href="#example-triple-for-van-goghs-painting"></a></h3>
+<table class="table"><colgroup><col width="33%"><col width="37%"><col width="29%"></colgroup><thead><tr class="header"><th>Subject</th>
+<th>Predicate</th>
+<th>Object</th>
+</tr></thead><tbody><tr class="odd"><td>“Wheat Field with Cypresses”</td>
+<td>was painted by</td>
+<td>“Vincent van Gogh”</td>
+</tr><tr class="even"><td>“Wheat Field with Cypresses”</td>
+<td>was created in</td>
+<td>“1889”</td>
+</tr><tr class="odd"><td>“Wheat Field with Cypresses”</td>
+<td>is located at</td>
+<td>“Metropolitan Museum of Art”</td>
+</tr></tbody></table><p>By structuring data in this way, we make information clearer and
+easier to connect with other datasets.</p>
+</div>
+</section><section><h2 class="section-heading" id="the-challenge-ambiguity-in-art-titles">The Challenge: Ambiguity in Art Titles<a class="anchor" aria-label="anchor" href="#the-challenge-ambiguity-in-art-titles"></a></h2>
+<hr class="half-width"><p>Now, let’s say you look up <em>Wheat Field with Cypresses</em> in
+different museum databases and find multiple records:</p>
+<ol style="list-style-type: decimal"><li>An entry titled <em>Wheat Field with Cypresses</em>, attributed to
+<strong>Vincent van Gogh</strong>, painted in
+<strong>1889</strong>.</li>
+<li>Another entry with the same title, attributed to <strong>Vincent van
+Gogh</strong>, also from <strong>1889</strong>.</li>
+<li>A third entry under the title <em>Champ de blé aux cyprès</em>,
+again by <strong>Vincent van Gogh</strong>.</li>
+</ol><p>Are these all the same painting, or are there multiple versions?
+Museum records might not provide enough information to clarify this.
+<strong>How can we ensure that different databases refer to the exact
+same painting?</strong></p>
+</section><section><h2 class="section-heading" id="how-uris-solve-ambiguity">How URIs Solve Ambiguity<a class="anchor" aria-label="anchor" href="#how-uris-solve-ambiguity"></a></h2>
+<hr class="half-width"><p>A <strong>Uniform Resource Identifier (URI)</strong> provides a
+unique reference for an entity, ensuring clarity in data relationships.
+Instead of relying on titles, which may be duplicated across datasets,
+we use a globally unique identifier.</p>
+<p>For example: - <strong>Van Gogh’s Wheat Field with Cypresses
+(Metropolitan Museum of Art)</strong>:
+<code>https://www.metmuseum.org/art/collection/search/436535</code> -
+<strong>Van Gogh’s Wheat Field with Cypresses (Wikidata)</strong>:
+<code>https://www.wikidata.org/entity/Q201852</code></p>
+<p>By linking datasets using these URIs, we can ensure that different
+records actually refer to the same artwork.</p>
+</section><section><h2 class="section-heading" id="what-is-linked-open-data-lod">What is Linked Open Data (LOD)?<a class="anchor" aria-label="anchor" href="#what-is-linked-open-data-lod"></a></h2>
+<hr class="half-width"><p>Linked Open Data (LOD) is a method of structuring and publishing data
+in a way that enables connections between different datasets. By
+following the principles of Linked Data and ensuring open access, LOD
+allows for seamless data integration across various domains.</p>
+<p>Tim Berners-Lee, the inventor of the World Wide Web, outlined
+<strong>four principles</strong> for Linked Data:</p>
+<ol start="4" style="list-style-type: decimal"><li>
+<strong>Use URIs</strong> to uniquely identify resources.</li>
+<li>
+<strong>Use HTTP URIs</strong> so that resources can be looked up
+online.</li>
+<li>
+<strong>Provide structured and useful information</strong> using
+standard formats.</li>
+<li>
+<strong>Include links to other relevant data</strong> to establish
+relationships between datasets.</li>
+</ol></section><section><h2 class="section-heading" id="real-world-examples-of-linked-open-data-in-the-humanities">Real-world examples of Linked Open Data in the humanities<a class="anchor" aria-label="anchor" href="#real-world-examples-of-linked-open-data-in-the-humanities"></a></h2>
+<hr class="half-width"><p>LOD is already being used in humanities research to resolve ambiguity
+and connect data. Some notable examples include:</p>
+<ul><li>
+<strong>Wikidata</strong> – A collaborative knowledge base using LOD
+principles to interconnect historical and biographical data.</li>
+<li>
+<strong>Europeana</strong> – A digital archive linking cultural
+heritage collections across Europe, making historical records more
+accessible.</li>
+<li>
+<strong>The Met’s Linked Open Data Initiative</strong> – A project
+providing LOD access to its art collection to facilitate data
+integration and research.</li>
+</ul></section><section><h2 class="section-heading" id="exercise-identifying-ambiguous-art-data">Exercise: Identifying Ambiguous Art Data<a class="anchor" aria-label="anchor" href="#exercise-identifying-ambiguous-art-data"></a></h2>
+<hr class="half-width"><div class="section level3">
+<h3 id="task">Task:<a class="anchor" aria-label="anchor" href="#task"></a></h3>
+<p>Consider the following museum record:</p>
+<blockquote>
+<p>“The Mona Lisa was painted by Leonardo da Vinci.”</p>
+</blockquote>
+<ol start="8" style="list-style-type: decimal"><li>Identify possible ambiguities in this statement (e.g., which Mona
+Lisa? Which Leonardo da Vinci?).</li>
+<li>Find the correct URI for <strong>The Mona Lisa</strong> on
+<strong>Wikidata</strong>.</li>
+<li>Express the information as a
+<strong>subject-predicate-object</strong> triple.</li>
+</ol></div>
+</section><section><h2 class="section-heading" id="summary">Summary<a class="anchor" aria-label="anchor" href="#summary"></a></h2>
+<hr class="half-width"><ul><li><strong>The subject-predicate-object model structures information
+clearly, helping to describe relationships.</strong></li>
+<li><strong>Ambiguity in data arises when different records use similar
+names without unique identifiers.</strong></li>
+<li><strong>URIs solve this issue by providing a single reference point
+for entities.</strong></li>
+<li><strong>Linked Open Data connects different datasets, allowing for
+richer, more accurate research.</strong></li>
+</ul><p>In the next lesson, we will explore <strong>how Linked Data can be
+used to build complex relationships between datasets.</strong></p>
+<!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- --></section></div> <!-- / div.lesson-content -->
+ -->
+</section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="../instructor/rdf.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
@@ -434,7 +562,7 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/introduction.html",
   "identifier": "https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/introduction.html",
   "dateCreated": "2025-02-04",
-  "dateModified": "2025-02-17",
+  "dateModified": "2025-02-19",
   "datePublished": "2025-02-19"
 }
 
