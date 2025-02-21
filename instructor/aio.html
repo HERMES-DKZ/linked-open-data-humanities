@@ -370,7 +370,7 @@
         
 <section id="aio-introduction"><p>Content from <a href="introduction.html">Introduction to Linked Open Data in the Humanities</a></p>
 <hr>
-<p>Last updated on 2025-02-19 |
+<p>Last updated on 2025-02-21 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 22 minutes</p>
@@ -389,9 +389,10 @@
 models?</li>
 <li>Why are standardized identifiers (e.g., URIs) essential for
 LOD?</li>
-<li>What is the subject-predicate-object model?</li>
 <li>How can the subject-predicate-object model be used to describe
 LOD?</li>
+<li>What are real-world examples of Linked Open Data in the
+humanities?</li>
 </ul>
 </div>
 </div>
@@ -401,11 +402,13 @@ LOD?</li>
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Explain the concept of Linked Open Data (LOD).</li>
-<li>Differentiate between ‘Linked Data’ and ‘Linked Open Data’.</li>
+<li>Explain the concept of Linked Open Data (LOD) in your own
+words.</li>
+<li>Differentiate between ‘Linked Data’ and ‘Linked Open Data’ using an
+example.</li>
 <li>Describe the importance of standardized identifiers (e.g., URIs) for
 data linking.</li>
-<li>Create Linked Open Data relationships using the
+<li>Represent simple Linked Open Data relationships using the
 subject-predicate-object model.</li>
 </ul>
 </div>
@@ -416,18 +419,25 @@ subject-predicate-object model.</li>
 <section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <hr class="half-width">
-<p>In this episode we want to understand the basics of <strong>Linked
-Open Data</strong>. What is this and why should I use it? To do this, we
-will split the term <strong>Linked Open Data</strong>, because the first
-thing we need to understand is: What kind of data we are talking
-about?</p>
+<p>In this lesson, we want to explore the basics of <strong>Linked Open
+Data (LOD)</strong>. What is it, and why is it important? To answer
+these questions, we will break down the term step by step. The first and
+most fundamental thing we need to understand is: <strong>What kind of
+data are we dealing with?</strong></p>
 <p>Imagine you are a researcher studying <strong>Vincent van
-Gogh</strong> and you want to build a collection about this person with,
-for example, paintings, friends, visited places and so on. Best case
-scenario would be, if you could use data from other researchers as well
-to connect the knowledge you collected.</p>
-<p>One way to express these knowledge is by breaking it down into
-relationships using a **subject-predicate-object structure:</p>
+Gogh</strong>, and you want to build a collection of information about
+him. You might collect details about his paintings, his friends, the
+places he visited, and much more. The best-case scenario would be if you
+could <strong>connect</strong> your collected knowledge with data from
+other researchers. But how can we structure this knowledge in a way that
+makes it easy to share, connect, and expand?</p>
+<div class="section level3">
+<h3 id="structuring-knowledge-the-subject-predicate-object-model">Structuring Knowledge: The Subject-Predicate-Object Model<a class="anchor" aria-label="anchor" href="#structuring-knowledge-the-subject-predicate-object-model"></a>
+</h3>
+<p>A powerful way to structure and connect knowledge is by breaking it
+down into <strong>simple relationships</strong> using the
+<strong>subject-predicate-object</strong> model. This model is a
+fundamental way of expressing data in a structured format:</p>
 <ul>
 <li>
 <strong>Subject</strong>: The entity being described.</li>
@@ -436,86 +446,94 @@ relationships using a **subject-predicate-object structure:</p>
 <li>
 <strong>Object</strong>: The value or linked entity.</li>
 </ul>
-<p>But what does this mean in the case of a person? One example would
-be, if you want to express that the picture “Bouqet of Sunflowers” were
-painted by Vincent van Gogh.</p>
-<div class="section level3">
-<h3 id="example-triple-for-van-goghs-painting">Example triple for Van Gogh’s painting:<a class="anchor" aria-label="anchor" href="#example-triple-for-van-goghs-painting"></a>
-</h3>
+<p>For example, if we want to express that Vincent van Gogh painted
+<em>Bouquet of Sunflowers</em>, we can structure it like this:</p>
+<div class="section level4">
+<h4 id="example-triple-for-van-goghs-painting">Example Triple for Van Gogh’s Painting<a class="anchor" aria-label="anchor" href="#example-triple-for-van-goghs-painting"></a>
+</h4>
 <table class="table">
-<colgroup>
-<col width="33%">
-<col width="37%">
-<col width="29%">
-</colgroup>
 <thead><tr class="header">
 <th>Subject</th>
 <th>Predicate</th>
 <th>Object</th>
 </tr></thead>
-<tbody>
-<tr class="odd">
-<td>“Wheat Field with Cypresses”</td>
+<tbody><tr class="odd">
+<td><em>Bouquet of Sunflowers</em></td>
 <td>was painted by</td>
-<td>“Vincent van Gogh”</td>
-</tr>
-<tr class="even">
-<td>“Wheat Field with Cypresses”</td>
-<td>was created in</td>
-<td>“1889”</td>
-</tr>
-<tr class="odd">
-<td>“Wheat Field with Cypresses”</td>
-<td>is located at</td>
-<td>“Metropolitan Museum of Art”</td>
-</tr>
-</tbody>
+<td><em>Vincent van Gogh</em></td>
+</tr></tbody>
 </table>
-<p>By structuring data in this way, we make information clearer and
-easier to connect with other datasets.</p>
+<p>By structuring data in this way, we make information <strong>clearer,
+more precise, and easier to connect with other datasets</strong>.</p>
+</div>
+</div>
+<div class="section level3">
+<h3 id="creating-a-simple-mindmap">Creating a Simple Mindmap<a class="anchor" aria-label="anchor" href="#creating-a-simple-mindmap"></a>
+</h3>
+<p>To visualize how Linked Open Data works, let’s think about a
+<strong>mindmap</strong>. Imagine writing <em>Vincent van Gogh</em> at
+the center of a page. Now, draw lines to different connected terms:</p>
+<ul>
+<li>One line connects to <em>Bouquet of Sunflowers</em> with the label
+<strong>was painted by</strong>.</li>
+<li>Another line connects to <em>Zundert</em> (his birthplace) with the
+label <strong>was born in</strong>.</li>
+<li>A third line connects <em>Zundert</em> to <em>Netherlands</em> with
+the label <strong>is part of</strong>.</li>
+</ul>
+<p>Each of these connections expands the <strong>network of
+knowledge</strong>—a simple version of what we call the <strong>LOD
+cloud</strong>. The more links we create, the richer and more meaningful
+our dataset becomes.</p>
+<hr>
 </div>
 </section><section><h2 class="section-heading" id="the-challenge-ambiguity-in-art-titles">The Challenge: Ambiguity in Art Titles<a class="anchor" aria-label="anchor" href="#the-challenge-ambiguity-in-art-titles"></a>
 </h2>
 <hr class="half-width">
-<p>Now, let’s say you look up <em>Wheat Field with Cypresses</em> in
-different museum databases and find multiple records:</p>
+<p>Now, let’s say you are researching Van Gogh’s painting <em>Wheat
+Field with Cypresses</em> and you check multiple museum databases. You
+find several records:</p>
 <ol style="list-style-type: decimal">
 <li>An entry titled <em>Wheat Field with Cypresses</em>, attributed to
 <strong>Vincent van Gogh</strong>, painted in
 <strong>1889</strong>.</li>
-<li>Another entry with the same title, attributed to <strong>Vincent van
-Gogh</strong>, also from <strong>1889</strong>.</li>
-<li>A third entry under the title <em>Champ de blé aux cyprès</em>,
-again by <strong>Vincent van Gogh</strong>.</li>
+<li>Another entry with the same title, also attributed to
+<strong>Vincent van Gogh</strong>, also from <strong>1889</strong>.</li>
+<li>A third entry under the French title <em>Champ de blé aux
+cyprès</em>, again by <strong>Vincent van Gogh</strong>.</li>
 </ol>
-<p>Are these all the same painting, or are there multiple versions?
-Museum records might not provide enough information to clarify this.
-<strong>How can we ensure that different databases refer to the exact
-same painting?</strong></p>
-</section><section><h2 class="section-heading" id="how-uris-solve-ambiguity">How URIs Solve Ambiguity<a class="anchor" aria-label="anchor" href="#how-uris-solve-ambiguity"></a>
+<p>Are these all referring to the same painting, or are there multiple
+versions? Museum records might not provide enough information to clarify
+this. <strong>How can we ensure that different databases refer to the
+exact same artwork?</strong></p>
+<hr></section><section><h2 class="section-heading" id="how-uris-solve-ambiguity">How URIs Solve Ambiguity<a class="anchor" aria-label="anchor" href="#how-uris-solve-ambiguity"></a>
 </h2>
 <hr class="half-width">
 <p>A <strong>Uniform Resource Identifier (URI)</strong> provides a
 unique reference for an entity, ensuring clarity in data relationships.
-Instead of relying on titles, which may be duplicated across datasets,
-we use a globally unique identifier.</p>
+Instead of relying on <strong>titles</strong>, which might be duplicated
+across datasets, we use a <strong>globally unique
+identifier</strong>.</p>
 <p>For example: - <strong>Van Gogh’s Wheat Field with Cypresses
 (Metropolitan Museum of Art)</strong>:
 <code>https://www.metmuseum.org/art/collection/search/436535</code> -
 <strong>Van Gogh’s Wheat Field with Cypresses (Wikidata)</strong>:
 <code>https://www.wikidata.org/entity/Q201852</code></p>
-<p>By linking datasets using these URIs, we can ensure that different
-records actually refer to the same artwork.</p>
-</section><section><h2 class="section-heading" id="what-is-linked-open-data-lod">What is Linked Open Data (LOD)?<a class="anchor" aria-label="anchor" href="#what-is-linked-open-data-lod"></a>
+<p>By linking datasets using these <strong>URIs</strong>, we can ensure
+that different records actually refer to the <strong>same
+artwork</strong>.</p>
+<hr></section><section><h2 class="section-heading" id="what-is-linked-open-data-lod">What is Linked Open Data (LOD)?<a class="anchor" aria-label="anchor" href="#what-is-linked-open-data-lod"></a>
 </h2>
 <hr class="half-width">
-<p>Linked Open Data (LOD) is a method of structuring and publishing data
-in a way that enables connections between different datasets. By
-following the principles of Linked Data and ensuring open access, LOD
-allows for seamless data integration across various domains.</p>
-<p>Tim Berners-Lee, the inventor of the World Wide Web, outlined
-<strong>four principles</strong> for Linked Data:</p>
-<ol start="4" style="list-style-type: decimal">
+<p><strong>Linked Open Data (LOD)</strong> is a way of
+<strong>structuring and publishing data</strong> that enables
+connections between different datasets. By following the principles of
+<strong>Linked Data</strong> and ensuring <strong>open access</strong>,
+LOD allows for <strong>seamless data integration across various
+domains</strong>.</p>
+<p>Tim Berners-Lee, the inventor of the <strong>World Wide Web</strong>,
+outlined <strong>four key principles</strong> for Linked Data:</p>
+<ol style="list-style-type: decimal">
 <li>
 <strong>Use URIs</strong> to uniquely identify resources.</li>
 <li>
@@ -527,24 +545,33 @@ standard formats.</li>
 <li>
 <strong>Include links to other relevant data</strong> to establish
 relationships between datasets.</li>
-</ol></section><section><h2 class="section-heading" id="real-world-examples-of-linked-open-data-in-the-humanities">Real-world examples of Linked Open Data in the humanities<a class="anchor" aria-label="anchor" href="#real-world-examples-of-linked-open-data-in-the-humanities"></a>
+</ol>
+<p>When we follow these principles, we create <strong>interconnected
+datasets</strong> that can be used, combined, and enriched by anyone in
+the world.</p>
+<hr></section><section><h2 class="section-heading" id="real-world-examples-of-linked-open-data-in-the-humanities">Real-World Examples of Linked Open Data in the Humanities<a class="anchor" aria-label="anchor" href="#real-world-examples-of-linked-open-data-in-the-humanities"></a>
 </h2>
 <hr class="half-width">
-<p>LOD is already being used in humanities research to resolve ambiguity
-and connect data. Some notable examples include:</p>
+<p>LOD is already widely used in <strong>humanities research</strong> to
+<strong>resolve ambiguity</strong> and <strong>connect data</strong>
+across institutions. Some notable examples include:</p>
 <ul>
 <li>
-<strong>Wikidata</strong> – A collaborative knowledge base using LOD
-principles to interconnect historical and biographical data.</li>
+<strong>Wikidata</strong> – A collaborative knowledge base that uses
+LOD principles to interconnect historical and biographical data.</li>
 <li>
 <strong>Europeana</strong> – A digital archive linking cultural
 heritage collections across Europe, making historical records more
 accessible.</li>
 <li>
 <strong>The Met’s Linked Open Data Initiative</strong> – A project
-providing LOD access to its art collection to facilitate data
-integration and research.</li>
-</ul></section><section><h2 class="section-heading" id="exercise-identifying-ambiguous-art-data">Exercise: Identifying Ambiguous Art Data<a class="anchor" aria-label="anchor" href="#exercise-identifying-ambiguous-art-data"></a>
+providing LOD access to its art collection, allowing researchers to
+integrate data more effectively.</li>
+</ul>
+<p>These projects <strong>enhance accessibility, improve research
+quality, and allow datasets to grow beyond the limits of individual
+institutions</strong>.</p>
+<hr></section><section><h2 class="section-heading" id="exercise-identifying-ambiguous-art-data">Exercise: Identifying Ambiguous Art Data<a class="anchor" aria-label="anchor" href="#exercise-identifying-ambiguous-art-data"></a>
 </h2>
 <hr class="half-width">
 <div class="section level3">
@@ -554,37 +581,43 @@ integration and research.</li>
 <blockquote>
 <p>“The Mona Lisa was painted by Leonardo da Vinci.”</p>
 </blockquote>
-<ol start="8" style="list-style-type: decimal">
-<li>Identify possible ambiguities in this statement (e.g., which Mona
-Lisa? Which Leonardo da Vinci?).</li>
-<li>Find the correct URI for <strong>The Mona Lisa</strong> on
-<strong>Wikidata</strong>.</li>
+<ol style="list-style-type: decimal">
+<li>Identify possible <strong>ambiguities</strong> in this statement
+(e.g., <strong>which</strong> Mona Lisa? <strong>Which</strong> Leonardo
+da Vinci?).</li>
+<li>Find the correct <strong>URI</strong> for <strong>The Mona
+Lisa</strong> on <strong>Wikidata</strong>.</li>
 <li>Express the information as a
 <strong>subject-predicate-object</strong> triple.</li>
+<li>Create a <strong>simple mindmap</strong> connecting <em>Leonardo da
+Vinci</em> with his paintings, birthplace, and other notable facts.</li>
 </ol>
+<hr>
 </div>
 </section><section><h2 class="section-heading" id="summary">Summary<a class="anchor" aria-label="anchor" href="#summary"></a>
 </h2>
 <hr class="half-width">
 <ul>
 <li><strong>The subject-predicate-object model structures information
-clearly, helping to describe relationships.</strong></li>
+clearly, helping to describe relationships between
+entities.</strong></li>
 <li><strong>Ambiguity in data arises when different records use similar
 names without unique identifiers.</strong></li>
 <li><strong>URIs solve this issue by providing a single reference point
-for entities.</strong></li>
+for each entity.</strong></li>
 <li><strong>Linked Open Data connects different datasets, allowing for
 richer, more accurate research.</strong></li>
 </ul>
-<p>In the next lesson, we will explore <strong>how Linked Data can be
-used to build complex relationships between datasets.</strong></p>
+<p>In the next lesson, we will explore <strong>how RDF (Resource
+Description Framework) formalizes this model and enables structured data
+exchange.</strong></p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
 </section></section><section id="aio-rdf"><p>Content from <a href="rdf.html">Introduction to RDF and Basic Modeling</a></p>
 <hr>
-<p>Last updated on 2025-02-17 |
+<p>Last updated on 2025-02-21 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/rdf.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 22 minutes</p>
@@ -620,7 +653,213 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-</div></section><section id="aio-model"><p>Content from <a href="model.html">Model Linked Data</a></p>
+</div>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width">
+<p>In the previous lesson, we explored the fundamentals of
+<strong>Linked Open Data (LOD)</strong> and how information can be
+structured using the <strong>subject-predicate-object</strong> model. We
+learned how using <strong>URIs</strong> helps to uniquely identify
+entities, avoiding ambiguity in datasets.</p>
+<p>In this episode, we will go a step further and introduce the
+<strong>Resource Description Framework (RDF)</strong>. RDF is the
+standard model used to structure Linked Open Data, allowing us to
+represent knowledge in a machine-readable way.</p>
+<hr></section><section><h2 class="section-heading" id="what-is-rdf-and-why-do-we-need-it">What is RDF and Why Do We Need It?<a class="anchor" aria-label="anchor" href="#what-is-rdf-and-why-do-we-need-it"></a>
+</h2>
+<hr class="half-width">
+<p>The <strong>Resource Description Framework (RDF)</strong> is a
+framework for representing structured data on the web. It provides a
+<strong>universal way to describe relationships between
+entities</strong>, making it easier to link and integrate different
+datasets.</p>
+<p>But why do we need RDF? Let’s consider an example:</p>
+<p>Imagine you are researching <strong>Leonardo da Vinci</strong> and
+his works. You visit different online databases and find information
+about his paintings, inventions, and biography. However, each database
+structures its information differently: - One website lists his
+paintings in a simple table. - Another site describes his life in
+paragraphs of text. - A third database provides numerical IDs for each
+artwork but no additional links.</p>
+<p>Since each database uses a <strong>different format</strong>, it
+becomes difficult to combine and compare data. <strong>RDF solves this
+problem</strong> by providing a structured format that allows computers
+to understand and process relationships between entities. This means: -
+Data from different sources can be easily combined. - Relationships
+between entities become explicit. - Machines (and humans) can navigate
+and query data efficiently.</p>
+<p>To achieve this, RDF follows a simple but powerful structure: the
+<strong>triple model</strong>.</p>
+<hr></section><section><h2 class="section-heading" id="rdf-and-the-triple-model">RDF and the Triple Model<a class="anchor" aria-label="anchor" href="#rdf-and-the-triple-model"></a>
+</h2>
+<hr class="half-width">
+<p>RDF represents data using <strong>triples</strong>, which follow the
+<strong>subject-predicate-object</strong> pattern we introduced in the
+previous lesson. This structure allows us to describe relationships
+between things in a clear and machine-readable way.</p>
+<p>Each RDF triple consists of three components:</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Subject</strong>: The entity being described (e.g., a
+person, a painting, a place).</li>
+<li>
+<strong>Predicate</strong>: The property or relationship connecting
+the subject and object.</li>
+<li>
+<strong>Object</strong>: The value or linked entity.</li>
+</ol>
+<p>Let’s look at an example in the context of art history.</p>
+<div class="section level3">
+<h3 id="example-describing-a-painting-in-rdf">Example: Describing a Painting in RDF<a class="anchor" aria-label="anchor" href="#example-describing-a-painting-in-rdf"></a>
+</h3>
+<p>Suppose we want to describe the fact that <strong>Leonardo da Vinci
+painted the Mona Lisa</strong>. We can structure this as
+subject-predicate-object relationships:</p>
+<table class="table">
+<thead><tr class="header">
+<th>Subject</th>
+<th>Predicate</th>
+<th>Object</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td><code>Mona Lisa</code></td>
+<td><code>was painted by</code></td>
+<td><code>Leonardo da Vinci</code></td>
+</tr></tbody>
+</table>
+<p>In RDF, we typically use <strong>URIs</strong> instead of plain text
+labels to uniquely identify resources. This avoids confusion between
+similar names (e.g., different artworks named “Mona Lisa” or multiple
+people named “Leonardo da Vinci”).</p>
+<p>Here is how the same fact would be expressed using URIs:</p>
+<table class="table">
+<colgroup>
+<col width="33%">
+<col width="37%">
+<col width="29%">
+</colgroup>
+<thead><tr class="header">
+<th>Subject</th>
+<th>Predicate</th>
+<th>Object</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td><code>&lt;https://www.wikidata.org/entity/Q12418&gt;</code></td>
+<td><code>&lt;https://schema.org/creator&gt;</code></td>
+<td><code>&lt;https://www.wikidata.org/entity/Q762&gt;</code></td>
+</tr></tbody>
+</table>
+<ul>
+<li>
+<code>&lt;https://www.wikidata.org/entity/Q12418&gt;</code> → The
+URI for the <strong>Mona Lisa</strong>.</li>
+<li>
+<code>&lt;https://schema.org/creator&gt;</code> → A standard
+property for describing the <strong>creator of an artwork</strong>.</li>
+<li>
+<code>&lt;https://www.wikidata.org/entity/Q762&gt;</code> → The URI
+for <strong>Leonardo da Vinci</strong>.</li>
+</ul>
+<p>By using <strong>URIs</strong>, we ensure that the data is clear and
+unambiguous. Any database referencing these URIs will automatically
+refer to the same entities, making it easy to merge and connect
+data.</p>
+<hr>
+</div>
+</section><section><h2 class="section-heading" id="modeling-real-world-relationships-with-rdf">Modeling Real-World Relationships with RDF<a class="anchor" aria-label="anchor" href="#modeling-real-world-relationships-with-rdf"></a>
+</h2>
+<hr class="half-width">
+<p>RDF allows us to represent <strong>complex knowledge
+networks</strong> by linking multiple pieces of information. Let’s
+extend our example and describe more facts about Leonardo da Vinci.</p>
+<table class="table">
+<colgroup>
+<col width="33%">
+<col width="37%">
+<col width="29%">
+</colgroup>
+<thead><tr class="header">
+<th>Subject</th>
+<th>Predicate</th>
+<th>Object</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><code>&lt;https://www.wikidata.org/entity/Q12418&gt;</code></td>
+<td><code>&lt;https://schema.org/creator&gt;</code></td>
+<td><code>&lt;https://www.wikidata.org/entity/Q762&gt;</code></td>
+</tr>
+<tr class="even">
+<td><code>&lt;https://www.wikidata.org/entity/Q762&gt;</code></td>
+<td><code>&lt;https://schema.org/birthPlace&gt;</code></td>
+<td><code>&lt;https://www.wikidata.org/entity/Q2044&gt;</code></td>
+</tr>
+<tr class="odd">
+<td><code>&lt;https://www.wikidata.org/entity/Q762&gt;</code></td>
+<td><code>&lt;https://schema.org/occupation&gt;</code></td>
+<td><code>Painter</code></td>
+</tr>
+</tbody>
+</table>
+<p>This data tells us: 1. <strong>Leonardo da Vinci created the Mona
+Lisa</strong>. 2. <strong>Leonardo da Vinci was born in Vinci,
+Italy</strong>. 3. <strong>Leonardo da Vinci’s occupation was
+“Painter”</strong>.</p>
+<p>By structuring data in this way, we create <strong>a network of
+linked facts</strong> that can be queried, analyzed, and combined with
+other datasets.</p>
+<hr></section><section><h2 class="section-heading" id="exercise-representing-rdf-triples">Exercise: Representing RDF Triples<a class="anchor" aria-label="anchor" href="#exercise-representing-rdf-triples"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="task-1-identifying-triples-in-a-sentence">Task 1: Identifying Triples in a Sentence<a class="anchor" aria-label="anchor" href="#task-1-identifying-triples-in-a-sentence"></a>
+</h3>
+<p>Consider the sentence:<br>
+&gt; “Vincent van Gogh painted Starry Night in 1889.”</p>
+<ol style="list-style-type: decimal">
+<li>Identify the <strong>subject</strong>, <strong>predicate</strong>,
+and <strong>object</strong> in this statement.</li>
+<li>Represent the information in a structured table.</li>
+<li>Try to express the same fact using <strong>URIs</strong>.</li>
+</ol>
+</div>
+<div class="section level3">
+<h3 id="task-2-expanding-the-rdf-graph">Task 2: Expanding the RDF Graph<a class="anchor" aria-label="anchor" href="#task-2-expanding-the-rdf-graph"></a>
+</h3>
+<p>Based on the example above, add <strong>two additional pieces of
+information</strong> about Vincent van Gogh to the dataset.<br>
+For example: - Where was he born? - What kind of artist was he?</p>
+<p>Write down your new RDF triples in a table format.</p>
+<hr>
+</div>
+</section><section><h2 class="section-heading" id="limitations-of-rdf">Limitations of RDF<a class="anchor" aria-label="anchor" href="#limitations-of-rdf"></a>
+</h2>
+<hr class="half-width">
+<p>While RDF is a powerful tool for structuring Linked Open Data, it
+also has some limitations:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Data Complexity</strong><br>
+RDF models can become very large and complex, especially when dealing
+with vast datasets. Querying and managing large RDF graphs requires
+specialized tools.</p></li>
+<li><p><strong>Understanding and Adoption</strong><br>
+Since RDF requires a structured approach and the use of URIs, it can be
+challenging for beginners and institutions unfamiliar with semantic web
+technologies.</p></li>
+<li><p><strong>Data Linking Challenges</strong><br>
+Although RDF enables linking data across sources, ensuring
+<strong>consistent and high-quality links</strong> requires effort and
+collaboration between organizations.</p></li>
+</ol>
+<p>Despite these challenges, RDF remains a <strong>key technology for
+Linked Open Data</strong>, enabling the creation of rich, connected
+knowledge graphs.</p>
+<hr>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ --></section></section><section id="aio-model"><p>Content from <a href="model.html">Model Linked Data</a></p>
 <hr>
 <p>Last updated on 2025-02-11 |
 
@@ -775,7 +1014,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.11" class="external-link">sandpaper (0.16.11)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.7" class="external-link">pegboard (0.7.7)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.5" class="external-link">varnish (1.0.5)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.11" class="external-link">sandpaper (0.16.11)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.8" class="external-link">pegboard (0.7.8)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.5" class="external-link">varnish (1.0.5)</a></p>
 			</div>
 		</footer>
 </div> <!-- / div.container -->
@@ -798,8 +1037,8 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/aio.html",
   "identifier": "https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/aio.html",
   "dateCreated": "2025-02-04",
-  "dateModified": "2025-02-19",
-  "datePublished": "2025-02-19"
+  "dateModified": "2025-02-21",
+  "datePublished": "2025-02-21"
 }
 
   </script><script>

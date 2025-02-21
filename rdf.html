@@ -215,12 +215,24 @@
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         2. Introduction to RDF and Basic Modeling
         </span>
-      
+      </button>
     </div><!--/div.accordion-header-->
+
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+      <div class="accordion-body">
+        <ul><li><a href="#introduction">Introduction</a></li>
+<li><a href="#what-is-rdf-and-why-do-we-need-it">What is RDF and Why Do We Need It?</a></li>
+<li><a href="#rdf-and-the-triple-model">RDF and the Triple Model</a></li>
+<li><a href="#modeling-real-world-relationships-with-rdf">Modeling Real-World Relationships with RDF</a></li>
+<li><a href="#exercise-representing-rdf-triples">Exercise: Representing RDF Triples</a></li>
+<li><a href="#limitations-of-rdf">Limitations of RDF</a></li>
+        </ul></div><!--/div.accordion-body-->
+    </div><!--/div.accordion-collapse-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -319,7 +331,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introduction to RDF and Basic Modeling</h1>
-        <p>Last updated on 2025-02-17 |
+        <p>Last updated on 2025-02-21 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/rdf.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -357,14 +369,152 @@
 </div>
 </div>
 </div>
-<!--
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a></h2>
+<hr class="half-width"><p>In the previous lesson, we explored the fundamentals of
+<strong>Linked Open Data (LOD)</strong> and how information can be
+structured using the <strong>subject-predicate-object</strong> model. We
+learned how using <strong>URIs</strong> helps to uniquely identify
+entities, avoiding ambiguity in datasets.</p>
+<p>In this episode, we will go a step further and introduce the
+<strong>Resource Description Framework (RDF)</strong>. RDF is the
+standard model used to structure Linked Open Data, allowing us to
+represent knowledge in a machine-readable way.</p>
+<hr></section><section><h2 class="section-heading" id="what-is-rdf-and-why-do-we-need-it">What is RDF and Why Do We Need It?<a class="anchor" aria-label="anchor" href="#what-is-rdf-and-why-do-we-need-it"></a></h2>
+<hr class="half-width"><p>The <strong>Resource Description Framework (RDF)</strong> is a
+framework for representing structured data on the web. It provides a
+<strong>universal way to describe relationships between
+entities</strong>, making it easier to link and integrate different
+datasets.</p>
+<p>But why do we need RDF? Let’s consider an example:</p>
+<p>Imagine you are researching <strong>Leonardo da Vinci</strong> and
+his works. You visit different online databases and find information
+about his paintings, inventions, and biography. However, each database
+structures its information differently: - One website lists his
+paintings in a simple table. - Another site describes his life in
+paragraphs of text. - A third database provides numerical IDs for each
+artwork but no additional links.</p>
+<p>Since each database uses a <strong>different format</strong>, it
+becomes difficult to combine and compare data. <strong>RDF solves this
+problem</strong> by providing a structured format that allows computers
+to understand and process relationships between entities. This means: -
+Data from different sources can be easily combined. - Relationships
+between entities become explicit. - Machines (and humans) can navigate
+and query data efficiently.</p>
+<p>To achieve this, RDF follows a simple but powerful structure: the
+<strong>triple model</strong>.</p>
+<hr></section><section><h2 class="section-heading" id="rdf-and-the-triple-model">RDF and the Triple Model<a class="anchor" aria-label="anchor" href="#rdf-and-the-triple-model"></a></h2>
+<hr class="half-width"><p>RDF represents data using <strong>triples</strong>, which follow the
+<strong>subject-predicate-object</strong> pattern we introduced in the
+previous lesson. This structure allows us to describe relationships
+between things in a clear and machine-readable way.</p>
+<p>Each RDF triple consists of three components:</p>
+<ol style="list-style-type: decimal"><li>
+<strong>Subject</strong>: The entity being described (e.g., a
+person, a painting, a place).</li>
+<li>
+<strong>Predicate</strong>: The property or relationship connecting
+the subject and object.</li>
+<li>
+<strong>Object</strong>: The value or linked entity.</li>
+</ol><p>Let’s look at an example in the context of art history.</p>
+<div class="section level3">
+<h3 id="example-describing-a-painting-in-rdf">Example: Describing a Painting in RDF<a class="anchor" aria-label="anchor" href="#example-describing-a-painting-in-rdf"></a></h3>
+<p>Suppose we want to describe the fact that <strong>Leonardo da Vinci
+painted the Mona Lisa</strong>. We can structure this as
+subject-predicate-object relationships:</p>
+<table class="table"><thead><tr class="header"><th>Subject</th>
+<th>Predicate</th>
+<th>Object</th>
+</tr></thead><tbody><tr class="odd"><td><code>Mona Lisa</code></td>
+<td><code>was painted by</code></td>
+<td><code>Leonardo da Vinci</code></td>
+</tr></tbody></table><p>In RDF, we typically use <strong>URIs</strong> instead of plain text
+labels to uniquely identify resources. This avoids confusion between
+similar names (e.g., different artworks named “Mona Lisa” or multiple
+people named “Leonardo da Vinci”).</p>
+<p>Here is how the same fact would be expressed using URIs:</p>
+<table class="table"><colgroup><col width="33%"><col width="37%"><col width="29%"></colgroup><thead><tr class="header"><th>Subject</th>
+<th>Predicate</th>
+<th>Object</th>
+</tr></thead><tbody><tr class="odd"><td><code>&lt;https://www.wikidata.org/entity/Q12418&gt;</code></td>
+<td><code>&lt;https://schema.org/creator&gt;</code></td>
+<td><code>&lt;https://www.wikidata.org/entity/Q762&gt;</code></td>
+</tr></tbody></table><ul><li>
+<code>&lt;https://www.wikidata.org/entity/Q12418&gt;</code> → The
+URI for the <strong>Mona Lisa</strong>.</li>
+<li>
+<code>&lt;https://schema.org/creator&gt;</code> → A standard
+property for describing the <strong>creator of an artwork</strong>.</li>
+<li>
+<code>&lt;https://www.wikidata.org/entity/Q762&gt;</code> → The URI
+for <strong>Leonardo da Vinci</strong>.</li>
+</ul><p>By using <strong>URIs</strong>, we ensure that the data is clear and
+unambiguous. Any database referencing these URIs will automatically
+refer to the same entities, making it easy to merge and connect
+data.</p>
+<hr></div>
+</section><section><h2 class="section-heading" id="modeling-real-world-relationships-with-rdf">Modeling Real-World Relationships with RDF<a class="anchor" aria-label="anchor" href="#modeling-real-world-relationships-with-rdf"></a></h2>
+<hr class="half-width"><p>RDF allows us to represent <strong>complex knowledge
+networks</strong> by linking multiple pieces of information. Let’s
+extend our example and describe more facts about Leonardo da Vinci.</p>
+<table class="table"><colgroup><col width="33%"><col width="37%"><col width="29%"></colgroup><thead><tr class="header"><th>Subject</th>
+<th>Predicate</th>
+<th>Object</th>
+</tr></thead><tbody><tr class="odd"><td><code>&lt;https://www.wikidata.org/entity/Q12418&gt;</code></td>
+<td><code>&lt;https://schema.org/creator&gt;</code></td>
+<td><code>&lt;https://www.wikidata.org/entity/Q762&gt;</code></td>
+</tr><tr class="even"><td><code>&lt;https://www.wikidata.org/entity/Q762&gt;</code></td>
+<td><code>&lt;https://schema.org/birthPlace&gt;</code></td>
+<td><code>&lt;https://www.wikidata.org/entity/Q2044&gt;</code></td>
+</tr><tr class="odd"><td><code>&lt;https://www.wikidata.org/entity/Q762&gt;</code></td>
+<td><code>&lt;https://schema.org/occupation&gt;</code></td>
+<td><code>Painter</code></td>
+</tr></tbody></table><p>This data tells us: 1. <strong>Leonardo da Vinci created the Mona
+Lisa</strong>. 2. <strong>Leonardo da Vinci was born in Vinci,
+Italy</strong>. 3. <strong>Leonardo da Vinci’s occupation was
+“Painter”</strong>.</p>
+<p>By structuring data in this way, we create <strong>a network of
+linked facts</strong> that can be queried, analyzed, and combined with
+other datasets.</p>
+<hr></section><section><h2 class="section-heading" id="exercise-representing-rdf-triples">Exercise: Representing RDF Triples<a class="anchor" aria-label="anchor" href="#exercise-representing-rdf-triples"></a></h2>
+<hr class="half-width"><div class="section level3">
+<h3 id="task-1-identifying-triples-in-a-sentence">Task 1: Identifying Triples in a Sentence<a class="anchor" aria-label="anchor" href="#task-1-identifying-triples-in-a-sentence"></a></h3>
+<p>Consider the sentence:<br>
+&gt; “Vincent van Gogh painted Starry Night in 1889.”</p>
+<ol style="list-style-type: decimal"><li>Identify the <strong>subject</strong>, <strong>predicate</strong>,
+and <strong>object</strong> in this statement.</li>
+<li>Represent the information in a structured table.</li>
+<li>Try to express the same fact using <strong>URIs</strong>.</li>
+</ol></div>
+<div class="section level3">
+<h3 id="task-2-expanding-the-rdf-graph">Task 2: Expanding the RDF Graph<a class="anchor" aria-label="anchor" href="#task-2-expanding-the-rdf-graph"></a></h3>
+<p>Based on the example above, add <strong>two additional pieces of
+information</strong> about Vincent van Gogh to the dataset.<br>
+For example: - Where was he born? - What kind of artist was he?</p>
+<p>Write down your new RDF triples in a table format.</p>
+<hr></div>
+</section><section><h2 class="section-heading" id="limitations-of-rdf">Limitations of RDF<a class="anchor" aria-label="anchor" href="#limitations-of-rdf"></a></h2>
+<hr class="half-width"><p>While RDF is a powerful tool for structuring Linked Open Data, it
+also has some limitations:</p>
+<ol style="list-style-type: decimal"><li><p><strong>Data Complexity</strong><br>
+RDF models can become very large and complex, especially when dealing
+with vast datasets. Querying and managing large RDF graphs requires
+specialized tools.</p></li>
+<li><p><strong>Understanding and Adoption</strong><br>
+Since RDF requires a structured approach and the use of URIs, it can be
+challenging for beginners and institutions unfamiliar with semantic web
+technologies.</p></li>
+<li><p><strong>Data Linking Challenges</strong><br>
+Although RDF enables linking data across sources, ensuring
+<strong>consistent and high-quality links</strong> requires effort and
+collaboration between organizations.</p></li>
+</ol><p>Despite these challenges, RDF remains a <strong>key technology for
+Linked Open Data</strong>, enabling the creation of rich, connected
+knowledge graphs.</p>
+<hr><!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- -->
-
-
-
-      </div> <!-- / div.lesson-content -->
+ --></section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="introduction.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="model.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
@@ -400,7 +550,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.11" class="external-link">sandpaper (0.16.11)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.7" class="external-link">pegboard (0.7.7)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.5" class="external-link">varnish (1.0.5)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.11" class="external-link">sandpaper (0.16.11)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.8" class="external-link">pegboard (0.7.8)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.5" class="external-link">varnish (1.0.5)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -422,8 +572,8 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/linked-open-data-humanities/rdf.html",
   "identifier": "https://HERMES-DKZ.github.io/linked-open-data-humanities/rdf.html",
   "dateCreated": "2025-02-04",
-  "dateModified": "2025-02-17",
-  "datePublished": "2025-02-19"
+  "dateModified": "2025-02-21",
+  "datePublished": "2025-02-21"
 }
 
   </script><script>
