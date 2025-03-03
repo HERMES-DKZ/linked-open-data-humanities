@@ -16,3 +16,17 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+
+## Using OpenRefine to transform a dataset from CSV to RDF
+
+
+* Open OpenRefine
+* Load Example Dataset
+* Get to know the GUI
+* Work with the RDF Transform extension
+
+
+:::::: keypoints
+ - keypoint 1
+ - keypoint 2
+::::::
