@@ -224,12 +224,20 @@
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         3. Model Linked Data
         </span>
-      
+      </button>
     </div><!--/div.accordion-header-->
+
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+      <div class="accordion-body">
+        <ul><li><a href="#different-concepts-in-rdf">Different concepts in RDF</a></li>
+<li><a href="#serialization-formats">Serialization formats</a></li>
+        </ul></div><!--/div.accordion-body-->
+    </div><!--/div.accordion-collapse-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -319,7 +327,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Model Linked Data</h1>
-        <p>Last updated on 2025-02-11 |
+        <p>Last updated on 2025-03-03 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/model.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -340,28 +348,89 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>
-</li></ul></div>
+<ul><li>What are IRIs, literals and a blanknodes and when to use them?</li>
+<li>How to write down RDF?</li>
+<li>What is Turtle?</li>
+<li>What is a vocabulary and a namespace?</li>
+<li>What is RDF Schema?</li>
+</ul></div>
 </div>
 </div>
 <div class="col-md-8">
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>
-</li></ul></div>
+<ul><li>Differentiate between the concepts of IRIs, literals and
+blanknodes?</li>
+<li>Know when to use IRIs, literals and blanknodes.</li>
+<li>Write down RDF in turtle format?</li>
+<li>Understand what a vocabulary is used for in linked open data.</li>
+<li>Remember where to look for the concepts of the RDF schema vocabulary
+and their definitions.</li>
+</ul></div>
 </div>
 </div>
+</div>
+</div>
+<section><h2 class="section-heading" id="different-concepts-in-rdf">Different concepts in RDF<a class="anchor" aria-label="anchor" href="#different-concepts-in-rdf"></a></h2>
+<hr class="half-width"><ul><li>IRI</li>
+<li>Literal</li>
+<li>Blanknode</li>
+</ul></section><section><h2 class="section-heading" id="serialization-formats">Serialization formats<a class="anchor" aria-label="anchor" href="#serialization-formats"></a></h2>
+<hr class="half-width"><p>A serialisation format is the answer to the question of how to write
+things down in RDF so that the machine understands them. In short Turtle
+is an example for such a format.</p>
+<p>Turtle example</p>
+<pre><code><span></span>
+<span><span class="co">##namespaces</span></span>
+<span><span class="co">##statements</span></span></code></pre>
+<p>Other common serialization formats:</p>
+<ul><li>RDF/XML</li>
+<li>JSON-LD</li>
+</ul><p>You do not have to know all the serialization Formats, there are
+plenty of converter tools on the web, for example the <a href="https://www.easyrdf.org/converter" class="external-link">EASYRDF Converter</a> or the <a href="https://converter.zazuko.com/" class="external-link">RDF Converter by Zazuko</a>.</p>
+<div id="write-down-the-information-in-turtle" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="write-down-the-information-in-turtle" class="callout-inner">
+<h3 class="callout-title">Write down the information in turtle</h3>
+<div class="callout-content">
+<p>List some statements and ask the learners to transform them to valid
+turtle.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<pre><code>TODO
+Valid turtle.</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points</h3>
+<div class="callout-content">
+<ul><li>keypoint 1</li>
+<li>keypoint 2</li>
+</ul></div>
 </div>
 </div>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-
-
-
-      </div> <!-- / div.lesson-content -->
+</section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/rdf.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="../instructor/creation.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
@@ -419,7 +488,7 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/model.html",
   "identifier": "https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/model.html",
   "dateCreated": "2025-02-04",
-  "dateModified": "2025-02-11",
+  "dateModified": "2025-03-03",
   "datePublished": "2025-03-03"
 }
 
