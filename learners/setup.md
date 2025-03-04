@@ -59,9 +59,9 @@ A file-explorer or finder window will open in your workspace. Note that path
    [http://localhost:3333](https://localhost:3333) to launch the program.
  8. Download the extension [rdf-transform](https://github.com/AtesComp/rdf-transform/releases/download/v2.2.4/rdf-transform-2.2.4.zip).
  9. Unzip the folder and move it into your OpenRefine workspace. 
-        1. You can find the path to your OpenRefine Workspace by launching OpenRefine and click Open Project in the sidebar. Then at the bottom of the screen, click "Browse workspace directory". A Finder window with the path `~/Library/Application Support/OpenRefine` opens.
-        2. Unzip the downloaded folder by double clicking on it.
-        3. Move the folder `rdf-transform` into the folder `extension` in your OpenRefine workspace.
+        * You can find the path to your OpenRefine Workspace by launching OpenRefine and click Open Project in the sidebar. Then at the bottom of the screen, click "Browse workspace directory". A Finder window with the path `~/Library/Application Support/OpenRefine` opens.
+        * Unzip the downloaded folder by double clicking on it.
+        * Move the folder `rdf-transform` into the folder `extension` in your OpenRefine workspace.
 10. Close OpenRefine and reopen it.
 
 ::::::::::::::::::::::::
