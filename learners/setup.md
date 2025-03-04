@@ -43,7 +43,26 @@ A file-explorer or finder window will open in your workspace. Note that path
 
 ### MacOS
 
-Use Terminal.app
+ 1. Check that you have Firefox, Edge, Opera or Chrome browsers installed and set as your
+   default browser. OpenRefine runs in your default browser. It will not run
+   correctly in Internet Explorer.
+ 2. Download the software from [openrefine.org](https://openrefine.org).
+ 3. Unzip the downloaded file into a directory by double-clicking it. Name
+   that directory something like OpenRefine. / Double click the dmg file. A window opens an now drag and drop the OpenRefine.app into your Applications
+ 4. Go to your newly created OpenRefine directory.
+ 5. Drag the OpenRefine app into the Applications folder.
+ 6. Launch OpenRefine: Control-click the app icon, then
+   choose "Open" from the shortcut menu. For Troubleshooting help, see
+   [the Apple support page](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac).
+ 7. If you are using a different browser than listed above, or if OpenRefine does not automatically
+   open for you, point your browser at [http://127.0.0.1:3333/](https://127.0.0.1:3333/) or
+   [http://localhost:3333](https://localhost:3333) to launch the program.
+ 8. Download the extension [rdf-transform](https://github.com/AtesComp/rdf-transform/releases/download/v2.2.4/rdf-transform-2.2.4.zip).
+ 9. Unzip the folder and move it into your OpenRefine workspace. 
+        1. You can find the path to your OpenRefine Workspace by launching OpenRefine and click Open Project in the sidebar. Then at the bottom of the screen, click "Browse workspace directory". A Finder window with the path `~/Library/Application Support/OpenRefine` opens.
+        2. Unzip the downloaded folder by double clicking on it.
+        3. Move the folder `rdf-transform` into the folder `extension` in your OpenRefine workspace.
+10. Close OpenRefine and reopen it.
 
 ::::::::::::::::::::::::
 
