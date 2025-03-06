@@ -23,3 +23,17 @@ title: 'Reference'
 - **Vocabulary**: A set of predefined terms and relationships used in RDF to maintain consistency and interoperability.
 
 - **Graph Database**: A database optimized for storing and querying relationships in graph structures, often used with RDF data.
+
+- **Graph**: 
+
+- **IRI (Internationalized Resource Identifier)**:
+  
+- **Blank Node**:
+  
+- **Literal**:
+  
+- **Namespace**:
+
+- **Resource**:
+
+- **Serialization**:
