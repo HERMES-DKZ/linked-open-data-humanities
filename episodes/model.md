@@ -10,7 +10,8 @@ exercises: 2
 - How to write down RDF?
 - What is Turtle?
 - What is a vocabulary and a namespace?
-- What is RDF Schema?
+- What is RDF Schema and what is it used for?
+
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -66,6 +67,38 @@ List some statements and ask the learners to transform them to valid turtle.
 TODO
 Valid turtle.
 ```
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+## Vocabularies & namespaces
+
+
+## RDF Schema
+
+RDF Schema is an extension of the basic RDF vocabulary, you already know from before.
+You can always go to the published (RDF Schema Vocabulary file)[https://www.w3.org/TR/rdf11-schema/] and look up the the terms (concepts), meanings and rules.
+
+* Classes
+    * rdfs:Resource
+    * rdfs:Class
+    * rdfs:Literal
+* Properties
+    * rdfs:domain
+    * rdfs:range
+    * rdfs:subClassOf
+    * rdfs:subClassOf
+    * rdfs:label
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Apply RDF Schmea to our artwork example
+
+Fill in the cloze or the gaps in the picture.
+
+:::::::::::::::: solution
+
+
 
 :::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
