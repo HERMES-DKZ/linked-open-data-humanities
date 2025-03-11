@@ -1,4 +1,8 @@
-## "Introduction to Linked Open Data in the Humanities"
+---
+title: "Introduction to Linked Open Data in the Humanities"
+teaching: 10
+exercises: 2
+---
 
 :::::::::::::::::::::::::::::::::::::: Questions
 

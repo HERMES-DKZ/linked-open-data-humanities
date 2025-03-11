@@ -1,3 +1,23 @@
+---
+title: "The concept of IRIs"
+teaching: 10
+exercises: 2
+---
+
+:::::::::::::::::::::::::::::::::::::: Questions
+
+- FILL
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: Learning Objectives
+
+- FILL
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
 ## How URIs Solve Ambiguity  
 
 The method used in LOD to resolve these ambiguities is IRIs. You may be familiar with the term URI—IRIs are simply an extension of this concept.  
