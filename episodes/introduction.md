@@ -4,7 +4,7 @@ teaching: 10
 exercises: 2
 ---
 
-:::::::::::::::::::::::::::::::::::::: Questions
+:::::::::::::::::::::::::::::::::::::: questions
 
 - What is Linked Open Data, and how does it differ from other data models?
 
@@ -16,7 +16,7 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::: Learning Objectives
+::::::::::::::::::::::::::::::::::::: objectives
 
 - Explain the concept of Linked Open Data (LOD) in your own words.
 
@@ -34,7 +34,7 @@ In this lesson, we want to explore the fundamentals of **Linked Open Data (LOD)*
 
 Imagine you are a researcher studying **Vincent van Gogh** and want to build a collection of information about him. You could gather details about his paintings, his friends, the places he visited, and much more. Ideally, you could **link** your collected knowledge with data from other researchers. But how can we structure this knowledge so that it is easy to share, connect, and expand?  
 
-### Structuring Knowledge: The Subject-Predicate-Object Model  
+## Structuring Knowledge: The Subject-Predicate-Object Model  
 
 One way to structure and link knowledge is to break it down into **simple relationships** using the **subject-predicate-object** model. This model is a fundamental method for structured data representation:  
 
@@ -46,24 +46,32 @@ One way to structure and link knowledge is to break it down into **simple relati
 
 For example, if we want to express that Vincent van Gogh painted *Bouquet of Sunflowers*, we can structure it like this:  
 
-#### Example Triple for Van Gogh's Painting  
+### Example Triple for Van Gogh's Painting  
+
+<br>
 
 | Subject                 | Predicate      | Object             |
 | ----------------------- | -------------- | ------------------ |
 | *Bouquet of Sunflowers* | was painted by | *Vincent van Gogh* |
 
+<br>
+
 By structuring information in this way, we ensure that the knowledge we store—namely, that Vincent van Gogh painted this artwork—is precise and easy to understand. We reduce the sentence to the essential elements, making it easier to store and process.  
 
 Now, if we wanted to store additional paintings by Vincent van Gogh, we could use the same format. Adding another painting to the table would look like this:  
+
+<br>
 
 | Subject                 | Predicate      | Object             |
 | ----------------------- | -------------- | ------------------ |
 | *Bouquet of Sunflowers* | was painted by | *Vincent van Gogh* |
 | *Starry Night*          | was painted by | *Vincent van Gogh* |
 
+<br>
+
 However, at this point, our data is still in a tabular format, which is not the format used in LOD.  
 
-### Creating a Simple Mind Map  
+## Triples Visualized
 
 To visualize how Linked Open Data works, imagine a **mind map**. Write *Vincent van Gogh* in the center of a page and draw lines to various related terms:  
 
@@ -79,7 +87,7 @@ Each of these connections expands the **knowledge network**—a simple version o
 
 By visualizing the data, it becomes easier to see why this way of storing and structuring knowledge is so efficient and valuable. Imagine a much larger mind map with significantly more information—this could reveal connections between people that were previously invisible. Furthermore, if researchers from different locations collaborate on such a mind map, additional insights and knowledge can be discovered.  
 
-:::::::::::::::::::::::::::::::::::::: Challenge  
+:::::::::::::::::::::::::::::::::::::: challenge  
 
 ### Create a Graph  
 
@@ -96,7 +104,7 @@ Feel free to get creative and think about what other information could be modele
 
 ---
 
-## The Challenge: Ambiguity  
+## Ambiguity  
 
 Now that the fundamental concept behind the subject-predicate-object model is understood, a problem arises when trying to connect personal data with external datasets or when modeling knowledge unambiguously: How can we ensure that we are talking about the same objects?  
 
