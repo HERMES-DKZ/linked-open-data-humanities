@@ -4,14 +4,11 @@ teaching: 10
 exercises: 2
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions
+:::::::::::::::::::::::::::::::::::::: questions 
 
 - What is Linked Open Data, and how does it differ from other data models?
-
 - Why are standardized identifiers (e.g., URIs) essential for LOD?
-
 - How can the subject-predicate-object model be used to describe LOD?
-
 - What are real-world examples of Linked Open Data in the humanities?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -19,11 +16,8 @@ exercises: 2
 ::::::::::::::::::::::::::::::::::::: objectives
 
 - Explain the concept of Linked Open Data (LOD) in your own words.
-
 - Distinguish between "Linked Data" and "Linked Open Data" using an example.
-
 - Describe the importance of standardized identifiers (e.g., URIs) for linking data.
-
 - Represent simple Linked Open Data relationships using the subject-predicate-object model.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -48,28 +42,28 @@ For example, if we want to express that Vincent van Gogh painted *Bouquet of Sun
 
 ### Example Triple for Van Gogh's Painting  
 
-<br>
+---
 
 | Subject                 | Predicate      | Object             |
 | ----------------------- | -------------- | ------------------ |
 | *Bouquet of Sunflowers* | was painted by | *Vincent van Gogh* |
 
-<br>
+---
 
 By structuring information in this way, we ensure that the knowledge we store—namely, that Vincent van Gogh painted this artwork—is precise and easy to understand. We reduce the sentence to the essential elements, making it easier to store and process.  
 
 Now, if we wanted to store additional paintings by Vincent van Gogh, we could use the same format. Adding another painting to the table would look like this:  
 
-<br>
-
+---
 | Subject                 | Predicate      | Object             |
 | ----------------------- | -------------- | ------------------ |
 | *Bouquet of Sunflowers* | was painted by | *Vincent van Gogh* |
 | *Starry Night*          | was painted by | *Vincent van Gogh* |
-
-<br>
+---
 
 However, at this point, our data is still in a tabular format, which is not the format used in LOD.  
+
+---
 
 ## Triples Visualized
 
@@ -102,7 +96,6 @@ Feel free to get creative and think about what other information could be modele
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::  
 
----
 
 ## Ambiguity  
 
