@@ -28,6 +28,8 @@ In this lesson, we want to explore the fundamentals of **Linked Open Data (LOD)*
 
 Imagine you are a researcher studying **Vincent van Gogh** and want to build a collection of information about him. You could gather details about his paintings, his friends, the places he visited, and much more. Ideally, you could **link** your collected knowledge with data from other researchers. But how can we structure this knowledge so that it is easy to share, connect, and expand?  
 
+
+
 ## Structuring Knowledge: The Subject-Predicate-Object Model  
 
 One way to structure and link knowledge is to break it down into **simple relationships** using the **subject-predicate-object** model. This model is a fundamental method for structured data representation:  
@@ -42,7 +44,6 @@ For example, if we want to express that Vincent van Gogh painted *Bouquet of Sun
 
 ### Example Triple for Van Gogh's Painting  
 
----
 
 | Subject                 | Predicate      | Object             |
 | ----------------------- | -------------- | ------------------ |
@@ -55,15 +56,16 @@ By structuring information in this way, we ensure that the knowledge we store—
 Now, if we wanted to store additional paintings by Vincent van Gogh, we could use the same format. Adding another painting to the table would look like this:  
 
 ---
+
 | Subject                 | Predicate      | Object             |
 | ----------------------- | -------------- | ------------------ |
 | *Bouquet of Sunflowers* | was painted by | *Vincent van Gogh* |
 | *Starry Night*          | was painted by | *Vincent van Gogh* |
+
 ---
 
 However, at this point, our data is still in a tabular format, which is not the format used in LOD.  
 
----
 
 ## Triples Visualized
 
@@ -83,7 +85,7 @@ By visualizing the data, it becomes easier to see why this way of storing and st
 
 :::::::::::::::::::::::::::::::::::::: challenge  
 
-### Create a Graph  
+## Create a Graph  
 
 Go into breakout rooms and create a graph with [Excalidraw](https://excalidraw.com/). Try to find connections you could model in that graph.  
 Possible properties could be:  
