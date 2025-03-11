@@ -217,7 +217,9 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#introduction">Introduction</a></li>
-<li><a href="#the-challenge-ambiguity">The Challenge: Ambiguity</a></li>
+<li><a href="#structuring-knowledge-the-subject-predicate-object-model">Structuring Knowledge: The Subject-Predicate-Object Model</a></li>
+<li><a href="#triples-visualized">Triples Visualized</a></li>
+<li><a href="#ambiguity">Ambiguity</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -339,7 +341,13 @@
 
         
 
-<div class="Questions">
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
 <ul><li><p>What is Linked Open Data, and how does it differ from other data
 models?</p></li>
 <li><p>Why are standardized identifiers (e.g., URIs) essential for
@@ -349,7 +357,12 @@ LOD?</p></li>
 <li><p>What are real-world examples of Linked Open Data in the
 humanities?</p></li>
 </ul></div>
-<p>::::::::::::::::::::::::::::::::::::: Learning Objectives</p>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
 <ul><li><p>Explain the concept of Linked Open Data (LOD) in your own
 words.</p></li>
 <li><p>Distinguish between “Linked Data” and “Linked Open Data” using an
@@ -358,7 +371,11 @@ example.</p></li>
 for linking data.</p></li>
 <li><p>Represent simple Linked Open Data relationships using the
 subject-predicate-object model.</p></li>
-</ul><p>::::::::::::::::::::::::::::::::::::::::::::::::</p>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
 <section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a></h2>
 <hr class="half-width"><p>In this lesson, we want to explore the fundamentals of <strong>Linked
 Open Data (LOD)</strong>. What is it, and why is it important? To answer
@@ -373,9 +390,8 @@ visited, and much more. Ideally, you could <strong>link</strong> your
 collected knowledge with data from other researchers. But how can we
 structure this knowledge so that it is easy to share, connect, and
 expand?</p>
-<div class="section level3">
-<h3 id="structuring-knowledge-the-subject-predicate-object-model">Structuring Knowledge: The Subject-Predicate-Object Model<a class="anchor" aria-label="anchor" href="#structuring-knowledge-the-subject-predicate-object-model"></a></h3>
-<p>One way to structure and link knowledge is to break it down into
+</section><section><h2 class="section-heading" id="structuring-knowledge-the-subject-predicate-object-model">Structuring Knowledge: The Subject-Predicate-Object Model<a class="anchor" aria-label="anchor" href="#structuring-knowledge-the-subject-predicate-object-model"></a></h2>
+<hr class="half-width"><p>One way to structure and link knowledge is to break it down into
 <strong>simple relationships</strong> using the
 <strong>subject-predicate-object</strong> model. This model is a
 fundamental method for structured data representation:</p>
@@ -385,21 +401,24 @@ attribute.</p></li>
 <li><p><strong>Object</strong>: The value or linked entity.</p></li>
 </ul><p>For example, if we want to express that Vincent van Gogh painted
 <em>Bouquet of Sunflowers</em>, we can structure it like this:</p>
-<div class="section level4">
-<h4 id="example-triple-for-van-goghs-painting">Example Triple for Van Gogh’s Painting<a class="anchor" aria-label="anchor" href="#example-triple-for-van-goghs-painting"></a></h4>
+<div class="section level3">
+<h3 id="example-triple-for-van-goghs-painting">Example Triple for Van Gogh’s Painting<a class="anchor" aria-label="anchor" href="#example-triple-for-van-goghs-painting"></a></h3>
+<p><br></p>
 <table class="table"><thead><tr class="header"><th>Subject</th>
 <th>Predicate</th>
 <th>Object</th>
 </tr></thead><tbody><tr class="odd"><td><em>Bouquet of Sunflowers</em></td>
 <td>was painted by</td>
 <td><em>Vincent van Gogh</em></td>
-</tr></tbody></table><p>By structuring information in this way, we ensure that the knowledge
+</tr></tbody></table><p><br></p>
+<p>By structuring information in this way, we ensure that the knowledge
 we store—namely, that Vincent van Gogh painted this artwork—is precise
 and easy to understand. We reduce the sentence to the essential
 elements, making it easier to store and process.</p>
 <p>Now, if we wanted to store additional paintings by Vincent van Gogh,
 we could use the same format. Adding another painting to the table would
 look like this:</p>
+<p><br></p>
 <table class="table"><thead><tr class="header"><th>Subject</th>
 <th>Predicate</th>
 <th>Object</th>
@@ -409,13 +428,12 @@ look like this:</p>
 </tr><tr class="even"><td><em>Starry Night</em></td>
 <td>was painted by</td>
 <td><em>Vincent van Gogh</em></td>
-</tr></tbody></table><p>However, at this point, our data is still in a tabular format, which
+</tr></tbody></table><p><br></p>
+<p>However, at this point, our data is still in a tabular format, which
 is not the format used in LOD.</p>
 </div>
-</div>
-<div class="section level3">
-<h3 id="creating-a-simple-mind-map">Creating a Simple Mind Map<a class="anchor" aria-label="anchor" href="#creating-a-simple-mind-map"></a></h3>
-<p>To visualize how Linked Open Data works, imagine a <strong>mind
+</section><section><h2 class="section-heading" id="triples-visualized">Triples Visualized<a class="anchor" aria-label="anchor" href="#triples-visualized"></a></h2>
+<hr class="half-width"><p>To visualize how Linked Open Data works, imagine a <strong>mind
 map</strong>. Write <em>Vincent van Gogh</em> in the center of a page
 and draw lines to various related terms:</p>
 <ul><li><p>One line connects <em>Bouquet of Sunflowers</em> with the label
@@ -435,9 +453,13 @@ a much larger mind map with significantly more information—this could
 reveal connections between people that were previously invisible.
 Furthermore, if researchers from different locations collaborate on such
 a mind map, additional insights and knowledge can be discovered.</p>
+<div id="create-a-graph" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
 </div>
-<div class="section level3 Challenge">
-<h3 id="create-a-graph">Create a Graph<a class="anchor" aria-label="anchor" href="#create-a-graph"></a></h3>
+<div id="create-a-graph" class="callout-inner">
+<h3 class="callout-title">Create a Graph</h3>
+<div class="callout-content">
 <p>Go into breakout rooms and create a graph with <a href="https://excalidraw.com/" class="external-link">Excalidraw</a>. Try to find connections
 you could model in that graph.<br>
 Possible properties could be:</p>
@@ -447,7 +469,9 @@ Possible properties could be:</p>
 </ul><p>Feel free to get creative and think about what other information
 could be modeled in this way, then create your own graph.</p>
 </div>
-<hr></section><section><h2 class="section-heading" id="the-challenge-ambiguity">The Challenge: Ambiguity<a class="anchor" aria-label="anchor" href="#the-challenge-ambiguity"></a></h2>
+</div>
+</div>
+<hr></section><section><h2 class="section-heading" id="ambiguity">Ambiguity<a class="anchor" aria-label="anchor" href="#ambiguity"></a></h2>
 <hr class="half-width"><p>Now that the fundamental concept behind the subject-predicate-object
 model is understood, a problem arises when trying to connect personal
 data with external datasets or when modeling knowledge unambiguously:
