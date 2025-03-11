@@ -49,20 +49,18 @@ For example, if we want to express that Vincent van Gogh painted *Bouquet of Sun
 | ----------------------- | -------------- | ------------------ |
 | *Bouquet of Sunflowers* | was painted by | *Vincent van Gogh* |
 
----
 
 By structuring information in this way, we ensure that the knowledge we store—namely, that Vincent van Gogh painted this artwork—is precise and easy to understand. We reduce the sentence to the essential elements, making it easier to store and process.  
 
 Now, if we wanted to store additional paintings by Vincent van Gogh, we could use the same format. Adding another painting to the table would look like this:  
 
----
 
 | Subject                 | Predicate      | Object             |
 | ----------------------- | -------------- | ------------------ |
 | *Bouquet of Sunflowers* | was painted by | *Vincent van Gogh* |
 | *Starry Night*          | was painted by | *Vincent van Gogh* |
 
----
+
 
 However, at this point, our data is still in a tabular format, which is not the format used in LOD.  
 
@@ -95,6 +93,17 @@ Possible properties could be:
 - lives in  
 
 Feel free to get creative and think about what other information could be modeled in this way, then create your own graph.  
+
+
+:::::::::::::::: solution
+
+
+```
+TODO
+Valid turtle.
+```
+
+:::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::  
 
