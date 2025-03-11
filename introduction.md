@@ -78,7 +78,7 @@ To visualize how Linked Open Data works, imagine a **mind map**. Write *Vincent 
 Each of these connections expands the **knowledge network**—a simple version of what we call the **LOD cloud**. The more connections we create, the richer and more meaningful our dataset becomes. The resulting mind map would look like this:  
 
 
-![Mind Map](/img/mind_map_example.png)
+<img src="img/mind_map_examples.png" alt="Mindmap"/>
 
 
 
