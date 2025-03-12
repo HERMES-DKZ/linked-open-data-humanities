@@ -224,24 +224,12 @@
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         3. Introduction to RDF and Basic Modeling
         </span>
-      </button>
+      
     </div><!--/div.accordion-header-->
-
-    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
-      <div class="accordion-body">
-        <ul><li><a href="#introduction">Introduction</a></li>
-<li><a href="#what-is-rdf-and-why-do-we-need-it">What is RDF and Why Do We Need It?</a></li>
-<li><a href="#rdf-and-the-triple-model">RDF and the Triple Model</a></li>
-<li><a href="#modeling-real-world-relationships-with-rdf">Modeling Real-World Relationships with RDF</a></li>
-<li><a href="#exercise-representing-rdf-triples">Exercise: Representing RDF Triples</a></li>
-<li><a href="#limitations-of-rdf">Limitations of RDF</a></li>
-        </ul></div><!--/div.accordion-body-->
-    </div><!--/div.accordion-collapse-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -340,7 +328,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introduction to RDF and Basic Modeling</h1>
-        <p>Last updated on 2025-02-21 |
+        <p>Last updated on 2025-03-12 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/rdf.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -380,152 +368,115 @@
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a></h2>
-<hr class="half-width"><p>In the previous lesson, we explored the fundamentals of
-<strong>Linked Open Data (LOD)</strong> and how information can be
-structured using the <strong>subject-predicate-object</strong> model. We
-learned how using <strong>URIs</strong> helps to uniquely identify
-entities, avoiding ambiguity in datasets.</p>
-<p>In this episode, we will go a step further and introduce the
-<strong>Resource Description Framework (RDF)</strong>. RDF is the
-standard model used to structure Linked Open Data, allowing us to
-represent knowledge in a machine-readable way.</p>
-<hr></section><section><h2 class="section-heading" id="what-is-rdf-and-why-do-we-need-it">What is RDF and Why Do We Need It?<a class="anchor" aria-label="anchor" href="#what-is-rdf-and-why-do-we-need-it"></a></h2>
-<hr class="half-width"><p>The <strong>Resource Description Framework (RDF)</strong> is a
-framework for representing structured data on the web. It provides a
-<strong>universal way to describe relationships between
-entities</strong>, making it easier to link and integrate different
-datasets.</p>
-<p>But why do we need RDF? Let’s consider an example:</p>
-<p>Imagine you are researching <strong>Leonardo da Vinci</strong> and
-his works. You visit different online databases and find information
-about his paintings, inventions, and biography. However, each database
-structures its information differently: - One website lists his
-paintings in a simple table. - Another site describes his life in
-paragraphs of text. - A third database provides numerical IDs for each
-artwork but no additional links.</p>
-<p>Since each database uses a <strong>different format</strong>, it
-becomes difficult to combine and compare data. <strong>RDF solves this
-problem</strong> by providing a structured format that allows computers
-to understand and process relationships between entities. This means: -
-Data from different sources can be easily combined. - Relationships
-between entities become explicit. - Machines (and humans) can navigate
-and query data efficiently.</p>
-<p>To achieve this, RDF follows a simple but powerful structure: the
-<strong>triple model</strong>.</p>
-<hr></section><section><h2 class="section-heading" id="rdf-and-the-triple-model">RDF and the Triple Model<a class="anchor" aria-label="anchor" href="#rdf-and-the-triple-model"></a></h2>
-<hr class="half-width"><p>RDF represents data using <strong>triples</strong>, which follow the
-<strong>subject-predicate-object</strong> pattern we introduced in the
-previous lesson. This structure allows us to describe relationships
-between things in a clear and machine-readable way.</p>
-<p>Each RDF triple consists of three components:</p>
-<ol style="list-style-type: decimal"><li>
-<strong>Subject</strong>: The entity being described (e.g., a
-person, a painting, a place).</li>
+<p>RDF (Resource Description Framework) is a <strong>universal data
+model</strong> designed to represent relationships between entities in a
+structured way. It provides a <strong>standardized format</strong> for
+expressing knowledge using the <strong>subject-predicate-object</strong>
+model, which allows different datasets to be linked together and ensures
+interoperability.</p>
+<p>Using RDF, we can describe facts in a machine-readable way. Each RDF
+statement, called a <strong>triple</strong>, consists of:</p>
+<ul><li>
+<strong>Subject</strong>: The entity being described.<br></li>
 <li>
-<strong>Predicate</strong>: The property or relationship connecting
-the subject and object.</li>
+<strong>Predicate</strong>: The property or relationship between the
+subject and the object.<br></li>
 <li>
-<strong>Object</strong>: The value or linked entity.</li>
-</ol><p>Let’s look at an example in the context of art history.</p>
+<strong>Object</strong>: The value or entity linked to the
+subject.</li>
+</ul><p>For example, we can express the relationship between the painting
+<em>Wheatfield with Cypresses</em> and Vincent van Gogh using an RDF
+triple with URIs:</p>
+<pre><code>&lt;https://www.wikidata.org/wiki/Q26221215&gt; &lt;"was painted by"&gt; &lt;https://www.wikidata.org/wiki/Q5582&gt;.</code></pre>
+<p>This triple means that <em>Wheatfield with Cypresses</em> was painted
+by Vincent van Gogh.</p>
 <div class="section level3">
-<h3 id="example-describing-a-painting-in-rdf">Example: Describing a Painting in RDF<a class="anchor" aria-label="anchor" href="#example-describing-a-painting-in-rdf"></a></h3>
-<p>Suppose we want to describe the fact that <strong>Leonardo da Vinci
-painted the Mona Lisa</strong>. We can structure this as
-subject-predicate-object relationships:</p>
-<table class="table"><thead><tr class="header"><th>Subject</th>
-<th>Predicate</th>
-<th>Object</th>
-</tr></thead><tbody><tr class="odd"><td><code>Mona Lisa</code></td>
-<td><code>was painted by</code></td>
-<td><code>Leonardo da Vinci</code></td>
-</tr></tbody></table><p>In RDF, we typically use <strong>URIs</strong> instead of plain text
-labels to uniquely identify resources. This avoids confusion between
-similar names (e.g., different artworks named “Mona Lisa” or multiple
-people named “Leonardo da Vinci”).</p>
-<p>Here is how the same fact would be expressed using URIs:</p>
-<table class="table"><colgroup><col width="33%"><col width="37%"><col width="29%"></colgroup><thead><tr class="header"><th>Subject</th>
-<th>Predicate</th>
-<th>Object</th>
-</tr></thead><tbody><tr class="odd"><td><code>&lt;https://www.wikidata.org/entity/Q12418&gt;</code></td>
-<td><code>&lt;https://schema.org/creator&gt;</code></td>
-<td><code>&lt;https://www.wikidata.org/entity/Q762&gt;</code></td>
-</tr></tbody></table><ul><li>
-<code>&lt;https://www.wikidata.org/entity/Q12418&gt;</code> → The
-URI for the <strong>Mona Lisa</strong>.</li>
+<h3 id="using-n-triples-as-the-simplest-rdf-representation">Using N-Triples as the Simplest RDF Representation<a class="anchor" aria-label="anchor" href="#using-n-triples-as-the-simplest-rdf-representation"></a></h3>
+<p>The format used above is called <strong>N-Triples</strong>, which is
+the simplest, standardized way to represent RDF data. N-Triples is a
+line-based format where each fact is written on a single line in the
+form:</p>
+<pre><code>&lt;subject&gt; &lt;predicate&gt; &lt;object&gt;.</code></pre>
+<p>This simplicity makes N-Triples easy to parse and store, making it
+ideal for exchanging RDF data between different systems.</p>
+</div>
+<div class="section level3">
+<h3 id="rdf-properties-and-vocabulary">RDF Properties and Vocabulary<a class="anchor" aria-label="anchor" href="#rdf-properties-and-vocabulary"></a></h3>
+<p>Beyond defining structured relationships, RDF also introduces
+<strong>vocabularies</strong> to standardize predicates. A vocabulary
+defines a set of properties and terms that describe specific concepts,
+ensuring consistency when linking data.</p>
+<p>For example, instead of every dataset using its own phrase for “was
+painted by,” a standardized RDF vocabulary might define a property. For
+this property definition we could use wikidata, because they not only
+provide IRIs for Objects, but for properties aswell. There we find
+<em><a href="https://www.wikidata.org/wiki/Property:P170" class="external-link">creator</a></em> ,
+with the definition <em>maker of this creative work or other
+object</em>. Our whole triple would now look like this:</p>
+<pre><code>&lt;https://www.wikidata.org/wiki/Q26221215&gt; &lt;https://www.wikidata.org/wiki/Property:P170&gt; &lt;https://www.wikidata.org/wiki/Q5582&gt;</code></pre>
+<p>Such vocabularies enable different datasets to use the same terms,
+making data integration more efficient.</p>
+</div>
+<div class="section level3">
+<h3 id="blank-nodes-and-literals-in-rdf">Blank Nodes and Literals in RDF<a class="anchor" aria-label="anchor" href="#blank-nodes-and-literals-in-rdf"></a></h3>
+<p>In RDF, not every object needs a globally unique identifier (IRI).
+Sometimes, an entity exists that doesn’t need to be explicitly
+named—this is where <strong>Blank Nodes</strong> come in.</p>
+<p>A <strong>Blank Node</strong> represents an entity that exists in the
+data model but has no specific identifier. It is useful when:<br>
+- The entity doesn’t have a meaningful global ID.<br>
+- It is only relevant in a limited local context.</p>
+<p>For example, if a painting has an <strong>unknown artist</strong>, we
+might use a blank node to represent the missing information:</p>
+<pre><code>&lt;IRI for Unknown Painting&gt; &lt;IRI for "was painted by"&gt; _:b1.</code></pre>
+<p>Here, <code>_:b1</code> is a blank node acting as a placeholder for
+an unknown artist.</p>
+<p>Additionally, RDF supports <strong>Literals</strong>, which represent
+concrete values such as <strong>dates, numbers, or text</strong> instead
+of links to other entities.</p>
+<p>For example, adding the creation year of <em>Wheatfield with
+Cypresses</em>:</p>
+<pre><code>&lt;https://www.wikidata.org/wiki/Q26221215&gt; &lt;"was painted in"&gt; "1889"^^http://www.w3.org/2001/XMLSchema#integer.</code></pre>
+<p>This triple states that <em>Wheatfield with Cypresses</em> was
+painted in the year <strong>1889</strong>, with the data type explicitly
+set as an integer.</p>
+<div id="creating-rdf-triples" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="creating-rdf-triples" class="callout-inner">
+<h3 class="callout-title">Creating RDF Triples</h3>
+<div class="callout-content">
+<p>Convert the following statements into RDF triples using the correct
+structure. Use wikidata for IRIs and properties:</p>
+<ol style="list-style-type: decimal"><li>Vincent van Gogh was born in Zundert.<br></li>
 <li>
-<code>&lt;https://schema.org/creator&gt;</code> → A standard
-property for describing the <strong>creator of an artwork</strong>.</li>
-<li>
-<code>&lt;https://www.wikidata.org/entity/Q762&gt;</code> → The URI
-for <strong>Leonardo da Vinci</strong>.</li>
-</ul><p>By using <strong>URIs</strong>, we ensure that the data is clear and
-unambiguous. Any database referencing these URIs will automatically
-refer to the same entities, making it easy to merge and connect
-data.</p>
-<hr></div>
-</section><section><h2 class="section-heading" id="modeling-real-world-relationships-with-rdf">Modeling Real-World Relationships with RDF<a class="anchor" aria-label="anchor" href="#modeling-real-world-relationships-with-rdf"></a></h2>
-<hr class="half-width"><p>RDF allows us to represent <strong>complex knowledge
-networks</strong> by linking multiple pieces of information. Let’s
-extend our example and describe more facts about Leonardo da Vinci.</p>
-<table class="table"><colgroup><col width="33%"><col width="37%"><col width="29%"></colgroup><thead><tr class="header"><th>Subject</th>
-<th>Predicate</th>
-<th>Object</th>
-</tr></thead><tbody><tr class="odd"><td><code>&lt;https://www.wikidata.org/entity/Q12418&gt;</code></td>
-<td><code>&lt;https://schema.org/creator&gt;</code></td>
-<td><code>&lt;https://www.wikidata.org/entity/Q762&gt;</code></td>
-</tr><tr class="even"><td><code>&lt;https://www.wikidata.org/entity/Q762&gt;</code></td>
-<td><code>&lt;https://schema.org/birthPlace&gt;</code></td>
-<td><code>&lt;https://www.wikidata.org/entity/Q2044&gt;</code></td>
-</tr><tr class="odd"><td><code>&lt;https://www.wikidata.org/entity/Q762&gt;</code></td>
-<td><code>&lt;https://schema.org/occupation&gt;</code></td>
-<td><code>Painter</code></td>
-</tr></tbody></table><p>This data tells us: 1. <strong>Leonardo da Vinci created the Mona
-Lisa</strong>. 2. <strong>Leonardo da Vinci was born in Vinci,
-Italy</strong>. 3. <strong>Leonardo da Vinci’s occupation was
-“Painter”</strong>.</p>
-<p>By structuring data in this way, we create <strong>a network of
-linked facts</strong> that can be queried, analyzed, and combined with
-other datasets.</p>
-<hr></section><section><h2 class="section-heading" id="exercise-representing-rdf-triples">Exercise: Representing RDF Triples<a class="anchor" aria-label="anchor" href="#exercise-representing-rdf-triples"></a></h2>
-<hr class="half-width"><div class="section level3">
-<h3 id="task-1-identifying-triples-in-a-sentence">Task 1: Identifying Triples in a Sentence<a class="anchor" aria-label="anchor" href="#task-1-identifying-triples-in-a-sentence"></a></h3>
-<p>Consider the sentence:<br>
-&gt; “Vincent van Gogh painted Starry Night in 1889.”</p>
-<ol style="list-style-type: decimal"><li>Identify the <strong>subject</strong>, <strong>predicate</strong>,
-and <strong>object</strong> in this statement.</li>
-<li>Represent the information in a structured table.</li>
-<li>Try to express the same fact using <strong>URIs</strong>.</li>
+<em>Starry Night</em> was painted by Vincent van Gogh.<br></li>
+<li>The painting <em>The Potato Eaters</em> was created in 1885.</li>
 </ol></div>
-<div class="section level3">
-<h3 id="task-2-expanding-the-rdf-graph">Task 2: Expanding the RDF Graph<a class="anchor" aria-label="anchor" href="#task-2-expanding-the-rdf-graph"></a></h3>
-<p>Based on the example above, add <strong>two additional pieces of
-information</strong> about Vincent van Gogh to the dataset.<br>
-For example: - Where was he born? - What kind of artist was he?</p>
-<p>Write down your new RDF triples in a table format.</p>
-<hr></div>
-</section><section><h2 class="section-heading" id="limitations-of-rdf">Limitations of RDF<a class="anchor" aria-label="anchor" href="#limitations-of-rdf"></a></h2>
-<hr class="half-width"><p>While RDF is a powerful tool for structuring Linked Open Data, it
-also has some limitations:</p>
-<ol style="list-style-type: decimal"><li><p><strong>Data Complexity</strong><br>
-RDF models can become very large and complex, especially when dealing
-with vast datasets. Querying and managing large RDF graphs requires
-specialized tools.</p></li>
-<li><p><strong>Understanding and Adoption</strong><br>
-Since RDF requires a structured approach and the use of URIs, it can be
-challenging for beginners and institutions unfamiliar with semantic web
-technologies.</p></li>
-<li><p><strong>Data Linking Challenges</strong><br>
-Although RDF enables linking data across sources, ensuring
-<strong>consistent and high-quality links</strong> requires effort and
-collaboration between organizations.</p></li>
-</ol><p>Despite these challenges, RDF remains a <strong>key technology for
-Linked Open Data</strong>, enabling the creation of rich, connected
-knowledge graphs.</p>
-<hr><!--
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<pre><code><span><span class="va">TODO</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- --></section></div> <!-- / div.lesson-content -->
+ -->
+</div>
+
+
+
+      </div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/iris.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="../instructor/model.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
@@ -583,7 +534,7 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/rdf.html",
   "identifier": "https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/rdf.html",
   "dateCreated": "2025-02-04",
-  "dateModified": "2025-02-21",
+  "dateModified": "2025-03-12",
   "datePublished": "2025-03-12"
 }
 
