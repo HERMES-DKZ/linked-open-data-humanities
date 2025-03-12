@@ -67,8 +67,8 @@ contact: 'julia.tolksdorf@hs-mainz.de, robert.zwick@hs-mainz.de' # FIXME
 # Order of episodes in your lesson
 episodes: 
 - introduction.md
-- rdf.md
 - iris.md
+- rdf.md
 - model.md
 - creation.md
 - sparql.md
