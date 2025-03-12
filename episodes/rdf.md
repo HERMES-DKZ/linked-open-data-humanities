@@ -110,7 +110,11 @@ Convert the following statements into RDF triples using the correct structure. U
 
 
 ```
-TODO
+<https://www.wikidata.org/wiki/Q5582><https://www.wikidata.org/wiki/Property:P19><https://www.wikidata.org/wiki/Q9883>
+
+<https://www.wikidata.org/wiki/Q45585><https://www.wikidata.org/wiki/Property:P170><https://www.wikidata.org/wiki/Q5582>
+
+<https://www.wikidata.org/wiki/Q154469><https://www.wikidata.org/wiki/Property:P571><"1889"^^http://www.w3.org/2001/XMLSchema#integer>
 ```
 
 :::::::::::::::::::::::::
