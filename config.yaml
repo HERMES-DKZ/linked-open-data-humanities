@@ -68,6 +68,7 @@ contact: 'julia.tolksdorf@hs-mainz.de, robert.zwick@hs-mainz.de' # FIXME
 episodes: 
 - introduction.md
 - rdf.md
+- iris.md
 - model.md
 - creation.md
 - sparql.md

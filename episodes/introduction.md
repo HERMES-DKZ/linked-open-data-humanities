@@ -111,25 +111,6 @@ Valid turtle.
 ::::::::::::::::::::::::::::::::::::::::::::::::::  
 
 
-## Ambiguity  
-
-Now that the fundamental concept behind the subject-predicate-object model is understood, a problem arises when trying to connect personal data with external datasets or when modeling knowledge unambiguously: How can we ensure that we are talking about the same objects?  
-
-Consider the following example:  
-
-Suppose you are researching Van Gogh’s painting *Wheatfield with Cypresses* and searching a museum database. You might find different paintings:  
-
-1. An entry titled *Weizenfeld mit Zypressen*, attributed to **Vincent van Gogh**, painted in **1889**.  
-
-2. Another entry titled *Cypresses*, also attributed to **Vincent van Gogh**, from **1889**.  
-
-3. Another entry titled *Wheat Field*, also by **Vincent van Gogh** from **1888**.  
-
-4. Yet another entry with the same title *Wheat Field*, but by **Jean Jacques de Boissieu** from **1772**.  
-
-This highlights that names are often not unique. While additional details like year and artist usually clarify which object is meant, this is not always guaranteed. Humans can often resolve such ambiguities using context, but computers struggle with this.  
-
-Since a subject-predicate-object model does not have the context of a larger text, ambiguity can be resolved using IDs. Museums, for instance, assign unique IDs to paintings, ensuring that even those with identical names are distinguishable. This concept is adapted and expanded for LOD to work in an open, large-scale environment.  
 
 
 
