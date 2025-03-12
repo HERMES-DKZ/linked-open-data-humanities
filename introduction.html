@@ -219,7 +219,6 @@
         <ul><li><a href="#introduction">Introduction</a></li>
 <li><a href="#structuring-knowledge-the-subject-predicate-object-model">Structuring Knowledge: The Subject-Predicate-Object Model</a></li>
 <li><a href="#triples-visualized">Triples Visualized</a></li>
-<li><a href="#ambiguity">Ambiguity</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -238,7 +237,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="model.html">3. Model Linked Data</a>
+        <a href="iris.html">3. The concept of IRIs</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -247,7 +246,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="creation.html">4. Create Linked Data</a>
+        <a href="model.html">4. Model Linked Data</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -256,7 +255,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="sparql.html">5. Query Linked Data with SPARQL</a>
+        <a href="creation.html">5. Create Linked Data</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -265,7 +264,16 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="publication.html">6. Publish your Linked Data</a>
+        <a href="sparql.html">6. Query Linked Data with SPARQL</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="publication.html">7. Publish your Linked Data</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -329,7 +337,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introduction to Linked Open Data in the Humanities</h1>
-        <p>Last updated on 2025-03-11 |
+        <p>Last updated on 2025-03-12 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -480,34 +488,6 @@ Valid turtle.</code></pre>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="ambiguity">Ambiguity<a class="anchor" aria-label="anchor" href="#ambiguity"></a></h2>
-<hr class="half-width"><p>Now that the fundamental concept behind the subject-predicate-object
-model is understood, a problem arises when trying to connect personal
-data with external datasets or when modeling knowledge unambiguously:
-How can we ensure that we are talking about the same objects?</p>
-<p>Consider the following example:</p>
-<p>Suppose you are researching Van Gogh’s painting <em>Wheatfield with
-Cypresses</em> and searching a museum database. You might find different
-paintings:</p>
-<ol style="list-style-type: decimal"><li><p>An entry titled <em>Weizenfeld mit Zypressen</em>, attributed to
-<strong>Vincent van Gogh</strong>, painted in
-<strong>1889</strong>.</p></li>
-<li><p>Another entry titled <em>Cypresses</em>, also attributed to
-<strong>Vincent van Gogh</strong>, from <strong>1889</strong>.</p></li>
-<li><p>Another entry titled <em>Wheat Field</em>, also by
-<strong>Vincent van Gogh</strong> from <strong>1888</strong>.</p></li>
-<li><p>Yet another entry with the same title <em>Wheat Field</em>, but
-by <strong>Jean Jacques de Boissieu</strong> from
-<strong>1772</strong>.</p></li>
-</ol><p>This highlights that names are often not unique. While additional
-details like year and artist usually clarify which object is meant, this
-is not always guaranteed. Humans can often resolve such ambiguities
-using context, but computers struggle with this.</p>
-<p>Since a subject-predicate-object model does not have the context of a
-larger text, ambiguity can be resolved using IDs. Museums, for instance,
-assign unique IDs to paintings, ensuring that even those with identical
-names are distinguishable. This concept is adapted and expanded for LOD
-to work in an open, large-scale environment.</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
@@ -570,8 +550,8 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/linked-open-data-humanities/introduction.html",
   "identifier": "https://HERMES-DKZ.github.io/linked-open-data-humanities/introduction.html",
   "dateCreated": "2025-02-04",
-  "dateModified": "2025-03-11",
-  "datePublished": "2025-03-11"
+  "dateModified": "2025-03-12",
+  "datePublished": "2025-03-12"
 }
 
   </script><script>

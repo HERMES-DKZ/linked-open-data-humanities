@@ -267,7 +267,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="model.html">3. Model Linked Data</a>
+        <a href="iris.html">3. The concept of IRIs</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -279,7 +279,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="creation.html">4. Create Linked Data</a>
+        <a href="model.html">4. Model Linked Data</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -291,7 +291,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="sparql.html">5. Query Linked Data with SPARQL</a>
+        <a href="creation.html">5. Create Linked Data</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -303,7 +303,19 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="publication.html">6. Publish your Linked Data</a>
+        <a href="sparql.html">6. Query Linked Data with SPARQL</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="publication.html">7. Publish your Linked Data</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -368,7 +380,7 @@
         
 <section id="aio-introduction"><p>Content from <a href="introduction.html">Introduction to Linked Open Data in the Humanities</a></p>
 <hr>
-<p>Last updated on 2025-03-11 |
+<p>Last updated on 2025-03-12 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -548,38 +560,6 @@ Valid turtle.</code></pre>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="ambiguity">Ambiguity<a class="anchor" aria-label="anchor" href="#ambiguity"></a>
-</h2>
-<hr class="half-width">
-<p>Now that the fundamental concept behind the subject-predicate-object
-model is understood, a problem arises when trying to connect personal
-data with external datasets or when modeling knowledge unambiguously:
-How can we ensure that we are talking about the same objects?</p>
-<p>Consider the following example:</p>
-<p>Suppose you are researching Van Gogh’s painting <em>Wheatfield with
-Cypresses</em> and searching a museum database. You might find different
-paintings:</p>
-<ol style="list-style-type: decimal">
-<li><p>An entry titled <em>Weizenfeld mit Zypressen</em>, attributed to
-<strong>Vincent van Gogh</strong>, painted in
-<strong>1889</strong>.</p></li>
-<li><p>Another entry titled <em>Cypresses</em>, also attributed to
-<strong>Vincent van Gogh</strong>, from <strong>1889</strong>.</p></li>
-<li><p>Another entry titled <em>Wheat Field</em>, also by
-<strong>Vincent van Gogh</strong> from <strong>1888</strong>.</p></li>
-<li><p>Yet another entry with the same title <em>Wheat Field</em>, but
-by <strong>Jean Jacques de Boissieu</strong> from
-<strong>1772</strong>.</p></li>
-</ol>
-<p>This highlights that names are often not unique. While additional
-details like year and artist usually clarify which object is meant, this
-is not always guaranteed. Humans can often resolve such ambiguities
-using context, but computers struggle with this.</p>
-<p>Since a subject-predicate-object model does not have the context of a
-larger text, ambiguity can be resolved using IDs. Museums, for instance,
-assign unique IDs to paintings, ensuring that even those with identical
-names are distinguishable. This concept is adapted and expanded for LOD
-to work in an open, large-scale environment.</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
@@ -827,7 +807,135 @@ knowledge graphs.</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- --></section></section><section id="aio-model"><p>Content from <a href="model.html">Model Linked Data</a></p>
+ --></section></section><section id="aio-iris"><p>Content from <a href="iris.html">The concept of IRIs</a></p>
+<hr>
+<p>Last updated on 2025-03-12 |
+
+        <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/iris.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>How do IRIs eliminate ambiguity when different datasets use similar
+titles?</li>
+<li>What are the essential components of a IRI, and how do they work
+together to ensure uniqueness?</li>
+<li>Why are namespaces crucial for maintaining clarity and consistency
+in linked data?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Explain what IRIs are</li>
+<li>Explain why they are important in Linked Open Data.</li>
+<li>Explain the structure of a IRI</li>
+<li>Explain what namespaces are</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="ambiguity">Ambiguity<a class="anchor" aria-label="anchor" href="#ambiguity"></a>
+</h2>
+<hr class="half-width">
+<p>Now that the fundamental concept behind the subject-predicate-object
+model is understood, a problem arises when trying to connect personal
+data with external datasets or when modeling knowledge unambiguously:
+How can we ensure that we are talking about the same objects?</p>
+<p>Consider the following example:</p>
+<p>Suppose you are researching in the database from the <a href="https://www.metmuseum.org/art/collection" class="external-link">Metropolitan Museum of
+Art</a> for Van Gogh’s painting <em>Wheat Field with Cypresses</em>.
+Now, if you would like to talk about the different paintings, it could
+become difficult and confusing which painting you want to talk about
+exactly, because you find:</p>
+<ol style="list-style-type: decimal">
+<li><p>An entry titled <em>Wheatfield with Cypresses</em>, attributed to
+<strong>Vincent van Gogh</strong>, painted in
+<strong>1889</strong>.</p></li>
+<li><p>Another entry titled <em>Cypresses</em>, also attributed to
+<strong>Vincent van Gogh</strong>, from <strong>1889</strong>.</p></li>
+<li><p>Another entry titled <em>Wheat Field</em>, also by
+<strong>Vincent van Gogh</strong> from <strong>1888</strong>.</p></li>
+<li><p>Yet another entry with the same title <em>Wheat Field</em>, but
+by <strong>Jean Jacques de Boissieu</strong> from
+<strong>1772</strong>.</p></li>
+</ol>
+<p>This highlights that names are often not unique. While additional
+details like year and artist usually clarify which object is meant, this
+is not always guaranteed. Humans can often resolve such ambiguities
+using context, but computers struggle with this.</p>
+<p>Since a subject-predicate-object model does not have the context of a
+larger text, ambiguity can be resolved using IDs. Museums, for instance,
+assign unique IDs to paintings, ensuring that even those with identical
+names are distinguishable. This concept is adapted and expanded for LOD
+to work in an open, large-scale environment.</p>
+<p>Now, with these IDs, it becomes possible to refer to one exact
+painting and be sure that everyone within the same context understands
+which artwork is meant. However, when we are only talking about an ID—a
+number—it is conceivable that in another context the same number might
+refer to a different object, meaning that the number alone is not free
+from ambiguity, so we need to find a way to resolve to that exact
+“context”.</p>
+<p>To resolve this problem, we can use a <strong>URI</strong>, a
+<strong>Uniform Resource Identifier</strong>. By combining a unique ID
+with a well-defined namespace, a URI guarantees global uniqueness. The
+namespace acts like a contextual “container” that ensures the ID is
+interpreted in a specific environment, making it unambiguous no matter
+where or when it is used. Similarly, <strong>IRIs</strong> extend this
+principle by allowing a broader set of characters, accommodating diverse
+languages and scripts. Together, the use of namespaces and IDs ensures
+that every resource is uniquely identifiable at all times and in every
+context. The namespace is the “context” mentioned before.</p>
+</section><section><h2 class="section-heading" id="understanding-iris">Understanding IRIs<a class="anchor" aria-label="anchor" href="#understanding-iris"></a>
+</h2>
+<hr class="half-width">
+<p>Applied to the painting <em>Wheatfield with Cypresses</em>, the
+Metropolitan Museum of Art does not provide a guaranteed way to
+reference this so-called resource unambiguously. While we can use the
+link to the museum’s website, there is no guarantee that this link will
+remain unchanged over time. If the URL were to change, our reference
+would no longer work.</p>
+<p>To avoid this problem, certain providers offer ways to generate IRIs.
+One example we want to examine is <em>Wikidata</em>, the structured data
+repository behind Wikipedia. If we search for <em>Wheatfield with
+Cypresses</em> on Wikidata, we also find multiple entries. Looking at
+this <a href="https://www.wikidata.org/wiki/Q26221215" class="external-link">entry</a>, we can
+already see the associated ID in the page title. The link to the page
+_<a href="https://www.wikidata.org/wiki/Q26221215_" class="external-link uri">https://www.wikidata.org/wiki/Q26221215_</a> forms the IRI.
+The first part, _<a href="https://www.wikidata.org/wiki/_" class="external-link uri">https://www.wikidata.org/wiki/_</a>, is the
+<strong>namespace</strong>, which is predefined, while the second part,
+<em>Q26221215</em>, is the <strong>ID</strong>, which is uniquely
+referable within this namespace. The combination of both elements
+ensures that this object can be referenced unambiguously in different
+contexts.</p>
+</section><section><h2 class="section-heading" id="conclusion">Conclusion<a class="anchor" aria-label="anchor" href="#conclusion"></a>
+</h2>
+<hr class="half-width">
+<p>URIs and IRIs form the bedrock of Linked Open Data by ensuring that
+every digital resource, such as Van Gogh’s <em>Wheatfield with
+Cypresses</em>, has a unique, reliable address. By breaking down the
+structure of these identifiers and understanding the role of namespaces,
+we see how ambiguity is resolved. This system not only enhances clarity
+but also fosters global collaboration and deeper insights in
+research.</p>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section><section id="aio-model"><p>Content from <a href="model.html">Model Linked Data</a></p>
 <hr>
 <p>Last updated on 2025-03-09 |
 
@@ -1173,8 +1281,8 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/linked-open-data-humanities/aio.html",
   "identifier": "https://HERMES-DKZ.github.io/linked-open-data-humanities/aio.html",
   "dateCreated": "2025-02-04",
-  "dateModified": "2025-03-11",
-  "datePublished": "2025-03-11"
+  "dateModified": "2025-03-12",
+  "datePublished": "2025-03-12"
 }
 
   </script><script>
