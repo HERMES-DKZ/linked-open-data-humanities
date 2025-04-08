@@ -29,8 +29,6 @@ In this lesson, we want to explore the fundamentals of **Linked Open Data (LOD)*
 :::::::::::::::::::::::::::::::::::::: discussion
 
 ### What is data?
-### What requirements should data fulfil?
-### What data modelling options do you know?
 
 When we talk about data, many people often understand different things about it, and no-one can quite put their finger on what it actually means. Try to approach this term on a linguistic level and find out what it could mean. 
 
@@ -44,23 +42,40 @@ Now that we understand what data is, we want to look at how it can be captured a
 :::::::::::::::::::::::::::::::::::::: discussion
 
 ### What requirements should data fulfil?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::: discussion
+
 ### What data modelling options do you know?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-Imagine you are a researcher studying **Vincent van Gogh** and want to build a collection of information about him. You could gather details about his paintings, his friends, the places he visited, and much more. Ideally, you could **link** your collected knowledge with data from other researchers. But how can we structure this knowledge so that it is easy to share, connect, and expand?  
+Imagine you are a researcher studying **Vincent van Gogh** and want to build a collection of information about him. You could gather details about his paintings, his friends, the places he visited, and much more. Probably the most common way would be to store this information in a table. This has various advantages, but also disadvantages. As with the collection of data and writing it down, there is no clear answer as to which type of modelling is correct, it remains individual and above all depends on the project. If you want to combine your own data with other data, such as information about Van Gogh's home town or his circle of acquaintances, it becomes difficult to visualise this in a table. The question is now, how we structure our knowledge in a way, that is easy to share, connect, and expand?  
+
 
 
 ## Structuring Knowledge: The Subject-Predicate-Object Model  
 
+Given the following Information about **Vincent Van Gogh**: He was **born** in **Zundert** and has **drawn** the painting **Starry Night**
+
 One way to structure and link knowledge is to break it down into **simple relationships** using the **subject-predicate-object** model. This model is a fundamental method for structured data representation:  
 
-- **Subject**: The entity being described.  
 
-- **Predicate**: The relationship or attribute.  
+:::::::::::::::::::::::::::::::::::::: callout
 
-- **Object**: The value or linked entity.  
+### The subject-predicate-object model
+
+**Subject**: The entity being described.  
+
+**Predicate**: The relationship or attribute.  
+
+**Object**: The value or linked entity. 
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
 
 For example, if we want to express that Vincent van Gogh painted *Bouquet of Sunflowers*, we can structure it like this:  
 
