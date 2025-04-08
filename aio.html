@@ -629,7 +629,7 @@ Museum of Modern Art in Manhattan.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>One way to visualize both texts in one graph is the following. If
 your solution looks different, this does not necessarily mean that it is
@@ -646,7 +646,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-iris"><p>Content from <a href="iris.html">The concept of IRIs</a></p>
 <hr>
-<p>Last updated on 2025-03-12 |
+<p>Last updated on 2025-04-08 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/iris.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -689,7 +689,7 @@ in linked data?</li>
 </h2>
 <hr class="half-width">
 <p>Now that the fundamental concept behind the subject-predicate-object
-model is understood, a problem arises when trying to connect personal
+model is understood, a problem arises when trying to connect your own
 data with external datasets or when modeling knowledge unambiguously:
 How can we ensure that we are talking about the same objects?</p>
 <p>Consider the following example:</p>
@@ -757,7 +757,11 @@ The first part, _<a href="https://www.wikidata.org/wiki/_" class="external-link 
 <em>Q26221215</em>, is the <strong>ID</strong>, which is uniquely
 referable within this namespace. The combination of both elements
 ensures that this object can be referenced unambiguously in different
-contexts.</p>
+contexts. Like subjects, predicates need to get a IRI aswell, which
+describes what the predicate means exactly. Wikidata also provides some
+properties in their <a href="https://www.wikidata.org/wiki/Wikidata:List_of_properties" class="external-link">List of
+Properties</a>. For example we can find an IRI for the property <a href="https://www.wikidata.org/wiki/Property:P19" class="external-link">place of
+birth</a>.</p>
 </section><section><h2 class="section-heading" id="conclusion">Conclusion<a class="anchor" aria-label="anchor" href="#conclusion"></a>
 </h2>
 <hr class="half-width">
@@ -914,7 +918,7 @@ structure. Use wikidata for IRIs and properties:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <pre><code>&lt;https://www.wikidata.org/wiki/Q5582&gt;&lt;https://www.wikidata.org/wiki/Property:P19&gt;&lt;https://www.wikidata.org/wiki/Q9883&gt;
 
