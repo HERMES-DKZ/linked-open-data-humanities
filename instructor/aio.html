@@ -439,28 +439,17 @@ data are we dealing with? In what form does data exist when we talk
 about LOD?</strong> To do this, first we want to look at the terms
 <em>linked</em>, <em>open</em>, and <em>data</em>, to understand what we
 are talking about in the first place.</p>
-<div id="create-a-graph" class="callout discussion">
+<div id="what-is-data" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
-<div class="callout-inner">
-<div class="section level3 callout-title">
-<h3 class="callout-title" id="what-is-data">What is data?<a class="anchor" aria-label="anchor" href="#what-is-data"></a>
-</h3>
-</div>
+<div id="what-is-data" class="callout-inner">
+<h3 class="callout-title">What is data?</h3>
 <div class="callout-content">
-<div class="section level3">
-<h3 id="what-requirements-should-data-fulfil">What requirements should data fulfil?<a class="anchor" aria-label="anchor" href="#what-requirements-should-data-fulfil"></a>
-</h3>
-</div>
-<div class="section level3">
-<h3 id="what-data-modelling-options-do-you-know">What data modelling options do you know?<a class="anchor" aria-label="anchor" href="#what-data-modelling-options-do-you-know"></a>
-</h3>
 <p>When we talk about data, many people often understand different
 things about it, and no-one can quite put their finger on what it
 actually means. Try to approach this term on a linguistic level and find
 out what it could mean.</p>
-</div>
 </div>
 </div>
 </div>
@@ -478,41 +467,64 @@ not. This is always application-related and individual.</p>
 <p>Now that we understand what data is, we want to look at how it can be
 captured and digitised, which is why we will look at the L from LOD
 next.</p>
-<div id="create-a-graph" class="callout discussion">
+<div id="what-requirements-should-data-fulfil" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
-<div class="callout-inner">
-<div class="section level3 callout-title">
-<h3 class="callout-title" id="what-requirements-should-data-fulfil-1">What requirements should data fulfil?<a class="anchor" aria-label="anchor" href="#what-requirements-should-data-fulfil-1"></a>
-</h3>
+<div id="what-requirements-should-data-fulfil" class="callout-inner">
+<h3 class="callout-title">What requirements should data fulfil?</h3>
+<div class="callout-content">
+
 </div>
-<div class="section level3 callout-content">
-<h3 id="what-data-modelling-options-do-you-know-1">What data modelling options do you know?<a class="anchor" aria-label="anchor" href="#what-data-modelling-options-do-you-know-1"></a>
-</h3>
+</div>
+</div>
+<div id="what-data-modelling-options-do-you-know" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="what-data-modelling-options-do-you-know" class="callout-inner">
+<h3 class="callout-title">What data modelling options do you know?</h3>
+<div class="callout-content">
+
 </div>
 </div>
 </div>
 <p>Imagine you are a researcher studying <strong>Vincent van
 Gogh</strong> and want to build a collection of information about him.
 You could gather details about his paintings, his friends, the places he
-visited, and much more. Ideally, you could <strong>link</strong> your
-collected knowledge with data from other researchers. But how can we
-structure this knowledge so that it is easy to share, connect, and
-expand?</p>
+visited, and much more. Probably the most common way would be to store
+this information in a table. This has various advantages, but also
+disadvantages. As with the collection of data and writing it down, there
+is no clear answer as to which type of modelling is correct, it remains
+individual and above all depends on the project. If you want to combine
+your own data with other data, such as information about Van Gogh’s home
+town or his circle of acquaintances, it becomes difficult to visualise
+this in a table. The question is now, how we structure our knowledge in
+a way, that is easy to share, connect, and expand?</p>
 </section><section><h2 class="section-heading" id="structuring-knowledge-the-subject-predicate-object-model">Structuring Knowledge: The Subject-Predicate-Object Model<a class="anchor" aria-label="anchor" href="#structuring-knowledge-the-subject-predicate-object-model"></a>
 </h2>
 <hr class="half-width">
+<p>Given the following Information about <strong>Vincent Van
+Gogh</strong>: He was <strong>born</strong> in <strong>Zundert</strong>
+and has <strong>drawn</strong> the painting <strong>Starry
+Night</strong></p>
 <p>One way to structure and link knowledge is to break it down into
 <strong>simple relationships</strong> using the
 <strong>subject-predicate-object</strong> model. This model is a
 fundamental method for structured data representation:</p>
-<ul>
-<li><p><strong>Subject</strong>: The entity being described.</p></li>
-<li><p><strong>Predicate</strong>: The relationship or
-attribute.</p></li>
-<li><p><strong>Object</strong>: The value or linked entity.</p></li>
-</ul>
+<div id="the-subject-predicate-object-model" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="the-subject-predicate-object-model" class="callout-inner">
+<h3 class="callout-title">The subject-predicate-object model</h3>
+<div class="callout-content">
+<p><strong>Subject</strong>: The entity being described.</p>
+<p><strong>Predicate</strong>: The relationship or attribute.</p>
+<p><strong>Object</strong>: The value or linked entity.</p>
+</div>
+</div>
+</div>
 <p>For example, if we want to express that Vincent van Gogh painted
 <em>Bouquet of Sunflowers</em>, we can structure it like this:</p>
 <div class="section level3">
@@ -895,7 +907,7 @@ structure. Use wikidata for IRIs and properties:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <pre><code>&lt;https://www.wikidata.org/wiki/Q5582&gt;&lt;https://www.wikidata.org/wiki/Property:P19&gt;&lt;https://www.wikidata.org/wiki/Q9883&gt;
 
@@ -995,7 +1007,7 @@ turtle.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <pre><code>TODO
 Valid turtle.</code></pre>
@@ -1046,7 +1058,7 @@ terms (concepts), meanings and rules.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 
 </div>
