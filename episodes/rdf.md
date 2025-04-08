@@ -114,3 +114,16 @@ Convert the following statements or your mindmap from the first task into RDF tr
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::  
 
+
+:::::::::::::::::::::::::::::::::::::: keypoints
+
+### Ressource Description Framework
+
+* Gives a standardised form to write subject-predicate-object modeled data
+* Is used to connect data on a global scope
+* One Format to write RDF is *n-triples*
+* Terms are written in angle brackets
+* Statements ending with a period
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
