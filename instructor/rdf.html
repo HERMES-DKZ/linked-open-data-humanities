@@ -328,7 +328,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introduction to RDF and Basic Modeling</h1>
-        <p>Last updated on 2025-03-12 |
+        <p>Last updated on 2025-04-08 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/rdf.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -350,7 +350,7 @@
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul><li>What is RDF, and why is it used in Linked Open Data?</li>
-<li>How does RDF structure information using triples?</li>
+<li>How does RDF structure information?</li>
 <li>How can we represent real-world relationships using RDF?</li>
 </ul></div>
 </div>
@@ -360,14 +360,20 @@
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul><li>Explain the purpose and structure of RDF.</li>
-<li>Model basic relationships using the
-<strong>subject-predicate-object</strong> structure.</li>
-<li>Explain limitations of RDF</li>
+<li>Model basic relationships using RDF.</li>
+<li>Explain limitations of n-triples.</li>
 </ul></div>
 </div>
 </div>
 </div>
 </div>
+<p>As we have already learnt, information can be stored and displayed in
+the form of the subject-predicate-object model. To avoid ambiguities and
+guarantee unambiguity, IRIs are used for the respective parts. We also
+need a similar approach to these IRIs in the representation and format
+of the modelling. We need standards in the notation to ensure that the
+computer handles the data correctly. The standard we want to use in LOD
+is RDF.</p>
 <p>RDF (Resource Description Framework) is a <strong>universal data
 model</strong> designed to represent relationships between entities in a
 structured way. It provides a <strong>standardized format</strong> for
@@ -375,47 +381,38 @@ expressing knowledge using the <strong>subject-predicate-object</strong>
 model, which allows different datasets to be linked together and ensures
 interoperability.</p>
 <p>Using RDF, we can describe facts in a machine-readable way. Each RDF
-statement, called a <strong>triple</strong>, consists of:</p>
-<ul><li>
-<strong>Subject</strong>: The entity being described.<br></li>
-<li>
-<strong>Predicate</strong>: The property or relationship between the
-subject and the object.<br></li>
-<li>
-<strong>Object</strong>: The value or entity linked to the
-subject.</li>
-</ul><p>For example, we can express the relationship between the painting
+statement, called a <strong>triple</strong>, consists of.</p>
+<p>For example, we can express the relationship between the painting
 <em>Wheatfield with Cypresses</em> and Vincent van Gogh using an RDF
-triple with URIs:</p>
-<pre><code>&lt;https://www.wikidata.org/wiki/Q26221215&gt; &lt;"was painted by"&gt; &lt;https://www.wikidata.org/wiki/Q5582&gt;.</code></pre>
+triple with IRIs:</p>
+<pre><code>&lt;https://www.wikidata.org/wiki/Q26221215&gt; &lt;https://www.wikidata.org/wiki/Property:P170&gt; &lt;https://www.wikidata.org/wiki/Q5582&gt;.</code></pre>
 <p>This triple means that <em>Wheatfield with Cypresses</em> was painted
 by Vincent van Gogh.</p>
 <div class="section level3">
 <h3 id="using-n-triples-as-the-simplest-rdf-representation">Using N-Triples as the Simplest RDF Representation<a class="anchor" aria-label="anchor" href="#using-n-triples-as-the-simplest-rdf-representation"></a></h3>
 <p>The format used above is called <strong>N-Triples</strong>, which is
-the simplest, standardized way to represent RDF data. N-Triples is a
+the simplest, standardized way to represent RDF data. The basic notation
+is quite simple. You just need to write your IRIs in <strong>angle
+brackets</strong> and end each statement with a period. N-Triples is a
 line-based format where each fact is written on a single line in the
 form:</p>
 <pre><code>&lt;subject&gt; &lt;predicate&gt; &lt;object&gt;.</code></pre>
 <p>This simplicity makes N-Triples easy to parse and store, making it
 ideal for exchanging RDF data between different systems.</p>
+<div id="writing-rdf" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="section level3">
-<h3 id="rdf-properties-and-vocabulary">RDF Properties and Vocabulary<a class="anchor" aria-label="anchor" href="#rdf-properties-and-vocabulary"></a></h3>
-<p>Beyond defining structured relationships, RDF also introduces
-<strong>vocabularies</strong> to standardize predicates. A vocabulary
-defines a set of properties and terms that describe specific concepts,
-ensuring consistency when linking data.</p>
-<p>For example, instead of every dataset using its own phrase for “was
-painted by,” a standardized RDF vocabulary might define a property. For
-this property definition we could use wikidata, because they not only
-provide IRIs for Objects, but for properties aswell. There we find
-<em><a href="https://www.wikidata.org/wiki/Property:P170" class="external-link">creator</a></em> ,
-with the definition <em>maker of this creative work or other
-object</em>. Our whole triple would now look like this:</p>
-<pre><code>&lt;https://www.wikidata.org/wiki/Q26221215&gt; &lt;https://www.wikidata.org/wiki/Property:P170&gt; &lt;https://www.wikidata.org/wiki/Q5582&gt;</code></pre>
-<p>Such vocabularies enable different datasets to use the same terms,
-making data integration more efficient.</p>
+<div id="writing-rdf" class="callout-inner">
+<h3 class="callout-title">Writing RDF</h3>
+<div class="callout-content">
+<ul><li>Write your information in the subject-predicate-object model</li>
+<li>Use IRIs for the subject, predicate and object</li>
+<li>Put the IRIs in angle brackets</li>
+<li>End each statement with a period.</li>
+</ul></div>
+</div>
+</div>
 </div>
 <div class="section level3">
 <h3 id="blank-nodes-and-literals-in-rdf">Blank Nodes and Literals in RDF<a class="anchor" aria-label="anchor" href="#blank-nodes-and-literals-in-rdf"></a></h3>
@@ -447,8 +444,9 @@ set as an integer.</p>
 <div id="creating-rdf-triples" class="callout-inner">
 <h3 class="callout-title">Creating RDF Triples</h3>
 <div class="callout-content">
-<p>Convert the following statements into RDF triples using the correct
-structure. Use wikidata for IRIs and properties:</p>
+<p>Convert the following statements or your mindmap from the first task
+into RDF triples using the correct structure. Use wikidata for IRIs and
+properties:</p>
 <ol style="list-style-type: decimal"><li>Vincent van Gogh was born in Zundert.<br></li>
 <li>
 <em>Starry Night</em> was painted by Vincent van Gogh.<br></li>
@@ -461,7 +459,7 @@ structure. Use wikidata for IRIs and properties:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <pre><code>&lt;https://www.wikidata.org/wiki/Q5582&gt;&lt;https://www.wikidata.org/wiki/Property:P19&gt;&lt;https://www.wikidata.org/wiki/Q9883&gt;
 
@@ -538,7 +536,7 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/rdf.html",
   "identifier": "https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/rdf.html",
   "dateCreated": "2025-02-04",
-  "dateModified": "2025-03-12",
+  "dateModified": "2025-04-08",
   "datePublished": "2025-04-08"
 }
 
