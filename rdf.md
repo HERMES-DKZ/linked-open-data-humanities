@@ -7,7 +7,7 @@ exercises: 2
 :::::::::::::::::::::::::::::::::::::: questions 
 
 - What is RDF, and why is it used in Linked Open Data?
-- How does RDF structure information using triples?
+- How does RDF structure information?
 - How can we represent real-world relationships using RDF?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -15,35 +15,30 @@ exercises: 2
 ::::::::::::::::::::::::::::::::::::: objectives
 
 - Explain the purpose and structure of RDF.
-- Model basic relationships using the **subject-predicate-object** structure.
-- Explain limitations of RDF
+- Model basic relationships using RDF.
+- Explain limitations of n-triples.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-
-
-
+As we have already learnt, information can be stored and displayed in the form of the subject-predicate-object model. To avoid ambiguities and guarantee unambiguity, IRIs are used for the respective parts. We also need a similar approach to these IRIs in the representation and format of the modelling. We need standards in the notation to ensure that the computer handles the data correctly. The standard we want to use in LOD is RDF.
 
 RDF (Resource Description Framework) is a **universal data model** designed to represent relationships between entities in a structured way. It provides a **standardized format** for expressing knowledge using the **subject-predicate-object** model, which allows different datasets to be linked together and ensures interoperability.  
 
-Using RDF, we can describe facts in a machine-readable way. Each RDF statement, called a **triple**, consists of:  
+Using RDF, we can describe facts in a machine-readable way. Each RDF statement, called a **triple**, consists of. 
 
-- **Subject**: The entity being described.  
-- **Predicate**: The property or relationship between the subject and the object.  
-- **Object**: The value or entity linked to the subject.  
-
-For example, we can express the relationship between the painting *Wheatfield with Cypresses* and Vincent van Gogh using an RDF triple with URIs:  
+For example, we can express the relationship between the painting *Wheatfield with Cypresses* and Vincent van Gogh using an RDF triple with IRIs:  
 
 ```
-<https://www.wikidata.org/wiki/Q26221215> <"was painted by"> <https://www.wikidata.org/wiki/Q5582>.
+<https://www.wikidata.org/wiki/Q26221215> <https://www.wikidata.org/wiki/Property:P170> <https://www.wikidata.org/wiki/Q5582>.
 ```
 
 This triple means that *Wheatfield with Cypresses* was painted by Vincent van Gogh.  
 
 ### Using N-Triples as the Simplest RDF Representation  
 
-The format used above is called **N-Triples**, which is the simplest, standardized way to represent RDF data. N-Triples is a line-based format where each fact is written on a single line in the form:  
+
+The format used above is called **N-Triples**, which is the simplest, standardized way to represent RDF data. The basic notation is quite simple. You just need to write your IRIs in **angle brackets** and end each statement with a period. N-Triples is a line-based format where each fact is written on a single line in the form:  
 
 ```
 <subject> <predicate> <object>.
@@ -51,18 +46,16 @@ The format used above is called **N-Triples**, which is the simplest, standardiz
 
 This simplicity makes N-Triples easy to parse and store, making it ideal for exchanging RDF data between different systems.  
 
-### RDF Properties and Vocabulary  
+:::::::::::::::::::::::::::::::::::::: callout
 
-Beyond defining structured relationships, RDF also introduces **vocabularies** to standardize predicates. A vocabulary defines a set of properties and terms that describe specific concepts, ensuring consistency when linking data.  
+### Writing RDF
 
-For example, instead of every dataset using its own phrase for "was painted by," a standardized RDF vocabulary might define a property. For this property definition we could use wikidata, because they not only provide IRIs for Objects, but for properties aswell. There we find *[creator](https://www.wikidata.org/wiki/Property:P170)* , with the definition _maker of this creative work or other object_. Our whole triple would now look like this:
+* Write your information in the subject-predicate-object model
+* Use IRIs for the subject, predicate and object
+* Put the IRIs in angle brackets
+* End each statement with a period.
 
-```
-<https://www.wikidata.org/wiki/Q26221215> <https://www.wikidata.org/wiki/Property:P170> <https://www.wikidata.org/wiki/Q5582>
-```
-
-Such vocabularies enable different datasets to use the same terms, making data integration more efficient.  
-
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 ### Blank Nodes and Literals in RDF  
@@ -99,7 +92,7 @@ This triple states that *Wheatfield with Cypresses* was painted in the year **18
 
 ## Creating RDF Triples  
 
-Convert the following statements into RDF triples using the correct structure. Use wikidata for IRIs and properties:  
+Convert the following statements or your mindmap from the first task into RDF triples using the correct structure. Use wikidata for IRIs and properties:  
 
 1. Vincent van Gogh was born in Zundert.  
 2. *Starry Night* was painted by Vincent van Gogh.  
