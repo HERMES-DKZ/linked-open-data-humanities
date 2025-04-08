@@ -24,7 +24,7 @@ exercises: 2
 
 ## Ambiguity  
 
-Now that the fundamental concept behind the subject-predicate-object model is understood, a problem arises when trying to connect personal data with external datasets or when modeling knowledge unambiguously: How can we ensure that we are talking about the same objects?  
+Now that the fundamental concept behind the subject-predicate-object model is understood, a problem arises when trying to connect your own data with external datasets or when modeling knowledge unambiguously: How can we ensure that we are talking about the same objects?  
 
 Consider the following example:  
 
@@ -47,14 +47,12 @@ Now, with these IDs, it becomes possible to refer to one exact painting and be s
 To resolve this problem, we can use a **URI**, a **Uniform Resource Identifier**. By combining a unique ID with a well-defined namespace, a URI guarantees global uniqueness. The namespace acts like a contextual “container” that ensures the ID is interpreted in a specific environment, making it unambiguous no matter where or when it is used. Similarly, **IRIs** extend this principle by allowing a broader set of characters, accommodating diverse languages and scripts. Together, the use of namespaces and IDs ensures that every resource is uniquely identifiable at all times and in every context. The namespace is the "context" mentioned before.
 
 
-
-
 ## Understanding IRIs
 
 
 Applied to the painting *Wheatfield with Cypresses*, the Metropolitan Museum of Art does not provide a guaranteed way to reference this so-called resource unambiguously. While we can use the link to the museum’s website, there is no guarantee that this link will remain unchanged over time. If the URL were to change, our reference would no longer work.  
 
-To avoid this problem, certain providers offer ways to generate IRIs. One example we want to examine is *Wikidata*, the structured data repository behind Wikipedia. If we search for *Wheatfield with Cypresses* on Wikidata, we also find multiple entries. Looking at this [entry](https://www.wikidata.org/wiki/Q26221215), we can already see the associated ID in the page title. The link to the page _https://www.wikidata.org/wiki/Q26221215_ forms the IRI. The first part, _https://www.wikidata.org/wiki/_, is the **namespace**, which is predefined, while the second part, _Q26221215_, is the **ID**, which is uniquely referable within this namespace. The combination of both elements ensures that this object can be referenced unambiguously in different contexts. 
+To avoid this problem, certain providers offer ways to generate IRIs. One example we want to examine is *Wikidata*, the structured data repository behind Wikipedia. If we search for *Wheatfield with Cypresses* on Wikidata, we also find multiple entries. Looking at this [entry](https://www.wikidata.org/wiki/Q26221215), we can already see the associated ID in the page title. The link to the page _https://www.wikidata.org/wiki/Q26221215_ forms the IRI. The first part, _https://www.wikidata.org/wiki/_, is the **namespace**, which is predefined, while the second part, _Q26221215_, is the **ID**, which is uniquely referable within this namespace. The combination of both elements ensures that this object can be referenced unambiguously in different contexts. Like subjects, predicates need to get a IRI aswell, which describes what the predicate means exactly. Wikidata also provides some properties in their [List of Properties](https://www.wikidata.org/wiki/Wikidata:List_of_properties). For example we can find an IRI for the property [place of birth](https://www.wikidata.org/wiki/Property:P19).
 
 
 
