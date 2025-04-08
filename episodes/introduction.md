@@ -24,10 +24,32 @@ exercises: 2
 
 ## Introduction
 
-In this lesson, we want to explore the fundamentals of **Linked Open Data (LOD)**. What is it, and why is it important? To answer these questions, we will break the term down step by step. The first and most fundamental concept we need to understand is: **What type of data are we dealing with? In what form does data exist when we talk about LOD?**  
+In this lesson, we want to explore the fundamentals of **Linked Open Data (LOD)**. What is it, and why is it important? To answer these questions, we will break the term down step by step. The first and most fundamental concept we need to understand is: **What type of data are we dealing with? In what form does data exist when we talk about LOD?**  To do this, first we want to look at the terms *linked*, *open*, and *data*, to understand what we are talking about in the first place.
+
+:::::::::::::::::::::::::::::::::::::: discussion
+
+### What is data?
+### What requirements should data fulfil?
+### What data modelling options do you know?
+
+When we talk about data, many people often understand different things about it, and no-one can quite put their finger on what it actually means. Try to approach this term on a linguistic level and find out what it could mean. 
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+It is not quite easy to find a universal definition to this, but most of the time data is described as something from the real world, which was observed and then written down. In the humanities this could be a **letter** or an **archaeological object** . In other fields of research, data is often a measurement result or observation. What they have in common is that they try to depict a part of the real world. In our digital age, hopefully, these data is digitalised and this digitalisation leads to challenges. It is impossible to map the entire section of the real world, which means that people with domain knowledge have to decide what to capture and what not. This is always application-related and individual. 
+
+Now that we understand what data is, we want to look at how it can be captured and digitised, which is why we will look at the L from LOD next.
+
+
+:::::::::::::::::::::::::::::::::::::: discussion
+
+### What requirements should data fulfil?
+### What data modelling options do you know?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 Imagine you are a researcher studying **Vincent van Gogh** and want to build a collection of information about him. You could gather details about his paintings, his friends, the places he visited, and much more. Ideally, you could **link** your collected knowledge with data from other researchers. But how can we structure this knowledge so that it is easy to share, connect, and expand?  
-
 
 
 ## Structuring Knowledge: The Subject-Predicate-Object Model  
