@@ -90,7 +90,7 @@ This triple states that *Wheatfield with Cypresses* was painted in the year **18
 
 :::::::::::::::::::::::::::::::::::::: challenge  
 
-## Creating RDF Triples  
+## Exercise: Creating RDF Triples  
 
 Convert the following statements or your mindmap from the first task into RDF triples using the correct structure. Use wikidata for IRIs and properties:  
 

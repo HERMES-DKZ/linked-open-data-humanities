@@ -28,7 +28,7 @@ In this lesson, we want to explore the fundamentals of **Linked Open Data (LOD)*
 
 :::::::::::::::::::::::::::::::::::::: discussion
 
-### What is data?
+### Discussion: What is data? 
 
 When we talk about data, many people often understand different things about it, and no-one can quite put their finger on what it actually means. Try to approach this term on a linguistic level and find out what it could mean. 
 
@@ -41,13 +41,13 @@ Now that we understand what data is, we want to look at how it can be captured a
 
 :::::::::::::::::::::::::::::::::::::: discussion
 
-### What requirements should data fulfil?
+### Discussion: What requirements should data fulfil?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::: discussion
 
-### What data modelling options do you know?
+### Discussion: What data modelling options do you know?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -121,7 +121,7 @@ In essence, we are working with graphs—more specifically, directed graphs that
 
 :::::::::::::::::::::::::::::::::::::: challenge  
 
-## Create a Graph  
+## Exercise: Create a Graph  
 
 Look at one of the following texts and try to visualise the information from it in a mind map. Pay attention to decisions that need to be made and possible problems that may arise. To draw the mind map you can use whatever you want. One possibility is [Excalidraw](https://excalidraw.com/) , an open source tool with which you can also work in a group
 Go into breakout rooms and create a graph with [Excalidraw](https://excalidraw.com/). Try to find connections you could model in that graph.  
