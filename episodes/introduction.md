@@ -79,8 +79,6 @@ One way to structure and link knowledge is to break it down into **simple relati
 
 For example, if we want to express that Vincent van Gogh painted *Starry Night*, we can structure it like this:  
 
-### Example Triple for Van Gogh's Painting  
-
 
 | Subject                 | Predicate      | Object             |
 | ----------------------- | -------------- | ------------------ |
@@ -125,15 +123,16 @@ By visualizing the data, it becomes easier to see why this way of storing and st
 
 ## Create a Graph  
 
+Look at one of the following texts and try to visualise the information from it in a mind map. Pay attention to decisions that need to be made and possible problems that may arise. To draw the mind map you can use whatever you want. One possibility is [Excalidraw](https://excalidraw.com/) , an open source tool with which you can also work in a group
 Go into breakout rooms and create a graph with [Excalidraw](https://excalidraw.com/). Try to find connections you could model in that graph.  
-Possible properties could be:  
 
-- born in  
-- studied in  
-- lives in  
+---
 
-Feel free to get creative and think about what other information could be modeled in this way, then create your own graph.  
+Vincent van Gogh was born in Zundert, the Netherlands, in 1853 and is a Post-Impressionist artist. In his youth, he developed a strong interest in art and initially studied in The Hague. He later moved to Paris, where he gained his first insights into modern art.
 
+---
+
+Van Gogh created numerous famous paintings. The masterpiece ‘Starry Night’ was created in Saint-Remy-de-Provence and belongs to the Post-Impressionist era. The painting can be found in the Museum of Modern Art in Manhattan.
 
 :::::::::::::::: solution
 
