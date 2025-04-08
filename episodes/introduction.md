@@ -76,7 +76,6 @@ One way to structure and link knowledge is to break it down into **simple relati
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-
 For example, if we want to express that Vincent van Gogh painted *Starry Night*, we can structure it like this:  
 
 
@@ -116,8 +115,9 @@ Each of these connections expands the **knowledge network**—a simple version o
 ![](fig/mind_map_example.png)
 
 
-
 By visualizing the data, it becomes easier to see why this way of storing and structuring knowledge is so efficient and valuable. Imagine a much larger mind map with significantly more information. This could reveal connections between people that were previously invisible. Furthermore, if researchers from different locations collaborate on such a mind map, additional insights and knowledge can be discovered. In very theorital and ideal scenario it would be possible to draw a mindmap with every information in the world to find a connection from you to Bill Gates.
+
+In essence, we are working with graphs—more specifically, directed graphs that follow a particular reading direction. Each connection has a clear subject, predicate, and object, forming what’s known as a triple. 
 
 :::::::::::::::::::::::::::::::::::::: challenge  
 
@@ -128,19 +128,17 @@ Go into breakout rooms and create a graph with [Excalidraw](https://excalidraw.c
 
 ---
 
-Vincent van Gogh was born in Zundert, the Netherlands, in 1853 and is a Post-Impressionist artist. In his youth, he developed a strong interest in art and initially studied in The Hague. He later moved to Paris, where he gained his first insights into modern art.
+**Group 1**: Vincent van Gogh was born in Zundert, the Netherlands, in 1853 and is a Post-Impressionist artist. In his youth, he developed a strong interest in art and initially studied in The Hague. He later moved to Paris, where he gained his first insights into modern art.
 
 ---
 
-Van Gogh created numerous famous paintings. The masterpiece ‘Starry Night’ was created in Saint-Remy-de-Provence and belongs to the Post-Impressionist era. The painting can be found in the Museum of Modern Art in Manhattan.
+**Group 2**: Van Gogh created numerous famous paintings. The masterpiece ‘Starry Night’ was created in Saint-Remy-de-Provence and belongs to the Post-Impressionist era. The painting can be found in the Museum of Modern Art in Manhattan.
 
 :::::::::::::::: solution
 
+One way to visualize both texts in one graph is the following. If your solution looks different, this does not necessarily mean that it is wrong. It is, as always in data modelling, individual and decision based.
 
-```
-TODO
-Valid turtle.
-```
+![](fig/solution_mind_map.png)
 
 :::::::::::::::::::::::::
 
