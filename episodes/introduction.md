@@ -77,7 +77,7 @@ One way to structure and link knowledge is to break it down into **simple relati
 
 
 
-For example, if we want to express that Vincent van Gogh painted *Bouquet of Sunflowers*, we can structure it like this:  
+For example, if we want to express that Vincent van Gogh painted *Starry Night*, we can structure it like this:  
 
 ### Example Triple for Van Gogh's Painting  
 
@@ -119,7 +119,7 @@ Each of these connections expands the **knowledge network**—a simple version o
 
 
 
-By visualizing the data, it becomes easier to see why this way of storing and structuring knowledge is so efficient and valuable. Imagine a much larger mind map with significantly more information—this could reveal connections between people that were previously invisible. Furthermore, if researchers from different locations collaborate on such a mind map, additional insights and knowledge can be discovered.  
+By visualizing the data, it becomes easier to see why this way of storing and structuring knowledge is so efficient and valuable. Imagine a much larger mind map with significantly more information. This could reveal connections between people that were previously invisible. Furthermore, if researchers from different locations collaborate on such a mind map, additional insights and knowledge can be discovered. In very theorital and ideal scenario it would be possible to draw a mindmap with every information in the world to find a connection from you to Bill Gates.
 
 :::::::::::::::::::::::::::::::::::::: challenge  
 
