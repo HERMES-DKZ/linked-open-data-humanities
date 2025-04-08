@@ -64,6 +64,17 @@ To avoid this problem, certain providers offer ways to generate IRIs. One exampl
 
 URIs and IRIs form the bedrock of Linked Open Data by ensuring that every digital resource, such as Van Gogh’s *Wheatfield with Cypresses*, has a unique, reliable address. By breaking down the structure of these identifiers and understanding the role of namespaces, we see how ambiguity is resolved. This system not only enhances clarity but also fosters global collaboration and deeper insights in research.
 
+:::::::::::::::::::::::::::::::::::::: keypoints
+
+### Internationalized Resource Identifier
+
+* Used to prevent ambiguities
+* Needs to be defined and saved open in the Internet
+* Are neccesary for Objects and Predicates
+* Are created from a namespace in combination with an ID
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 
 
