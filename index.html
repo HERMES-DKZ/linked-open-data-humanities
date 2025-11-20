@@ -218,7 +218,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="introduction.html">1. Introduction to Linked Open Data in the Humanities</a>
+        <a href="01_introduction.html">1. Introduction to Linked Open Data in the Humanities</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -227,7 +227,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="iris.html">2. The concept of IRIs</a>
+        <a href="02_iris.html">2. The concept of IRIs</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -236,7 +236,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="rdf.html">3. Introduction to RDF and Basic Modeling</a>
+        <a href="03_rdf.html">3. Introduction to RDF and Basic Modeling</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -245,7 +245,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="model.html">4. Model Linked Data</a>
+        <a href="04_model.html">4. Model Linked Data</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -254,7 +254,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="creation.html">5. Create Linked Data</a>
+        <a href="05_creation.html">5. Create Linked Data</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -263,7 +263,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="sparql.html">6. Query Linked Data with SPARQL</a>
+        <a href="06_sparql.html">6. Query Linked Data with SPARQL</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -272,7 +272,7 @@
 <div class="accordion accordion-flush" id="accordionFlush8">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading8">
-        <a href="publication.html">7. Publish your Linked Data</a>
+        <a href="07_publication.html">7. Publish your Linked Data</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -320,44 +320,67 @@
         <!-- START: inst/pkgdown/templates/content-syllabus.html -->
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link float-end" href="introduction.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="01_introduction.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link float-end" href="introduction.html" rel="next">Next: Introduction to... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="01_introduction.html" rel="next">Next: Introduction to... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><h1 class="schedule-heading">Summary and Setup</h1>
       
 
-<p>Welcome to the course <strong>“Linked Open Data for the
-Humanities”</strong>! This course provides a practical introduction to
-the world of Linked Open Data (LOD) and is specifically designed for
-researchers and students in the humanities. However, the concepts behind
-linked open data are just as transferable to other research areas, which
-means that this course is also aimed at all interested learnes who have
-no experience in the humanities. Also you dont need any coding
-experience or other theoretical background knowledge. You will learn
-everything you need in this course.</p>
-<p>The concept behind a carpentry lesson is very practical, so this
-course will give you different hands-on tasks to solve to learn the
-theoretical concepts to provide an inclusive and interesting learning
-experience.</p>
-<section><h2 class="section-heading" id="learning-objectives">Learning objectives<a class="anchor" aria-label="anchor" href="#learning-objectives"></a></h2>
-<hr class="half-width"><p>By the end of this lesson, you will be able to:</p>
-<ul><li>Model your research data with RDF.</li>
-<li>Identify the advantages and disadvantages of Linked Data.</li>
-<li>Use RDF in your own research practice.</li>
-</ul></section><section><h2 class="section-heading" id="what-is-linked-open-data">What is Linked Open Data?<a class="anchor" aria-label="anchor" href="#what-is-linked-open-data"></a></h2>
-<hr class="half-width"><p>Linked Open Data (LOD) is a method of structuring and interconnecting
-data on the web in a machine-readable format. It builds upon existing
-web technologies such as the Resource Description Framework (RDF) to
-create meaningful relationships between different datasets. This allows
-data to be linked across various sources, facilitating improved
-accessibility, integration, and reusability. In this course, you will
-learn what RDF is, how to create a file in the RDF format, and what
-possibilities this provides. You will also learn how to use this format
-to analyze your data and gain a brief insight into its potential
-applications</p>
+<p>Welcome to <strong>Linked Open Data for the
+Humanities</strong>!<br>
+This lesson introduces the core ideas behind <strong>Linked
+Data</strong>, <strong>Linked Open Data (LOD)</strong>, and the
+<strong>RDF</strong> data model. It is designed for learners in the
+humanities, but no prior technical or theoretical knowledge is required.
+The concepts you will encounter are used across libraries, archives,
+museums, digital humanities projects, and many other research
+domains.</p>
+<p>Throughout the lesson, you will work with short discussions and
+hands-on activities to understand how structured, interconnected data
+can support research.</p>
+<p>During this course, you will:</p>
+<ul><li>explore how humanities information can be represented as
+<strong>relationships</strong> between entities,</li>
+<li>learn how RDF expresses these relationships using
+<strong>subject–predicate–object</strong> relationships,<br></li>
+<li>understand how <strong>URIs</strong> identify real-world things
+unambiguously,</li>
+<li>transform tabular data to RDF</li>
+<li>and see how Linked Data enables collections and datasets to connect
+across the web.</li>
+</ul><p>By the end, you will be able to create small RDF descriptions
+yourself and evaluate when Linked Open Data is useful in your own
+research context.</p>
+<section><h2 class="section-heading" id="what-is-linked-open-data">What Is Linked Open Data?<a class="anchor" aria-label="anchor" href="#what-is-linked-open-data"></a></h2>
+<hr class="half-width"><p><strong>Linked Data</strong> is a way of publishing structured
+information so that connections between entities become explicit and
+machine-readable. Instead of using tables, Linked Data represents
+knowledge as a <strong>graph</strong>, where each fact is expressed as a
+triple.</p>
+<p><strong>Linked Open Data</strong> applies the same principles but
+ensures that the data is openly accessible and reusable. This openness
+enables institutions and researchers to link information across projects
+and domains.</p>
+<p>For example:</p>
+<ul><li>Vincent van Gogh → <em>was born in</em> → Zundert<br></li>
+<li>
+<em>Starry Night</em> → <em>was created by</em> → Vincent van
+Gogh</li>
+</ul><p>When such information is identified with <strong>URIs</strong>,
+different datasets can refer to the same person, place, or artwork,
+making integration possible at web scale.</p>
+</section><section><h2 class="section-heading" id="why-linked-data-matters-in-the-humanities">Why Linked Data Matters in the Humanities<a class="anchor" aria-label="anchor" href="#why-linked-data-matters-in-the-humanities"></a></h2>
+<hr class="half-width"><p>Humanities research often involves:</p>
+<ul><li>complex relationships (people, places, works, events),</li>
+<li>multiple names, languages, and historical contexts,</li>
+<li>information dispersed across collections and institutions.</li>
+</ul><p>Graph-based representations such as RDF can capture this richness
+without forcing it into rigid table structures. Linked Open Data makes
+these graphs shareable so that knowledge from separate sources can be
+combined.</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
@@ -397,7 +420,7 @@ fundamental functionalities of OpenRefine.</p>
   Windows
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>Click this <a href="https://openrefine.org/post_download?version=3.9-beta1&amp;platform=linux" class="external-link">link</a>
 to download OpenRefine.</li>
@@ -427,7 +450,7 @@ called “extensions”. Unzip rdf-transform into that folder.</li>
   MacOS
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>Check that you have Firefox, Edge, Opera or Chrome browsers
 installed and set as your default browser. OpenRefine runs in your
@@ -467,7 +490,7 @@ your OpenRefine workspace.</li>
   Linux
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>Click this <a href="https://openrefine.org/post_download?version=3.9-beta1&amp;platform=linux" class="external-link">link</a>
 to download OpenRefine.</li>
@@ -494,11 +517,11 @@ Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
 </section></section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link float-end" href="introduction.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="01_introduction.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link float-end" href="introduction.html" rel="next">Next: Introduction to... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="01_introduction.html" rel="next">Next: Introduction to... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
     </nav></div>
 <!-- END  : inst/pkgdown/templates/content-syllabus.html -->
@@ -542,8 +565,8 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/linked-open-data-humanities/index.html",
   "identifier": "https://HERMES-DKZ.github.io/linked-open-data-humanities/index.html",
   "dateCreated": "2025-02-04",
-  "dateModified": "2025-11-18",
-  "datePublished": "2025-11-18"
+  "dateModified": "2025-11-20",
+  "datePublished": "2025-11-20"
 }
 
   </script><script>
