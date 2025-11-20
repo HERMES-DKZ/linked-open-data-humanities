@@ -34,6 +34,7 @@ When we talk about data, many people often understand different things about it,
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+
 It is not quite easy to find a universal definition to this, but most of the time data is described as something from the real world, which was observed and then written down. In the humanities this could be a **letter** or an **archaeological object** . In other fields of research, data is often a measurement result or observation. What they have in common is that they try to depict a part of the real world. In our digital age, hopefully, these data is digitalised and this digitalisation leads to challenges. It is impossible to map the entire section of the real world, which means that people with domain knowledge have to decide what to capture and what not. This is always application-related and individual. 
 
 Now that we understand what data is, we want to look at how it can be captured and digitised, which is why we will look at the L from LOD next.

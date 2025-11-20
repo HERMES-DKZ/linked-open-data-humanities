@@ -2,21 +2,48 @@
 site: sandpaper::sandpaper_site
 ---
 
-Welcome to the course **“Linked Open Data for the Humanities”**! This course provides a practical introduction to the world of Linked Open Data (LOD) and is specifically designed for researchers and students in the humanities. However, the concepts behind linked open data are just as transferable to other research 
-areas, which means that this course is also aimed at all interested learnes who have no experience in the humanities. Also you dont need any coding experience or other theoretical background knowledge. You will learn everything you need in this course.
 
-The concept behind a carpentry lesson is very practical, so this course will give you different hands-on tasks to solve to learn the theoretical concepts to provide an inclusive and interesting learning experience.
+Welcome to **Linked Open Data for the Humanities**!  
+This lesson introduces the core ideas behind **Linked Data**, **Linked Open Data (LOD)**, and the **RDF** data model. It is designed for learners in the humanities, but no prior technical or theoretical knowledge is required. The concepts you will encounter are used across libraries, archives, museums, digital humanities projects, and many other research domains.
 
-## Learning objectives
-
-By the end of this lesson, you will be able to:
-
-- Model your research data with RDF.
-- Identify the advantages and disadvantages of Linked Data.
-- Use RDF in your own research practice.
+Throughout the lesson, you will work with short discussions and hands-on activities to understand how structured, interconnected data can support research.
 
 
-## What is Linked Open Data?
+During this course, you will:
 
-Linked Open Data (LOD) is a method of structuring and interconnecting data on the web in a machine-readable format. It builds upon existing web technologies such as the Resource Description Framework (RDF) to create meaningful relationships between different datasets. This allows data to be linked across various sources, facilitating improved accessibility, integration, and reusability. In this course, you will learn what RDF is, how to create a file in the RDF format, and what possibilities this provides. You will also learn how to use this format to analyze your data and gain a brief insight into its potential applications
+- explore how humanities information can be represented as **relationships** between entities,
+- learn how RDF expresses these relationships using **subject–predicate–object** relationships,  
+- understand how **URIs** identify real-world things unambiguously,
+- transform tabular data to RDF
+- and see how Linked Data enables collections and datasets to connect across the web.
+
+By the end, you will be able to create small RDF descriptions yourself and evaluate when Linked Open Data is useful in your own research context.
+
+
+
+## What Is Linked Open Data?
+
+**Linked Data** is a way of publishing structured information so that connections between entities become explicit and machine-readable. Instead of using tables, Linked Data represents knowledge as a **graph**, where each fact is expressed as a triple.
+
+**Linked Open Data** applies the same principles but ensures that the data is openly accessible and reusable. This openness enables institutions and researchers to link information across projects and domains.
+
+For example:
+
+- Vincent van Gogh → *was born in* → Zundert  
+- *Starry Night* → *was created by* → Vincent van Gogh  
+
+When such information is identified with **URIs**, different datasets can refer to the same person, place, or artwork, making integration possible at web scale.
+
+
+
+## Why Linked Data Matters in the Humanities
+
+Humanities research often involves:
+
+- complex relationships (people, places, works, events),
+- multiple names, languages, and historical contexts,
+- information dispersed across collections and institutions.
+
+Graph-based representations such as RDF can capture this richness without forcing it into rigid table structures. Linked Open Data makes these graphs shareable so that knowledge from separate sources can be combined.
+
 
