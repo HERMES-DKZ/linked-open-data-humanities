@@ -16,9 +16,9 @@ exercises: 2
 ::::::::::::::::::::::::::::::::::::: objectives
 
 - Explain the concept of Linked Open Data (LOD) in your own words.
-- Distinguish between "Linked Data" and "Linked Open Data" using an example.
+- Distinguish between "Linked Data" and "Linked Open Data".
 - Describe the importance of standardized identifiers (e.g., URIs) for linking data.
-- Represent simple Linked Open Data relationships using the subject-predicate-object model.
+- Represent simple relationships using the subject-predicate-object model.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -30,12 +30,24 @@ In this lesson, we want to explore the fundamentals of **Linked Open Data (LOD)*
 
 ### Discussion: What is data? 
 
-When we talk about data, many people often understand different things about it, and no-one can quite put their finger on what it actually means. Try to approach this term on a linguistic level and find out what it could mean. 
+When we talk about data, many people often understand different things about it, and no-one can quite put their finger on what it actually means. Try to approach this term and find out what it could mean. 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-It is not quite easy to find a universal definition to this, but most of the time data is described as something from the real world, which was observed and then written down. In the humanities this could be a **letter** or an **archaeological object** . In other fields of research, data is often a measurement result or observation. What they have in common is that they try to depict a part of the real world. In our digital age, hopefully, these data is digitalised and this digitalisation leads to challenges. It is impossible to map the entire section of the real world, which means that people with domain knowledge have to decide what to capture and what not. This is always application-related and individual. 
+It is not easy to find a universal definition of data, but a useful starting point is: **data is information about the real world that has been observed and recorded**. Think of it like a photograph. A photo captures a moment in time, but it can never show everything: the smell in the air, the sounds in the background, or what happened the moment before. Data works the same way.
+
+In the humanities, data can take many forms:
+
+- A **letter** written by a historical figure is data. It records words, a date, a sender, and a recipient.
+- An **archaeological object**, such as a Roman coin, is data. It records material, size, imagery, and findspot.
+- A **painting** like the *Starry Night* is data. It records a creative act at a specific time and place.
+
+In the natural sciences, data is often a number: the temperature on a given day or the weight of a sample. What all of these have in common is that they try to **represent a portion of the real world**.
+
+This also means that data is always **incomplete and selective**. It is impossible to capture everything about a Roman coin just by noting its diameter. Someone, a researcher, a curator, a museum, has to decide which properties are worth recording and which are not. These decisions are always tied to a specific purpose and perspective, and they shape what the data can and cannot tell us.
+
+In our digital age, much of this data exists or is being transferred into digital form. This makes it easier to store, share, and analyse, but it also intensifies these challenges: **what we digitise, and how we digitise it, determines what future researchers will be able to find and understand.**
 
 Now that we understand what data is, we want to look at how it can be captured and digitised, which is why we will look at the L from LOD next.
 
@@ -116,16 +128,16 @@ Each of these connections expands the **knowledge network**—a simple version o
 ![](fig/mind_map_example.png)
 
 
-By visualizing the data, it becomes easier to see why this way of storing and structuring knowledge is so efficient and valuable. Imagine a much larger mind map with significantly more information. This could reveal connections between people that were previously invisible. Furthermore, if researchers from different locations collaborate on such a mind map, additional insights and knowledge can be discovered. In very theorital and ideal scenario it would be possible to draw a mindmap with every information in the world to find a connection from you to Bill Gates.
+By visualizing the data, it becomes easier to see why this way of storing and structuring knowledge is so efficient and valuable. Imagine a much larger mind map with significantly more information. This could reveal connections between people that were previously invisible. Furthermore, if researchers from different locations collaborate on such a mind map, additional insights and knowledge can be discovered. In a very theorital and ideal scenario it would be possible to draw a mindmap with every information in the world to find a connection from you to Bill Gates.
 
-In essence, we are working with graphs—more specifically, directed graphs that follow a particular reading direction. Each connection has a clear subject, predicate, and object, forming what’s known as a triple. 
+In essence, we are working with graphs, more specifically, directed graphs that follow a particular reading direction. Each connection has a clear subject, predicate, and object, forming what’s known as a triple. 
 
 :::::::::::::::::::::::::::::::::::::: challenge  
 
 ## Exercise: Create a Graph  
 
 Look at one of the following texts and try to visualise the information from it in a mind map. Pay attention to decisions that need to be made and possible problems that may arise. To draw the mind map you can use whatever you want. One possibility is [Excalidraw](https://excalidraw.com/) , an open source tool with which you can also work in a group
-Go into breakout rooms and create a graph with [Excalidraw](https://excalidraw.com/). Try to find connections you could model in that graph.  
+Go into breakout rooms and create a graph. Try to find connections you could model in that graph.  
 
 ---
 

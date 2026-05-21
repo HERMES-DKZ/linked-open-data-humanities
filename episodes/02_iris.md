@@ -42,9 +42,30 @@ This highlights that names are often not unique. While additional details like y
 
 Since a subject-predicate-object model does not have the context of a larger text, ambiguity can be resolved using IDs. Museums, for instance, assign unique IDs to paintings, ensuring that even those with identical names are distinguishable. This concept is adapted and expanded for LOD to work in an open, large-scale environment.
 
-Now, with these IDs, it becomes possible to refer to one exact painting and be sure that everyone within the same context understands which artwork is meant. However, when we are only talking about an ID—a number—it is conceivable that in another context the same number might refer to a different object, meaning that the number alone is not free from ambiguity, so we need to find a way to resolve to that exact "context".
+Now, with these IDs, it becomes possible to refer to one exact painting and be sure that everyone within the same context understands which artwork is meant. However, when we are only talking about an ID, a number, it is conceivable that in another context the same number might refer to a different object, meaning that the number alone is not free from ambiguity, so we need to find a way to resolve to that exact "context".
 
-To resolve this problem, we can use a **URI**, a **Uniform Resource Identifier**. By combining a unique ID with a well-defined namespace, a URI guarantees global uniqueness. The namespace acts like a contextual “container” that ensures the ID is interpreted in a specific environment, making it unambiguous no matter where or when it is used. Similarly, **IRIs** extend this principle by allowing a broader set of characters, accommodating diverse languages and scripts. Together, the use of namespaces and IDs ensures that every resource is uniquely identifiable at all times and in every context. The namespace is the "context" mentioned before.
+To resolve this problem, we can use a **URI**, a **Uniform Resource Identifier**. The key idea is to combine a unique ID with a **namespace** and together they form a globally unique address.
+
+Think of it like a postal address. If someone tells you “the house is number 42”, that is not very helpful, there are thousands of houses numbered 42 in the world. But “42 Baker Street, London” is unambiguous. The house number is the **ID**, and the street and city together form the **namespace**: they provide the context that makes the number meaningful.
+
+Back to our example: the Metropolitan Museum of Art assigns the internal ID `436535` to *Wheatfield with Cypresses*. Another museum might use the very same number for a completely different object. But by combining that ID with the name of the institution as the **namespace**, the combination `Metropolitan Museum of Art / 436535` is already unambiguous. The namespace is therefore not just a technical prefix, it is a declaration of context: *”this ID belongs to this institution, and has a defined meaning there”*.
+
+In Linked Open Data, this principle is taken a step further: namespaces are defined as addresses on the internet, so that every resource can be looked up and referenced globally by anyone. This turns a namespace-and-ID combination into a **URI** (Uniform Resource Identifier), a unique, web-resolvable address. **IRIs** (Internationalized Resource Identifiers) extend this further by also supporting non-Latin scripts such as Arabic, Chinese, or Japanese.
+
+:::::::::::::::::::::::::::::::::::::: callout
+
+### URI and IRI in a nutshell
+
+A **URI** is a unique, web-resolvable address for an object, made up of two parts:
+
+- The **namespace** gives the context, a web address identifying the institution or system that manages the data
+- The **ID** identifies the specific object within that context
+
+Together: `namespace` + `ID` = URI, a globally unique address that anyone can look up.
+
+An **IRI** works exactly the same way, but also supports non-Latin characters.
+
+::::::::::::::::::::::::::::::::::::::::::::::
 
 
 ## Understanding IRIs
@@ -53,10 +74,6 @@ To resolve this problem, we can use a **URI**, a **Uniform Resource Identifier**
 Applied to the painting *Wheatfield with Cypresses*, the Metropolitan Museum of Art does not provide a guaranteed way to reference this so-called resource unambiguously. While we can use the link to the museum’s website, there is no guarantee that this link will remain unchanged over time. If the URL were to change, our reference would no longer work.  
 
 To avoid this problem, certain providers offer ways to generate IRIs. One example we want to examine is *Wikidata*, the structured data repository behind Wikipedia. If we search for *Wheatfield with Cypresses* on Wikidata, we also find multiple entries. Looking at this [entry](https://www.wikidata.org/wiki/Q26221215), we can already see the associated ID in the page title. The link to the page _https://www.wikidata.org/wiki/Q26221215_ forms the IRI. The first part, _https://www.wikidata.org/wiki/_, is the **namespace**, which is predefined, while the second part, _Q26221215_, is the **ID**, which is uniquely referable within this namespace. The combination of both elements ensures that this object can be referenced unambiguously in different contexts. Like subjects, predicates need to get a IRI aswell, which describes what the predicate means exactly. Wikidata also provides some properties in their [List of Properties](https://www.wikidata.org/wiki/Wikidata:List_of_properties). For example we can find an IRI for the property [place of birth](https://www.wikidata.org/wiki/Property:P19).
-
-
-
-
 
 
 
@@ -74,8 +91,3 @@ URIs and IRIs form the bedrock of Linked Open Data by ensuring that every digita
 * Are created from a namespace in combination with an ID
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-
-
-
