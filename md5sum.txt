@@ -12,6 +12,6 @@
 "episodes/06_sparql.md" "2c3a53f3a73b5a31658819ef871ae873" "site/built/06_sparql.md" "2025-11-20"
 "episodes/07_publication.md" "e0b927063a205cdf363e2ebdcb8f0188" "site/built/07_publication.md" "2025-11-20"
 "instructors/instructor-notes.md" "cae72b6712578d74a49fea7513099f8c" "site/built/instructor-notes.md" "2023-03-16"
-"learners/reference.md" "efd57946cb38470750181a593bb68685" "site/built/reference.md" "2025-03-06"
+"learners/reference.md" "92be264a8af999e6dd7c0de7d310c2d7" "site/built/reference.md" "2026-05-21"
 "learners/setup.md" "59dba8043e75ba15dff32870b0708987" "site/built/setup.md" "2025-03-04"
 "profiles/learner-profiles.md" "60b93493cf1da06dfd63255d73854461" "site/built/learner-profiles.md" "2022-04-22"
