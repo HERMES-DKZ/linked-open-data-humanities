@@ -330,7 +330,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>The concept of IRIs</h1>
-        <p>Last updated on 2025-11-20 |
+        <p>Last updated on 2026-05-21 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/02_iris.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -405,21 +405,59 @@ names are distinguishable. This concept is adapted and expanded for LOD
 to work in an open, large-scale environment.</p>
 <p>Now, with these IDs, it becomes possible to refer to one exact
 painting and be sure that everyone within the same context understands
-which artwork is meant. However, when we are only talking about an ID—a
-number—it is conceivable that in another context the same number might
+which artwork is meant. However, when we are only talking about an ID, a
+number, it is conceivable that in another context the same number might
 refer to a different object, meaning that the number alone is not free
 from ambiguity, so we need to find a way to resolve to that exact
 “context”.</p>
 <p>To resolve this problem, we can use a <strong>URI</strong>, a
-<strong>Uniform Resource Identifier</strong>. By combining a unique ID
-with a well-defined namespace, a URI guarantees global uniqueness. The
-namespace acts like a contextual “container” that ensures the ID is
-interpreted in a specific environment, making it unambiguous no matter
-where or when it is used. Similarly, <strong>IRIs</strong> extend this
-principle by allowing a broader set of characters, accommodating diverse
-languages and scripts. Together, the use of namespaces and IDs ensures
-that every resource is uniquely identifiable at all times and in every
-context. The namespace is the “context” mentioned before.</p>
+<strong>Uniform Resource Identifier</strong>. The key idea is to combine
+a unique ID with a <strong>namespace</strong> and together they form a
+globally unique address.</p>
+<p>Think of it like a postal address. If someone tells you “the house is
+number 42”, that is not very helpful, there are thousands of houses
+numbered 42 in the world. But “42 Baker Street, London” is unambiguous.
+The house number is the <strong>ID</strong>, and the street and city
+together form the <strong>namespace</strong>: they provide the context
+that makes the number meaningful.</p>
+<p>Back to our example: the Metropolitan Museum of Art assigns the
+internal ID <code>436535</code> to <em>Wheatfield with Cypresses</em>.
+Another museum might use the very same number for a completely different
+object. But by combining that ID with the name of the institution as the
+<strong>namespace</strong>, the combination
+<code>Metropolitan Museum of Art / 436535</code> is already unambiguous.
+The namespace is therefore not just a technical prefix, it is a
+declaration of context: <em>”this ID belongs to this institution, and
+has a defined meaning there”</em>.</p>
+<p>In Linked Open Data, this principle is taken a step further:
+namespaces are defined as addresses on the internet, so that every
+resource can be looked up and referenced globally by anyone. This turns
+a namespace-and-ID combination into a <strong>URI</strong> (Uniform
+Resource Identifier), a unique, web-resolvable address.
+<strong>IRIs</strong> (Internationalized Resource Identifiers) extend
+this further by also supporting non-Latin scripts such as Arabic,
+Chinese, or Japanese.</p>
+<div id="uri-and-iri-in-a-nutshell" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="uri-and-iri-in-a-nutshell" class="callout-inner">
+<h3 class="callout-title">URI and IRI in a nutshell</h3>
+<div class="callout-content">
+<p>A <strong>URI</strong> is a unique, web-resolvable address for an
+object, made up of two parts:</p>
+<ul><li>The <strong>namespace</strong> gives the context, a web address
+identifying the institution or system that manages the data</li>
+<li>The <strong>ID</strong> identifies the specific object within that
+context</li>
+</ul><p>Together: <code>namespace</code> + <code>ID</code> = URI, a globally
+unique address that anyone can look up.</p>
+<p>An <strong>IRI</strong> works exactly the same way, but also supports
+non-Latin characters.</p>
+</div>
+</div>
+</div>
 </section><section><h2 class="section-heading" id="understanding-iris">Understanding IRIs<a class="anchor" aria-label="anchor" href="#understanding-iris"></a></h2>
 <hr class="half-width"><p>Applied to the painting <em>Wheatfield with Cypresses</em>, the
 Metropolitan Museum of Art does not provide a guaranteed way to
@@ -531,7 +569,7 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/02_iris.html",
   "identifier": "https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/02_iris.html",
   "dateCreated": "2025-02-04",
-  "dateModified": "2025-11-20",
+  "dateModified": "2026-05-21",
   "datePublished": "2026-05-21"
 }
 

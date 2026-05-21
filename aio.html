@@ -373,7 +373,7 @@
         
 <section id="aio-01_introduction"><p>Content from <a href="01_introduction.html">Introduction to Linked Open Data in the Humanities</a></p>
 <hr>
-<p>Last updated on 2025-11-20 |
+<p>Last updated on 2026-05-21 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/01_introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -406,12 +406,11 @@ humanities?</li>
 <ul>
 <li>Explain the concept of Linked Open Data (LOD) in your own
 words.</li>
-<li>Distinguish between “Linked Data” and “Linked Open Data” using an
-example.</li>
+<li>Distinguish between “Linked Data” and “Linked Open Data”.</li>
 <li>Describe the importance of standardized identifiers (e.g., URIs) for
 linking data.</li>
-<li>Represent simple Linked Open Data relationships using the
-subject-predicate-object model.</li>
+<li>Represent simple relationships using the subject-predicate-object
+model.</li>
 </ul>
 </div>
 </div>
@@ -439,22 +438,41 @@ are talking about in the first place.</p>
 <div class="callout-content">
 <p>When we talk about data, many people often understand different
 things about it, and no-one can quite put their finger on what it
-actually means. Try to approach this term on a linguistic level and find
-out what it could mean.</p>
+actually means. Try to approach this term and find out what it could
+mean.</p>
 </div>
 </div>
 </div>
-<p>It is not quite easy to find a universal definition to this, but most
-of the time data is described as something from the real world, which
-was observed and then written down. In the humanities this could be a
-<strong>letter</strong> or an <strong>archaeological object</strong> .
-In other fields of research, data is often a measurement result or
-observation. What they have in common is that they try to depict a part
-of the real world. In our digital age, hopefully, these data is
-digitalised and this digitalisation leads to challenges. It is
-impossible to map the entire section of the real world, which means that
-people with domain knowledge have to decide what to capture and what
-not. This is always application-related and individual.</p>
+<p>It is not easy to find a universal definition of data, but a useful
+starting point is: <strong>data is information about the real world that
+has been observed and recorded</strong>. Think of it like a photograph.
+A photo captures a moment in time, but it can never show everything: the
+smell in the air, the sounds in the background, or what happened the
+moment before. Data works the same way.</p>
+<p>In the humanities, data can take many forms:</p>
+<ul>
+<li>A <strong>letter</strong> written by a historical figure is data. It
+records words, a date, a sender, and a recipient.</li>
+<li>An <strong>archaeological object</strong>, such as a Roman coin, is
+data. It records material, size, imagery, and findspot.</li>
+<li>A <strong>painting</strong> like the <em>Starry Night</em> is data.
+It records a creative act at a specific time and place.</li>
+</ul>
+<p>In the natural sciences, data is often a number: the temperature on a
+given day or the weight of a sample. What all of these have in common is
+that they try to <strong>represent a portion of the real
+world</strong>.</p>
+<p>This also means that data is always <strong>incomplete and
+selective</strong>. It is impossible to capture everything about a Roman
+coin just by noting its diameter. Someone, a researcher, a curator, a
+museum, has to decide which properties are worth recording and which are
+not. These decisions are always tied to a specific purpose and
+perspective, and they shape what the data can and cannot tell us.</p>
+<p>In our digital age, much of this data exists or is being transferred
+into digital form. This makes it easier to store, share, and analyse,
+but it also intensifies these challenges: <strong>what we digitise, and
+how we digitise it, determines what future researchers will be able to
+find and understand.</strong></p>
 <p>Now that we understand what data is, we want to look at how it can be
 captured and digitised, which is why we will look at the L from LOD
 next.</p>
@@ -587,11 +605,11 @@ storing and structuring knowledge is so efficient and valuable. Imagine
 a much larger mind map with significantly more information. This could
 reveal connections between people that were previously invisible.
 Furthermore, if researchers from different locations collaborate on such
-a mind map, additional insights and knowledge can be discovered. In very
-theorital and ideal scenario it would be possible to draw a mindmap with
-every information in the world to find a connection from you to Bill
-Gates.</p>
-<p>In essence, we are working with graphs—more specifically, directed
+a mind map, additional insights and knowledge can be discovered. In a
+very theorital and ideal scenario it would be possible to draw a mindmap
+with every information in the world to find a connection from you to
+Bill Gates.</p>
+<p>In essence, we are working with graphs, more specifically, directed
 graphs that follow a particular reading direction. Each connection has a
 clear subject, predicate, and object, forming what’s known as a
 triple.</p>
@@ -608,8 +626,7 @@ information from it in a mind map. Pay attention to decisions that need
 to be made and possible problems that may arise. To draw the mind map
 you can use whatever you want. One possibility is <a href="https://excalidraw.com/" class="external-link">Excalidraw</a> , an open source tool with
 which you can also work in a group Go into breakout rooms and create a
-graph with <a href="https://excalidraw.com/" class="external-link">Excalidraw</a>. Try to find
-connections you could model in that graph.</p>
+graph. Try to find connections you could model in that graph.</p>
 <hr>
 <p><strong>Group 1</strong>: Vincent van Gogh was born in Zundert, the
 Netherlands, in 1853 and is a Post-Impressionist artist. In his youth,
@@ -629,7 +646,7 @@ Museum of Modern Art in Manhattan.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>One way to visualize both texts in one graph is the following. If
 your solution looks different, this does not necessarily mean that it is
@@ -646,7 +663,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-02_iris"><p>Content from <a href="02_iris.html">The concept of IRIs</a></p>
 <hr>
-<p>Last updated on 2025-11-20 |
+<p>Last updated on 2026-05-21 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/02_iris.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -721,21 +738,61 @@ names are distinguishable. This concept is adapted and expanded for LOD
 to work in an open, large-scale environment.</p>
 <p>Now, with these IDs, it becomes possible to refer to one exact
 painting and be sure that everyone within the same context understands
-which artwork is meant. However, when we are only talking about an ID—a
-number—it is conceivable that in another context the same number might
+which artwork is meant. However, when we are only talking about an ID, a
+number, it is conceivable that in another context the same number might
 refer to a different object, meaning that the number alone is not free
 from ambiguity, so we need to find a way to resolve to that exact
 “context”.</p>
 <p>To resolve this problem, we can use a <strong>URI</strong>, a
-<strong>Uniform Resource Identifier</strong>. By combining a unique ID
-with a well-defined namespace, a URI guarantees global uniqueness. The
-namespace acts like a contextual “container” that ensures the ID is
-interpreted in a specific environment, making it unambiguous no matter
-where or when it is used. Similarly, <strong>IRIs</strong> extend this
-principle by allowing a broader set of characters, accommodating diverse
-languages and scripts. Together, the use of namespaces and IDs ensures
-that every resource is uniquely identifiable at all times and in every
-context. The namespace is the “context” mentioned before.</p>
+<strong>Uniform Resource Identifier</strong>. The key idea is to combine
+a unique ID with a <strong>namespace</strong> and together they form a
+globally unique address.</p>
+<p>Think of it like a postal address. If someone tells you “the house is
+number 42”, that is not very helpful, there are thousands of houses
+numbered 42 in the world. But “42 Baker Street, London” is unambiguous.
+The house number is the <strong>ID</strong>, and the street and city
+together form the <strong>namespace</strong>: they provide the context
+that makes the number meaningful.</p>
+<p>Back to our example: the Metropolitan Museum of Art assigns the
+internal ID <code>436535</code> to <em>Wheatfield with Cypresses</em>.
+Another museum might use the very same number for a completely different
+object. But by combining that ID with the name of the institution as the
+<strong>namespace</strong>, the combination
+<code>Metropolitan Museum of Art / 436535</code> is already unambiguous.
+The namespace is therefore not just a technical prefix, it is a
+declaration of context: <em>”this ID belongs to this institution, and
+has a defined meaning there”</em>.</p>
+<p>In Linked Open Data, this principle is taken a step further:
+namespaces are defined as addresses on the internet, so that every
+resource can be looked up and referenced globally by anyone. This turns
+a namespace-and-ID combination into a <strong>URI</strong> (Uniform
+Resource Identifier), a unique, web-resolvable address.
+<strong>IRIs</strong> (Internationalized Resource Identifiers) extend
+this further by also supporting non-Latin scripts such as Arabic,
+Chinese, or Japanese.</p>
+<div id="uri-and-iri-in-a-nutshell" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="uri-and-iri-in-a-nutshell" class="callout-inner">
+<h3 class="callout-title">URI and IRI in a nutshell</h3>
+<div class="callout-content">
+<p>A <strong>URI</strong> is a unique, web-resolvable address for an
+object, made up of two parts:</p>
+<ul>
+<li>The <strong>namespace</strong> gives the context, a web address
+identifying the institution or system that manages the data</li>
+<li>The <strong>ID</strong> identifies the specific object within that
+context</li>
+</ul>
+<p>Together: <code>namespace</code> + <code>ID</code> = URI, a globally
+unique address that anyone can look up.</p>
+<p>An <strong>IRI</strong> works exactly the same way, but also supports
+non-Latin characters.</p>
+</div>
+</div>
+</div>
 </section><section><h2 class="section-heading" id="understanding-iris">Understanding IRIs<a class="anchor" aria-label="anchor" href="#understanding-iris"></a>
 </h2>
 <hr class="half-width">
