@@ -646,7 +646,7 @@ Museum of Modern Art in Manhattan.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>One way to visualize both texts in one graph is the following. If
 your solution looks different, this does not necessarily mean that it is
@@ -663,7 +663,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-02_iris"><p>Content from <a href="02_iris.html">The concept of IRIs</a></p>
 <hr>
-<p>Last updated on 2026-05-21 |
+<p>Last updated on 2026-05-22 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/02_iris.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -743,6 +743,9 @@ number, it is conceivable that in another context the same number might
 refer to a different object, meaning that the number alone is not free
 from ambiguity, so we need to find a way to resolve to that exact
 “context”.</p>
+</section><section><h2 class="section-heading" id="from-ids-to-uris">From IDs to URIs<a class="anchor" aria-label="anchor" href="#from-ids-to-uris"></a>
+</h2>
+<hr class="half-width">
 <p>To resolve this problem, we can use a <strong>URI</strong>, a
 <strong>Uniform Resource Identifier</strong>. The key idea is to combine
 a unique ID with a <strong>namespace</strong> and together they form a
@@ -819,6 +822,64 @@ describes what the predicate means exactly. Wikidata also provides some
 properties in their <a href="https://www.wikidata.org/wiki/Wikidata:List_of_properties" class="external-link">List of
 Properties</a>. For example we can find an IRI for the property <a href="https://www.wikidata.org/wiki/Property:P19" class="external-link">place of
 birth</a>.</p>
+</section><section><h2 class="section-heading" id="exercise">Exercise<a class="anchor" aria-label="anchor" href="#exercise"></a>
+</h2>
+<hr class="half-width">
+<div id="one-entity-two-iris" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="one-entity-two-iris" class="callout-inner">
+<h3 class="callout-title">One Entity, Two IRIs</h3>
+<div class="callout-content">
+<p>In LOD, the goal is to identify every resource unambiguously. But
+what happens when different systems each assign their own IRI to the
+same entity?</p>
+<ol style="list-style-type: decimal">
+<li>Open <a href="https://www.wikidata.org" class="external-link">Wikidata</a> and find the
+entry for <strong>Vincent van Gogh</strong>. Note down his IRI.</li>
+<li>Now open <a href="https://viaf.org" class="external-link">VIAF</a> (Virtual International
+Authority File) and search for Vincent van Gogh. Note down his IRI there
+as well.</li>
+<li>Identify the <strong>namespace</strong> and the <strong>ID</strong>
+in each IRI.</li>
+<li>You now have two different IRIs for the same person. Does this
+contradict the LOD principle of unambiguous identification? Look
+carefully at the Wikidata entry for Van Gogh. Can you find anything that
+addresses this problem?</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<p><strong>Wikidata IRI</strong>:
+<code>https://www.wikidata.org/wiki/Q5582</code> Namespace:
+<code>https://www.wikidata.org/wiki/</code> — ID: <code>Q5582</code></p>
+<p><strong>VIAF IRI</strong>: <code>https://viaf.org/viaf/9854560</code>
+Namespace: <code>https://viaf.org/viaf/</code> — ID:
+<code>9854560</code></p>
+<p>Both IRIs are internally unambiguous. Within their own system, each
+points to exactly one entity. The apparent contradiction is resolved by
+the fact that LOD systems can explicitly declare that two IRIs refer to
+the same thing. In the Wikidata entry for Van Gogh, you can find the
+property <strong>VIAF ID</strong> with the value <code>9854560</code> ,
+a direct link to the VIAF record. The two systems are already
+connected.</p>
+<p>This is a fundamental pattern in LOD: rather than forcing a single
+global ID on every entity, different institutions maintain their own
+IRIs and link them to each other. How exactly this linking works will be
+covered in a later chapter.</p>
+</div>
+</div>
+</div>
+</div>
 </section><section><h2 class="section-heading" id="conclusion">Conclusion<a class="anchor" aria-label="anchor" href="#conclusion"></a>
 </h2>
 <hr class="half-width">
@@ -989,7 +1050,7 @@ properties:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <pre><code>&lt;https://www.wikidata.org/wiki/Q5582&gt;&lt;https://www.wikidata.org/wiki/Property:P19&gt;&lt;https://www.wikidata.org/wiki/Q9883&gt;
 
@@ -1374,8 +1435,8 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/linked-open-data-humanities/aio.html",
   "identifier": "https://HERMES-DKZ.github.io/linked-open-data-humanities/aio.html",
   "dateCreated": "2025-02-04",
-  "dateModified": "2026-05-21",
-  "datePublished": "2026-05-21"
+  "dateModified": "2026-05-22",
+  "datePublished": "2026-05-22"
 }
 
   </script><script>
