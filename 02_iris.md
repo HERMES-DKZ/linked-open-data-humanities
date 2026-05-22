@@ -44,6 +44,8 @@ Since a subject-predicate-object model does not have the context of a larger tex
 
 Now, with these IDs, it becomes possible to refer to one exact painting and be sure that everyone within the same context understands which artwork is meant. However, when we are only talking about an ID, a number, it is conceivable that in another context the same number might refer to a different object, meaning that the number alone is not free from ambiguity, so we need to find a way to resolve to that exact "context".
 
+## From IDs to URIs
+
 To resolve this problem, we can use a **URI**, a **Uniform Resource Identifier**. The key idea is to combine a unique ID with a **namespace** and together they form a globally unique address.
 
 Think of it like a postal address. If someone tells you “the house is number 42”, that is not very helpful, there are thousands of houses numbered 42 in the world. But “42 Baker Street, London” is unambiguous. The house number is the **ID**, and the street and city together form the **namespace**: they provide the context that makes the number meaningful.
@@ -75,6 +77,37 @@ Applied to the painting *Wheatfield with Cypresses*, the Metropolitan Museum of 
 
 To avoid this problem, certain providers offer ways to generate IRIs. One example we want to examine is *Wikidata*, the structured data repository behind Wikipedia. If we search for *Wheatfield with Cypresses* on Wikidata, we also find multiple entries. Looking at this [entry](https://www.wikidata.org/wiki/Q26221215), we can already see the associated ID in the page title. The link to the page _https://www.wikidata.org/wiki/Q26221215_ forms the IRI. The first part, _https://www.wikidata.org/wiki/_, is the **namespace**, which is predefined, while the second part, _Q26221215_, is the **ID**, which is uniquely referable within this namespace. The combination of both elements ensures that this object can be referenced unambiguously in different contexts. Like subjects, predicates need to get a IRI aswell, which describes what the predicate means exactly. Wikidata also provides some properties in their [List of Properties](https://www.wikidata.org/wiki/Wikidata:List_of_properties). For example we can find an IRI for the property [place of birth](https://www.wikidata.org/wiki/Property:P19).
 
+
+
+
+## Exercise
+
+:::::::::::::::::::::::::::::::::::::: challenge
+
+## One Entity, Two IRIs
+
+In LOD, the goal is to identify every resource unambiguously. But what happens when different systems each assign their own IRI to the same entity?
+
+1. Open [Wikidata](https://www.wikidata.org) and find the entry for **Vincent van Gogh**. Note down his IRI.
+2. Now open [VIAF](https://viaf.org) (Virtual International Authority File) and search for Vincent van Gogh. Note down his IRI there as well.
+3. Identify the **namespace** and the **ID** in each IRI.
+4. You now have two different IRIs for the same person. Does this contradict the LOD principle of unambiguous identification? Look carefully at the Wikidata entry for Van Gogh. Can you find anything that addresses this problem?
+
+:::::::::::::::: solution
+
+**Wikidata IRI**: `https://www.wikidata.org/wiki/Q5582`
+Namespace: `https://www.wikidata.org/wiki/` — ID: `Q5582`
+
+**VIAF IRI**: `https://viaf.org/viaf/9854560`
+Namespace: `https://viaf.org/viaf/` — ID: `9854560`
+
+Both IRIs are internally unambiguous. Within their own system, each points to exactly one entity. The apparent contradiction is resolved by the fact that LOD systems can explicitly declare that two IRIs refer to the same thing. In the Wikidata entry for Van Gogh, you can find the property **VIAF ID** with the value `9854560` , a direct link to the VIAF record. The two systems are already connected.
+
+This is a fundamental pattern in LOD: rather than forcing a single global ID on every entity, different institutions maintain their own IRIs and link them to each other. How exactly this linking works will be covered in a later chapter.
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 ## Conclusion
