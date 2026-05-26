@@ -661,7 +661,7 @@ Museum of Modern Art in Manhattan.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>One way to visualize both texts in one graph is the following. If
 your solution looks different, this does not necessarily mean that it is
@@ -873,7 +873,7 @@ addresses this problem?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p><strong>Wikidata IRI</strong>:
 <code>https://www.wikidata.org/wiki/Q5582</code> Namespace:
@@ -1377,7 +1377,7 @@ Museum of Modern Art in Manhattan.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>There is no single correct answer, your solution depends on which
 connections you modelled in your mind map. The following are examples of
@@ -1437,9 +1437,10 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>What are serialisation formats used for?</li>
+<li>How can RDF graphs be wirtten down in files?</li>
+<li>What are serialization formats?</li>
 <li>What is Turtle?</li>
-<li>What is a namespace?</li>
+<li>What are namespaces and prefixes?</li>
 </ul>
 </div>
 </div>
@@ -1449,10 +1450,11 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Write down RDF in turtle format</li>
-<li>Understand what a vocabulary is used for in linked open data.</li>
-<li>Remember where to look for the concepts of the RDF schema vocabulary
-and their definitions.</li>
+<li>Explain the purpose of serialization formats</li>
+<li>Identify common serialization formats</li>
+<li>Read and write RDF in Turtle syntax</li>
+<li>Explain the purpose of namspaces and prefixes</li>
+<li>Identify namspaces and prefixes in a RDF file</li>
 </ul>
 </div>
 </div>
@@ -1462,20 +1464,25 @@ and their definitions.</li>
 <section><h2 class="section-heading" id="serialization-formats">Serialization formats<a class="anchor" aria-label="anchor" href="#serialization-formats"></a>
 </h2>
 <hr class="half-width">
+<p>Serialisation is the process of converting our drawn graphs into a
+text form, this is writing them down in a file. This allows the computer
+to understand and process them. We have already learnt about one
+<strong>serialisation format</strong>: n-triple. If we were to save it
+as a file on our computer, the file would end in <code>.nt</code>.
+Another serialisation format is Turtle (Terse RDF Triple Language), and
+these files end in <code>.ttt</code></p>
 <p>A serialisation format is the answer to the question of how to write
 things down in RDF so that the machine understands them. In short Turtle
 is an example for such a format.</p>
 <p>Turtle example</p>
 <pre><code><span></span>
-<span><span class="co">##namespaces</span></span>
 <span><span class="co">##statements</span></span></code></pre>
 <p>Other common serialization formats:</p>
 <ul>
 <li>RDF/XML</li>
 <li>JSON-LD</li>
+<li>N-Triples</li>
 </ul>
-<p>You do not have to know all the serialization Formats, there are
-plenty of converter tools on the web, for example the <a href="https://www.easyrdf.org/converter" class="external-link">EASYRDF Converter</a> or the <a href="https://converter.zazuko.com/" class="external-link">RDF Converter by Zazuko</a>.</p>
 <div id="write-down-the-information-in-turtle" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -1505,10 +1512,75 @@ Valid turtle.</code></pre>
 </section><section><h2 class="section-heading" id="namespaces">Namespaces<a class="anchor" aria-label="anchor" href="#namespaces"></a>
 </h2>
 <hr class="half-width">
+<p>As described in the chapter ‘The Concept of IRIs’, namespaces are
+used to avoid ambiguity in resources. As they are frequently used in RDF
+files, this can be confusing for humans. It is therefore possible to
+assign a <strong>prefix</strong> – effectively an abbreviation – to a
+namespace once at the start of an RDF file using the line
+<code>@prefix ns: &lt;fullnamespace&gt;</code>. This abbreviation can
+then be used throughout the entire RDF file, in which case the
+surrounding characters <code>&lt;</code> and <code>&gt;</code> of the
+resources are also no longer required. This abbreviation then applies
+only locally within that file.</p>
+<p>Example:</p>
+<pre><code>&lt;https://www.wikidata.org/wiki/Q5582&gt;&lt;https://www.wikidata.org/wiki/Property:P19&gt;&lt;https://www.wikidata.org/wiki/Q9883&gt;</code></pre>
+<p>```` <span class="citation">@prefix</span> wd: <a href="https://www.wikidata.org/wiki/" class="external-link uri">https://www.wikidata.org/wiki/</a>.</p>
+<p>wd:Q5582 wd:Property:P19 wd:Q9883 .</p>
+<pre><code>::::::::::::::::::::::::::::::::::::: challenge
+
+## Find the mistakes in the following turtle file
+
+A few spelling mistakes have crept into the following turtle file. Take a look at the code example and try to spot the mistakes.
+
+```turtle
+</code></pre>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<pre><code>Valid turtle.</code></pre>
+</div>
+</div>
+</div>
+</div>
+<p>:::::::::::::::::::::::::::::::::::::::::::::::</p>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>You do not have to know all the serialization Formats, there are
+plenty of converter tools on the web, for example the <a href="https://www.easyrdf.org/converter" class="external-link">EASYRDF Converter</a> or the <a href="https://converter.zazuko.com/" class="external-link">RDF Converter by Zazuko</a>.</p>
+</div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>How can RDF graphs be wirtten down in files?</li>
+<li>What are serialization formats?</li>
+<li>What is Turtle?</li>
+<li>What are namespaces and prefixes?</li>
+<li>Why are namspaces and prefixes used?</li>
+</ul>
+</div>
+</div>
+</div>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- --></section></section><section id="aio-05_model"><p>Content from <a href="05_model.html">Model Linked Data</a></p>
+ -->
+</section></section><section id="aio-05_model"><p>Content from <a href="05_model.html">Model Linked Data</a></p>
 <hr>
 <p>Last updated on 2026-05-26 |
 
@@ -1525,7 +1597,11 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>What are Ontologies, Vocabularies and RDF Schema?</li>
+<li>What is a vocabulary and what is it used for?</li>
+<li>What is RDF Schema and what is it used for?</li>
+<li>What are the concepts in RDFSchema?</li>
+<li>How can you describe RDF resources with RDF Schema?</li>
+<li>What is a ontology?</li>
 </ul>
 </div>
 </div>
@@ -1536,15 +1612,20 @@ any links that you are not going to use.
 <h3 class="card-title">Objectives</h3>
 <ul>
 <li>Understand what a vocabulary is used for in linked open data.</li>
-<li>Remember where to look for the concepts of the RDF schema vocabulary
-and their definitions.</li>
+<li>Remember some concepts of RDF Schema</li>
+<li>Refer to the RDF Schema vocabulary file to look up concepts, terms
+and descriptions</li>
+<li>
+</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="rdf-schema">RDF Schema<a class="anchor" aria-label="anchor" href="#rdf-schema"></a>
+<section><h2 class="section-heading" id="vocabularies">Vocabularies<a class="anchor" aria-label="anchor" href="#vocabularies"></a>
+</h2>
+<hr class="half-width"></section><section><h2 class="section-heading" id="rdf-schema">RDF Schema<a class="anchor" aria-label="anchor" href="#rdf-schema"></a>
 </h2>
 <hr class="half-width">
 <p>RDF Schema is an extension of the basic RDF vocabulary, you already
@@ -1593,6 +1674,9 @@ terms (concepts), meanings and rules.</p>
 </div>
 </div>
 </div>
+</section><section><h2 class="section-heading" id="ontologies">Ontologies<a class="anchor" aria-label="anchor" href="#ontologies"></a>
+</h2>
+<hr class="half-width">
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
