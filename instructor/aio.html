@@ -661,7 +661,7 @@ Museum of Modern Art in Manhattan.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>One way to visualize both texts in one graph is the following. If
 your solution looks different, this does not necessarily mean that it is
@@ -929,7 +929,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-03_rdf"><p>Content from <a href="03_rdf.html">Introduction to RDF and Basic Modeling</a></p>
 <hr>
-<p>Last updated on 2025-11-20 |
+<p>Last updated on 2026-05-26 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/03_rdf.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 22 minutes</p>
@@ -947,6 +947,7 @@ any links that you are not going to use.
 <li>What is RDF, and why is it used in Linked Open Data?</li>
 <li>How does RDF structure information?</li>
 <li>How can we represent real-world relationships using RDF?</li>
+<li>Know when to use IRIs, literals and blanknodes.</li>
 </ul>
 </div>
 </div>
@@ -959,6 +960,9 @@ any links that you are not going to use.
 <li>Explain the purpose and structure of RDF.</li>
 <li>Model basic relationships using RDF.</li>
 <li>Explain limitations of n-triples.</li>
+<li>Differentiate between the concepts of IRIs, literals and
+blanknodes?</li>
+<li>Know when to use IRIs, literals and blanknodes.</li>
 </ul>
 </div>
 </div>
@@ -1019,6 +1023,12 @@ ideal for exchanging RDF data between different systems.</p>
 <div class="section level3">
 <h3 id="blank-nodes-and-literals-in-rdf">Blank Nodes and Literals in RDF<a class="anchor" aria-label="anchor" href="#blank-nodes-and-literals-in-rdf"></a>
 </h3>
+<p>Different concepts in RDF:</p>
+<ul>
+<li>IRI</li>
+<li>Literal</li>
+<li>Blanknode</li>
+</ul>
 <p>In RDF, not every object needs a globally unique identifier (IRI).
 Sometimes, an entity exists that doesn’t need to be explicitly
 named—this is where <strong>Blank Nodes</strong> come in.</p>
@@ -1067,7 +1077,7 @@ properties:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <pre><code>&lt;https://www.wikidata.org/wiki/Q5582&gt;&lt;https://www.wikidata.org/wiki/Property:P19&gt;&lt;https://www.wikidata.org/wiki/Q9883&gt;
 
@@ -1119,8 +1129,7 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>What are IRIs, literals and a blanknodes and when to use them?</li>
-<li>How to write down RDF?</li>
+<li>What are serialisation formats used for?</li>
 <li>What is Turtle?</li>
 <li>What is a namespace?</li>
 </ul>
@@ -1132,10 +1141,7 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Differentiate between the concepts of IRIs, literals and
-blanknodes?</li>
-<li>Know when to use IRIs, literals and blanknodes.</li>
-<li>Write down RDF in turtle format?</li>
+<li>Write down RDF in turtle format</li>
 <li>Understand what a vocabulary is used for in linked open data.</li>
 <li>Remember where to look for the concepts of the RDF schema vocabulary
 and their definitions.</li>
@@ -1145,62 +1151,7 @@ and their definitions.</li>
 </div>
 </div>
 </div>
-<div class="section level1">
-<h1 id="serialization">Serialization<a class="anchor" aria-label="anchor" href="#serialization"></a>
-</h1>
-</div>
-<div class="section level1">
-<h1 id="namespaces">Namespaces<a class="anchor" aria-label="anchor" href="#namespaces"></a>
-</h1>
-<!--
-Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use.
- -->
-</div></section><section id="aio-05_model"><p>Content from <a href="05_model.html">Model Linked Data</a></p>
-<hr>
-<p>Last updated on 2026-05-26 |
-
-        <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/05_model.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
-<div class="text-end">
-          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
-        </div>
-<div class="overview card">
-<h2 class="card-header">Overview</h2>
-<div class="row g-0">
-<div class="col-md-4">
-<div class="card-body">
-<div class="inner">
-<h3 class="card-title">Questions</h3>
-<ul>
-<li>What are Ontologies, Vocabularies and RDF Schema?</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-md-8">
-<div class="card-body">
-<div class="inner bordered">
-<h3 class="card-title">Objectives</h3>
-<ul>
-<li>Know when to use IRIs, literals and blanknodes.</li>
-<li>Understand what a vocabulary is used for in linked open data.</li>
-<li>Remember where to look for the concepts of the RDF schema vocabulary
-and their definitions.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<section><h2 class="section-heading" id="different-concepts-in-rdf">Different concepts in RDF<a class="anchor" aria-label="anchor" href="#different-concepts-in-rdf"></a>
-</h2>
-<hr class="half-width">
-<ul>
-<li>IRI</li>
-<li>Literal</li>
-<li>Blanknode</li>
-</ul></section><section><h2 class="section-heading" id="serialization-formats">Serialization formats<a class="anchor" aria-label="anchor" href="#serialization-formats"></a>
+<section><h2 class="section-heading" id="serialization-formats">Serialization formats<a class="anchor" aria-label="anchor" href="#serialization-formats"></a>
 </h2>
 <hr class="half-width">
 <p>A serialisation format is the answer to the question of how to write
@@ -1243,9 +1194,49 @@ Valid turtle.</code></pre>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="vocabularies-namespaces">Vocabularies &amp; namespaces<a class="anchor" aria-label="anchor" href="#vocabularies-namespaces"></a>
+</section><section><h2 class="section-heading" id="namespaces">Namespaces<a class="anchor" aria-label="anchor" href="#namespaces"></a>
 </h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="rdf-schema">RDF Schema<a class="anchor" aria-label="anchor" href="#rdf-schema"></a>
+<hr class="half-width">
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ --></section></section><section id="aio-05_model"><p>Content from <a href="05_model.html">Model Linked Data</a></p>
+<hr>
+<p>Last updated on 2026-05-26 |
+
+        <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/05_model.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>What are Ontologies, Vocabularies and RDF Schema?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Understand what a vocabulary is used for in linked open data.</li>
+<li>Remember where to look for the concepts of the RDF schema vocabulary
+and their definitions.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="rdf-schema">RDF Schema<a class="anchor" aria-label="anchor" href="#rdf-schema"></a>
 </h2>
 <hr class="half-width">
 <p>RDF Schema is an extension of the basic RDF vocabulary, you already
@@ -1282,12 +1273,12 @@ terms (concepts), meanings and rules.</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 
 </div>

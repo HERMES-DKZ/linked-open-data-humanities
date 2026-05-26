@@ -226,12 +226,20 @@
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         4. Serialization
         </span>
-      
+      </button>
     </div><!--/div.accordion-header-->
+
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
+      <div class="accordion-body">
+        <ul><li><a href="#serialization-formats">Serialization formats</a></li>
+<li><a href="#namespaces">Namespaces</a></li>
+        </ul></div><!--/div.accordion-body-->
+    </div><!--/div.accordion-collapse-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -349,8 +357,7 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>What are IRIs, literals and a blanknodes and when to use them?</li>
-<li>How to write down RDF?</li>
+<ul><li>What are serialisation formats used for?</li>
 <li>What is Turtle?</li>
 <li>What is a namespace?</li>
 </ul></div>
@@ -360,10 +367,7 @@
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>Differentiate between the concepts of IRIs, literals and
-blanknodes?</li>
-<li>Know when to use IRIs, literals and blanknodes.</li>
-<li>Write down RDF in turtle format?</li>
+<ul><li>Write down RDF in turtle format</li>
 <li>Understand what a vocabulary is used for in linked open data.</li>
 <li>Remember where to look for the concepts of the RDF schema vocabulary
 and their definitions.</li>
@@ -372,20 +376,50 @@ and their definitions.</li>
 </div>
 </div>
 </div>
-<div class="section level1">
-<h1 id="serialization">Serialization<a class="anchor" aria-label="anchor" href="#serialization"></a></h1>
+<section><h2 class="section-heading" id="serialization-formats">Serialization formats<a class="anchor" aria-label="anchor" href="#serialization-formats"></a></h2>
+<hr class="half-width"><p>A serialisation format is the answer to the question of how to write
+things down in RDF so that the machine understands them. In short Turtle
+is an example for such a format.</p>
+<p>Turtle example</p>
+<pre><code><span></span>
+<span><span class="co">##namespaces</span></span>
+<span><span class="co">##statements</span></span></code></pre>
+<p>Other common serialization formats:</p>
+<ul><li>RDF/XML</li>
+<li>JSON-LD</li>
+</ul><p>You do not have to know all the serialization Formats, there are
+plenty of converter tools on the web, for example the <a href="https://www.easyrdf.org/converter" class="external-link">EASYRDF Converter</a> or the <a href="https://converter.zazuko.com/" class="external-link">RDF Converter by Zazuko</a>.</p>
+<div id="write-down-the-information-in-turtle" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
 </div>
-<div class="section level1">
-<h1 id="namespaces">Namespaces<a class="anchor" aria-label="anchor" href="#namespaces"></a></h1>
-<!--
+<span class="callout-header">Challenge</span>
+<div id="write-down-the-information-in-turtle" class="callout-inner">
+<h3 class="callout-title">Write down the information in turtle</h3>
+<div class="callout-content">
+<p>List some statements and ask the learners to transform them to valid
+turtle.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<pre><code>TODO
+Valid turtle.</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="namespaces">Namespaces<a class="anchor" aria-label="anchor" href="#namespaces"></a></h2>
+<hr class="half-width"><!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- -->
-</div>
-
-
-
-      </div> <!-- / div.lesson-content -->
+ --></section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter Bottom"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="03_rdf.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="05_model.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
