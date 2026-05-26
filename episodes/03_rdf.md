@@ -91,9 +91,6 @@ Let us build a triple step by step. We want to express: *Wheatfield with Cypress
 <https://www.wikidata.org/wiki/Q26221215> <https://www.wikidata.org/wiki/Property:P170> <https://www.wikidata.org/wiki/Q5582>.
 ```
 
-
-## Building a Graph from Triples
-
 A single triple is just one statement. In practice, many triples together form a **graph**, a network of connected resources. Recall the mind map from chapter 1: each arrow with two nodes was one triple. Written in N-Triples, the same information looks like this:
 
 ```
