@@ -217,12 +217,23 @@
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         3. Introduction to RDF and Basic Modeling
         </span>
-      
+      </button>
     </div><!--/div.accordion-header-->
+
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
+      <div class="accordion-body">
+        <ul><li><a href="#from-the-concept-to-rdf">From the concept to RDF</a></li>
+<li><a href="#writing-rdf-n-triples">Writing RDF: N-Triples</a></li>
+<li><a href="#building-a-graph-from-triples">Building a Graph from Triples</a></li>
+<li><a href="#not-everything-is-an-iri-blank-nodes-and-literals">Not Everything Is an IRI: Blank Nodes and Literals</a></li>
+<li><a href="#limitations-of-n-triples">Limitations of N-Triples</a></li>
+        </ul></div><!--/div.accordion-body-->
+    </div><!--/div.accordion-collapse-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -351,10 +362,10 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>What is RDF, and why is it used in Linked Open Data?</li>
+<ul><li>Why does LOD need a standard format like RDF?</li>
 <li>How does RDF structure information?</li>
-<li>How can we represent real-world relationships using RDF?</li>
-<li>Know when to use IRIs, literals and blanknodes.</li>
+<li>What are blank nodes and literals?</li>
+<li>What are the limitations of N-Triples?</li>
 </ul></div>
 </div>
 </div>
@@ -362,108 +373,313 @@
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>Explain the purpose and structure of RDF.</li>
-<li>Model basic relationships using RDF.</li>
-<li>Explain limitations of n-triples.</li>
-<li>Differentiate between the concepts of IRIs, literals and
-blanknodes?</li>
-<li>Know when to use IRIs, literals and blanknodes.</li>
+<ul><li>Explain the purpose of RDF and why standardization matters in
+LOD.</li>
+<li>Construct basic RDF triples in N-Triples format.</li>
+<li>Distinguish between IRIs, blank nodes, and literals, and know when
+to use each.</li>
 </ul></div>
 </div>
 </div>
 </div>
 </div>
-<p>As we have already learnt, information can be stored and displayed in
-the form of the subject-predicate-object model. To avoid ambiguities and
-guarantee unambiguity, IRIs are used for the respective parts. We also
-need a similar approach to these IRIs in the representation and format
-of the modelling. We need standards in the notation to ensure that the
-computer handles the data correctly. The standard we want to use in LOD
-is RDF.</p>
-<p>RDF (Resource Description Framework) is a <strong>universal data
-model</strong> designed to represent relationships between entities in a
-structured way. It provides a <strong>standardized format</strong> for
-expressing knowledge using the <strong>subject-predicate-object</strong>
-model, which allows different datasets to be linked together and ensures
-interoperability.</p>
-<p>Using RDF, we can describe facts in a machine-readable way. Each RDF
-statement, called a <strong>triple</strong>, consists of.</p>
-<p>For example, we can express the relationship between the painting
-<em>Wheatfield with Cypresses</em> and Vincent van Gogh using an RDF
-triple with IRIs:</p>
-<pre><code>&lt;https://www.wikidata.org/wiki/Q26221215&gt; &lt;https://www.wikidata.org/wiki/Property:P170&gt; &lt;https://www.wikidata.org/wiki/Q5582&gt;.</code></pre>
-<p>This triple means that <em>Wheatfield with Cypresses</em> was painted
-by Vincent van Gogh.</p>
-<div class="section level3">
-<h3 id="using-n-triples-as-the-simplest-rdf-representation">Using N-Triples as the Simplest RDF Representation<a class="anchor" aria-label="anchor" href="#using-n-triples-as-the-simplest-rdf-representation"></a></h3>
-<p>The format used above is called <strong>N-Triples</strong>, which is
-the simplest, standardized way to represent RDF data. The basic notation
-is quite simple. You just need to write your IRIs in <strong>angle
-brackets</strong> and end each statement with a period. N-Triples is a
-line-based format where each fact is written on a single line in the
-form:</p>
-<pre><code>&lt;subject&gt; &lt;predicate&gt; &lt;object&gt;.</code></pre>
-<p>This simplicity makes N-Triples easy to parse and store, making it
-ideal for exchanging RDF data between different systems.</p>
-<div id="writing-rdf" class="callout">
+<section><h2 class="section-heading" id="from-the-concept-to-rdf">From the concept to RDF<a class="anchor" aria-label="anchor" href="#from-the-concept-to-rdf"></a></h2>
+<hr class="half-width"><p>In the previous chapters, we established two fundamental building
+blocks of Linked Open Data:</p>
+<ul><li>The <strong>subject-predicate-object model</strong> as a way to
+break knowledge down into simple, structured statements.</li>
+<li>
+<strong>IRIs</strong> as a way to identify every resource and
+property unambiguously across the web.</li>
+</ul><p>We are now ready to combine these two ideas into a concrete,
+machine-readable format. But consider the following: imagine researchers
+in Tokyo, Cairo, and Berlin all model information about Vincent van Gogh
+using the subject-predicate-object structure, but each in their own way,
+with their own notation and their own rules for writing things down.
+Even if they all use IRIs, a computer cannot reliably process and
+combine their data if the formatting is inconsistent.</p>
+<p>This is why we need not just a model, but a
+<strong>standard</strong>. A shared grammar that everyone follows, so
+that data from different sources can be read, understood, and connected
+by machines without human interpretation in between.</p>
+<p>That standard is <strong>RDF</strong> (Resource Description
+Framework)** , a W3C standard for representing and exchanging knowledge
+on the web. It does not introduce new concepts, it takes the
+subject-predicate-object model and the use of IRIs that we already know,
+and defines precise, universally agreed rules for how to write them
+down.</p>
+<p>Think of it like the rules of written language. Two people might know
+the same words, but without shared grammar and spelling conventions,
+written communication becomes unreliable. RDF is the grammar of Linked
+Open Data: it ensures that a triple written by a museum in Amsterdam
+means the same thing when read by someone in São Paulo.</p>
+<p>By following RDF, datasets from entirely different institutions and
+domains can be linked together and queried as if they were one. At its
+core, every piece of information in RDF is expressed as a
+<strong>triple</strong>.</p>
+<div id="the-rdf-triple" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <span class="callout-header">Callout</span>
-<div id="writing-rdf" class="callout-inner">
-<h3 class="callout-title">Writing RDF</h3>
+<div id="the-rdf-triple" class="callout-inner">
+<h3 class="callout-title">The RDF Triple</h3>
 <div class="callout-content">
-<ul><li>Write your information in the subject-predicate-object model</li>
-<li>Use IRIs for the subject, predicate and object</li>
-<li>Put the IRIs in angle brackets</li>
-<li>End each statement with a period.</li>
+<table class="table"><colgroup><col width="33%"><col width="33%"><col width="33%"></colgroup><thead><tr><th>Part</th>
+<th>Role</th>
+<th>Allowed values</th>
+</tr></thead><tbody><tr><td><strong>Subject</strong></td>
+<td>The resource being described</td>
+<td>IRI or blank node</td>
+</tr><tr><td><strong>Predicate</strong></td>
+<td>The relationship or property</td>
+<td>IRI only</td>
+</tr><tr><td><strong>Object</strong></td>
+<td>The value or related resource</td>
+<td>IRI, blank node, or literal</td>
+</tr></tbody></table><p>The predicate is always an IRI. Relationships must be defined and
+unambiguous. The object can also be a concrete value (a literal) or a
+blank node, which we will look at below.</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="writing-rdf-n-triples">Writing RDF: N-Triples<a class="anchor" aria-label="anchor" href="#writing-rdf-n-triples"></a></h2>
+<hr class="half-width"><p>To write RDF data in a concrete, machine-readable way, we need a
+defined notation. The one we will use in this chapter is
+<strong>N-Triples</strong>.</p>
+<p>In N-Triples, the rules are minimal:</p>
+<div id="rules-for-writing-n-triples" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="rules-for-writing-n-triples" class="callout-inner">
+<h3 class="callout-title">Rules for writing N-Triples</h3>
+<div class="callout-content">
+<ul><li>Write each triple on its own line</li>
+<li>Wrap every IRI in angle brackets: <code>&lt; &gt;</code>
+</li>
+<li>End every statement with a period: <code>.</code>
+</li>
+<li>Separate subject, predicate, and object with whitespace</li>
 </ul></div>
 </div>
 </div>
+<p>Let us build a triple step by step. We want to express:
+<em>Wheatfield with Cypresses</em> was created by Vincent van Gogh.</p>
+<p><strong>Step 1</strong> — Identify subject, predicate, and
+object:</p>
+<table class="table"><thead><tr><th>Subject</th>
+<th>Predicate</th>
+<th>Object</th>
+</tr></thead><tbody><tr><td><em>Wheatfield with Cypresses</em></td>
+<td>was created by</td>
+<td><em>Vincent van Gogh</em></td>
+</tr></tbody></table><p><strong>Step 2</strong> — Replace each element with its Wikidata
+IRI:</p>
+<table class="table"><colgroup><col width="33%"><col width="33%"><col width="33%"></colgroup><thead><tr><th>Subject</th>
+<th>Predicate</th>
+<th>Object</th>
+</tr></thead><tbody><tr><td><code>https://www.wikidata.org/wiki/Q26221215</code></td>
+<td><code>https://www.wikidata.org/wiki/Property:P170</code></td>
+<td><code>https://www.wikidata.org/wiki/Q5582</code></td>
+</tr></tbody></table><p><strong>Step 3</strong> — Write it as an N-Triple:</p>
+<pre><code>&lt;https://www.wikidata.org/wiki/Q26221215&gt; &lt;https://www.wikidata.org/wiki/Property:P170&gt; &lt;https://www.wikidata.org/wiki/Q5582&gt;.</code></pre>
+</section><section><h2 class="section-heading" id="building-a-graph-from-triples">Building a Graph from Triples<a class="anchor" aria-label="anchor" href="#building-a-graph-from-triples"></a></h2>
+<hr class="half-width"><p>A single triple is just one statement. In practice, many triples
+together form a <strong>graph</strong>, a network of connected
+resources. Recall the mind map from chapter 1: each arrow with two nodes
+was one triple. Written in N-Triples, the same information looks like
+this:</p>
+<pre><code>&lt;https://www.wikidata.org/wiki/Q26221215&gt; &lt;https://www.wikidata.org/wiki/Property:P170&gt; &lt;https://www.wikidata.org/wiki/Q5582&gt;.
+&lt;https://www.wikidata.org/wiki/Q5582&gt; &lt;https://www.wikidata.org/wiki/Property:P19&gt; &lt;https://www.wikidata.org/wiki/Q9883&gt;.
+&lt;https://www.wikidata.org/wiki/Q9883&gt; &lt;https://www.wikidata.org/wiki/Property:P17&gt; &lt;https://www.wikidata.org/wiki/Q55&gt;.</code></pre>
+<p>These three triples state that:</p>
+<ol style="list-style-type: decimal"><li>
+<em>Wheatfield with Cypresses</em> (<code>Q26221215</code>) was
+created by Vincent van Gogh (<code>Q5582</code>).</li>
+<li>Vincent van Gogh (<code>Q5582</code>) was born in Zundert
+(<code>Q9883</code>).</li>
+<li>Zundert (<code>Q9883</code>) is located in the Netherlands
+(<code>Q55</code>).</li>
+</ol><p>Notice that <code>Q5582</code> appears as both the object of the
+first triple and the subject of the second. This is how the graph
+connects: the same IRI in different positions links the triples
+together, creating a chain of related statements, exactly like the
+arrows in the mind map.</p>
+</section><section><h2 class="section-heading" id="not-everything-is-an-iri-blank-nodes-and-literals">Not Everything Is an IRI: Blank Nodes and Literals<a class="anchor" aria-label="anchor" href="#not-everything-is-an-iri-blank-nodes-and-literals"></a></h2>
+<hr class="half-width"><p>So far, every part of our triples has been identified by an IRI. In
+practice, two other types of values appear in RDF: <strong>blank
+nodes</strong> and <strong>literals</strong>.</p>
+<div class="section level3">
+<h3 id="blank-nodes">Blank Nodes<a class="anchor" aria-label="anchor" href="#blank-nodes"></a></h3>
+<p>A <strong>blank node</strong> is a resource without a globally unique
+identifier. It is used when an entity is relevant within the local
+dataset but does not need to be referenced from the outside world.</p>
+<p>Imagine a painting in a museum’s collection where the artist is
+unknown. We still want to record that there <em>was</em> a creator, we
+just cannot identify them. A blank node acts as an anonymous
+placeholder:</p>
+<pre><code>&lt;https://www.wikidata.org/wiki/Q26221215&gt; &lt;https://www.wikidata.org/wiki/Property:P170&gt; _:unknownArtist.</code></pre>
+<p>The prefix <code>_:</code> marks a blank node. The name after it
+(<code>unknownArtist</code>) is only meaningful within this file, it has
+no global significance and cannot be referenced from other datasets.
+Within the same dataset, however, the same blank node identifier can
+appear in multiple triples to make several statements about the same
+anonymous entity. For example, if we also know that this unknown artist
+was French, we can write:</p>
+<pre><code>&lt;https://www.wikidata.org/wiki/Q26221215&gt; &lt;https://www.wikidata.org/wiki/Property:P170&gt; _:unknownArtist.
+_:unknownArtist &lt;https://www.wikidata.org/wiki/Property:P27&gt; &lt;https://www.wikidata.org/wiki/Q142&gt;.</code></pre>
+<p>Both triples refer to the same unnamed person, connected by the
+shared blank node identifier.</p>
 </div>
 <div class="section level3">
-<h3 id="blank-nodes-and-literals-in-rdf">Blank Nodes and Literals in RDF<a class="anchor" aria-label="anchor" href="#blank-nodes-and-literals-in-rdf"></a></h3>
-<p>Different concepts in RDF:</p>
-<ul><li>IRI</li>
-<li>Literal</li>
-<li>Blanknode</li>
-</ul><p>In RDF, not every object needs a globally unique identifier (IRI).
-Sometimes, an entity exists that doesn’t need to be explicitly
-named—this is where <strong>Blank Nodes</strong> come in.</p>
-<p>A <strong>Blank Node</strong> represents an entity that exists in the
-data model but has no specific identifier. It is useful when:<br>
-- The entity doesn’t have a meaningful global ID.<br>
-- It is only relevant in a limited local context.</p>
-<p>For example, if a painting has an <strong>unknown artist</strong>, we
-might use a blank node to represent the missing information:</p>
-<pre><code>&lt;IRI for Unknown Painting&gt; &lt;IRI for "was painted by"&gt; _:b1.</code></pre>
-<p>Here, <code>_:b1</code> is a blank node acting as a placeholder for
-an unknown artist.</p>
-<p>Additionally, RDF supports <strong>Literals</strong>, which represent
-concrete values such as <strong>dates, numbers, or text</strong> instead
-of links to other entities.</p>
-<p>For example, adding the creation year of <em>Wheatfield with
-Cypresses</em>:</p>
-<pre><code>&lt;https://www.wikidata.org/wiki/Q26221215&gt; &lt;"was painted in"&gt; "1889"^^http://www.w3.org/2001/XMLSchema#integer.</code></pre>
-<p>This triple states that <em>Wheatfield with Cypresses</em> was
-painted in the year <strong>1889</strong>, with the data type explicitly
-set as an integer.</p>
-<div id="exercise-creating-rdf-triples" class="callout challenge">
+<h3 id="literals">Literals<a class="anchor" aria-label="anchor" href="#literals"></a></h3>
+<p>A <strong>literal</strong> is a concrete value: a piece of text, a
+number, or a date. Unlike IRIs, literals do not point to a resource,
+they express a value directly.</p>
+<p>For example, to record the creation year of <em>Wheatfield with
+Cypresses</em> or it’s title:</p>
+<pre><code>&lt;https://www.wikidata.org/wiki/Q26221215&gt; &lt;https://www.wikidata.org/wiki/Property:P571&gt; "1889"^^&lt;http://www.w3.org/2001/XMLSchema#gYear&gt;.
+&lt;https://www.wikidata.org/wiki/Q26221215&gt; &lt;https://www.wikidata.org/wiki/Property:P1476&gt; "Wheatfield with Cypresses".</code></pre>
+<p>The value <code>"1889"</code> is the literal. The part after
+<code>^^</code> is a <strong>datatype IRI</strong>.</p>
+<div id="entities-have-no-inherent-properties" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="entities-have-no-inherent-properties" class="callout-inner">
+<h3 class="callout-title">Entities have no inherent properties</h3>
+<div class="callout-content">
+<p>An entity in RDF is, at its core, nothing more than an IRI, a bare
+identifier. <code>https://www.wikidata.org/wiki/Q5582</code> does not
+“contain” the name <em>Vincent van Gogh</em>. It has no label, no birth
+year, no nationality built in. All of this information is added through
+triples, including the name itself:</p>
+<pre><code>&lt;https://www.wikidata.org/wiki/Q5582&gt; &lt;https://www.wikidata.org/wiki/Property:P1476&gt; "Vincent van Gogh"@en.</code></pre>
+<p>This is one of the central ideas of RDF: an entity is defined
+entirely by the statements made about it. The more triples you add, the
+richer the description becomes, but without any triples, an IRI is just
+an address pointing on an empty thing.</p>
+</div>
+</div>
+</div>
+<p>A computer, on its own, cannot know what <code>"1889"</code> means.
+Is it a year? A house number? A product code? The characters
+<code>1</code>, <code>8</code>, <code>8</code>, <code>9</code> are just
+a sequence of digits. The datatype IRI resolves this ambiguity: it tells
+the computer precisely how to interpret the value.
+<code>xsd:gYear</code> means “this is a calendar year”, which allows the
+computer to sort or compare it correctly. For instance, it now knows
+that 1889 comes before 1900, or that it falls within the 19th century.
+Without the datatype, the computer would treat <code>"1889"</code> as
+plain text and could not do any of that.</p>
+<p>The datatype IRIs come from a standardised vocabulary defining these.
+Common examples are <code>xsd:integer</code> for whole numbers,
+<code>xsd:date</code> for full dates like <code>"1853-03-30"</code>, and
+<code>xsd:string</code> for plain text.</p>
+<p>Plain text literals can omit the datatype.
+<code>"Wheatfield with Cypresses"</code> without any <code>^^</code> is
+valid and implicitly treated as plain text. They can also carry a
+<strong>language tag</strong> to specify which language they are written
+in:</p>
+<pre><code>&lt;https://www.wikidata.org/wiki/Q26221215&gt; &lt;https://www.wikidata.org/wiki/Property:P1476&gt; "Wheatfield with Cypresses"@en.</code></pre>
+<p>Here, no explicit <code>^^</code> datatype is needed. The language
+tag <code>@en</code> already tells the computer everything it needs to
+know about how to interpret the value: it is a piece of text in English.
+Language tag and datatype IRI cannot be combined on the same literal;
+they are two alternative ways of describing a value.</p>
+<div id="the-three-types-of-values-in-rdf" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="the-three-types-of-values-in-rdf" class="callout-inner">
+<h3 class="callout-title">The three types of values in RDF</h3>
+<div class="callout-content">
+<table class="table"><colgroup><col width="33%"><col width="33%"><col width="33%"></colgroup><thead><tr><th>Type</th>
+<th>When to use</th>
+<th>Syntax example</th>
+</tr></thead><tbody><tr><td><strong>IRI</strong></td>
+<td>The resource has a global, persistent identifier</td>
+<td><code>&lt;https://www.wikidata.org/wiki/Q5582&gt;</code></td>
+</tr><tr><td><strong>Blank node</strong></td>
+<td>The resource exists but has no global ID</td>
+<td><code>_:unknownArtist</code></td>
+</tr><tr><td><strong>Literal</strong></td>
+<td>The value is text, a number, or a date</td>
+<td><code>"1889"^^&lt;http://www.w3.org/2001/XMLSchema#gYear&gt;</code></td>
+</tr></tbody></table></div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="limitations-of-n-triples">Limitations of N-Triples<a class="anchor" aria-label="anchor" href="#limitations-of-n-triples"></a></h2>
+<hr class="half-width"><p>N-Triples is simple, strict, and easy to parse, but writing larger
+datasets in this format quickly becomes impractical. Every triple must
+repeat the full IRI of the subject, even when many consecutive triples
+describe the same resource. Consider these three statements about the
+same painting:</p>
+<pre><code>&lt;https://www.wikidata.org/wiki/Q26221215&gt; &lt;https://www.wikidata.org/wiki/Property:P170&gt; &lt;https://www.wikidata.org/wiki/Q5582&gt;.
+&lt;https://www.wikidata.org/wiki/Q26221215&gt; &lt;https://www.wikidata.org/wiki/Property:P571&gt; "1889"^^&lt;http://www.w3.org/2001/XMLSchema#gYear&gt;.
+&lt;https://www.wikidata.org/wiki/Q26221215&gt; &lt;https://www.wikidata.org/wiki/Property:P1476&gt; "Wheatfield with Cypresses"@en.</code></pre>
+<p>The IRI <code>https://www.wikidata.org/wiki/Q26221215</code> appears
+three times, once per triple. In a real dataset with hundreds or
+thousands of triples, this repetition makes files long, hard to read,
+and error-prone. How this problem is addressed in practice is the
+subject of the next chapter.</p>
+<div id="exercise-from-mind-map-to-n-triples" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="exercise-creating-rdf-triples" class="callout-inner">
-<h3 class="callout-title">Exercise: Creating RDF Triples</h3>
+<div id="exercise-from-mind-map-to-n-triples" class="callout-inner">
+<h3 class="callout-title">Exercise: From Mind Map to N-Triples</h3>
 <div class="callout-content">
-<p>Convert the following statements or your mindmap from the first task
-into RDF triples using the correct structure. Use wikidata for IRIs and
-properties:</p>
-<ol style="list-style-type: decimal"><li>Vincent van Gogh was born in Zundert.<br></li>
-<li>
-<em>Starry Night</em> was painted by Vincent van Gogh.<br></li>
-<li>The painting <em>The Potato Eaters</em> was created in 1885.</li>
-</ol></div>
+<p>In the first chapter, you created a mind map from one of the
+following two texts. Now take the connections you modelled there and
+express them as N-Triples. For each arrow in your mind map, write one
+triple. Use Wikidata for all IRIs. For any entity not listed in the
+table below, look it up yourself on <a href="https://www.wikidata.org" class="external-link">Wikidata</a>. Try to include at least
+one literal (a year or a date).</p>
+<hr><p><strong>Group 1</strong>: Vincent van Gogh was born in Zundert, the
+Netherlands, in 1853 and is a Post-Impressionist artist. In his youth,
+he developed a strong interest in art and initially studied in The
+Hague. He later moved to Paris, where he gained his first insights into
+modern art.</p>
+<hr><p><strong>Group 2</strong>: Van Gogh created numerous famous paintings.
+The masterpiece ‘Starry Night’ was created in Saint-Remy-de-Provence and
+belongs to the Post-Impressionist era. The painting can be found in the
+Museum of Modern Art in Manhattan.</p>
+<hr><table class="table"><thead><tr><th>Entity</th>
+<th>Wikidata ID</th>
+</tr></thead><tbody><tr><td>Vincent van Gogh</td>
+<td><code>Q5582</code></td>
+</tr><tr><td>Zundert</td>
+<td><code>Q9883</code></td>
+</tr><tr><td>Netherlands</td>
+<td><code>Q55</code></td>
+</tr><tr><td>Paris</td>
+<td><code>Q90</code></td>
+</tr><tr><td><em>Starry Night</em></td>
+<td><code>Q45585</code></td>
+</tr><tr><td>Museum of Modern Art</td>
+<td><code>Q188740</code></td>
+</tr></tbody></table><table class="table"><thead><tr><th>Property</th>
+<th>Wikidata ID</th>
+</tr></thead><tbody><tr><td>place of birth</td>
+<td><code>P19</code></td>
+</tr><tr><td>country</td>
+<td><code>P17</code></td>
+</tr><tr><td>creator</td>
+<td><code>P170</code></td>
+</tr><tr><td>located in</td>
+<td><code>P276</code></td>
+</tr><tr><td>inception</td>
+<td><code>P571</code></td>
+</tr><tr><td>date of birth</td>
+<td><code>P569</code></td>
+</tr></tbody></table></div>
 </div>
 </div>
 <div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
@@ -473,30 +689,38 @@ properties:</p>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<pre><code>&lt;https://www.wikidata.org/wiki/Q5582&gt;&lt;https://www.wikidata.org/wiki/Property:P19&gt;&lt;https://www.wikidata.org/wiki/Q9883&gt;
-
-&lt;https://www.wikidata.org/wiki/Q45585&gt;&lt;https://www.wikidata.org/wiki/Property:P170&gt;&lt;https://www.wikidata.org/wiki/Q5582&gt;
-
-&lt;https://www.wikidata.org/wiki/Q154469&gt;&lt;https://www.wikidata.org/wiki/Property:P571&gt;&lt;"1889"^^http://www.w3.org/2001/XMLSchema#integer&gt;</code></pre>
+<p>There is no single correct answer, your solution depends on which
+connections you modelled in your mind map. The following are examples of
+valid triples for each group.</p>
+<p><strong>Group 1</strong></p>
+<pre><code>&lt;https://www.wikidata.org/wiki/Q5582&gt; &lt;https://www.wikidata.org/wiki/Property:P19&gt; &lt;https://www.wikidata.org/wiki/Q9883&gt;.
+&lt;https://www.wikidata.org/wiki/Q9883&gt; &lt;https://www.wikidata.org/wiki/Property:P17&gt; &lt;https://www.wikidata.org/wiki/Q55&gt;.
+&lt;https://www.wikidata.org/wiki/Q5582&gt; &lt;https://www.wikidata.org/wiki/Property:P569&gt; "1853"^^&lt;http://www.w3.org/2001/XMLSchema#gYear&gt;.</code></pre>
+<p><strong>Group 2</strong></p>
+<pre><code>&lt;https://www.wikidata.org/wiki/Q45585&gt; &lt;https://www.wikidata.org/wiki/Property:P170&gt; &lt;https://www.wikidata.org/wiki/Q5582&gt;.
+&lt;https://www.wikidata.org/wiki/Q45585&gt; &lt;https://www.wikidata.org/wiki/Property:P276&gt; &lt;https://www.wikidata.org/wiki/Q188740&gt;.</code></pre>
 </div>
 </div>
 </div>
 </div>
-<div id="ressource-description-framework" class="callout keypoints">
+<div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <span class="callout-header">Key Points</span>
-<div id="ressource-description-framework" class="callout-inner">
-<h3 class="callout-title">Ressource Description Framework</h3>
+<div class="callout-inner">
 <div class="callout-content">
-<ul><li>Gives a standardised form to write subject-predicate-object modeled
-data</li>
-<li>Is used to connect data on a global scope</li>
-<li>One Format to write RDF is <em>n-triples</em>
-</li>
-<li>Terms are written in angle brackets</li>
-<li>Statements ending with a period</li>
+<ul><li>
+<strong>RDF</strong> is a W3C standard that gives a precise, shared
+format to the subject-predicate-object model.</li>
+<li>In RDF, every statement is a <strong>triple</strong>: subject,
+predicate, object.</li>
+<li>
+<strong>N-Triples</strong> is a notation for RDF: one triple per
+line, IRIs in angle brackets, statements ending with a period.</li>
+<li>The object of a triple can be an <strong>IRI</strong> (a resource),
+a <strong>blank node</strong> (an anonymous entity), or a
+<strong>literal</strong> (a concrete value like a date or string).</li>
 </ul></div>
 </div>
 </div>
@@ -504,11 +728,7 @@ data</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</div>
-
-
-
-      </div> <!-- / div.lesson-content -->
+</section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter Bottom"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/02_iris.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="../instructor/04_serialization.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
