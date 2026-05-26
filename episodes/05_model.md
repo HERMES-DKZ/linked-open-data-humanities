@@ -6,18 +6,24 @@ exercises: 2
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- What are Ontologies, Vocabularies and RDF Schema?
+- What is a vocabulary and what is it used for?
+- What is RDF Schema and what is it used for?
+- What are the concepts in RDFSchema?
+- How can you describe RDF resources with RDF Schema?
+- What is a ontology?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
 - Understand what a vocabulary is used for in linked open data.
-- Remember where to look for the concepts of the RDF schema vocabulary and their definitions.
+- Remember some concepts of RDF Schema 
+- Refer to the RDF Schema vocabulary file to look up concepts, terms and descriptions
+-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-
+## Vocabularies
 
 ## RDF Schema
 
@@ -48,6 +54,7 @@ Fill in the cloze or the gaps in the picture.
 :::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
 
+## Ontologies
 
 :::::: keypoints
  - keypoint 1
