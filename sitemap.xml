@@ -16,13 +16,25 @@
     <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/04_model.html</loc>
   </url>
   <url>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/04_serialization.html</loc>
+  </url>
+  <url>
     <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/05_creation.html</loc>
+  </url>
+  <url>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/05_model.html</loc>
+  </url>
+  <url>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/06_creation.html</loc>
   </url>
   <url>
     <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/06_sparql.html</loc>
   </url>
   <url>
     <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/07_publication.html</loc>
+  </url>
+  <url>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/08_sparql.html</loc>
   </url>
   <url>
     <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/404.html</loc>
@@ -67,13 +79,25 @@
     <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/04_model.html</loc>
   </url>
   <url>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/04_serialization.html</loc>
+  </url>
+  <url>
     <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/05_creation.html</loc>
+  </url>
+  <url>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/05_model.html</loc>
+  </url>
+  <url>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/06_creation.html</loc>
   </url>
   <url>
     <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/06_sparql.html</loc>
   </url>
   <url>
     <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/07_publication.html</loc>
+  </url>
+  <url>
+    <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/08_sparql.html</loc>
   </url>
   <url>
     <loc>https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/404.html</loc>

@@ -235,7 +235,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="04_model.html">4. Model Linked Data</a>
+        <a href="04_serialization.html">4. Serialization</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -244,7 +244,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="05_creation.html">5. Create Linked Data</a>
+        <a href="05_model.html">5. Model Linked Data</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -253,7 +253,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="06_sparql.html">6. Query Linked Data with SPARQL</a>
+        <a href="06_creation.html">6. Create Linked Data</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -263,6 +263,15 @@
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading8">
         <a href="07_publication.html">7. Publish your Linked Data</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush9">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading9">
+        <a href="08_sparql.html">8. Query Linked Data with SPARQL</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -417,18 +426,26 @@ using RDF?
 <span class="visually-hidden">Duration: </span>00h 46m
 </td>
 <td>
- 4. <a href="04_model.html">Model Linked Data</a>
+ 4. <a href="04_serialization.html">Serialization</a>
 </td>
 <td>
 What are IRIs, literals and a blanknodes and when to use them?<br>How
-to write down RDF?<br>What is Turtle?<br>What is a vocabulary and a
-namespace?<br>What is RDF Schema and what is it used for?
+to write down RDF?<br>What is Turtle?<br>What is a namespace?
 </td>
 </tr><tr><td>
 <span class="visually-hidden">Duration: </span>00h 58m
 </td>
 <td>
- 5. <a href="05_creation.html">Create Linked Data</a>
+ 5. <a href="05_model.html">Model Linked Data</a>
+</td>
+<td>
+What are Ontologies, Vocabularies and RDF Schema?
+</td>
+</tr><tr><td>
+<span class="visually-hidden">Duration: </span>01h 10m
+</td>
+<td>
+ 6. <a href="06_creation.html">Create Linked Data</a>
 </td>
 <td>
 What possibilities do I have to write RDF statements?<br>What is
@@ -436,15 +453,6 @@ OpenRefine useful for with the focus on Linked Open Data?<br>How to
 create a RDF dataset by using OpenRefine?<br>How do I reconcile my data
 by comparing it to authoritative datasets?<br>How to export and save
 the transfomed RDF data with OpenRefine?
-</td>
-</tr><tr><td>
-<span class="visually-hidden">Duration: </span>01h 40m
-</td>
-<td>
- 6. <a href="06_sparql.html">Query Linked Data with SPARQL</a>
-</td>
-<td>
-What is SPARQL?
 </td>
 </tr><tr><td>
 <span class="visually-hidden">Duration: </span>01h 52m
@@ -457,6 +465,15 @@ How do I publish my linked data?
 </td>
 </tr><tr><td>
 <span class="visually-hidden">Duration: </span>02h 04m
+</td>
+<td>
+ 8. <a href="08_sparql.html">Query Linked Data with SPARQL</a>
+</td>
+<td>
+What is SPARQL?
+</td>
+</tr><tr><td>
+<span class="visually-hidden">Duration: </span>02h 16m
 </td>
 <td>
 Finish
@@ -502,7 +519,7 @@ fundamental functionalities of OpenRefine.</p>
   Windows
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>Click this <a href="https://openrefine.org/post_download?version=3.9-beta1&amp;platform=linux" class="external-link">link</a>
 to download OpenRefine.</li>
@@ -532,7 +549,7 @@ called “extensions”. Unzip rdf-transform into that folder.</li>
   MacOS
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>Check that you have Firefox, Edge, Opera or Chrome browsers
 installed and set as your default browser. OpenRefine runs in your
@@ -572,7 +589,7 @@ your OpenRefine workspace.</li>
   Linux
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>Click this <a href="https://openrefine.org/post_download?version=3.9-beta1&amp;platform=linux" class="external-link">link</a>
 to download OpenRefine.</li>

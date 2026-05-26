@@ -272,7 +272,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="04_model.html">4. Model Linked Data</a>
+        <a href="04_serialization.html">4. Serialization</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -284,7 +284,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="05_creation.html">5. Create Linked Data</a>
+        <a href="05_model.html">5. Model Linked Data</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -296,7 +296,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="06_sparql.html">6. Query Linked Data with SPARQL</a>
+        <a href="06_creation.html">6. Create Linked Data</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -309,6 +309,18 @@
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading8">
         <a href="07_publication.html">7. Publish your Linked Data</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush9">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading9">
+        <a href="08_sparql.html">8. Query Linked Data with SPARQL</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -646,7 +658,7 @@ Museum of Modern Art in Manhattan.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>One way to visualize both texts in one graph is the following. If
 your solution looks different, this does not necessarily mean that it is
@@ -1085,11 +1097,11 @@ data</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</div></section><section id="aio-04_model"><p>Content from <a href="04_model.html">Model Linked Data</a></p>
+</div></section><section id="aio-04_serialization"><p>Content from <a href="04_serialization.html">Serialization</a></p>
 <hr>
-<p>Last updated on 2025-11-20 |
+<p>Last updated on 2026-05-26 |
 
-        <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/04_model.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/04_serialization.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -1104,8 +1116,7 @@ any links that you are not going to use.
 <li>What are IRIs, literals and a blanknodes and when to use them?</li>
 <li>How to write down RDF?</li>
 <li>What is Turtle?</li>
-<li>What is a vocabulary and a namespace?</li>
-<li>What is RDF Schema and what is it used for?</li>
+<li>What is a namespace?</li>
 </ul>
 </div>
 </div>
@@ -1119,6 +1130,53 @@ any links that you are not going to use.
 blanknodes?</li>
 <li>Know when to use IRIs, literals and blanknodes.</li>
 <li>Write down RDF in turtle format?</li>
+<li>Understand what a vocabulary is used for in linked open data.</li>
+<li>Remember where to look for the concepts of the RDF schema vocabulary
+and their definitions.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level1">
+<h1 id="serialization">Serialization<a class="anchor" aria-label="anchor" href="#serialization"></a>
+</h1>
+</div>
+<div class="section level1">
+<h1 id="namespaces">Namespaces<a class="anchor" aria-label="anchor" href="#namespaces"></a>
+</h1>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</div></section><section id="aio-05_model"><p>Content from <a href="05_model.html">Model Linked Data</a></p>
+<hr>
+<p>Last updated on 2026-05-26 |
+
+        <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/05_model.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>What are Ontologies, Vocabularies and RDF Schema?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Know when to use IRIs, literals and blanknodes.</li>
 <li>Understand what a vocabulary is used for in linked open data.</li>
 <li>Remember where to look for the concepts of the RDF schema vocabulary
 and their definitions.</li>
@@ -1247,11 +1305,11 @@ terms (concepts), meanings and rules.</p>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</section></section><section id="aio-05_creation"><p>Content from <a href="05_creation.html">Create Linked Data</a></p>
+</section></section><section id="aio-06_creation"><p>Content from <a href="06_creation.html">Create Linked Data</a></p>
 <hr>
-<p>Last updated on 2025-11-20 |
+<p>Last updated on 2026-05-26 |
 
-        <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/05_creation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/06_creation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -1321,39 +1379,7 @@ OpenRefine.</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</section></section><section id="aio-06_sparql"><p>Content from <a href="06_sparql.html">Query Linked Data with SPARQL</a></p>
-<hr>
-<p>Last updated on 2025-11-20 |
-
-        <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/06_sparql.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<div class="text-end">
-          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
-        </div>
-<div class="overview card">
-<h2 class="card-header">Overview</h2>
-<div class="row g-0">
-<div class="col-md-4">
-<div class="card-body">
-<div class="inner">
-<h3 class="card-title">Questions</h3>
-<ul>
-<li>What is SPARQL?</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-md-8">
-<div class="card-body">
-<div class="inner bordered">
-<h3 class="card-title">Objectives</h3>
-<ul>
-<li>Write a SPARQL-Query</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div></section><section id="aio-07_publication"><p>Content from <a href="07_publication.html">Publish your Linked Data</a></p>
+</section></section><section id="aio-07_publication"><p>Content from <a href="07_publication.html">Publish your Linked Data</a></p>
 <hr>
 <p>Last updated on 2025-11-20 |
 
@@ -1380,6 +1406,38 @@ any links that you are not going to use.
 <h3 class="card-title">Objectives</h3>
 <ul>
 <li>Publish linked data with github.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div></section><section id="aio-08_sparql"><p>Content from <a href="08_sparql.html">Query Linked Data with SPARQL</a></p>
+<hr>
+<p>Last updated on 2026-05-26 |
+
+        <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/08_sparql.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>What is SPARQL?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Write a SPARQL-Query</li>
 </ul>
 </div>
 </div>
