@@ -9,6 +9,7 @@ exercises: 2
 - What is RDF, and why is it used in Linked Open Data?
 - How does RDF structure information?
 - How can we represent real-world relationships using RDF?
+- Know when to use IRIs, literals and blanknodes.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -17,6 +18,8 @@ exercises: 2
 - Explain the purpose and structure of RDF.
 - Model basic relationships using RDF.
 - Explain limitations of n-triples.
+- Differentiate between the concepts of IRIs, literals and blanknodes?
+- Know when to use IRIs, literals and blanknodes.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -58,7 +61,14 @@ This simplicity makes N-Triples easy to parse and store, making it ideal for exc
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
+
 ### Blank Nodes and Literals in RDF  
+
+Different concepts in RDF:
+
+- IRI
+- Literal
+- Blanknode
 
 In RDF, not every object needs a globally unique identifier (IRI). Sometimes, an entity exists that doesn’t need to be explicitly named—this is where **Blank Nodes** come in.  
 
