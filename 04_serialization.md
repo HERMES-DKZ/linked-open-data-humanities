@@ -26,25 +26,50 @@ exercises: 2
 
 
 
-## Serialization formats
+## Serialization Formats
 
-Serialisation is the process of converting our drawn graphs into a text form, this is writing them down in a file. This allows the computer to understand and process them. We have already learnt about one **serialisation format**: n-triple. If we were to save it as a file on our computer, the file would end in `.nt`.
-Another serialisation format is Turtle (Terse RDF Triple Language), and these files end in `.ttt`
+So far, we have represented RDF as graphs. To store and exchange this information, the graph must be written down in a machine-readable text format. This process is called **serialization**.
 
-A serialisation format is the answer to the question of how to write things down in RDF so that the machine understands them. In short Turtle is an example for such a format.
+A serialization format defines how RDF triples are written in a text file so that computers can read and process them.
 
-Turtle example
+One serialization format we have already seen is **N-Triples**. Files written in this format usually use the file extension `.nt`.
+
+Another common serialization format is **Turtle** (Terse RDF Triple Language). Turtle is designed to be more compact and easier for humans to read and write than N-Triples. It reduces repetition. Turtle files usually use the file extension `.ttl`.
+
+Example in N-Triple:
+
+
+Example in Turtle:
+
+### Basic Turtle Rules
+
+1. Each triple ends with a period `.`
+2. A semicolon `;` continues the same subject
+3. A comma `,` continues the same subject and predicate
+
+
+
+### Other Serialization Formats
+
+Other common serialization formats are RDF/XML and JSON-LD. Although these formats look different, they all represent the same RDF graph.
+
+
+Example in JSON-LD and RDF/XML 
+
+```json
+
 ```
 
-##statements
+```xml
+
 ```
-Other common serialization formats:
+All RDF serialization formats are plain text formats and can be opened with any text editor.
 
-* RDF/XML
-* JSON-LD
-* N-Triples
+::: callout
 
+Each serialization formats has its own grammar ruleset, in the case of turtle you can find it here: https://www.w3.org/TR/turtle/
 
+::::
 
 
 ::::::::::::::::::::::::::::::::::::: challenge
@@ -67,34 +92,160 @@ Valid turtle.
 
 
 
-## Namespaces
+## Namespaces and Prefixes
 
-As described in the chapter ‘The Concept of IRIs’, namespaces are used to avoid ambiguity in resources. As they are frequently used in RDF files, this can be confusing for humans. It is therefore possible to assign a **prefix** – effectively an abbreviation – to a namespace once at the start of an RDF file using the line `@prefix ns: <fullnamespace>`. This abbreviation can then be used throughout the entire RDF file,  in which case the surrounding characters `<` and `>` of the resources are also no longer required. This abbreviation then applies only locally within that file.
+Namespaces help make RDF data unambiguous and interoperable. As introduced in the previous episode, IRIs uniquely identify resources such as people, places, or concepts.
 
-Example: 
-````
-<https://www.wikidata.org/wiki/Q5582><https://www.wikidata.org/wiki/Property:P19><https://www.wikidata.org/wiki/Q9883>
-````
+However, full IRIs can become very long and difficult to read when used repeatedly in an RDF file. To make RDF easier to write and understand, we can define a short abbreviation for a namespace. This abbreviation is called a **prefix**.
 
-````
-@prefix wd: <https://www.wikidata.org/wiki/>.
+Prefixes are declared at the beginning of a Turtle file using the `@prefix` keyword:
+
+```turtle
+@prefix wd: <https://www.wikidata.org/wiki/> .
+```
+
+For example, the following triple written with full IRIs:
+
+```turtle
+<https://www.wikidata.org/wiki/Q5582>
+    <https://www.wikidata.org/wiki/Property:P19>
+    <https://www.wikidata.org/wiki/Q9883> .
+```
+
+can be written more compactly using prefixes:
+
+```turtle
+@prefix wd: <https://www.wikidata.org/wiki/> .
 
 wd:Q5582 wd:Property:P19 wd:Q9883 .
 ```
+
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Find the mistakes in the following turtle file
+## Find the mistakes in the following Turtle file
 
-A few spelling mistakes have crept into the following turtle file. Take a look at the code example and try to spot the mistakes.
+The following Turtle file contains several syntax mistakes. Copy the code snippet into a text editor and try to identify and correct the errors.
 
 ```turtle
+1  @prefix wiki: <https://www.wikidata.org/wiki/> .
+3  @prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+5  # Vincent van Gogh
+6  wd:Q5582
+7      ex:is ex:Artist ,
+8      ex:hasName "Vincent van Gogh"^^xsd:string ;
+9      ex:wasBornIn ex:Zundert ;
+10     ex:wasBornInYear "1853"^^xsd:gYear ;
+11     ex:hasArtMovement ex:PostImpressionism
+12     ex:studiedIn ex:TheHague ;
+13     ex:movedTo ex:Paris .
+
+15 # Places
+16 ex:Zundert
+17     ex:isLocatedIn ex:Netherlands .
+
+19 ex:TheHague
+20     ex:isLocatedIn ex:Netherlands .
+
+22 ex:Paris
+23     ex:isLocatedIn ex:France ;
+
+25 ex:SaintRemyDeProvence
+26     ex:isLocatedIn ex:France .
+
+28 ex:Manhattan
+29     ex:isLocatedIn ex:USA .
+
+31 # Artwork
+32 wd:Q45585
+33     ex:is ex:Painting ;
+34     ex:hasName Starry Night^^xsd:string ;
+35     ex:wasCreatedBy wd:Q5582 ;
+36     ex:wasCreatedIn ex:SaintRemyDeProvence ;
+37     ex:belongsTo ex:PostImpressionism ;
+38     ex:isLocatedIn MuseumOfModernArt .
+
+40 # Museum
+41 ex:MuseumOfModernArt
+42     ex:is ex:Museum ;
+43     ex:isLocatedIn ex:Manhattan ;
+44     ex:hasName "Museum of Modern Art"^^xsd:string .
+
+46 # Art Movement
+47 ex:PostImpressionism
+48     ex:is ex:ArtMovement ;
+49     ex:hasName "Post-Impressionism"^^xsd:string
 
 ```
 :::::::::::::::: solution
 
+There are 9 mistakes in the Turtle file:
+- Missing prefix declaration: `@prefix ex: <http://example.org/> .`
+- Wrong prefix name `wiki:` should be `wd:` 
+- Missing `.` after the xsd: prefix declaration
+- Comma used instead of semicolon in line 7
+- Missing semicolon in line 11
+- Incorrect punctuation in line 23: ; should be .
+- Missing quatation marks around "Starry Night" in line 34
+- Missing prefix `ex:` in line 38
+- Missing final `.` in line 49
 
-```
-Valid turtle.
+You can validate the Turtle file using an online Turtle editor or validator, for example:
+(Turtle Web Editor)[https://felixlohmeier.github.io/turtle-web-editor/?utm_source=chatgpt.com]
+
+The corrected Turtle file looks like this:
+
+```turtle
+@prefix ex: <http://example.org/> .
+@prefix wd: <https://www.wikidata.org/wiki/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Vincent van Gogh
+wd:Q5582
+    ex:is ex:Artist ;
+    ex:hasName "Vincent van Gogh"^^xsd:string ;
+    ex:wasBornIn ex:Zundert ;
+    ex:wasBornInYear "1853"^^xsd:gYear ;
+    ex:hasArtMovement ex:PostImpressionism ;
+    ex:studiedIn ex:TheHague ;
+    ex:movedTo ex:Paris .
+
+# Places
+ex:Zundert
+    ex:isLocatedIn ex:Netherlands .
+
+ex:TheHague
+    ex:isLocatedIn ex:Netherlands .
+
+ex:Paris
+    ex:isLocatedIn ex:France .
+
+ex:SaintRemyDeProvence
+    ex:isLocatedIn ex:France .
+
+ex:Manhattan
+    ex:isLocatedIn ex:USA .
+
+# Artwork
+wd:Q45585
+    ex:is ex:Painting ;
+    ex:hasName "Starry Night"^^xsd:string ;
+    ex:wasCreatedBy wd:Q5582 ;
+    ex:wasCreatedIn ex:SaintRemyDeProvence ;
+    ex:belongsTo ex:PostImpressionism ;
+    ex:isLocatedIn ex:MuseumOfModernArt .
+
+# Museum
+ex:MuseumOfModernArt
+    ex:is ex:Museum ;
+    ex:isLocatedIn ex:Manhattan ;
+    ex:hasName "Museum of Modern Art"^^xsd:string .
+
+# Art Movement
+ex:PostImpressionism
+    ex:is ex:ArtMovement ;
+    ex:hasName "Post-Impressionism"^^xsd:string .
+
 ```
 
 :::::::::::::::::::::::::
@@ -103,16 +254,22 @@ Valid turtle.
 
 :::::::::::: callout
 
-You do not have to know all the serialization Formats, there are plenty of converter tools on the web, for example the [EASYRDF Converter](https://www.easyrdf.org/converter) or the [RDF Converter by Zazuko](https://converter.zazuko.com/).
+You do not need to memorize all RDF serialization formats. In practice, many tools can automatically convert between formats such as Turtle, RDF/XML, and JSON-LD.
+
+Some useful online converters are:
+- [EasyRDF Converter](https://www.easyrdf.org/converter)
+- [RDF Converter by Zazuko](https://converter.zazuko.com/)
+
+These tools are helpful for exploring different serialization formats and also validating RDF data.
 
 ::::::::::::
 
 :::::: keypoints
 
-- How can RDF graphs be wirtten down in files?
-- What are serialization formats?
-- What is Turtle?
-- What are namespaces and prefixes?
-- Why are namspaces and prefixes used?
+- RDF graphs can be written in different serialization formats.
+- Turtle is a compact and human-readable RDF serialization format.
+- Turtle uses `.`, `;`, and `,` to structure RDF triples.
+- Namespaces uniquely identify resources and properties.
+- Prefixes shorten long IRIs and improve readability.
 
 ::::::
