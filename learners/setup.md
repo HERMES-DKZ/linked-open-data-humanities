@@ -5,7 +5,7 @@ title: Setup
 
 ## Data Sets
 
-The Dataset we will use in this lesson is a subset from the Collection of the [Metropolitan Museum of Art](https://www.metmuseum.org/de). If you are interested in the whole data you can find and use it in their database [here](https://www.metmuseum.org/de/art/collection). The subset we are using can be downloaded [here]()
+The Dataset we will use in this lesson is a simplified subset from the Collection of the [Metropolitan Museum of Art](https://www.metmuseum.org/de). If you are interested in the whole data you can find it on [their website](https://www.metmuseum.org/de/hubs/open-access). The subset we are using can be downloaded [here](episodes/data/met-dataset-50.csv).
 
 ## Software Setup
 
@@ -13,7 +13,7 @@ The Dataset we will use in this lesson is a subset from the Collection of the [M
 
 ### Details
 
-The only software you need for doing this workshop is Open Refine with the extension rdf-transform. OpenRefine is actually a tool for data cleaning. However, with various extensions, the tool can be customised and extended to convert data into other formats just as easily. If you are interested in the other functionalities of Open Refine, we are developing a lesson to this aswell, where you learn more of the fundamental functionalities of OpenRefine. 
+The only software you need for doing this workshop is Open Refine with the extension `rdf-transform`. OpenRefine is actually a tool for data cleaning. However, with various extensions, the tool can be customised and extended to convert data into other formats just as easily. If you are interested in the other functionalities of Open Refine, tere are also lessons dedicated entirely to the topic of Open Refine.
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::
 
