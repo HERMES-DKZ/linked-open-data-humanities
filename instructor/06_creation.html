@@ -118,7 +118,7 @@
     <a id="search-button" class="btn btn-primary" href="../instructor/aio.html" role="button" aria-label="Search the All In One page">Search the All In One page</a>
   </div><!--/div.container-fluid -->
 </nav><aside class="col-md-12 lesson-progress"><div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 51%" aria-valuenow="51" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson Progress">51%</div>
+    <div class="progress-bar incubator" role="progressbar" style="width: 44%" aria-valuenow="44" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson Progress">44%</div>
   </div>
 </aside><div class="container">
       <div class="row">
@@ -254,7 +254,8 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#using-openrefine-to-transform-a-dataset-from-csv-to-rdf">Using OpenRefine to transform a dataset from CSV to RDF</a></li>
+        <ul><li><a href="#what-is-openrefine">What Is OpenRefine?</a></li>
+<li><a href="#planning-the-data-model">Planning the Data Model</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -264,7 +265,7 @@
 <div class="accordion accordion-flush" id="accordionFlush8">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading8">
-        <a href="07_publication.html">7. Publish your Linked Data</a>
+        <a href="07_reconciliation.html">7. Reconciliation</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -273,7 +274,16 @@
 <div class="accordion accordion-flush" id="accordionFlush9">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading9">
-        <a href="08_sparql.html">8. Query Linked Data with SPARQL</a>
+        <a href="08_publication.html">8. Publish your Linked Data</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush10">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading10">
+        <a href="09_sparql.html">9. Query Linked Data with SPARQL</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -322,7 +332,7 @@
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter Top"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/05_model.html" rel="prev"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/07_publication.html" rel="next">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/07_reconciliation.html" rel="next">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -330,20 +340,20 @@
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: Model Linked Data
         </a>
-        <a class="chapter-link float-end" href="../instructor/07_publication.html" rel="next">
-          Next: Publish your Linked...
+        <a class="chapter-link float-end" href="../instructor/07_reconciliation.html" rel="next">
+          Next: Reconciliation...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Create Linked Data</h1>
-        <p>Last updated on 2026-05-26 |
+        <p>Last updated on 2026-05-27 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/06_creation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
 
 
-        <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 42 minutes</p>
+        <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 52 minutes</p>
 
         <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -358,13 +368,9 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>What possibilities do I have to write RDF statements?</li>
-<li>What is OpenRefine useful for with the focus on Linked Open
-Data?</li>
-<li>How to create a RDF dataset by using OpenRefine?</li>
-<li>How do I reconcile my data by comparing it to authoritative
-datasets?</li>
-<li>How to export and save the transfomed RDF data with OpenRefine?</li>
+<ul><li>Why use a tool like OpenRefine instead of writing RDF manually?</li>
+<li>How can a CSV table be transformed into RDF?</li>
+<li>What is reconciliation?</li>
 </ul></div>
 </div>
 </div>
@@ -372,35 +378,90 @@ datasets?</li>
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>Create Linked data from a csv table.</li>
-<li>Getting to know the OpenRefine functionalities and the graphical
-user interface of OpenRefine.</li>
-<li>Applying the theory learnt about RDF, namspaces, RDFs to a data
-set.</li>
-<li>Understand how Reconciliation services are used to annotate
-data.</li>
-<li>Memorize how to export and save the transfomed RDF data with
-OpenRefine.</li>
+<ul><li>Load a CSV dataset into OpenRefine and navigate its interface.</li>
+<li>Explain how tabular data maps to RDF entities and properties.</li>
+<li>Define a root node for the Person entity and attach properties to
+it.</li>
+<li>Complete the remaining entities and connect them into a graph.</li>
+<li>Reconcile text values against Wikidata and ULAN to replace them with
+IRIs.</li>
 </ul></div>
 </div>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="using-openrefine-to-transform-a-dataset-from-csv-to-rdf">Using OpenRefine to transform a dataset from CSV to RDF<a class="anchor" aria-label="anchor" href="#using-openrefine-to-transform-a-dataset-from-csv-to-rdf"></a></h2>
-<hr class="half-width"><ul><li>Open OpenRefine</li>
-<li>Load Example Dataset</li>
-<li>Get to know the GUI</li>
-<li>Work with the RDF Transform extension</li>
-</ul><div id="keypoints1" class="callout keypoints">
+<p>So far, we have learnt how to model knowledge using the
+subject-predicate-object model, how to identify resources with IRIs, how
+to write RDF in N-Triples and Turtle, and how to use vocabularies to
+give our data shared meaning. In this chapter, we put all of that
+together.</p>
+<p>Writing RDF by hand works well for a handful of triples, but becomes
+impractical quickly. A dataset with hundreds or thousands of rows would
+require thousands of triples, each with full IRIs for subject,
+predicate, and object. This is where tools come in.</p>
+<section><h2 class="section-heading" id="what-is-openrefine">What Is OpenRefine?<a class="anchor" aria-label="anchor" href="#what-is-openrefine"></a></h2>
+<hr class="half-width"><p><strong>OpenRefine</strong> is a free, open-source tool for working
+with tabular data. It runs in the browser but operates locally on your
+computer, your data never leaves your machine. Originally developed to
+clean and transform messy datasets, OpenRefine has grown into a
+general-purpose tool for data exploration and enrichment. If you are
+interested, there is a Carpentries Lecture “<a href="https://hermes-dkz.github.io/OpenRefine-humanities/" class="external-link">OpenRefine
+for the Humanities</a>” you can go through to get a deeper insight of
+the tool.</p>
+<p>The feature we want to look at is the <strong>RDF-Transform</strong>
+extension, which adds the ability to map a spreadsheet to RDF. Instead
+of writing triples by hand, we define the mapping once: which columns
+become subjects, which become predicates, which become objects and
+OpenRefine applies it to every row automatically.</p>
+<p>Make sure OpenRefine is installed and the RDF-Transform extension is
+set up. You can find instructions in the setup page for this lesson.</p>
+<div class="section level3">
+<h3 id="getting-to-know-the-interface">Getting to Know the Interface<a class="anchor" aria-label="anchor" href="#getting-to-know-the-interface"></a></h3>
+<p>Open OpenRefine in your browser. You will see the <strong>start
+screen</strong>, which lets you create a new project by importing a
+file.</p>
+<p><strong>Loading the dataset:</strong></p>
+<ol style="list-style-type: decimal"><li>Click <em>Create Project</em> → <em>This Computer</em> and select
+the file <code>met-dataset-50.csv</code> and click <em>Next</em>.</li>
+<li>OpenRefine previews the data. Here you can configure more detailed
+import settings if necessary. In our case, however, everything should be
+set up correctly.</li>
+<li>Click <em>Create Project</em>.</li>
+</ol><p>You should now see the dataset as a table: 50 rows, one per museum
+object.</p>
+<figure><img src="../fig/open_refine_start.png" alt="OpenRefine project view with the Met dataset loaded" class="figure mx-auto d-block"><div class="figcaption">OpenRefine project view with the Met dataset
+loaded</div>
+</figure><p>The interface has a few key areas worth knowing:</p>
+<ul><li>
+<strong>Column headers</strong> each have a small dropdown arrow.
+Clicking it opens a menu with options to transform, filter, or rename
+that column.</li>
+<li>
+<strong>Facets and filters</strong> (left panel) allow you to
+explore and narrow down the data.</li>
+<li>
+<strong>Undo / Redo</strong> (top left) keeps a full history of all
+changes you make. You can step backwards at any point.</li>
+<li>
+<strong>RDF Transform</strong> button in the top menu bar opens the
+extension panel where we will define the entire mapping.</li>
+</ul></div>
+</section><section><h2 class="section-heading" id="planning-the-data-model">Planning the Data Model<a class="anchor" aria-label="anchor" href="#planning-the-data-model"></a></h2>
+<hr class="half-width"><p>Before configuring anything in OpenRefine, we need to decide what our
+RDF data should look like. A flat table is not flat data, it contains
+information about several different things at once. Each row in our
+dataset describes not just one object, but also other entities.</p>
+<div id="discussion-what-entities-or-classes-can-you-identify-in-the-dataset-that-we-could-model-in-rdf" class="callout discussion">
 <div class="callout-square">
-<i class="callout-icon" data-feather="key"></i>
+<i class="callout-icon" data-feather="message-circle"></i>
 </div>
-<span class="callout-header">Key Points</span>
-<div class="callout-inner">
+<span class="callout-header">Discussion</span>
+<div id="discussion-what-entities-or-classes-can-you-identify-in-the-dataset-that-we-could-model-in-rdf" class="callout-inner">
+<h3 class="callout-title">Discussion: What entities or classes can you
+identify in the dataset that we could model in RDF?</h3>
 <div class="callout-content">
-<ul><li>keypoint 1</li>
-<li>keypoint 2</li>
-</ul></div>
+
+</div>
 </div>
 </div>
 <!--
@@ -410,7 +471,7 @@ any links that you are not going to use.
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter Bottom"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/05_model.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/07_publication.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/07_reconciliation.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -418,8 +479,8 @@ any links that you are not going to use.
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: Model Linked Data
         </a>
-        <a class="chapter-link float-end" href="../instructor/07_publication.html" rel="next">
-          Next: Publish your Linked...
+        <a class="chapter-link float-end" href="../instructor/07_reconciliation.html" rel="next">
+          Next: Reconciliation...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -467,7 +528,7 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/06_creation.html",
   "identifier": "https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/06_creation.html",
   "dateCreated": "2025-02-04",
-  "dateModified": "2026-05-26",
+  "dateModified": "2026-05-27",
   "datePublished": "2026-05-27"
 }
 
