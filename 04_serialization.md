@@ -6,7 +6,7 @@ exercises: 2
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How can RDF graphs be wirtten down in files?
+- How can RDF graphs be written down in files?
 - What are serialization formats?
 - What is Turtle?
 - What are namespaces and prefixes?
@@ -59,11 +59,11 @@ Turtle:
     
 ```
 
-::: callout
+:::: callout
 
 Each RDF serialization format has its own syntax and grammar rules. You can find the official specifications for (Turtle)[https://www.w3.org/TR/turtle/] and for (N-Triple)[https://www.w3.org/TR/n-triples/]. But in practice, you do not need to memorize all syntax rules: RDF editors and validators can help you.
 
-::::
+:::::
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
