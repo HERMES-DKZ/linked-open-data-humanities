@@ -180,15 +180,16 @@ The following Turtle file contains several syntax mistakes. Copy the code snippe
 :::::::::::::::: solution
 
 There are 9 mistakes in the Turtle file:
-- Missing prefix declaration: `@prefix ex: <http://example.org/> .`
-- Wrong prefix name `wiki:` should be `wd:` 
-- Missing `.` after the xsd: prefix declaration
-- Comma used instead of semicolon in line 7
-- Missing semicolon in line 11
-- Incorrect punctuation in line 23: ; should be .
-- Missing quatation marks around "Starry Night" in line 34
-- Missing prefix `ex:` in line 38
-- Missing final `.` in line 49
+
+* Missing prefix declaration: `@prefix ex: <http://example.org/> .`
+* Wrong prefix name `wiki:` should be `wd:` 
+* Missing `.` after the xsd: prefix declaration
+* Comma used instead of semicolon in line 7
+* Missing semicolon in line 11
+* Incorrect punctuation in line 23: ; should be .
+* Missing quatation marks around "Starry Night" in line 34
+* Missing prefix `ex:` in line 38
+* Missing final `.` in line 49
 
 You can validate the Turtle file using an online Turtle editor or validator, for example:
 (Turtle Web Editor)[https://felixlohmeier.github.io/turtle-web-editor/?utm_source=chatgpt.com]
