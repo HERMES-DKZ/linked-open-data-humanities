@@ -32,14 +32,6 @@ So far, we have represented RDF as graphs. To store and exchange this informatio
 
 One serialization format we have already seen is **N-Triples**. Files written in this format usually use the file extension `.nt`. Another common serialization format is **Turtle** (Terse RDF Triple Language). Turtle is designed to be more compact and easier for humans to read and write than N-Triples. It reduces repetition by grouping multiple triples with the same subject (or same subject and predicate) and is easier to read by indentation. Turtle files use the file extension `.ttl`.
 
-Lets demonstate this on our example from the previous episode: `Vincent van Gogh created Starry Night and Wheatfield with Cypresses. He was born in Zundert.` These sentences in N-Triple:
-
-```
-<http://example.org/VincentVanGogh> <http://example.org/hasCreated> <http://example.org/StarryNight> .
-<http://example.org/VincentVanGogh> <http://example.org/hasCreated> <http://example.org/Wheatfield with Cypresses>.
-<http://example.org/VincentVanGogh> <http://example.org/wasBornIn> <http://example.org/Zundert> .
-```
-
 
 ### Basic Turtle Rules
 
@@ -47,64 +39,39 @@ Lets demonstate this on our example from the previous episode: `Vincent van Gogh
 2. A semicolon `;` continues the same subject (subject predicate object ; predicate object .)
 3. A comma `,` continues the same subject and predicate (subject predicate object , object .))
 
-Example in Turtle:
+N-Triple:
+
+```
+# Vincent van Gogh created Starry Night and Wheatfield with Cypresses. He was born in Zundert.
+<http://example.org/VincentVanGogh> <http://example.org/hasCreated> <http://example.org/StarryNight> .
+<http://example.org/VincentVanGogh> <http://example.org/hasCreated> <http://example.org/WheatfieldwithCypresses>.
+<http://example.org/VincentVanGogh> <http://example.org/wasBornIn> <http://example.org/Zundert> .
+```
+
+Turtle:
+
 ```turtle
+# Vincent van Gogh created Starry Night and Wheatfield with Cypresses. He was born in Zundert.
+
 <http://example.org/VincentVanGogh>
-    <http://example.org/hasCreated> <http://example.org/StarryNight>, <http://example.org/Wheatfield with Cypresses> ;
+    <http://example.org/hasCreated> <http://example.org/StarryNight>, <http://example.org/WheatfieldwithCypresses> ;
     <http://example.org/wasBornIn> <http://example.org/Zundert> .
     
 ```
 
-### Other Serialization Formats
-
-Other common serialization formats are RDF/XML and JSON-LD. Although these formats look different, they all represent the same RDF graph.
-
-
-Example in JSON-LD and RDF/XML 
-
-```json
-{
-  "@id": "http://example.org/VincentVanGogh",
-  "http://example.org/hasCreated": [
-    {
-      "@id": "http://example.org/StarryNight"
-    },
-    {
-      "@id": "http://example.org/Wheatfield with Cypresses"
-    }
-  ],
-  "http://example.org/wasBornIn": {
-    "@id": "http://example.org/Zundert"
-  }
-}
-```
-
-```xml
-<rdf:Description rdf:about="http://example.org/VincentVanGogh">
-
-  <hasCreated rdf:resource="http://example.org/StarryNight"/>
-
-  <hasCreated rdf:resource="http://example.org/Wheatfield with Cypresses"/>
-
-  <wasBornIn rdf:resource="http://example.org/Zundert"/>
-
-</rdf:Description>
-
-```
-All RDF serialization formats are plain text formats and can be opened with any text editor.
-
 ::: callout
 
-Each serialization formats has its own grammar ruleset, in the case of turtle you can find it here: https://www.w3.org/TR/turtle/
+Each RDF serialization format has its own syntax and grammar rules. You can find the official specifications for (Turtle)[https://www.w3.org/TR/turtle/] and for (N-Triple)[https://www.w3.org/TR/n-triples/]. But in practice, you do not need to memorize all syntax rules: RDF editors and validators can help you.
 
 ::::
 
-
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Write down the information in turtle
+## Write RDF statements in Turtle
 
-List some statements and ask the learners to transform them to valid turtle.
+Below you will find several RDF statements written either as natural language sentences or in N-Triples format. Rewrite them in Turtle syntax using a text editor.
+
+TODO
 
 :::::::::::::::: solution
 
@@ -117,6 +84,51 @@ Valid turtle.
 :::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
 
+### Other Serialization Formats
+
+Other common serialization formats are RDF/XML and JSON-LD. Although these formats look different, they all represent the same RDF graph.
+
+
+Example in JSON-LD and RDF/XML 
+
+```json
+// Vincent van Gogh created Starry Night and Wheatfield with Cypresses. He was born in Zundert.
+{
+  "@id": "http://example.org/VincentVanGogh",
+  "http://example.org/hasCreated": [
+    {
+      "@id": "http://example.org/StarryNight"
+    },
+    {
+      "@id": "http://example.org/WheatfieldwithCypresses"
+    }
+  ],
+  "http://example.org/wasBornIn": {
+    "@id": "http://example.org/Zundert"
+  }
+}
+```
+
+```xml
+ <!-- Vincent van Gogh created Starry Night and Wheatfield with Cypresses. He was born in Zundert. -->
+<rdf:Description rdf:about="http://example.org/VincentVanGogh">
+
+  <hasCreated rdf:resource="http://example.org/StarryNight"/>
+
+  <hasCreated rdf:resource="http://example.org/WheatfieldwithCypresses"/>
+
+  <wasBornIn rdf:resource="http://example.org/Zundert"/>
+
+</rdf:Description>
+
+```
+All RDF serialization formats are plain text formats and can be opened with any text editor.
+
+::: callout
+
+Each RDF serialization format has its own syntax and grammar rules. You can find the official specifications for (Turtle)[https://www.w3.org/TR/turtle/] and for (N-Triple)[https://www.w3.org/TR/n-triples/]. But in practice, you do not need to memorize all syntax rules: RDF editors and validators can help you.
+
+::::
 
 
 
