@@ -72,8 +72,9 @@ episodes:
 - 04_serialization.md
 - 05_model.md
 - 06_creation.md
-- 07_publication.md
-- 08_sparql.md
+- 07_reconciliation.md
+- 08_publication.md
+- 09_sparql.md
 
 # Information for Learners
 learners: 
