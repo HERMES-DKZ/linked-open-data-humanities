@@ -873,7 +873,7 @@ addresses this problem?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p><strong>Wikidata IRI</strong>:
 <code>https://www.wikidata.org/wiki/Q5582</code> Namespace:
@@ -1377,7 +1377,7 @@ Museum of Modern Art in Manhattan.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>There is no single correct answer, your solution depends on which
 connections you modelled in your mind map. The following are examples of
@@ -1422,7 +1422,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-04_serialization"><p>Content from <a href="04_serialization.html">Serialization</a></p>
 <hr>
-<p>Last updated on 2026-05-26 |
+<p>Last updated on 2026-05-27 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/04_serialization.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -1461,28 +1461,63 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="serialization-formats">Serialization formats<a class="anchor" aria-label="anchor" href="#serialization-formats"></a>
+<section><h2 class="section-heading" id="serialization-formats">Serialization Formats<a class="anchor" aria-label="anchor" href="#serialization-formats"></a>
 </h2>
 <hr class="half-width">
-<p>Serialisation is the process of converting our drawn graphs into a
-text form, this is writing them down in a file. This allows the computer
-to understand and process them. We have already learnt about one
-<strong>serialisation format</strong>: n-triple. If we were to save it
-as a file on our computer, the file would end in <code>.nt</code>.
-Another serialisation format is Turtle (Terse RDF Triple Language), and
-these files end in <code>.ttt</code></p>
-<p>A serialisation format is the answer to the question of how to write
-things down in RDF so that the machine understands them. In short Turtle
-is an example for such a format.</p>
-<p>Turtle example</p>
-<pre><code><span></span>
-<span><span class="co">##statements</span></span></code></pre>
-<p>Other common serialization formats:</p>
-<ul>
-<li>RDF/XML</li>
-<li>JSON-LD</li>
-<li>N-Triples</li>
-</ul>
+<p>So far, we have represented RDF as graphs. To store and exchange this
+information, the graph must be written down in a machine-readable text
+format. This process is called <strong>serialization</strong>.</p>
+<p>A serialization format defines how RDF triples are written in a text
+file so that computers can read and process them.</p>
+<p>One serialization format we have already seen is
+<strong>N-Triples</strong>. Files written in this format usually use the
+file extension <code>.nt</code>.</p>
+<p>Another common serialization format is <strong>Turtle</strong> (Terse
+RDF Triple Language). Turtle is designed to be more compact and easier
+for humans to read and write than N-Triples. It reduces repetition.
+Turtle files usually use the file extension <code>.ttl</code>.</p>
+<p>Example in N-Triple:</p>
+<p>Example in Turtle:</p>
+<div class="section level3">
+<h3 id="basic-turtle-rules">Basic Turtle Rules<a class="anchor" aria-label="anchor" href="#basic-turtle-rules"></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>Each triple ends with a period <code>.</code>
+</li>
+<li>A semicolon <code>;</code> continues the same subject</li>
+<li>A comma <code>,</code> continues the same subject and predicate</li>
+</ol>
+</div>
+<div class="section level3">
+<h3 id="other-serialization-formats">Other Serialization Formats<a class="anchor" aria-label="anchor" href="#other-serialization-formats"></a>
+</h3>
+<p>Other common serialization formats are RDF/XML and JSON-LD. Although
+these formats look different, they all represent the same RDF graph.</p>
+<p>Example in JSON-LD and RDF/XML</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode json" tabindex="0"><code class="sourceCode json"></code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">XML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode xml" tabindex="0"><code class="sourceCode xml"></code></pre>
+</div>
+<p>All RDF serialization formats are plain text formats and can be
+opened with any text editor.</p>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>Each serialization formats has its own grammar ruleset, in the case
+of turtle you can find it here: <a href="https://www.w3.org/TR/turtle/" class="external-link uri">https://www.w3.org/TR/turtle/</a></p>
+</div>
+</div>
+</div>
 <div id="write-down-the-information-in-turtle" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -1509,31 +1544,92 @@ Valid turtle.</code></pre>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="namespaces">Namespaces<a class="anchor" aria-label="anchor" href="#namespaces"></a>
+</div>
+</section><section><h2 class="section-heading" id="namespaces-and-prefixes">Namespaces and Prefixes<a class="anchor" aria-label="anchor" href="#namespaces-and-prefixes"></a>
 </h2>
 <hr class="half-width">
-<p>As described in the chapter ‘The Concept of IRIs’, namespaces are
-used to avoid ambiguity in resources. As they are frequently used in RDF
-files, this can be confusing for humans. It is therefore possible to
-assign a <strong>prefix</strong> – effectively an abbreviation – to a
-namespace once at the start of an RDF file using the line
-<code>@prefix ns: &lt;fullnamespace&gt;</code>. This abbreviation can
-then be used throughout the entire RDF file, in which case the
-surrounding characters <code>&lt;</code> and <code>&gt;</code> of the
-resources are also no longer required. This abbreviation then applies
-only locally within that file.</p>
-<p>Example:</p>
-<pre><code>&lt;https://www.wikidata.org/wiki/Q5582&gt;&lt;https://www.wikidata.org/wiki/Property:P19&gt;&lt;https://www.wikidata.org/wiki/Q9883&gt;</code></pre>
-<p>```` <span class="citation">@prefix</span> wd: <a href="https://www.wikidata.org/wiki/" class="external-link uri">https://www.wikidata.org/wiki/</a>.</p>
-<p>wd:Q5582 wd:Property:P19 wd:Q9883 .</p>
-<pre><code>::::::::::::::::::::::::::::::::::::: challenge
+<p>Namespaces help make RDF data unambiguous and interoperable. As
+introduced in the previous episode, IRIs uniquely identify resources
+such as people, places, or concepts.</p>
+<p>However, full IRIs can become very long and difficult to read when
+used repeatedly in an RDF file. To make RDF easier to write and
+understand, we can define a short abbreviation for a namespace. This
+abbreviation is called a <strong>prefix</strong>.</p>
+<p>Prefixes are declared at the beginning of a Turtle file using the
+<code>@prefix</code> keyword:</p>
+<pre class="turtle"><code>@prefix wd: &lt;https://www.wikidata.org/wiki/&gt; .</code></pre>
+<p>For example, the following triple written with full IRIs:</p>
+<pre class="turtle"><code>&lt;https://www.wikidata.org/wiki/Q5582&gt;
+    &lt;https://www.wikidata.org/wiki/Property:P19&gt;
+    &lt;https://www.wikidata.org/wiki/Q9883&gt; .</code></pre>
+<p>can be written more compactly using prefixes:</p>
+<pre class="turtle"><code>@prefix wd: &lt;https://www.wikidata.org/wiki/&gt; .
 
-## Find the mistakes in the following turtle file
+wd:Q5582 wd:Property:P19 wd:Q9883 .</code></pre>
+<div id="find-the-mistakes-in-the-following-turtle-file" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="find-the-mistakes-in-the-following-turtle-file" class="callout-inner">
+<h3 class="callout-title">Find the mistakes in the following Turtle
+file</h3>
+<div class="callout-content">
+<p>The following Turtle file contains several syntax mistakes. Copy the
+code snippet into a text editor and try to identify and correct the
+errors.</p>
+<pre class="turtle"><code>1  @prefix wiki: &lt;https://www.wikidata.org/wiki/&gt; .
+3  @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
 
-A few spelling mistakes have crept into the following turtle file. Take a look at the code example and try to spot the mistakes.
+5  # Vincent van Gogh
+6  wd:Q5582
+7      ex:is ex:Artist ,
+8      ex:hasName "Vincent van Gogh"^^xsd:string ;
+9      ex:wasBornIn ex:Zundert ;
+10     ex:wasBornInYear "1853"^^xsd:gYear ;
+11     ex:hasArtMovement ex:PostImpressionism
+12     ex:studiedIn ex:TheHague ;
+13     ex:movedTo ex:Paris .
 
-```turtle
+15 # Places
+16 ex:Zundert
+17     ex:isLocatedIn ex:Netherlands .
+
+19 ex:TheHague
+20     ex:isLocatedIn ex:Netherlands .
+
+22 ex:Paris
+23     ex:isLocatedIn ex:France ;
+
+25 ex:SaintRemyDeProvence
+26     ex:isLocatedIn ex:France .
+
+28 ex:Manhattan
+29     ex:isLocatedIn ex:USA .
+
+31 # Artwork
+32 wd:Q45585
+33     ex:is ex:Painting ;
+34     ex:hasName Starry Night^^xsd:string ;
+35     ex:wasCreatedBy wd:Q5582 ;
+36     ex:wasCreatedIn ex:SaintRemyDeProvence ;
+37     ex:belongsTo ex:PostImpressionism ;
+38     ex:isLocatedIn MuseumOfModernArt .
+
+40 # Museum
+41 ex:MuseumOfModernArt
+42     ex:is ex:Museum ;
+43     ex:isLocatedIn ex:Manhattan ;
+44     ex:hasName "Museum of Modern Art"^^xsd:string .
+
+46 # Art Movement
+47 ex:PostImpressionism
+48     ex:is ex:ArtMovement ;
+49     ex:hasName "Post-Impressionism"^^xsd:string
 </code></pre>
+</div>
+</div>
+</div>
 <div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
@@ -1541,21 +1637,84 @@ A few spelling mistakes have crept into the following turtle file. Take a look a
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
-<pre><code>Valid turtle.</code></pre>
+<p>There are 9 mistakes in the Turtle file: - Missing prefix
+declaration: <code>@prefix ex: &lt;http://example.org/&gt; .</code> -
+Wrong prefix name <code>wiki:</code> should be <code>wd:</code> -
+Missing <code>.</code> after the xsd: prefix declaration - Comma used
+instead of semicolon in line 7 - Missing semicolon in line 11 -
+Incorrect punctuation in line 23: ; should be . - Missing quatation
+marks around “Starry Night” in line 34 - Missing prefix <code>ex:</code>
+in line 38 - Missing final <code>.</code> in line 49</p>
+<p>You can validate the Turtle file using an online Turtle editor or
+validator, for example: (Turtle Web Editor)[<a href="https://felixlohmeier.github.io/turtle-web-editor/?utm_source=chatgpt.com" class="external-link uri">https://felixlohmeier.github.io/turtle-web-editor/?utm_source=chatgpt.com</a>]</p>
+<p>The corrected Turtle file looks like this:</p>
+<pre class="turtle"><code>@prefix ex: &lt;http://example.org/&gt; .
+@prefix wd: &lt;https://www.wikidata.org/wiki/&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+# Vincent van Gogh
+wd:Q5582
+    ex:is ex:Artist ;
+    ex:hasName "Vincent van Gogh"^^xsd:string ;
+    ex:wasBornIn ex:Zundert ;
+    ex:wasBornInYear "1853"^^xsd:gYear ;
+    ex:hasArtMovement ex:PostImpressionism ;
+    ex:studiedIn ex:TheHague ;
+    ex:movedTo ex:Paris .
+
+# Places
+ex:Zundert
+    ex:isLocatedIn ex:Netherlands .
+
+ex:TheHague
+    ex:isLocatedIn ex:Netherlands .
+
+ex:Paris
+    ex:isLocatedIn ex:France .
+
+ex:SaintRemyDeProvence
+    ex:isLocatedIn ex:France .
+
+ex:Manhattan
+    ex:isLocatedIn ex:USA .
+
+# Artwork
+wd:Q45585
+    ex:is ex:Painting ;
+    ex:hasName "Starry Night"^^xsd:string ;
+    ex:wasCreatedBy wd:Q5582 ;
+    ex:wasCreatedIn ex:SaintRemyDeProvence ;
+    ex:belongsTo ex:PostImpressionism ;
+    ex:isLocatedIn ex:MuseumOfModernArt .
+
+# Museum
+ex:MuseumOfModernArt
+    ex:is ex:Museum ;
+    ex:isLocatedIn ex:Manhattan ;
+    ex:hasName "Museum of Modern Art"^^xsd:string .
+
+# Art Movement
+ex:PostImpressionism
+    ex:is ex:ArtMovement ;
+    ex:hasName "Post-Impressionism"^^xsd:string .
+</code></pre>
 </div>
 </div>
 </div>
 </div>
-<p>:::::::::::::::::::::::::::::::::::::::::::::::</p>
-<div id="callout1" class="callout">
+<div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <span class="callout-header">Callout</span>
 <div class="callout-inner">
 <div class="callout-content">
-<p>You do not have to know all the serialization Formats, there are
-plenty of converter tools on the web, for example the <a href="https://www.easyrdf.org/converter" class="external-link">EASYRDF Converter</a> or the <a href="https://converter.zazuko.com/" class="external-link">RDF Converter by Zazuko</a>.</p>
+<p>You do not need to memorize all RDF serialization formats. In
+practice, many tools can automatically convert between formats such as
+Turtle, RDF/XML, and JSON-LD.</p>
+<p>Some useful online converters are: - <a href="https://www.easyrdf.org/converter" class="external-link">EasyRDF Converter</a> - <a href="https://converter.zazuko.com/" class="external-link">RDF Converter by Zazuko</a></p>
+<p>These tools are helpful for exploring different serialization formats
+and also validating RDF data.</p>
 </div>
 </div>
 </div>
@@ -1567,11 +1726,13 @@ plenty of converter tools on the web, for example the <a href="https://www.easyr
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>How can RDF graphs be wirtten down in files?</li>
-<li>What are serialization formats?</li>
-<li>What is Turtle?</li>
-<li>What are namespaces and prefixes?</li>
-<li>Why are namspaces and prefixes used?</li>
+<li>RDF graphs can be written in different serialization formats.</li>
+<li>Turtle is a compact and human-readable RDF serialization
+format.</li>
+<li>Turtle uses <code>.</code>, <code>;</code>, and <code>,</code> to
+structure RDF triples.</li>
+<li>Namespaces uniquely identify resources and properties.</li>
+<li>Prefixes shorten long IRIs and improve readability.</li>
 </ul>
 </div>
 </div>
