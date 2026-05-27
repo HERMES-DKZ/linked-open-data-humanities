@@ -359,7 +359,7 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>How can RDF graphs be wirtten down in files?</li>
+<ul><li>How can RDF graphs be written down in files?</li>
 <li>What are serialization formats?</li>
 <li>What is Turtle?</li>
 <li>What are namespaces and prefixes?</li>
@@ -394,12 +394,6 @@ to be more compact and easier for humans to read and write than
 N-Triples. It reduces repetition by grouping multiple triples with the
 same subject (or same subject and predicate) and is easier to read by
 indentation. Turtle files use the file extension <code>.ttl</code>.</p>
-<p>Lets demonstate this on our example from the previous episode:
-<code>Vincent van Gogh created Starry Night and Wheatfield with Cypresses. He was born in Zundert.</code>
-These sentences in N-Triple:</p>
-<pre><code>&lt;http://example.org/VincentVanGogh&gt; &lt;http://example.org/hasCreated&gt; &lt;http://example.org/StarryNight&gt; .
-&lt;http://example.org/VincentVanGogh&gt; &lt;http://example.org/hasCreated&gt; &lt;http://example.org/Wheatfield with Cypresses&gt;.
-&lt;http://example.org/VincentVanGogh&gt; &lt;http://example.org/wasBornIn&gt; &lt;http://example.org/Zundert&gt; .</code></pre>
 <div class="section level3">
 <h3 id="basic-turtle-rules">Basic Turtle Rules<a class="anchor" aria-label="anchor" href="#basic-turtle-rules"></a></h3>
 <ol style="list-style-type: decimal"><li>Each triple ends with a period <code>.</code> ( subject predicate
@@ -408,50 +402,18 @@ object .)</li>
 predicate object ; predicate object .)</li>
 <li>A comma <code>,</code> continues the same subject and predicate
 (subject predicate object , object .))</li>
-</ol><p>Example in Turtle:</p>
-<pre class="turtle"><code>&lt;http://example.org/VincentVanGogh&gt;
-    &lt;http://example.org/hasCreated&gt; &lt;http://example.org/StarryNight&gt;, &lt;http://example.org/Wheatfield with Cypresses&gt; ;
+</ol><p>N-Triple:</p>
+<pre><code># Vincent van Gogh created Starry Night and Wheatfield with Cypresses. He was born in Zundert.
+&lt;http://example.org/VincentVanGogh&gt; &lt;http://example.org/hasCreated&gt; &lt;http://example.org/StarryNight&gt; .
+&lt;http://example.org/VincentVanGogh&gt; &lt;http://example.org/hasCreated&gt; &lt;http://example.org/WheatfieldwithCypresses&gt;.
+&lt;http://example.org/VincentVanGogh&gt; &lt;http://example.org/wasBornIn&gt; &lt;http://example.org/Zundert&gt; .</code></pre>
+<p>Turtle:</p>
+<pre class="turtle"><code># Vincent van Gogh created Starry Night and Wheatfield with Cypresses. He was born in Zundert.
+
+&lt;http://example.org/VincentVanGogh&gt;
+    &lt;http://example.org/hasCreated&gt; &lt;http://example.org/StarryNight&gt;, &lt;http://example.org/WheatfieldwithCypresses&gt; ;
     &lt;http://example.org/wasBornIn&gt; &lt;http://example.org/Zundert&gt; .
     </code></pre>
-</div>
-<div class="section level3">
-<h3 id="other-serialization-formats">Other Serialization Formats<a class="anchor" aria-label="anchor" href="#other-serialization-formats"></a></h3>
-<p>Other common serialization formats are RDF/XML and JSON-LD. Although
-these formats look different, they all represent the same RDF graph.</p>
-<p>Example in JSON-LD and RDF/XML</p>
-<div class="codewrapper sourceCode" id="cb3">
-<h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="fu">{</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1" aria-label="code-block-3-2"></a>  <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://example.org/VincentVanGogh"</span><span class="fu">,</span></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1" aria-label="code-block-3-3"></a>  <span class="dt">"http://example.org/hasCreated"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1" aria-label="code-block-3-4"></a>    <span class="fu">{</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1" aria-label="code-block-3-5"></a>      <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://example.org/StarryNight"</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1" aria-label="code-block-3-6"></a>    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1" aria-label="code-block-3-7"></a>    <span class="fu">{</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1" aria-label="code-block-3-8"></a>      <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://example.org/Wheatfield with Cypresses"</span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1" aria-label="code-block-3-9"></a>    <span class="fu">}</span></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1" aria-label="code-block-3-10"></a>  <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1" aria-label="code-block-3-11"></a>  <span class="dt">"http://example.org/wasBornIn"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1" aria-label="code-block-3-12"></a>    <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://example.org/Zundert"</span></span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1" aria-label="code-block-3-13"></a>  <span class="fu">}</span></span>
-<span id="cb3-14"><a href="#cb3-14" tabindex="-1" aria-label="code-block-3-14"></a><span class="fu">}</span></span></code></pre>
-</div>
-<div class="codewrapper sourceCode" id="cb4">
-<h3 class="code-label">XML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode xml" tabindex="0"><code class="sourceCode xml"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a>&lt;<span class="kw">rdf:Description</span> <span class="ot">rdf:about=</span><span class="st">"http://example.org/VincentVanGogh"</span>&gt;</span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1" aria-label="code-block-4-2"></a></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1" aria-label="code-block-4-3"></a>  &lt;<span class="kw">hasCreated</span> <span class="ot">rdf:resource=</span><span class="st">"http://example.org/StarryNight"</span>/&gt;</span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1" aria-label="code-block-4-4"></a></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1" aria-label="code-block-4-5"></a>  &lt;<span class="kw">hasCreated</span> <span class="ot">rdf:resource=</span><span class="st">"http://example.org/Wheatfield with Cypresses"</span>/&gt;</span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1" aria-label="code-block-4-6"></a></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1" aria-label="code-block-4-7"></a>  &lt;<span class="kw">wasBornIn</span> <span class="ot">rdf:resource=</span><span class="st">"http://example.org/Zundert"</span>/&gt;</span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1" aria-label="code-block-4-8"></a></span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1" aria-label="code-block-4-9"></a>&lt;/<span class="kw">rdf:Description</span>&gt;</span></code></pre>
-</div>
-<p>All RDF serialization formats are plain text formats and can be
-opened with any text editor.</p>
 <div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -459,21 +421,25 @@ opened with any text editor.</p>
 <span class="callout-header">Callout</span>
 <div class="callout-inner">
 <div class="callout-content">
-<p>Each serialization formats has its own grammar ruleset, in the case
-of turtle you can find it here: <a href="https://www.w3.org/TR/turtle/" class="external-link uri">https://www.w3.org/TR/turtle/</a></p>
+<p>Each RDF serialization format has its own syntax and grammar rules.
+You can find the official specifications for (Turtle)[<a href="https://www.w3.org/TR/turtle/" class="external-link uri">https://www.w3.org/TR/turtle/</a>] and for (N-Triple)[<a href="https://www.w3.org/TR/n-triples/" class="external-link uri">https://www.w3.org/TR/n-triples/</a>]. But in practice, you
+do not need to memorize all syntax rules: RDF editors and validators can
+help you.</p>
 </div>
 </div>
 </div>
-<div id="write-down-the-information-in-turtle" class="callout challenge">
+<div id="write-rdf-statements-in-turtle" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="write-down-the-information-in-turtle" class="callout-inner">
-<h3 class="callout-title">Write down the information in turtle</h3>
+<div id="write-rdf-statements-in-turtle" class="callout-inner">
+<h3 class="callout-title">Write RDF statements in Turtle</h3>
 <div class="callout-content">
-<p>List some statements and ask the learners to transform them to valid
-turtle.</p>
+<p>Below you will find several RDF statements written either as natural
+language sentences or in N-Triples format. Rewrite them in Turtle syntax
+using a text editor.</p>
+<p>TODO</p>
 </div>
 </div>
 </div>
@@ -482,11 +448,66 @@ turtle.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <pre><code>TODO
 Valid turtle.</code></pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="other-serialization-formats">Other Serialization Formats<a class="anchor" aria-label="anchor" href="#other-serialization-formats"></a></h3>
+<p>Other common serialization formats are RDF/XML and JSON-LD. Although
+these formats look different, they all represent the same RDF graph.</p>
+<p>Example in JSON-LD and RDF/XML</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a><span class="er">//</span> <span class="er">Vincent</span> <span class="er">van</span> <span class="er">Gogh</span> <span class="er">created</span> <span class="er">Starry</span> <span class="er">Night</span> <span class="er">and</span> <span class="er">Wheatfield</span> <span class="er">with</span> <span class="er">Cypresses.</span> <span class="er">He</span> <span class="er">was</span> <span class="er">born</span> <span class="er">in</span> <span class="er">Zundert.</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1" aria-label="code-block-4-2"></a><span class="fu">{</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1" aria-label="code-block-4-3"></a>  <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://example.org/VincentVanGogh"</span><span class="fu">,</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1" aria-label="code-block-4-4"></a>  <span class="dt">"http://example.org/hasCreated"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1" aria-label="code-block-4-5"></a>    <span class="fu">{</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1" aria-label="code-block-4-6"></a>      <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://example.org/StarryNight"</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1" aria-label="code-block-4-7"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1" aria-label="code-block-4-8"></a>    <span class="fu">{</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1" aria-label="code-block-4-9"></a>      <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://example.org/WheatfieldwithCypresses"</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1" aria-label="code-block-4-10"></a>    <span class="fu">}</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1" aria-label="code-block-4-11"></a>  <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1" aria-label="code-block-4-12"></a>  <span class="dt">"http://example.org/wasBornIn"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1" aria-label="code-block-4-13"></a>    <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://example.org/Zundert"</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1" aria-label="code-block-4-14"></a>  <span class="fu">}</span></span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1" aria-label="code-block-4-15"></a><span class="fu">}</span></span></code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">XML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode xml" tabindex="0"><code class="sourceCode xml"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a> <span class="co">&lt;!-- Vincent van Gogh created Starry Night and Wheatfield with Cypresses. He was born in Zundert. --&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1" aria-label="code-block-5-2"></a>&lt;<span class="kw">rdf:Description</span> <span class="ot">rdf:about=</span><span class="st">"http://example.org/VincentVanGogh"</span>&gt;</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1" aria-label="code-block-5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1" aria-label="code-block-5-4"></a>  &lt;<span class="kw">hasCreated</span> <span class="ot">rdf:resource=</span><span class="st">"http://example.org/StarryNight"</span>/&gt;</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1" aria-label="code-block-5-5"></a></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1" aria-label="code-block-5-6"></a>  &lt;<span class="kw">hasCreated</span> <span class="ot">rdf:resource=</span><span class="st">"http://example.org/WheatfieldwithCypresses"</span>/&gt;</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1" aria-label="code-block-5-7"></a></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1" aria-label="code-block-5-8"></a>  &lt;<span class="kw">wasBornIn</span> <span class="ot">rdf:resource=</span><span class="st">"http://example.org/Zundert"</span>/&gt;</span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1" aria-label="code-block-5-9"></a></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1" aria-label="code-block-5-10"></a>&lt;/<span class="kw">rdf:Description</span>&gt;</span></code></pre>
+</div>
+<p>All RDF serialization formats are plain text formats and can be
+opened with any text editor.</p>
+<div id="callout2" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>Each RDF serialization format has its own syntax and grammar rules.
+You can find the official specifications for (Turtle)[<a href="https://www.w3.org/TR/turtle/" class="external-link uri">https://www.w3.org/TR/turtle/</a>] and for (N-Triple)[<a href="https://www.w3.org/TR/n-triples/" class="external-link uri">https://www.w3.org/TR/n-triples/</a>]. But in practice, you
+do not need to memorize all syntax rules: RDF editors and validators can
+help you.</p>
 </div>
 </div>
 </div>
@@ -580,7 +601,7 @@ errors.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>There are 9 mistakes in the Turtle file:</p>
 <ul><li>Missing prefix declaration:
@@ -652,7 +673,7 @@ ex:PostImpressionism
 </div>
 </div>
 </div>
-<div id="callout2" class="callout">
+<div id="callout3" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
