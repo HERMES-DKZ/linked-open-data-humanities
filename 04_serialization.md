@@ -28,26 +28,32 @@ exercises: 2
 
 ## Serialization Formats
 
-So far, we have represented RDF as graphs. To store and exchange this information, the graph must be written down in a machine-readable text format. This process is called **serialization**.
+So far, we have represented RDF as graphs. To store and exchange this information, the graph must be written down in a machine-readable text format. This process is called **serialization**. A serialization format defines how RDF triples are written in a text file so that computers can read and process them.
 
-A serialization format defines how RDF triples are written in a text file so that computers can read and process them.
+One serialization format we have already seen is **N-Triples**. Files written in this format usually use the file extension `.nt`. Another common serialization format is **Turtle** (Terse RDF Triple Language). Turtle is designed to be more compact and easier for humans to read and write than N-Triples. It reduces repetition by grouping multiple triples with the same subject (or same subject and predicate) and is easier to read by indentation. Turtle files use the file extension `.ttl`.
 
-One serialization format we have already seen is **N-Triples**. Files written in this format usually use the file extension `.nt`.
+Lets demonstate this on our example from the previous episode: `Vincent van Gogh created Starry Night and Wheatfield with Cypresses. He was born in Zundert.` These sentences in N-Triple:
 
-Another common serialization format is **Turtle** (Terse RDF Triple Language). Turtle is designed to be more compact and easier for humans to read and write than N-Triples. It reduces repetition. Turtle files usually use the file extension `.ttl`.
+```
+<http://example.org/VincentVanGogh> <http://example.org/hasCreated> <http://example.org/StarryNight> .
+<http://example.org/VincentVanGogh> <http://example.org/hasCreated> <http://example.org/Wheatfield with Cypresses>.
+<http://example.org/VincentVanGogh> <http://example.org/wasBornIn> <http://example.org/Zundert> .
+```
 
-Example in N-Triple:
-
-
-Example in Turtle:
 
 ### Basic Turtle Rules
 
-1. Each triple ends with a period `.`
-2. A semicolon `;` continues the same subject
-3. A comma `,` continues the same subject and predicate
+1. Each triple ends with a period `.` ( subject predicate object .)
+2. A semicolon `;` continues the same subject (subject predicate object ; predicate object .)
+3. A comma `,` continues the same subject and predicate (subject predicate object , object .))
 
-
+Example in Turtle:
+```turtle
+<http://example.org/VincentVanGogh>
+    <http://example.org/hasCreated> <http://example.org/StarryNight>, <http://example.org/Wheatfield with Cypresses> ;
+    <http://example.org/wasBornIn> <http://example.org/Zundert> .
+    
+```
 
 ### Other Serialization Formats
 
@@ -57,10 +63,32 @@ Other common serialization formats are RDF/XML and JSON-LD. Although these forma
 Example in JSON-LD and RDF/XML 
 
 ```json
-
+{
+  "@id": "http://example.org/VincentVanGogh",
+  "http://example.org/hasCreated": [
+    {
+      "@id": "http://example.org/StarryNight"
+    },
+    {
+      "@id": "http://example.org/Wheatfield with Cypresses"
+    }
+  ],
+  "http://example.org/wasBornIn": {
+    "@id": "http://example.org/Zundert"
+  }
+}
 ```
 
 ```xml
+<rdf:Description rdf:about="http://example.org/VincentVanGogh">
+
+  <hasCreated rdf:resource="http://example.org/StarryNight"/>
+
+  <hasCreated rdf:resource="http://example.org/Wheatfield with Cypresses"/>
+
+  <wasBornIn rdf:resource="http://example.org/Zundert"/>
+
+</rdf:Description>
 
 ```
 All RDF serialization formats are plain text formats and can be opened with any text editor.
@@ -98,7 +126,7 @@ Namespaces help make RDF data unambiguous and interoperable. As introduced in th
 
 However, full IRIs can become very long and difficult to read when used repeatedly in an RDF file. To make RDF easier to write and understand, we can define a short abbreviation for a namespace. This abbreviation is called a **prefix**.
 
-Prefixes are declared at the beginning of a Turtle file using the `@prefix` keyword:
+Namspaces and prefixes are declared at the beginning of a Turtle file using the `@prefix` keyword:
 
 ```turtle
 @prefix wd: <https://www.wikidata.org/wiki/> .
@@ -112,7 +140,7 @@ For example, the following triple written with full IRIs:
     <https://www.wikidata.org/wiki/Q9883> .
 ```
 
-can be written more compactly using prefixes:
+can be written more compactly using prefixes. In this case the enclosing characters '<' and '>' around the IRIs are omitted.
 
 ```turtle
 @prefix wd: <https://www.wikidata.org/wiki/> .
