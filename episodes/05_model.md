@@ -1,5 +1,5 @@
 ---
-title: "Model Linked Data"
+title: "Ontologies"
 teaching: 10
 exercises: 2
 ---
