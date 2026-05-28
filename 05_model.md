@@ -5,17 +5,23 @@ exercises: 2
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
-
-- What are Ontologies, Vocabularies and RDF Schema?
-- How to create an Entity in RDF with an Ontology?
-- How can I describe RDF resources?
+- What steps you need to take to create an RDF data model from tabular data?
+- What is the difference between a resource and a concept?
+- What is RDF Schema used for and what does it include?
+- What are vocabularies and ontologies used for?
+- How to find vocabularies and ontologies?
+- How to apply RDF Schema and vocabularies to create a RDF datamodel?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain what a vocabulary is used for in linked open data.
-- Create a Person Entity in RDF from our example Dataset
+- Identify entities and relationships in tabular data
+- Distinguish between resources, concepts, and literals
+- Explain the purpose of RDF Schema
+- Apply classes and properties to RDF data
+- Reuse existing vocabularies and ontologies
+- Create a simple RDF data model from tabular data
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -24,20 +30,45 @@ exercises: 2
 
 Before we can create a whole RDF dataset, we need to decide what our data should look like. A flat table is not flat data, it contains information about several different things at once. Each row in our dataset describes not just one object, but also other entities.
 
-:::::::::::::::::::::::::::::::::::::: discussion
+::::::::::::::::::::::::::::::::::::: challenge
 
-### Discussion: What entities or classes can you identify in the dataset that we could model in RDF?
+## Create a Mind Map out of the Dataset
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+Form groups and look at the column headings and pick a row of data in the table. 
+1. Try to convert the information of one data row into a mind-map (with nodes and connections) using the (Excalidraw)[https://excalidraw.com/] tool.
+2. Identify central nodes.
+3. How are the nodes interconnected with the table header?
+4. Name the relationships between the nodes by assigning labels to them.
 
-## Ontologies
 
-## Vocabularies
+:::::::::::::::: solution
+
+TODO: Add image of mindmap 
+
+Central nodes are the ones with the objectIDs, artist, department and museum. Modeling decisions are subjective.
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+## Resources and Concepts
+
+Difference between individual things and abstract concepts.
+(rdf:type)
+
+::::::::::::::::::::::::::::::::::::: challenge
+## Challenge
+
+:::::::::::::::: solution
+
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 ## RDF Schema
 
-RDF Schema is an extension of the basic RDF vocabulary, you already know from before.
-You can always go to the published (RDF Schema Vocabulary file)[https://www.w3.org/TR/rdf11-schema/] and look up the the terms (concepts), meanings and rules.
+RDF Schema is an extension of the basic RDF vocabulary, you already know from before. It provides a way to describe / define the structure of the RDF data, a **vocabulary on data-modelling**. 
+You can always go to the published (RDF Schema Vocabulary file)[https://www.w3.org/TR/rdf11-schema/] and look up the the terms, meanings and rules.
+
 
 * Classes
     * rdfs:Resource
@@ -47,14 +78,33 @@ You can always go to the published (RDF Schema Vocabulary file)[https://www.w3.o
     * rdfs:domain
     * rdfs:range
     * rdfs:subClassOf
-    * rdfs:subClassOf
     * rdfs:label
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Create a person entity
+## Challenge
 
-Create a ttl file for one person from our example data. Use classes
+
+
+:::::::::::::::: solution
+
+
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
+## Vocabularies and Ontologies
+
+Vocabularies provide shared meaning and terms across data models. They promote interoperability. 
+
+Frequent vocabularies, where to find them and how to read them.
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Extend the data model by the use of vacabularies
+
+
 
 :::::::::::::::: solution
 
@@ -65,6 +115,5 @@ Create a ttl file for one person from our example data. Use classes
 
 
 :::::: keypoints
- - keypoint 1
- - keypoint 2
+- keypoint1
 ::::::
