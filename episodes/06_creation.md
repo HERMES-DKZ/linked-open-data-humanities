@@ -60,12 +60,4 @@ The interface has a few key areas worth knowing:
 - **RDF Transform** button in the top menu bar opens the extension panel where we will define the entire mapping.
 
 
-## Planning the Data Model
 
-Before configuring anything in OpenRefine, we need to decide what our RDF data should look like. A flat table is not flat data, it contains information about several different things at once. Each row in our dataset describes not just one object, but also other entities.
-
-:::::::::::::::::::::::::::::::::::::: discussion
-
-### Discussion: What entities or classes can you identify in the dataset that we could model in RDF?
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
