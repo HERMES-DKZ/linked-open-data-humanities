@@ -86,7 +86,7 @@ The structure of the mapping follows the triple model you already know:
 
 At the bottom of the panel, the **Add Root Node** button lets you add a new entity type to the mapping. The **Import Template** and **Export Template** buttons allow you to save and reuse a mapping across projects. **Save** applies the current mapping to the project.
 
-![alt text](rdf-transform-preview-tab.png)
+![alt text](fig/rdf-transform-preview-tab.png)
 
 To get a first impression of what the data looks like as RDF, switch to the *Preview* tab. It shows the current mapping rendered as Turtle. At the top you will see the declared namespaces, followed by the generated triples. In the auto-generated mapping, each row's index becomes the subject, and each column header becomes a predicate with the corresponding cell value as a literal object.
 
