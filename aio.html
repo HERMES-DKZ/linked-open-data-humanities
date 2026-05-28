@@ -284,7 +284,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="05_model.html">5. Ontologies</a>
+        <a href="05_model.html">5. Model with Ontologies and Vocabularies</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -1384,7 +1384,7 @@ Museum of Modern Art in Manhattan.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>There is no single correct answer, your solution depends on which
 connections you modelled in your mind map. The following are examples of
@@ -1540,7 +1540,7 @@ using a text editor.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <pre><code>TODO
 Valid turtle.</code></pre>
@@ -1696,7 +1696,7 @@ errors.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>There are 9 mistakes in the Turtle file:</p>
 <ul>
@@ -1809,7 +1809,7 @@ structure RDF triples.</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</section></section><section id="aio-05_model"><p>Content from <a href="05_model.html">Ontologies</a></p>
+</section></section><section id="aio-05_model"><p>Content from <a href="05_model.html">Model with Ontologies and Vocabularies</a></p>
 <hr>
 <p>Last updated on 2026-05-28 |
 
@@ -1825,11 +1825,9 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>What is a vocabulary and what is it used for?</li>
-<li>What is RDF Schema and what is it used for?</li>
-<li>What are the concepts in RDFSchema?</li>
-<li>How can you describe RDF resources with RDF Schema?</li>
-<li>What is a ontology?</li>
+<li>What are Ontologies, Vocabularies and RDF Schema?</li>
+<li>How to create an Entity in RDF with an Ontology?</li>
+<li>How can I describe RDF resources?</li>
 </ul>
 </div>
 </div>
@@ -1839,19 +1837,37 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Understand what a vocabulary is used for in linked open data.</li>
-<li>Remember some concepts of RDF Schema</li>
-<li>Refer to the RDF Schema vocabulary file to look up concepts, terms
-and descriptions</li>
-<li>
-</li>
+<li>Explain what a vocabulary is used for in linked open data.</li>
+<li>Create a Person Entity in RDF from our example Dataset</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="vocabularies">Vocabularies<a class="anchor" aria-label="anchor" href="#vocabularies"></a>
+<section><h2 class="section-heading" id="planning-the-data-model">Planning the Data Model<a class="anchor" aria-label="anchor" href="#planning-the-data-model"></a>
+</h2>
+<hr class="half-width">
+<p>Before we can create a whole RDF dataset, we need to decide what our
+data should look like. A flat table is not flat data, it contains
+information about several different things at once. Each row in our
+dataset describes not just one object, but also other entities.</p>
+<div id="discussion-what-entities-or-classes-can-you-identify-in-the-dataset-that-we-could-model-in-rdf" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<span class="callout-header">Discussion</span>
+<div id="discussion-what-entities-or-classes-can-you-identify-in-the-dataset-that-we-could-model-in-rdf" class="callout-inner">
+<h3 class="callout-title">Discussion: What entities or classes can you
+identify in the dataset that we could model in RDF?</h3>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="ontologies">Ontologies<a class="anchor" aria-label="anchor" href="#ontologies"></a>
+</h2>
+<hr class="half-width"></section><section><h2 class="section-heading" id="vocabularies">Vocabularies<a class="anchor" aria-label="anchor" href="#vocabularies"></a>
 </h2>
 <hr class="half-width"></section><section><h2 class="section-heading" id="rdf-schema">RDF Schema<a class="anchor" aria-label="anchor" href="#rdf-schema"></a>
 </h2>
@@ -1878,15 +1894,16 @@ terms (concepts), meanings and rules.</p>
 </ul>
 </li>
 </ul>
-<div id="apply-rdf-schmea-to-our-artwork-example" class="callout challenge">
+<div id="create-a-person-entity" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="apply-rdf-schmea-to-our-artwork-example" class="callout-inner">
-<h3 class="callout-title">Apply RDF Schmea to our artwork example</h3>
+<div id="create-a-person-entity" class="callout-inner">
+<h3 class="callout-title">Create a person entity</h3>
 <div class="callout-content">
-<p>Fill in the cloze or the gaps in the picture.</p>
+<p>Create a ttl file for one person from our example data. Use
+classes</p>
 </div>
 </div>
 </div>
@@ -1895,16 +1912,13 @@ terms (concepts), meanings and rules.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 
 </div>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="ontologies">Ontologies<a class="anchor" aria-label="anchor" href="#ontologies"></a>
-</h2>
-<hr class="half-width">
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -2026,31 +2040,11 @@ changes you make. You can step backwards at any point.</li>
 <strong>RDF Transform</strong> button in the top menu bar opens the
 extension panel where we will define the entire mapping.</li>
 </ul>
-</div>
-</section><section><h2 class="section-heading" id="planning-the-data-model">Planning the Data Model<a class="anchor" aria-label="anchor" href="#planning-the-data-model"></a>
-</h2>
-<hr class="half-width">
-<p>Before configuring anything in OpenRefine, we need to decide what our
-RDF data should look like. A flat table is not flat data, it contains
-information about several different things at once. Each row in our
-dataset describes not just one object, but also other entities.</p>
-<div id="discussion-what-entities-or-classes-can-you-identify-in-the-dataset-that-we-could-model-in-rdf" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<span class="callout-header">Discussion</span>
-<div id="discussion-what-entities-or-classes-can-you-identify-in-the-dataset-that-we-could-model-in-rdf" class="callout-inner">
-<h3 class="callout-title">Discussion: What entities or classes can you
-identify in the dataset that we could model in RDF?</h3>
-<div class="callout-content">
-
-</div>
-</div>
-</div>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
 </section></section><section id="aio-07_reconciliation"><p>Content from <a href="07_reconciliation.html">Reconciliation</a></p>
 <hr>
 <p>Last updated on 2026-05-27 |
@@ -2117,7 +2111,7 @@ any links that you are not going to use.
 </div>
 </div></section><section id="aio-09_sparql"><p>Content from <a href="09_sparql.html">Query Linked Data with SPARQL</a></p>
 <hr>
-<p>Last updated on 2026-05-27 |
+<p>Last updated on 2026-05-28 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/09_sparql.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
