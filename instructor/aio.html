@@ -885,7 +885,7 @@ addresses this problem?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p><strong>Wikidata IRI</strong>:
 <code>https://www.wikidata.org/wiki/Q5582</code> Namespace:
@@ -1546,7 +1546,7 @@ using a text editor.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <pre><code>TODO
 Valid turtle.</code></pre>
@@ -1702,7 +1702,7 @@ errors.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>There are 9 mistakes in the Turtle file:</p>
 <ul>
@@ -1832,9 +1832,14 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>What are Ontologies, Vocabularies and RDF Schema?</li>
-<li>How to create an Entity in RDF with an Ontology?</li>
-<li>How can I describe RDF resources?</li>
+<li>What steps you need to take to create an RDF data model from tabular
+data?</li>
+<li>What is the difference between a resource and a concept?</li>
+<li>What is RDF Schema used for and what does it include?</li>
+<li>What are vocabularies and ontologies used for?</li>
+<li>How to find vocabularies and ontologies?</li>
+<li>How to apply RDF Schema and vocabularies to create a RDF
+datamodel?</li>
 </ul>
 </div>
 </div>
@@ -1844,8 +1849,12 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Explain what a vocabulary is used for in linked open data.</li>
-<li>Create a Person Entity in RDF from our example Dataset</li>
+<li>Identify entities and relationships in tabular data</li>
+<li>Distinguish between resources, concepts, and literals</li>
+<li>Explain the purpose of RDF Schema</li>
+<li>Apply classes and properties to RDF data</li>
+<li>Reuse existing vocabularies and ontologies</li>
+<li>Create a simple RDF data model from tabular data</li>
 </ul>
 </div>
 </div>
@@ -1859,30 +1868,74 @@ any links that you are not going to use.
 data should look like. A flat table is not flat data, it contains
 information about several different things at once. Each row in our
 dataset describes not just one object, but also other entities.</p>
-<div id="discussion-what-entities-or-classes-can-you-identify-in-the-dataset-that-we-could-model-in-rdf" class="callout discussion">
+<div id="create-a-mind-map-out-of-the-dataset" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
-<span class="callout-header">Discussion</span>
-<div id="discussion-what-entities-or-classes-can-you-identify-in-the-dataset-that-we-could-model-in-rdf" class="callout-inner">
-<h3 class="callout-title">Discussion: What entities or classes can you
-identify in the dataset that we could model in RDF?</h3>
+<span class="callout-header">Challenge</span>
+<div id="create-a-mind-map-out-of-the-dataset" class="callout-inner">
+<h3 class="callout-title">Create a Mind Map out of the Dataset</h3>
+<div class="callout-content">
+<p>Form groups and look at the column headings and pick a row of data in
+the table. 1. Try to convert the information of one data row into a
+mind-map (with nodes and connections) using the (Excalidraw)[<a href="https://excalidraw.com/" class="external-link uri">https://excalidraw.com/</a>]
+tool. 2. Identify central nodes. 3. How are the nodes interconnected
+with the table header? 4. Name the relationships between the nodes by
+assigning labels to them.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p>TODO: Add image of mindmap</p>
+<p>Central nodes are the ones with the objectIDs, artist, department and
+museum. Modeling decisions are subjective.</p>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="resources-and-concepts">Resources and Concepts<a class="anchor" aria-label="anchor" href="#resources-and-concepts"></a>
+</h2>
+<hr class="half-width">
+<p>Difference between individual things and abstract concepts.
+(rdf:type)</p>
+<div id="challenge" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge" class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
 
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="ontologies">Ontologies<a class="anchor" aria-label="anchor" href="#ontologies"></a>
-</h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="vocabularies">Vocabularies<a class="anchor" aria-label="anchor" href="#vocabularies"></a>
-</h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="rdf-schema">RDF Schema<a class="anchor" aria-label="anchor" href="#rdf-schema"></a>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="rdf-schema">RDF Schema<a class="anchor" aria-label="anchor" href="#rdf-schema"></a>
 </h2>
 <hr class="half-width">
 <p>RDF Schema is an extension of the basic RDF vocabulary, you already
-know from before. You can always go to the published (RDF Schema
-Vocabulary file)[<a href="https://www.w3.org/TR/rdf11-schema/" class="external-link uri">https://www.w3.org/TR/rdf11-schema/</a>] and look up the the
-terms (concepts), meanings and rules.</p>
+know from before. It provides a way to describe / define the structure
+of the RDF data, a <strong>vocabulary on data-modelling</strong>. You
+can always go to the published (RDF Schema Vocabulary file)[<a href="https://www.w3.org/TR/rdf11-schema/" class="external-link uri">https://www.w3.org/TR/rdf11-schema/</a>] and look up the the
+terms, meanings and rules.</p>
 <ul>
 <li>Classes
 <ul>
@@ -1896,30 +1949,59 @@ terms (concepts), meanings and rules.</p>
 <li>rdfs:domain</li>
 <li>rdfs:range</li>
 <li>rdfs:subClassOf</li>
-<li>rdfs:subClassOf</li>
 <li>rdfs:label</li>
 </ul>
 </li>
 </ul>
-<div id="create-a-person-entity" class="callout challenge">
+<div id="challenge-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="create-a-person-entity" class="callout-inner">
-<h3 class="callout-title">Create a person entity</h3>
+<div id="challenge-1" class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
-<p>Create a ttl file for one person from our example data. Use
-classes</p>
+
 </div>
 </div>
 </div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
+
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="vocabularies-and-ontologies">Vocabularies and Ontologies<a class="anchor" aria-label="anchor" href="#vocabularies-and-ontologies"></a>
+</h2>
+<hr class="half-width">
+<p>Vocabularies provide shared meaning and terms across data models.
+They promote interoperability.</p>
+<p>Frequent vocabularies, where to find them and how to read them.</p>
+<div id="extend-the-data-model-by-the-use-of-vacabularies" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="extend-the-data-model-by-the-use-of-vacabularies" class="callout-inner">
+<h3 class="callout-title">Extend the data model by the use of
+vacabularies</h3>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
+</button>
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 
 </div>
@@ -1934,8 +2016,7 @@ classes</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>keypoint 1</li>
-<li>keypoint 2</li>
+<li>keypoint1</li>
 </ul>
 </div>
 </div>
