@@ -1,5 +1,5 @@
 ---
-title: "Create Linked Data"
+title: "From Model to Data"
 teaching: 50
 exercises: 2
 ---
@@ -15,18 +15,18 @@ exercises: 2
 ::::::::::::::::::::::::::::::::::::: objectives
 
 - Load a CSV dataset into OpenRefine and navigate its interface.
-- Explain how tabular data maps to RDF entities and properties.
+- Implement the data model from the previous chapter using RDF-Transform.
 - Define a root node for the Person entity and attach properties to it.
-- Complete the remaining entities and connect them into a graph.
+- Complete the Object entity and connect it to the Person.
 - Reconcile text values against Wikidata and ULAN to replace them with IRIs.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 
-So far, we have learnt how to model knowledge using the subject-predicate-object model, how to identify resources with IRIs, how to write RDF in N-Triples and Turtle, and how to use vocabularies to give our data shared meaning. In this chapter, we put all of that together.
+In the previous chapter, we designed a data model for our Met dataset: we identified the entities, chose classes and properties from shared vocabularies, and planned how the columns of the table map to RDF triples. We know *what* we want to produce. Now we need a way to actually produce it.
 
-Writing RDF by hand works well for a handful of triples, but becomes impractical quickly. A dataset with hundreds or thousands of rows would require thousands of triples, each with full IRIs for subject, predicate, and object. This is where tools come in.
+Writing RDF by hand works well for a handful of triples, but becomes impractical quickly. A dataset with 50 rows and multiple properties per entity would require hundreds of triples, each written out in full. The tool we will use to automate this is **OpenRefine** with the **RDF-Transform** extension.
 
 
 ## What Is OpenRefine?
@@ -37,8 +37,6 @@ The feature we want to look at is the **RDF-Transform** extension, which adds th
 
 Make sure OpenRefine is installed and the RDF-Transform extension is set up. You can find instructions in the setup page for this lesson.
 
-
-### Getting to Know the Interface
 
 Open OpenRefine in your browser. You will see the **start screen**, which lets you create a new project by importing a file.
 
@@ -59,5 +57,37 @@ The interface has a few key areas worth knowing:
 - **Undo / Redo** (top left) keeps a full history of all changes you make. You can step backwards at any point.
 - **RDF Transform** button in the top menu bar opens the extension panel where we will define the entire mapping.
 
+
+## What is RDF-Transform
+
+RDF-Transform is an extension for OpenRefine that provides a visual interface for defining how tabular data becomes RDF. You describe the mapping once, which columns represent which entities, which properties they have, and how they connect and the extension generates the RDF output for every row automatically.
+
+To open it, click **RDF Transform** in the top menu bar of an open project, then select *Edit RDF Transform...*. This opens the mapping panel.
+
+![The RDF-Transform panel after opening a project for the first time](fig/rdf-transform-empty.png)
+
+The panel has two tabs:
+
+- **Transform**: where the mapping is configured. This is where you will spend most of your time.
+- **Preview**: shows a sample of the RDF output based on the current mapping, updated live as you make changes.
+
+At the top of the Transform tab you will find:
+
+- **Base IRI**: the default namespace used when constructing IRIs from column values. It can be changed to match your project.
+- **Available Namespaces**: the prefixes declared for use in the mapping. Several common ones (rdf, rdfs, owl, xsd, vcard, foaf) are pre-loaded. New namespaces can be added with the *+ Add* button and managed with *Manage*.
+
+The main area shows the **mapping structure**. When you first open RDF-Transform on a dataset, it automatically generates a starting point: it reads all column names and creates one property per column, using the column name as the predicate. This auto-generated mapping is a useful overview of what data is available, but it is not yet meaningful RDF, it uses made-up property names and treats everything as a literal. We will replace it with our own mapping.
+
+The structure of the mapping follows the triple model you already know:
+
+- On the left: a **root node** — this becomes the subject of the triples. The default root node uses the row index as the subject.
+- In the middle: **properties** — these become the predicates.
+- On the right: **objects** — literal values from columns, or links to other root nodes.
+
+At the bottom of the panel, the **Add Root Node** button lets you add a new entity type to the mapping. The **Import Template** and **Export Template** buttons allow you to save and reuse a mapping across projects. **Save** applies the current mapping to the project.
+
+![alt text](rdf-transform-preview-tab.png)
+
+To get a first impression of what the data looks like as RDF, switch to the *Preview* tab. It shows the current mapping rendered as Turtle. At the top you will see the declared namespaces, followed by the generated triples. In the auto-generated mapping, each row's index becomes the subject, and each column header becomes a predicate with the corresponding cell value as a literal object.
 
 
