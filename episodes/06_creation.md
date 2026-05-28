@@ -45,7 +45,7 @@ Open OpenRefine in your browser. You will see the **start screen**, which lets y
 **Loading the dataset:**
 
 1. Click *Create Project* → *This Computer* and select the file `met-dataset-50.csv` and click *Next*.
-2. OpenRefine previews the data. Here you can configure more detailed import settings if necessary. In our case, however, everything should be set up correctly.
+2. OpenRefine previews the data. Here you can configure more detailed import settings if necessary. In our case everything should be set up correctly.
 3. Click *Create Project*.
 
 You should now see the dataset as a table: 50 rows, one per museum object.
