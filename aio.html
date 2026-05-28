@@ -296,7 +296,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="06_creation.html">6. Create Linked Data</a>
+        <a href="06_creation.html">6. From Model to Data</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -670,7 +670,7 @@ Museum of Modern Art in Manhattan.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>One way to visualize both texts in one graph is the following. If
 your solution looks different, this does not necessarily mean that it is
@@ -881,7 +881,7 @@ addresses this problem?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p><strong>Wikidata IRI</strong>:
 <code>https://www.wikidata.org/wiki/Q5582</code> Namespace:
@@ -1384,7 +1384,7 @@ Museum of Modern Art in Manhattan.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>There is no single correct answer, your solution depends on which
 connections you modelled in your mind map. The following are examples of
@@ -2018,7 +2018,7 @@ vacabularies</h3>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</section></section><section id="aio-06_creation"><p>Content from <a href="06_creation.html">Create Linked Data</a></p>
+</section></section><section id="aio-06_creation"><p>Content from <a href="06_creation.html">From Model to Data</a></p>
 <hr>
 <p>Last updated on 2026-05-28 |
 
@@ -2047,10 +2047,11 @@ any links that you are not going to use.
 <h3 class="card-title">Objectives</h3>
 <ul>
 <li>Load a CSV dataset into OpenRefine and navigate its interface.</li>
-<li>Explain how tabular data maps to RDF entities and properties.</li>
+<li>Implement the data model from the previous chapter using
+RDF-Transform.</li>
 <li>Define a root node for the Person entity and attach properties to
 it.</li>
-<li>Complete the remaining entities and connect them into a graph.</li>
+<li>Complete the Object entity and connect it to the Person.</li>
 <li>Reconcile text values against Wikidata and ULAN to replace them with
 IRIs.</li>
 </ul>
@@ -2059,15 +2060,16 @@ IRIs.</li>
 </div>
 </div>
 </div>
-<p>So far, we have learnt how to model knowledge using the
-subject-predicate-object model, how to identify resources with IRIs, how
-to write RDF in N-Triples and Turtle, and how to use vocabularies to
-give our data shared meaning. In this chapter, we put all of that
-together.</p>
+<p>In the previous chapter, we designed a data model for our Met
+dataset: we identified the entities, chose classes and properties from
+shared vocabularies, and planned how the columns of the table map to RDF
+triples. We know <em>what</em> we want to produce. Now we need a way to
+actually produce it.</p>
 <p>Writing RDF by hand works well for a handful of triples, but becomes
-impractical quickly. A dataset with hundreds or thousands of rows would
-require thousands of triples, each with full IRIs for subject,
-predicate, and object. This is where tools come in.</p>
+impractical quickly. A dataset with 50 rows and multiple properties per
+entity would require hundreds of triples, each written out in full. The
+tool we will use to automate this is <strong>OpenRefine</strong> with
+the <strong>RDF-Transform</strong> extension.</p>
 <section><h2 class="section-heading" id="what-is-openrefine">What Is OpenRefine?<a class="anchor" aria-label="anchor" href="#what-is-openrefine"></a>
 </h2>
 <hr class="half-width">
@@ -2086,9 +2088,6 @@ become subjects, which become predicates, which become objects and
 OpenRefine applies it to every row automatically.</p>
 <p>Make sure OpenRefine is installed and the RDF-Transform extension is
 set up. You can find instructions in the setup page for this lesson.</p>
-<div class="section level3">
-<h3 id="getting-to-know-the-interface">Getting to Know the Interface<a class="anchor" aria-label="anchor" href="#getting-to-know-the-interface"></a>
-</h3>
 <p>Open OpenRefine in your browser. You will see the <strong>start
 screen</strong>, which lets you create a new project by importing a
 file.</p>
@@ -2120,12 +2119,74 @@ changes you make. You can step backwards at any point.</li>
 <li>
 <strong>RDF Transform</strong> button in the top menu bar opens the
 extension panel where we will define the entire mapping.</li>
+</ul></section><section><h2 class="section-heading" id="what-is-rdf-transform">What is RDF-Transform<a class="anchor" aria-label="anchor" href="#what-is-rdf-transform"></a>
+</h2>
+<hr class="half-width">
+<p>RDF-Transform is an extension for OpenRefine that provides a visual
+interface for defining how tabular data becomes RDF. You describe the
+mapping once, which columns represent which entities, which properties
+they have, and how they connect and the extension generates the RDF
+output for every row automatically.</p>
+<p>To open it, click <strong>RDF Transform</strong> in the top menu bar
+of an open project, then select <em>Edit RDF Transform…</em>. This opens
+the mapping panel.</p>
+<figure><img src="fig/rdf-transform-empty.png" alt="The RDF-Transform panel after opening a project for the first time" class="figure mx-auto d-block"><div class="figcaption">The RDF-Transform panel after opening a project
+for the first time</div>
+</figure><p>The panel has two tabs:</p>
+<ul>
+<li>
+<strong>Transform</strong>: where the mapping is configured. This is
+where you will spend most of your time.</li>
+<li>
+<strong>Preview</strong>: shows a sample of the RDF output based on
+the current mapping, updated live as you make changes.</li>
 </ul>
+<p>At the top of the Transform tab you will find:</p>
+<ul>
+<li>
+<strong>Base IRI</strong>: the default namespace used when
+constructing IRIs from column values. It can be changed to match your
+project.</li>
+<li>
+<strong>Available Namespaces</strong>: the prefixes declared for use
+in the mapping. Several common ones (rdf, rdfs, owl, xsd, vcard, foaf)
+are pre-loaded. New namespaces can be added with the <em>+ Add</em>
+button and managed with <em>Manage</em>.</li>
+</ul>
+<p>The main area shows the <strong>mapping structure</strong>. When you
+first open RDF-Transform on a dataset, it automatically generates a
+starting point: it reads all column names and creates one property per
+column, using the column name as the predicate. This auto-generated
+mapping is a useful overview of what data is available, but it is not
+yet meaningful RDF, it uses made-up property names and treats everything
+as a literal. We will replace it with our own mapping.</p>
+<p>The structure of the mapping follows the triple model you already
+know:</p>
+<ul>
+<li>On the left: a <strong>root node</strong> — this becomes the subject
+of the triples. The default root node uses the row index as the
+subject.</li>
+<li>In the middle: <strong>properties</strong> — these become the
+predicates.</li>
+<li>On the right: <strong>objects</strong> — literal values from
+columns, or links to other root nodes.</li>
+</ul>
+<p>At the bottom of the panel, the <strong>Add Root Node</strong> button
+lets you add a new entity type to the mapping. The <strong>Import
+Template</strong> and <strong>Export Template</strong> buttons allow you
+to save and reuse a mapping across projects. <strong>Save</strong>
+applies the current mapping to the project.</p>
+<figure><img src="rdf-transform-preview-tab.png" alt="alt text" class="figure mx-auto d-block"><div class="figcaption">alt text</div>
+</figure><p>To get a first impression of what the data looks like as RDF, switch
+to the <em>Preview</em> tab. It shows the current mapping rendered as
+Turtle. At the top you will see the declared namespaces, followed by the
+generated triples. In the auto-generated mapping, each row’s index
+becomes the subject, and each column header becomes a predicate with the
+corresponding cell value as a literal object.</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</div>
 </section></section><section id="aio-07_reconciliation"><p>Content from <a href="07_reconciliation.html">Reconciliation</a></p>
 <hr>
 <p>Last updated on 2026-05-27 |
