@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Untitled Document.md</title>
+  <style>
+  @import url("https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha2/katex.min.css");
+
+  body {
+    font-family: Georgia, Cambria, serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #373D49;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+  }
+  h1 { font-size: 2em; }
+  h2 { font-size: 1.5em; }
+  h3 { font-size: 1.25em; }
+  a { color: #35D7BB; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code {
+    font-family: "Ubuntu Mono", Monaco, monospace;
+    background: #F5F7FA;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+  }
+  pre {
+    background: #F5F7FA;
+    padding: 1em;
+    border-radius: 3px;
+    overflow-x: auto;
+  }
+  .hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0;
+    color: #333;
+  }
+  pre code { background: none; padding: 0; }
+  blockquote {
+    border-left: 3px solid #A0AABF;
+    padding-left: 1em;
+    margin-left: 0;
+    font-style: italic;
+    color: #666;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    border: 1px solid #E8E8E8;
+    padding: 0.5em;
+    text-align: left;
+  }
+  th {
+    background: #F5F7FA;
+    font-weight: 600;
+  }
+  #preview .table {
+    width: auto;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  .katex-display {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+</style>
+</head>
+<body id="preview">
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>objectID</th>
+<th>museum</th>
+<th>department</th>
+<th>departmentID</th>
+<th>accessionYear</th>
+<th>objectName</th>
+<th>title</th>
+<th>artistRole</th>
+<th>artistDisplayBio</th>
+<th>artist</th>
+<th>objectDate</th>
+<th>city</th>
+<th>country</th>
+<th>classification</th>
+<th>linkResource</th>
+<th>tags</th>
+<th>tag1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>693151</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1978</td>
+<td>Print</td>
+<td>The Dismissed Servant</td>
+<td>Publisher</td>
+<td>French, Paris ca. 1686–1762 Grand Vaux</td>
+<td>Surugue, Louis</td>
+<td>ca. 1749</td>
+<td>Berlin</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/693151">http://www.metmuseum.org/art/collection/search/693151</a></td>
+<td>Women|Servants</td>
+<td>woman</td>
+</tr>
+<tr>
+<td>708926</td>
+<td>Metropolitan Museum of Art</td>
+<td>Arts of Africa, Oceania, and the Americas</td>
+<td>2</td>
+<td>2015</td>
+<td>Photograph</td>
+<td>Woman outdoors – Ewe kente skirt, headtie and blouse</td>
+<td>Photographer</td>
+<td>Togolese, Kedzi 1880–1975 Lomé</td>
+<td>Acolatse, Alex Agbaglo</td>
+<td>1975</td>
+<td>Lomé</td>
+<td>Togo</td>
+<td>Photographs</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/708926">http://www.metmuseum.org/art/collection/search/708926</a></td>
+<td>Portraits|Women</td>
+<td>Portraits</td>
+</tr>
+<tr>
+<td>377561</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1985</td>
+<td>Print</td>
+<td>Advertising Card for a Wall-mounted Candleholder and Shade: No. 46 Daniel Boone</td>
+<td>Publisher</td>
+<td>American, Brooklyn, New York 1853–1936 Buffalo, New York</td>
+<td>Rohlfs, Charles</td>
+<td>1907</td>
+<td>Buffalo</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/377561">http://www.metmuseum.org/art/collection/search/377561</a></td>
+<td>Lighting|Advertisements</td>
+<td>lighting</td>
+</tr>
+<tr>
+<td>646598</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1958</td>
+<td>Print</td>
+<td>The last meal of Mary, Queen of Scots</td>
+<td>Sitter</td>
+<td>British, Linlithgow 1542–1587 Fotheringhay</td>
+<td>Mary Queen of Scots</td>
+<td>ca. 1840</td>
+<td>Paris</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/646598">http://www.metmuseum.org/art/collection/search/646598</a></td>
+<td>Food|Men|Women|Dining|Mary Queen of Scots</td>
+<td>food</td>
+</tr>
+<tr>
+<td>344795</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1951</td>
+<td>Book</td>
+<td>Holiday Suggestions—Special, Nov. 20th to Dec. 22nd, 1917 [trade catalogue]</td>
+<td>Author</td>
+<td>American, New York, 1865–1990</td>
+<td>B. Altman &amp; Co.</td>
+<td>November 20–December 22, 1917</td>
+<td>New York</td>
+<td></td>
+<td>Books</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/344795">http://www.metmuseum.org/art/collection/search/344795</a></td>
+<td>Girls|Department Stores|Women</td>
+<td>Girls</td>
+</tr>
+<tr>
+<td>22378</td>
+<td>Metropolitan Museum of Art</td>
+<td>Arms and Armor</td>
+<td>1</td>
+<td>1914</td>
+<td>Wheellock rifle</td>
+<td>Wheellock Rifle</td>
+<td>Steel-chiseler</td>
+<td>German, Munich, recorded 1602–32</td>
+<td>Sadeler, Daniel</td>
+<td>ca. 1610–30</td>
+<td>Munich</td>
+<td></td>
+<td>Firearms-Guns-Wheellock</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/22378">http://www.metmuseum.org/art/collection/search/22378</a></td>
+<td>Dogs|Men|Hunting|Deer</td>
+<td>dog</td>
+</tr>
+<tr>
+<td>377555</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1985</td>
+<td>Print</td>
+<td>Advertising Card for a Call Bell: No. 37</td>
+<td>Publisher</td>
+<td>American, Brooklyn, New York 1853–1936 Buffalo, New York</td>
+<td>Rohlfs, Charles</td>
+<td>1907</td>
+<td>Buffalo</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/377555">http://www.metmuseum.org/art/collection/search/377555</a></td>
+<td>Candlesticks|Advertisements|Bells</td>
+<td>Candlesticks</td>
+</tr>
+<tr>
+<td>427181</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1959</td>
+<td>Print</td>
+<td>Francesco I d’Este Sets Out for the Seige of Cremona, Crosses the Trench Between Himself and the Spanish, and Takes the City with Great Force, from L’Idea di un Principe ed Eroe Cristiano in Francesco I d’Este, di Modena e Reggio Duca VIII […]</td>
+<td>Artist</td>
+<td></td>
+<td>Fenice (Fénis)</td>
+<td>1659</td>
+<td>Modena</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/427181">http://www.metmuseum.org/art/collection/search/427181</a></td>
+<td>Horses|Battles|Army</td>
+<td>horse</td>
+</tr>
+<tr>
+<td>645013</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1958</td>
+<td>Print</td>
+<td>Mary, Queen of Scots, on the eve previous to her execution (from “The History of England,” volume III, chapter XLII)</td>
+<td>Sitter</td>
+<td>British, Linlithgow 1542–1587 Fotheringhay</td>
+<td>Mary Queen of Scots</td>
+<td>1828</td>
+<td>Philadelphia</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/645013">http://www.metmuseum.org/art/collection/search/645013</a></td>
+<td>Queens|Women|Mary Queen of Scots</td>
+<td>Queens</td>
+</tr>
+<tr>
+<td>788990</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1917</td>
+<td>Print</td>
+<td>Plate 16, from “World in Miniature”</td>
+<td>Publisher</td>
+<td>British, active 1794–1829</td>
+<td>Ackermann, Rudolph</td>
+<td>1816</td>
+<td>London</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/788990">http://www.metmuseum.org/art/collection/search/788990</a></td>
+<td>Barns|Men|Women|Dogs|Carts</td>
+<td>Barns</td>
+</tr>
+<tr>
+<td>371852</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1949</td>
+<td>Print</td>
+<td>Head of Satyr and Three Figures, from “Ex Antiquis Cameorum et Gemmae Delineata/ Liber Secundus/et ab Enea Vico Parmen Incis”</td>
+<td>Dedicatee</td>
+<td>Terni 1559 or 1587–1652 Rome</td>
+<td>Angeloni, Francesco</td>
+<td>published ca. 1599–1622</td>
+<td>Rome</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/371852">http://www.metmuseum.org/art/collection/search/371852</a></td>
+<td>Male Nudes|Women|Satyrs</td>
+<td>Male Nudes</td>
+</tr>
+<tr>
+<td>412555</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1968</td>
+<td>Portfolio</td>
+<td>Plate 8 from Sonia Delaunay: ses peintures, ses objets, ses tissus simultanés, ses modes</td>
+<td>Artist</td>
+<td>French (born Ukraine), Gradizhsk 1885–1979 Paris</td>
+<td>Delaunay, Sonia</td>
+<td>[1925]</td>
+<td>Paris</td>
+<td></td>
+<td>Portfolios</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/412555">http://www.metmuseum.org/art/collection/search/412555</a></td>
+<td>Fashion|Women|Dresses</td>
+<td>fashion</td>
+</tr>
+<tr>
+<td>346869</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1959</td>
+<td>Book</td>
+<td>Reims: la cathédrale</td>
+<td>Author</td>
+<td>French, 1882-1953</td>
+<td>Burnand, Robert</td>
+<td>1918</td>
+<td>Paris</td>
+<td></td>
+<td>Books</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/346869">http://www.metmuseum.org/art/collection/search/346869</a></td>
+<td>Swords|Men|Horses|Trees</td>
+<td>sword</td>
+</tr>
+<tr>
+<td>468319</td>
+<td>Metropolitan Museum of Art</td>
+<td>Medieval Art</td>
+<td>5</td>
+<td>1949</td>
+<td>Triptych panel</td>
+<td>Triptych Panel with Saint Catherine</td>
+<td>Artist</td>
+<td>ca. 1490–ca. 1515</td>
+<td>Master of the Louis XII Triptych</td>
+<td>15th–16th century</td>
+<td>Limoges</td>
+<td>France</td>
+<td>Enamels-Painted</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/468319">http://www.metmuseum.org/art/collection/search/468319</a></td>
+<td>Swords|Men</td>
+<td>sword</td>
+</tr>
+<tr>
+<td>788996</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1917</td>
+<td>Print</td>
+<td>Plate 22, from “World in Miniature”</td>
+<td>Artist</td>
+<td>British, London 1757–1827 London</td>
+<td>Rowlandson, Thomas</td>
+<td>1816</td>
+<td>London</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/788996">http://www.metmuseum.org/art/collection/search/788996</a></td>
+<td>Castles|Men|Women|Horses|Carriages</td>
+<td>Castles</td>
+</tr>
+<tr>
+<td>430642</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1963</td>
+<td>Print</td>
+<td>The First Four Trombones, from The Apocalypse</td>
+<td>Artist</td>
+<td>German, Augsburg 1473–1531 Augsburg</td>
+<td>Burgkmair, Hans, the elder</td>
+<td>1523–24</td>
+<td>Augsburg</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/430642">http://www.metmuseum.org/art/collection/search/430642</a></td>
+<td>Trombones|Apocalypse</td>
+<td>trombone</td>
+</tr>
+<tr>
+<td>311552</td>
+<td>Metropolitan Museum of Art</td>
+<td>Arts of Africa, Oceania, and the Americas</td>
+<td>2</td>
+<td>1978</td>
+<td>Spear</td>
+<td>Spear</td>
+<td>Artist</td>
+<td></td>
+<td>Jewer</td>
+<td>mid-20th century</td>
+<td>Omadesep village</td>
+<td>Indonesia</td>
+<td>Wood-Implements</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/311552">http://www.metmuseum.org/art/collection/search/311552</a></td>
+<td>Spears</td>
+<td>spear</td>
+</tr>
+<tr>
+<td>478980</td>
+<td>Metropolitan Museum of Art</td>
+<td>Medieval Art</td>
+<td>5</td>
+<td>1949</td>
+<td>Plaque</td>
+<td>Plaque with the Crucifixion</td>
+<td>Artist</td>
+<td>French, 1470–1542/43</td>
+<td>Pénicaud, Nardon</td>
+<td>late 15th–early 16th century</td>
+<td>Limoges</td>
+<td>France</td>
+<td>Enamels-Painted</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/478980">http://www.metmuseum.org/art/collection/search/478980</a></td>
+<td>Christ|Crucifixion|Horses</td>
+<td>Jesus</td>
+</tr>
+<tr>
+<td>639584</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1958</td>
+<td>Print</td>
+<td>Mary, Queen of Scots (from “La Touraine, Anienne et Moderne”)</td>
+<td>Artist</td>
+<td>French, Paris 1819–1886 Ecouen</td>
+<td>Frère, Pierre-Edouard</td>
+<td>1845</td>
+<td>Paris</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/639584">http://www.metmuseum.org/art/collection/search/639584</a></td>
+<td>Queens|Portraits|Women|Mary Queen of Scots</td>
+<td>Queens</td>
+</tr>
+<tr>
+<td>344567</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1917</td>
+<td>Book</td>
+<td>Household Stories from the Collection of the Brothers Grimm</td>
+<td>Illustrator</td>
+<td>British, Liverpool 1845–1915 Horsham</td>
+<td>Crane, Walter</td>
+<td>1882</td>
+<td>London</td>
+<td></td>
+<td>Books</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/344567">http://www.metmuseum.org/art/collection/search/344567</a></td>
+<td>Cranes|Men|Women|Lutes|Cats|Dogs|Flowers|Allegory|Sleeping</td>
+<td>Cranes</td>
+</tr>
+<tr>
+<td>687765</td>
+<td>Metropolitan Museum of Art</td>
+<td>Arts of Africa, Oceania, and the Americas</td>
+<td>2</td>
+<td>2015</td>
+<td>Negative</td>
+<td>Couple</td>
+<td>Artist</td>
+<td>Malian, Bamako ca. 1921–2001 Paris</td>
+<td>Keïta, Seydou</td>
+<td>1950s–1960s</td>
+<td>Bamako</td>
+<td>Mali</td>
+<td>Negatives</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/687765">http://www.metmuseum.org/art/collection/search/687765</a></td>
+<td>Couples|Men|Women|Portraits</td>
+<td>Couples</td>
+</tr>
+<tr>
+<td>384650</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1928</td>
+<td>Print</td>
+<td>L’Inconnu</td>
+<td>Artist</td>
+<td>French, Paris 1833–1914 Sèvres</td>
+<td>Bracquemond, Félix</td>
+<td>1862</td>
+<td>Paris</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/384650">http://www.metmuseum.org/art/collection/search/384650</a></td>
+<td>Ducks|Turtles</td>
+<td>Ducks</td>
+</tr>
+<tr>
+<td>789012</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1917</td>
+<td>Print</td>
+<td>Plate 38, from “World in Miniature”</td>
+<td>Artist</td>
+<td>British, London 1757–1827 London</td>
+<td>Rowlandson, Thomas</td>
+<td>1816</td>
+<td>London</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/789012">http://www.metmuseum.org/art/collection/search/789012</a></td>
+<td>Interiors|Churches|Men|Women</td>
+<td>Interiors</td>
+</tr>
+<tr>
+<td>643208</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1958</td>
+<td>Print</td>
+<td>Mary, Queen of Scots (frontispiece, from “Graham’s Magazine,” volume 46, number 4)</td>
+<td>Sitter</td>
+<td>British, Linlithgow 1542–1587 Fotheringhay</td>
+<td>Mary Queen of Scots</td>
+<td>April 1855</td>
+<td>Philadelphia</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/643208">http://www.metmuseum.org/art/collection/search/643208</a></td>
+<td>Queens|Portraits|Women|Mary Queen of Scots</td>
+<td>Queens</td>
+</tr>
+<tr>
+<td>311560</td>
+<td>Metropolitan Museum of Art</td>
+<td>Arts of Africa, Oceania, and the Americas</td>
+<td>2</td>
+<td>1978</td>
+<td>Canoe prow</td>
+<td>Canoe Prow</td>
+<td>Artist</td>
+<td></td>
+<td>Osu</td>
+<td>mid-20th century</td>
+<td>Erma</td>
+<td>Indonesia</td>
+<td>Wood-Sculpture</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/311560">http://www.metmuseum.org/art/collection/search/311560</a></td>
+<td>Animals</td>
+<td>animal</td>
+</tr>
+<tr>
+<td>491022</td>
+<td>Metropolitan Museum of Art</td>
+<td>Modern and Contemporary Art</td>
+<td>6</td>
+<td>1928</td>
+<td>Textile sample</td>
+<td>Sample</td>
+<td>Maker</td>
+<td>American, 1861–1949</td>
+<td>Crawford, M. D. C.</td>
+<td>ca. 1928</td>
+<td>New York</td>
+<td>United States</td>
+<td>Textiles</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/491022">http://www.metmuseum.org/art/collection/search/491022</a></td>
+<td>Animals|Carriages|Human Figures</td>
+<td>animal</td>
+</tr>
+<tr>
+<td>463679</td>
+<td>Metropolitan Museum of Art</td>
+<td>Medieval Art</td>
+<td>5</td>
+<td>1914</td>
+<td>Triptych</td>
+<td>Three plaques from a triptych with the Adoration of the Shepherds, Flanked by the Angel Gabriel and the Virgin Annunciate</td>
+<td>Artist</td>
+<td>ca. 1490–ca. 1515</td>
+<td>Master of the Louis XII Triptych</td>
+<td>early 16th century</td>
+<td>Limoges</td>
+<td>France</td>
+<td>Enamels-Painted</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/463679">http://www.metmuseum.org/art/collection/search/463679</a></td>
+<td>Archangel Gabriel|Annunciation|Adoration of the Shepherds|Angels|Virgin Mary</td>
+<td>Archangel Gabriel</td>
+</tr>
+<tr>
+<td>656610</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1962</td>
+<td>Print</td>
+<td>The Murder of David Rizzio (Mary, Queen of Scots witnessing the murder of David Rizzio)</td>
+<td>Sitter</td>
+<td>British, Linlithgow 1542–1587 Fotheringhay</td>
+<td>Mary Queen of Scots</td>
+<td>July 1, 1791</td>
+<td>London</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/656610">http://www.metmuseum.org/art/collection/search/656610</a></td>
+<td>Swords|Queens|Men|Women|Mary Queen of Scots</td>
+<td>sword</td>
+</tr>
+<tr>
+<td>687744</td>
+<td>Metropolitan Museum of Art</td>
+<td>Arts of Africa, Oceania, and the Americas</td>
+<td>2</td>
+<td>2015</td>
+<td>Negative</td>
+<td>Chief in top hat surrounded by women and children</td>
+<td>Photographer</td>
+<td>Togolese, Kedzi 1880–1975 Lomé</td>
+<td>Acolatse, Alex Agbaglo</td>
+<td>1909(?)</td>
+<td>Lomé</td>
+<td>Togo</td>
+<td>Negatives|Glass</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/687744">http://www.metmuseum.org/art/collection/search/687744</a></td>
+<td>Children|Women|Men</td>
+<td>Children</td>
+</tr>
+<tr>
+<td>789185</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1959</td>
+<td>Print</td>
+<td>Domestic Arrangements in Prison</td>
+<td>Publisher</td>
+<td>British, active 1794–1829</td>
+<td>Ackermann, Rudolph</td>
+<td>May 1, 1817</td>
+<td>London</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/789185">http://www.metmuseum.org/art/collection/search/789185</a></td>
+<td>Prisons|Children|Men|Women</td>
+<td>Prisons</td>
+</tr>
+<tr>
+<td>412552</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1968</td>
+<td>Portfolio</td>
+<td>Plate 5 from Sonia Delaunay: ses peintures, ses objets, ses tissus simultanés, ses modes</td>
+<td>Artist</td>
+<td>French (born Ukraine), Gradizhsk 1885–1979 Paris</td>
+<td>Delaunay, Sonia</td>
+<td>[1925]</td>
+<td>Paris</td>
+<td></td>
+<td>Portfolios</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/412552">http://www.metmuseum.org/art/collection/search/412552</a></td>
+<td>Women|Fashion</td>
+<td>woman</td>
+</tr>
+<tr>
+<td>476566</td>
+<td>Metropolitan Museum of Art</td>
+<td>The Cloisters</td>
+<td>9</td>
+<td>2006</td>
+<td>Laudario; Manuscript leaf</td>
+<td>Manuscript Leaf with the Martyrdom of Saint Bartholomew, from a Laudario</td>
+<td>Artist</td>
+<td>Italian, active Florence 1302–ca. 1340</td>
+<td>Pacino di Bonaguida</td>
+<td>ca. 1340</td>
+<td>Florence</td>
+<td>Italy</td>
+<td>Manuscripts and Illuminations</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/476566">http://www.metmuseum.org/art/collection/search/476566</a></td>
+<td>Angels|Saints|Men</td>
+<td>Angels</td>
+</tr>
+<tr>
+<td>427164</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1959</td>
+<td>Print</td>
+<td>Francesco d’Este Leads the French Army After the Difficult Resolution of Cremona without Losing Men or Belongings due to the Duke’s Prudence and Corageous Strength, from L’Idea di un Principe ed Eroe Cristiano in Francesco I d’Este, di Modena e Reggio Duca VIII […]</td>
+<td>Artist</td>
+<td></td>
+<td>Fenice (Fénis)</td>
+<td>1659</td>
+<td>Modena</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/427164">http://www.metmuseum.org/art/collection/search/427164</a></td>
+<td>Horses|Army|Trees</td>
+<td>horse</td>
+</tr>
+<tr>
+<td>368441</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1949</td>
+<td>Print</td>
+<td>St George Killing the Dragon</td>
+<td>Artist</td>
+<td>Italian, Parma 1523–1567 Ferrara</td>
+<td>Vico, Enea</td>
+<td>1542</td>
+<td>Rome</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/368441">http://www.metmuseum.org/art/collection/search/368441</a></td>
+<td>Spears|Women|Dragons|Saint George|Horses</td>
+<td>spear</td>
+</tr>
+<tr>
+<td>770582</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1924</td>
+<td>Print</td>
+<td>The Castle of Cards</td>
+<td>Artist</td>
+<td>French, Paris 1735–1784 Paris</td>
+<td>Lépicié, Nicolas Bernard</td>
+<td>1762</td>
+<td>Paris</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/770582">http://www.metmuseum.org/art/collection/search/770582</a></td>
+<td>Boys|Playing Cards|Tables</td>
+<td>Boys</td>
+</tr>
+<tr>
+<td>641028</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1958</td>
+<td>Print</td>
+<td>Mary, Queen of Scots</td>
+<td>Sitter</td>
+<td>British, Linlithgow 1542–1587 Fotheringhay</td>
+<td>Mary Queen of Scots</td>
+<td>mid-18th century</td>
+<td>London</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/641028">http://www.metmuseum.org/art/collection/search/641028</a></td>
+<td>Queens|Portraits|Women|Mary Queen of Scots</td>
+<td>Queens</td>
+</tr>
+<tr>
+<td>708768</td>
+<td>Metropolitan Museum of Art</td>
+<td>Arts of Africa, Oceania, and the Americas</td>
+<td>2</td>
+<td>2015</td>
+<td>Photograph</td>
+<td>Young Woman Seated in Apple Print Dress</td>
+<td>Artist</td>
+<td>Malian, Bamako ca. 1921–2001 Paris</td>
+<td>Keïta, Seydou</td>
+<td>1975</td>
+<td>Bamako</td>
+<td>Mali</td>
+<td>Paper-Photographs</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/708768">http://www.metmuseum.org/art/collection/search/708768</a></td>
+<td>Portraits|Women</td>
+<td>Portraits</td>
+</tr>
+<tr>
+<td>359958</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1933</td>
+<td>Print</td>
+<td>On ne s’avise jamais du tout, from “Contes et nouvelles en vers par Jean de La Fontaine.  A Paris, de l’imprimerie de  P. Didot, l’an III de la République, 1795”</td>
+<td>Artist</td>
+<td>French, Grasse 1732–1806 Paris</td>
+<td>Fragonard, Jean-Honoré</td>
+<td>1795</td>
+<td>Paris</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/359958">http://www.metmuseum.org/art/collection/search/359958</a></td>
+<td>Interiors|Couples|Women</td>
+<td>Interiors</td>
+</tr>
+<tr>
+<td>370768</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1941</td>
+<td>Print</td>
+<td>Speculum Romanae Magnificentiae: Aristotle</td>
+<td>Artist</td>
+<td>Italian, Parma 1523–1567 Ferrara</td>
+<td>Vico, Enea</td>
+<td>1553</td>
+<td>Rome</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/370768">http://www.metmuseum.org/art/collection/search/370768</a></td>
+<td>Aristotle|Profiles</td>
+<td>Aristotle</td>
+</tr>
+<tr>
+<td>468320</td>
+<td>Metropolitan Museum of Art</td>
+<td>Medieval Art</td>
+<td>5</td>
+<td>1949</td>
+<td>Triptych panel</td>
+<td>Triptych Panel with Saint Sebastian</td>
+<td>Artist</td>
+<td>ca. 1490–ca. 1515</td>
+<td>Master of the Louis XII Triptych</td>
+<td>15th–16th century</td>
+<td>Limoges</td>
+<td>France</td>
+<td>Enamels-Painted</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/468320">http://www.metmuseum.org/art/collection/search/468320</a></td>
+<td>Bow and Arrow|Men</td>
+<td>Bow and Arrow</td>
+</tr>
+<tr>
+<td>455054</td>
+<td>Metropolitan Museum of Art</td>
+<td>Islamic Art</td>
+<td>4</td>
+<td>1913</td>
+<td>Illustrated manuscript</td>
+<td>Haft Paikar (Seven Portraits) of the Khamsa (Quintet) of Nizami of Ganja</td>
+<td>Author</td>
+<td>present-day Azerbaijan, Ganja 1141–1209 Ganja</td>
+<td>Nizami</td>
+<td>ca. 1430</td>
+<td>Herat</td>
+<td>present-day Afghanistan</td>
+<td>Codices</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/455054">http://www.metmuseum.org/art/collection/search/455054</a></td>
+<td>Horses|Animals|Men|Hunting</td>
+<td>horse</td>
+</tr>
+<tr>
+<td>427319</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1959</td>
+<td>Print</td>
+<td>Francesco I d’Este, Suffering the Pain of his Injuries, Continues to Take Charge for the Successful Completion of the Military Campaign, from L’Idea di un Principe ed Eroe Cristiano in Francesco I d’Este, di Modena e Reggio Duca VIII […]</td>
+<td>Artist</td>
+<td></td>
+<td>Fenice (Fénis)</td>
+<td>1659</td>
+<td>Modena</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/427319">http://www.metmuseum.org/art/collection/search/427319</a></td>
+<td>Battles|Soldiers|Men|Horses</td>
+<td>Battles</td>
+</tr>
+<tr>
+<td>789164</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1959</td>
+<td>Print</td>
+<td>Frontispiece: The Vicar of Wakefield, from “The Vicar of Wakefield”</td>
+<td>Publisher</td>
+<td>British, active 1794–1829</td>
+<td>Ackermann, Rudolph</td>
+<td>May 1, 1817</td>
+<td>London</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/789164">http://www.metmuseum.org/art/collection/search/789164</a></td>
+<td>Children|Men|Women</td>
+<td>Children</td>
+</tr>
+<tr>
+<td>377525</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1985</td>
+<td>Print</td>
+<td>Advertising Card for a Carved Dresser</td>
+<td>Publisher</td>
+<td>American, Brooklyn, New York 1853–1936 Buffalo, New York</td>
+<td>Rohlfs, Charles</td>
+<td>1907</td>
+<td>Buffalo</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/377525">http://www.metmuseum.org/art/collection/search/377525</a></td>
+<td>Furniture|Dressers</td>
+<td>Furniture</td>
+</tr>
+<tr>
+<td>412556</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1968</td>
+<td>Portfolio</td>
+<td>Plate 9 from Sonia Delaunay: ses peintures, ses objets, ses tissus simultanés, ses modes</td>
+<td>Artist</td>
+<td>French (born Ukraine), Gradizhsk 1885–1979 Paris</td>
+<td>Delaunay, Sonia</td>
+<td>[1925]</td>
+<td>Paris</td>
+<td></td>
+<td>Portfolios</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/412556">http://www.metmuseum.org/art/collection/search/412556</a></td>
+<td>Women|Fashion</td>
+<td>woman</td>
+</tr>
+<tr>
+<td>457758</td>
+<td>Metropolitan Museum of Art</td>
+<td>Islamic Art</td>
+<td>4</td>
+<td>2012</td>
+<td>Illustrated manuscript</td>
+<td>An Orange-Headed Ground Thrush and a Death’s-Head Moth on a Purple Ebony Orchid Branch</td>
+<td>Artist</td>
+<td>Indian, born Patna, Bihar</td>
+<td>Shaikh Zain al–Din</td>
+<td>dated 1778</td>
+<td>Calcutta</td>
+<td>India</td>
+<td>Codices</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/457758">http://www.metmuseum.org/art/collection/search/457758</a></td>
+<td>Birds|Insects|Flowers|Orchids</td>
+<td>Birds</td>
+</tr>
+<tr>
+<td>506046</td>
+<td>Metropolitan Museum of Art</td>
+<td>Musical Instruments</td>
+<td>7</td>
+<td>2008</td>
+<td>Lithographic Plates</td>
+<td>Lithographic Plates</td>
+<td>Maker</td>
+<td>French, 1814–1876</td>
+<td>Collette, Alexandre-Désiré</td>
+<td>1850</td>
+<td>Paris</td>
+<td>France</td>
+<td>Works on Paper-Drawings</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/506046">http://www.metmuseum.org/art/collection/search/506046</a></td>
+<td>Musical Instruments|Men|Musicians</td>
+<td>Musical Instruments</td>
+</tr>
+<tr>
+<td>345407</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1952</td>
+<td>Book</td>
+<td>Recueil de divers Monumens Anciens répandus en plusieurs endroits de L’Italie</td>
+<td>Author</td>
+<td>French, Viarmes 1718–1762 Rome</td>
+<td>Barbault, Jean</td>
+<td>1770</td>
+<td>Rome</td>
+<td></td>
+<td>Books</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/345407">http://www.metmuseum.org/art/collection/search/345407</a></td>
+<td>Monuments|Pyramids|Men|Trees</td>
+<td>monument</td>
+</tr>
+<tr>
+<td>427186</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1959</td>
+<td>Print</td>
+<td>Francesco I d’Este Protects the French in Casalmaggiore from the Seige of the Spanish, from L’Idea di un Principe ed Eroe Cristiano in Francesco I d’Este, di Modena e Reggio Duca VIII […]</td>
+<td>Artist</td>
+<td></td>
+<td>Fenice (Fénis)</td>
+<td>1659</td>
+<td>Modena</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/427186">http://www.metmuseum.org/art/collection/search/427186</a></td>
+<td>Horses|Battles|Soldiers|Men</td>
+<td>horse</td>
+</tr>
+<tr>
+<td>21968</td>
+<td>Metropolitan Museum of Art</td>
+<td>Arms and Armor</td>
+<td>1</td>
+<td>1904</td>
+<td>Wheellock rifle</td>
+<td>Wheellock Rifle</td>
+<td>Steel-chiseler</td>
+<td>German, Munich, ca. 1611–1691</td>
+<td>Spät, Caspar</td>
+<td>ca. 1640–50</td>
+<td>Munich</td>
+<td></td>
+<td>Firearms-Guns-Wheellock</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/21968">http://www.metmuseum.org/art/collection/search/21968</a></td>
+<td>Hunting|Deer|Dogs|Men</td>
+<td>Hunting</td>
+</tr>
+</tbody>
+</table>
+
+</body>
+</html>
