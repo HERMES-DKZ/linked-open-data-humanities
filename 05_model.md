@@ -30,6 +30,14 @@ exercises: 2
 
 Before we can create a whole RDF dataset, we need to decide what our data should look like. A flat table is not flat data, it contains information about several different things at once. Each row in our dataset describes not just one object, but also other entities.
 
+
+:::instructor
+
+In the Github Repository you can find a [markdown representation](https://github.com/HERMES-DKZ/linked-open-data-humanities/blob/main/episodes/data/met-dataset-50.md) and a [html representation](https://github.com/HERMES-DKZ/linked-open-data-humanities/blob/main/episodes/data/met-dataset-50.html) of the dataset. 
+
+:::::
+
+
 ::::::::::::::::::::::::::::::::::::: challenge
 
 ## Create a Mind Map out of the Dataset
