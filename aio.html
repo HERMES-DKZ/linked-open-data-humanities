@@ -881,7 +881,7 @@ addresses this problem?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p><strong>Wikidata IRI</strong>:
 <code>https://www.wikidata.org/wiki/Q5582</code> Namespace:
@@ -1540,7 +1540,7 @@ using a text editor.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <pre><code>TODO
 Valid turtle.</code></pre>
@@ -1696,7 +1696,7 @@ errors.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>There are 9 mistakes in the Turtle file:</p>
 <ul>
@@ -1884,7 +1884,7 @@ assigning labels to them.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>TODO: Add image of mindmap</p>
 <p>Central nodes are the ones with the objectIDs, artist, department and
@@ -1915,7 +1915,7 @@ museum. Modeling decisions are subjective.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 
 </div>
@@ -1964,7 +1964,7 @@ terms, meanings and rules.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 
 </div>
@@ -1995,7 +1995,7 @@ vacabularies</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 
 </div>
@@ -2021,7 +2021,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-06_creation"><p>Content from <a href="06_creation.html">From Model to Data</a></p>
 <hr>
-<p>Last updated on 2026-05-28 |
+<p>Last updated on 2026-06-12 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/06_creation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2068,9 +2068,10 @@ triples. We know <em>what</em> we want to produce. Now we need a way to
 actually produce it.</p>
 <p>Writing RDF by hand works well for a handful of triples, but becomes
 impractical quickly. A dataset with 50 rows and multiple properties per
-entity would require hundreds of triples, each written out in full. The
-tool we will use to automate this is <strong>OpenRefine</strong> with
-the <strong>RDF-Transform</strong> extension.</p>
+entity would require hundreds of triples, each written out. The tool we
+will use to automate this transforming process is
+<strong>OpenRefine</strong> with the <strong>RDF-Transform</strong>
+extension.</p>
 <section><h2 class="section-heading" id="what-is-openrefine">What Is OpenRefine?<a class="anchor" aria-label="anchor" href="#what-is-openrefine"></a>
 </h2>
 <hr class="half-width">
@@ -2083,12 +2084,24 @@ interested, there is a Carpentries Lecture “<a href="https://hermes-dkz.github
 for the Humanities</a>” you can go through to get a deeper insight of
 the tool.</p>
 <p>The feature we want to look at is the <strong>RDF-Transform</strong>
-extension, which adds the ability to map a spreadsheet to RDF. Instead
-of writing triples by hand, we define the mapping once: which columns
+extension, which adds the ability to transform tabular data to RDF.
+Instead of writing triples by hand, we define a mapping: which columns
 become subjects, which become predicates, which become objects and
 OpenRefine applies it to every row automatically.</p>
-<p>Make sure OpenRefine is installed and the RDF-Transform extension is
-set up. You can find instructions in the setup page for this lesson.</p>
+<div id="prerequisites" class="callout prereq">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check"></i>
+</div>
+<span class="callout-header">Prerequisite</span>
+<div id="prerequisites" class="callout-inner">
+<h3 class="callout-title">Prerequisites</h3>
+<div class="callout-content">
+<p>This chapter requires <strong>OpenRefine</strong> and the
+<strong>RDF-Transform</strong> extension to be installed. Step-by-step
+installation instructions for both can be found on the <a href="index.html#setup">setup page</a> of this lesson.</p>
+</div>
+</div>
+</div>
 <p>Open OpenRefine in your browser. You will see the <strong>start
 screen</strong>, which lets you create a new project by importing a
 file.</p>
@@ -2177,20 +2190,334 @@ lets you add a new entity type to the mapping. The <strong>Import
 Template</strong> and <strong>Export Template</strong> buttons allow you
 to save and reuse a mapping across projects. <strong>Save</strong>
 applies the current mapping to the project.</p>
-<figure><img src="fig/rdf-transform-preview-tab.png" alt="alt text" class="figure mx-auto d-block"><div class="figcaption">alt text</div>
+<figure><img src="fig/rdf-transform-preview-tab.png" alt="The RDF-Preview panel after opening a project for the first time" class="figure mx-auto d-block"><div class="figcaption">The RDF-Preview panel after opening a project
+for the first time</div>
 </figure><p>To get a first impression of what the data looks like as RDF, switch
 to the <em>Preview</em> tab. It shows the current mapping rendered as
 Turtle. At the top you will see the declared namespaces, followed by the
 generated triples. In the auto-generated mapping, each row’s index
 becomes the subject, and each column header becomes a predicate with the
 corresponding cell value as a literal object.</p>
+</section><section><h2 class="section-heading" id="creating-the-person-entity">Creating the Person Entity<a class="anchor" aria-label="anchor" href="#creating-the-person-entity"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="starting-fresh">Starting Fresh<a class="anchor" aria-label="anchor" href="#starting-fresh"></a>
+</h3>
+<p>The auto-generated mapping is a useful preview of the data, but it is
+not the model we designed. Before we build our own mapping, we clear it:
+click the <strong>×</strong> button next to the existing root node on
+the left side of the mapping area two times. This removes the root node
+and all its properties. The panel should now be empty except for the
+buttons at the bottom.</p>
+<p><strong>Screenshot??</strong></p>
+</div>
+<div class="section level3">
+<h3 id="a-note-on-iris-and-identity">A Note on IRIs and Identity<a class="anchor" aria-label="anchor" href="#a-note-on-iris-and-identity"></a>
+</h3>
+<p>Before we create the first root node, we need to think about one
+thing: what IRI should identify each Person?</p>
+<p>The auto-generated mapping used the <strong>row index</strong>, row
+1, row 2, row 3, and so on. That works if the entire dataset describes
+only one type of entity. But our model has two: a Person and an Object
+per row. If both used the row index, row 1 would produce a Person IRI
+and an Object IRI that look identical in structure, making them
+impossible to distinguish.</p>
+<p>More importantly, the row index ignores the actual content of the
+data. If the same artist appears in five rows, the auto-generated
+mapping would create five different Person IRIs, one for each row, even
+though they all refer to the same person. In Linked Data, the same
+real-world entity should always have the same IRI.</p>
+<p>The solution is to construct the IRI from a column value that
+uniquely identifies the entity. For the Person, we use the
+<code>artist</code> column. Two rows with the same artist name will
+produce the same Person IRI, which is exactly what we want: in the
+resulting graph, both museum objects point to the same person node.</p>
+<pre class="turtle"><code># Two objects, same artist → same Person IRI
+&lt;http://example.org/object/693151&gt;  schema:creator  &lt;http://example.org/person/Surugue%2C+Louis&gt; .
+&lt;http://example.org/object/703022&gt;  schema:creator  &lt;http://example.org/person/Surugue%2C+Louis&gt; .</code></pre>
+<p>This IRI is still a local placeholder, it is not a globally
+recognised identifier. We will link it to the world of LOD later. But it
+is stable, unique per artist, and consistent across the dataset.</p>
+</div>
+<div class="section level3">
+<h3 id="adding-the-schema-org-namespace">Adding the Schema.org Namespace<a class="anchor" aria-label="anchor" href="#adding-the-schema-org-namespace"></a>
+</h3>
+<p>Our Person entity uses <code>schema:Person</code> and
+<code>schema:description</code>, both from Schema.org. The namespace is
+not pre-loaded in RDF-Transform, so we add it first.</p>
+<ol style="list-style-type: decimal">
+<li>In the <em>Available Namespaces</em> bar, click <strong>+
+Add</strong>.</li>
+<li>Enter the prefix <code>schema</code> and the namespace IRI
+<code>https://schema.org/</code>. (In newer versions of OpenRefine the
+IRI gets autofilled)</li>
+<li>Click <strong>ok</strong>.</li>
+</ol>
+<p>The prefix <code>schema</code> should now appear in the namespace bar
+alongside the pre-loaded ones.</p>
+</div>
+<div class="section level3">
+<h3 id="creating-the-root-node">Creating the Root Node<a class="anchor" aria-label="anchor" href="#creating-the-root-node"></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>Click <strong>Add Root Node</strong> at the bottom of the
+panel.</li>
+<li>A new root node appears. Click on it to configure it.</li>
+<li>Set the content to <strong>artist</strong>.</li>
+<li>In the <strong>Content used…</strong> panel, select
+<strong>IRI</strong>.</li>
+<li>Click <strong>ok</strong>
+</li>
+</ol>
+<p>[Screenshot: Person root node configured with artist column and base
+IRI]</p>
+</div>
+<div class="section level3">
+<h3 id="adding-properties">Adding Properties<a class="anchor" aria-label="anchor" href="#adding-properties"></a>
+</h3>
+<p>Now we have already created our root, but the Preview is still emtpy.
+We need to add properties to create a full triple.</p>
+<p><strong>Type</strong></p>
+<ol style="list-style-type: decimal">
+<li>Click <strong>Add type…</strong> below the root node (or <em>Add
+property</em> and choose <code>rdf:type</code>).</li>
+<li>Set the value to the fixed IRI <code>schema:Person</code>.</li>
+<li>You can click <strong>Add it</strong> to reuse the imported
+properties from schema</li>
+</ol>
+<p>This produces the triple:
+<code>&lt;person-IRI&gt; rdf:type schema:Person</code>. We can see this
+in the Preview tab.</p>
+<p><strong>Label</strong></p>
+<ol style="list-style-type: decimal">
+<li>Click <strong>Add property…</strong> to create a new property for
+our person root node.</li>
+<li>Click on that new property set it to <code>rdfs:label</code>.</li>
+<li>Click on <strong>Add object…</strong> and then
+<strong>Configure?</strong> .</li>
+<li>Set the <strong>Content</strong> to artist again and <strong>Content
+used…</strong> to <strong>Text</strong> .</li>
+</ol>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>This step could seem redundant, because we already used
+<strong>artist</strong>. Initially, we only set the IRI of the entity,
+which is just an identifier without any content or meaning. Then, we
+added the name as the actual information to this ID. For the IRI you
+could theoretically choose whatever you want, for the concrete label,
+the name of the entity, it can only be artist.</p>
+</div>
+</div>
+</div>
+<p><strong>Description</strong></p>
+<ol style="list-style-type: decimal">
+<li>Add another property by clicking <strong>Add property</strong> in
+the middle and set it to <code>schema:description</code>.</li>
+<li>Add the related object, click <strong>Configure?</strong> and set
+the Content to <code>artistDisplayBio</code>.</li>
+<li>
+<strong>Content uesd…</strong>: <strong>Text</strong>.</li>
+</ol>
+<p>Once all properties are added, click <strong>Save</strong> and switch
+to the <em>Preview</em> tab to check the output. One block per row
+should appear, each describing a person:</p>
+<pre class="turtle"><code>&lt;http://example.org/person/Surugue%2C+Louis&gt;
+    a schema:Person ;
+    rdfs:label "Surugue, Louis"@en ;
+    schema:description "French, Paris ca. 1686–1762 Grand Vaux" .</code></pre>
+<p>You will notice that in the preview some persons appear multiple
+times, once for each row that shares the same artist name. In RDF
+Databases and so called Triplestores, duplicate triples are
+automatically merged, the result is a single Person node with the same
+IRI, not multiple separate persons. This is one of the reasons we chose
+the artist name as the IRI source rather than the row index.</p>
+<div id="choosing-the-right-iri-source" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="choosing-the-right-iri-source" class="callout-inner">
+<h3 class="callout-title">Choosing the Right IRI Source</h3>
+<div class="callout-content">
+<p>When constructing IRIs from column values, a good rule of thumb is to
+prefer <strong>stable identifiers</strong> over text strings. The
+<code>artist</code> column is a text string, names can be spelled
+differently, contain typos, or change. A numeric ID column (like
+<code>departmentID</code>) is a more reliable IRI source: it is assigned
+once, does not change, and is not affected by language or formatting
+differences.</p>
+<p>For the Person entity we have no choice but to use the name string,
+since the dataset does not include a separate artist ID. This is a
+common situation in real projects: the data you have rarely matches the
+ideal you would design from scratch. Data modelling is seldom about
+finding the one correct solution, it is about making the best decision
+given the available data, the intended use, and the constraints of the
+project. The result may not be textbook-perfect, but it can still be
+consistent, meaningful, and useful. Reconciliation, which we will cover
+later, is one way to compensate: it replaces a fragile text-based IRI
+with a stable, authoritative one after the fact.</p>
+</div>
+</div>
+</div>
+<div id="exercise-create-the-department-entity" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="exercise-create-the-department-entity" class="callout-inner">
+<h3 class="callout-title">Exercise: Create the Department Entity</h3>
+<div class="callout-content">
+<p>Using the Person entity as a model, now create a root node for the
+<strong>Department</strong> entity. The dataset has a dedicated
+<code>departmentID</code> column, use this as the IRI source rather than
+the department name.</p>
+<p>The Department entity should have the following properties:</p>
+<table class="table">
+<thead><tr>
+<th>Property</th>
+<th>Value source</th>
+<th>Type</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><code>rdf:type</code></td>
+<td><code>schema:Organization</code></td>
+<td>IRI</td>
+</tr>
+<tr>
+<td><code>rdfs:label</code></td>
+<td><code>department</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td><code>schema:parentOrganization</code></td>
+<td>museum</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p>Check your result in the <em>Preview</em> tab before moving on.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p><strong>Department root node:</strong> - Base IRI:
+<code>http://example.org/department/</code>, column:
+<code>departmentID</code> - <code>rdf:type</code> →
+<code>schema:Organization</code> - <code>rdfs:label</code> →
+<code>department</code> column, literal -
+<code>schema:parentOrganization</code> → Museum root node</p>
+<p>The Preview tab should show output like this:</p>
+<pre class="turtle"><code>&lt;http://example.org/department/3&gt;
+    a schema:Organization ;
+    rdfs:label "Drawings and Prints" ;
+    schema:parentOrganization "" .
+
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="exporting-the-data">Exporting the Data<a class="anchor" aria-label="anchor" href="#exporting-the-data"></a>
+</h2>
+<hr class="half-width">
+<p>With the mapping complete, we can export the dataset as RDF. Click
+the <strong>Export</strong> button in the top right corner of
+OpenRefine, not inside the RDF-Transform panel, but in the main project
+view. The RDF-Transform extension adds several RDF format options to the
+export menu.</p>
+<p>We will export the data twice: once as <strong>Turtle</strong> and
+once as <strong>JSON-LD</strong>.</p>
+<ol style="list-style-type: decimal">
+<li>Select <em>Pretty Exports</em> and <em>Turtle</em> from the export
+menu and save the file.</li>
+<li>Repeat and select <em>JSON-LD</em>.</li>
+</ol>
+<p>Open both files in a text editor and compare them.</p>
+<p><strong>Turtle</strong> will look familiar from the previous
+chapters, compact, human-readable, with namespace prefixes at the
+top:</p>
+<pre class="turtle"><code>@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix schema: &lt;https://schema.org/&gt; .
+
+&lt;http://example.org/person/Surugue%2C+Louis&gt;
+    a schema:Person ;
+    rdfs:label "Surugue, Louis"@en ;
+    schema:description "French, Paris ca. 1686–1762 Grand Vaux" .
+
+&lt;http://example.org/department/3&gt;
+    a schema:Organization ;
+    rdfs:label "Drawings and Prints" ;
+    schema:parentOrganization &lt;http://example.org/museum/Metropolitan+Museum+of+Art&gt; .</code></pre>
+<p><strong>JSON-LD</strong> encodes the same triples in JSON syntax. It
+is less readable at first glance, but follows a structure that web
+developers and APIs work with readily:</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a><span class="ot">[</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1" aria-label="code-block-5-2"></a>  <span class="fu">{</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1" aria-label="code-block-5-3"></a>    <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://example.org/person/Surugue%2C+Louis"</span><span class="fu">,</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1" aria-label="code-block-5-4"></a>    <span class="dt">"@type"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"https://schema.org/Person"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1" aria-label="code-block-5-5"></a>    <span class="dt">"http://www.w3.org/2000/01/rdf-schema#label"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1" aria-label="code-block-5-6"></a>      <span class="fu">{</span> <span class="dt">"@value"</span><span class="fu">:</span> <span class="st">"Surugue, Louis"</span><span class="fu">,</span> <span class="dt">"@language"</span><span class="fu">:</span> <span class="st">"en"</span> <span class="fu">}</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1" aria-label="code-block-5-7"></a>    <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1" aria-label="code-block-5-8"></a>    <span class="dt">"https://schema.org/description"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1" aria-label="code-block-5-9"></a>      <span class="fu">{</span> <span class="dt">"@value"</span><span class="fu">:</span> <span class="st">"French, Paris ca. 1686–1762 Grand Vaux"</span> <span class="fu">}</span></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1" aria-label="code-block-5-10"></a>    <span class="ot">]</span></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1" aria-label="code-block-5-11"></a>  <span class="fu">}</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1" aria-label="code-block-5-12"></a><span class="ot">]</span></span></code></pre>
+</div>
+<p>The data is identical, both files describe the same entities with the
+same properties and the same values. The serialization format is just a
+different way of writing down the same graph. A triple store or RDF tool
+can read either format and produce the same internal representation.</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>
+<strong>OpenRefine</strong> with RDF-Transform turns a tabular
+mapping into RDF automatically, applying it to every row in the
+dataset.</li>
+<li>IRIs for entities should be constructed from stable column values,
+not row indices, this ensures that the same real-world entity always
+gets the same IRI across rows.</li>
+<li>A <strong>root node</strong> represents a subject entity; properties
+attached to it become predicates, and their values become objects,
+directly mirroring the triple structure.</li>
+<li>The same RDF graph can be exported in multiple serialization
+formats; Turtle is readable and compact, JSON-LD integrates with web
+development workflows.</li>
+</ul>
+</div>
+</div>
+</div>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
 </section></section><section id="aio-07_reconciliation"><p>Content from <a href="07_reconciliation.html">Reconciliation</a></p>
 <hr>
-<p>Last updated on 2026-05-27 |
+<p>Last updated on 2026-06-12 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/07_reconciliation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2204,7 +2531,10 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>What is reconciliation</li>
+<li>What is reconciliation and why does it matter for Linked Data?</li>
+<li>How do I reconcile a column against Wikidata in OpenRefine?</li>
+<li>How do I use reconciled values to add authority IRIs to my RDF
+mapping?</li>
 </ul>
 </div>
 </div>
@@ -2214,13 +2544,198 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Reconcile your data in OpenRefine with Normdata</li>
+<li>Explain what reconciliation is and why it is a key step in creating
+Linked Open Data.</li>
+<li>Reconcile the <code>artist</code> column against Wikidata in
+OpenRefine.</li>
+<li>Review, accept, and reject candidate matches.</li>
+<li>Add <code>schema:sameAs</code> links to the Person entity using the
+reconciled Wikidata IRIs.</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
-</div></section><section id="aio-08_publication"><p>Content from <a href="08_publication.html">Publish your Linked Data</a></p>
+</div>
+<section><h2 class="section-heading" id="from-placeholders-to-real-identifiers">From Placeholders to Real Identifiers<a class="anchor" aria-label="anchor" href="#from-placeholders-to-real-identifiers"></a>
+</h2>
+<hr class="half-width">
+<p>In the previous chapter, we created a Person entity for each artist
+in our dataset. The subject IRI was constructed from the artist’s name —
+<code>http://example.org/person/Surugue%2C+Louis</code>. This works
+within our dataset: the IRI is unique, consistent across rows, and
+stable enough for the mapping to function.</p>
+<p>But it is still a local placeholder. Nothing outside our dataset
+knows what <code>http://example.org/person/Surugue%2C+Louis</code>
+refers to. It cannot be connected to information about this artist in
+other datasets, and a system working with Wikidata or any other
+authority file has no way to recognise it as the same person.</p>
+<p>This is the gap between a local RDF dataset and genuine
+<strong>Linked Open Data</strong>. To close it, we need to connect our
+local entities to identifiers that the wider LOD ecosystem already
+knows: identifiers in authority files like Wikidata, ULAN, or the
+GND.</p>
+<p>The process of establishing these connections is called
+<strong>reconciliation</strong>.</p>
+<div class="section level3">
+<h3 id="what-is-reconciliation">What Is Reconciliation?<a class="anchor" aria-label="anchor" href="#what-is-reconciliation"></a>
+</h3>
+<p>Reconciliation means matching the values in a column against the
+entities in an external authority file and finding the best
+correspondence for each value.</p>
+<p>In practice: you take the text “Surugue, Louis” and ask Wikidata:
+<em>is there an entity in your system that matches this name?</em>
+Wikidata returns one or more candidates with confidence scores. You
+review them, confirm the correct match, and the local text value is now
+linked to a globally recognised IRI:
+<code>https://www.wikidata.org/wiki/Q5981497</code>.</p>
+<p>This is not about replacing your local data. The local placeholder
+IRI remains the subject of your RDF graph. What reconciliation adds is a
+link to the same entity in another dataset. Any system following that
+link can retrieve everything the other dataset, in our example Wikidata,
+knows about the person without you having to include it yourself.</p>
+<div id="why-authority-files" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="why-authority-files" class="callout-inner">
+<h3 class="callout-title">Why Authority Files?</h3>
+<div class="callout-content">
+<p>An <strong>authority file</strong> is a curated, maintained list of
+entities — persons, places, organisations, concepts — each with a stable
+identifier and a canonical form of the name. Authority files are
+maintained by libraries, archives, research institutions, or other
+communities. They exist precisely to solve the problem of ambiguous or
+inconsistent names.</p>
+<p>Wikidata is the largest openly accessible authority file and covers
+an enormous range of entities. <strong>ULAN</strong> (Union List of
+Artist Names, Getty Research Institute) is a domain-specific authority
+for artists and architects. Both are widely used in the cultural
+heritage sector.</p>
+<p>When you reconcile against these sources, your data gains a
+connection to a global knowledge network and any other dataset that has
+reconciled against the same source is now implicitly connected to
+yours.</p>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="reconciling-against-wikidata">Reconciling Against Wikidata<a class="anchor" aria-label="anchor" href="#reconciling-against-wikidata"></a>
+</h2>
+<hr class="half-width">
+<p>OpenRefine has a built-in reconciliation client that can query any
+reconciliation service endpoint. Wikidata provides one out of the
+box.</p>
+<p><strong>Start the reconciliation:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Click the dropdown arrow on the <code>artist</code> column header in
+Open Refine, not the RDF-Transform window.</li>
+<li>Select <em>Reconcile</em> → <em>Start reconciling…</em>.</li>
+<li>In the dialog that opens, select <strong>Wikidata (en)</strong> from
+the list of available services and click <strong>Next</strong>.</li>
+<li>Under <em>Reconcile each cell to an entity of type</em>, type
+<code>human</code> and select the result <em>human (Q5)</em>. This tells
+Wikidata that you are looking for people, which narrows the search and
+improves match quality.</li>
+<li>Click <em>Start reconciling</em>.</li>
+</ol>
+<p>OpenRefine will now query Wikidata for every unique value in the
+<code>artist</code> column. Depending on the number of distinct values
+and network speed, this may take a moment.</p>
+<figure><img src="fig/reconciling_empty.png" alt="The Reconcile panel after opening the Reconcilation and setting human from Wikidata" class="figure mx-auto d-block"><div class="figcaption">The Reconcile panel after opening the
+Reconcilation and setting human from Wikidata</div>
+</figure><div class="section level3">
+<h3 id="reviewing-matches">Reviewing Matches<a class="anchor" aria-label="anchor" href="#reviewing-matches"></a>
+</h3>
+<p>In some cases, Open Refine will be certain that it has selected the
+correct entity, while in others it will not. In cases where it is
+certain, the name is displayed directly in blue as a link that takes you
+to the entry in Wikidata. In other cases, various entities are displayed
+from which you must choose. In our case, for example, in row 8. There,
+OpenRefine is unsure, and we must explicitly confirm once again whether
+the entity found is the correct one. If we look at the Wikidata entry,
+we can see that the person listed there was active in Modena, a city
+that is also found in our data. That is enough for us to be certain in
+this case. Now we can click the single tick (✓) to confirm the entity or
+the double tick (✓✓) to perform this action for all fields associated
+with this entity. In row 10, with Rudolph Ackermann, it gets more
+difficult. There, we have two people to choose from, and since we have
+little other information in our dataset, it is difficult to be certain
+which entity is the correct one. If no candidate is correct, you can
+leave the cell unmatched, search for a match by hand or even create a
+new Entity in wikidata.</p>
+<div id="not-every-match-will-succeed" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="not-every-match-will-succeed" class="callout-inner">
+<h3 class="callout-title">Not every match will succeed</h3>
+<div class="callout-content">
+<p>For well-known artists — Rembrandt, Dürer, Hokusai — Wikidata will
+typically return a confident single match. For lesser-known, historical,
+or ambiguously named artists, the match may be uncertain or absent. This
+is expected. Reconciliation improves data quality where it can; it does
+not require perfection to be useful. Even a partial reconciliation,
+covering 60 % of artists, significantly increases the connectedness of
+the dataset. However, reconciliation always requires expertise and
+domain knowledge. In our example, it is already clear that some
+decisions cannot be made without further research.</p>
+</div>
+</div>
+</div>
+<p>As mentioned earlier, we have only created a link within Open Refine
+so far. If we want to supplement the underlying data with the new
+information, we need to add a new column containing that
+information:</p>
+<ol style="list-style-type: decimal">
+<li>Click the droptdown arrow in the <code>artist</code> column
+again</li>
+<li>
+<strong>Reconcile</strong> -&gt; <strong>Add column with URLs of
+matched entities</strong>
+</li>
+<li>Enter <strong>artistSameAs</strong> as column name</li>
+</ol>
+<p>Now you can see a new column in your data linking the artist to the
+corresponding Wikidata entity.</p>
+</div>
+</section><section><h2 class="section-heading" id="applying-reconciled-iris-in-rdf-transform">Applying Reconciled IRIs in RDF-Transform<a class="anchor" aria-label="anchor" href="#applying-reconciled-iris-in-rdf-transform"></a>
+</h2>
+<hr class="half-width">
+<p>Confirming a match in OpenRefine does not automatically change the
+exported RDF, we still need to tell RDF-Transform to use the reconciled
+Wikidata IRI. We do this by adding a <code>schema:sameAs</code> property
+to the Person root node.</p>
+<ol style="list-style-type: decimal">
+<li>Open the RDF-Transform panel (<em>RDF Transform</em> → <em>Edit RDF
+Transform…</em>).</li>
+<li>Find the Person root node.</li>
+<li>Add a new property: <code>schema:sameAs</code>.</li>
+<li>Add a new object to this property.</li>
+<li>Set the Content to our new <strong>artistSameAs</strong> column</li>
+<li>Sett **Content used… to IRI.</li>
+</ol>
+<p>RDF-Transform will now read the reconciled Wikidata IRI for each cell
+and write it as the value of <code>schema:sameAs</code>. Cells that were
+not reconciled will produce no triple for this property.</p>
+<p>Switch to the <em>Preview</em> tab to check the result. A
+successfully reconciled artist should now appear like this:</p>
+<pre class="turtle"><code>&lt;example.de/Surugue,Louis&gt;
+        rdf:type            schema:Person;
+        rdfs:label          "Surugue, Louis";
+        schema:description  "French, Paris ca. 1686–1762 Grand Vaux";
+        schema:sameAs       &lt;https://www.wikidata.org/wiki/Q5981497&gt; .</code></pre>
+<p>The local IRI remains the subject. The <code>schema:sameAs</code>
+link connects it to the Wikidata entity. Both are now part of the
+triple, and any system following the <code>schema:sameAs</code> link can
+retrieve the full Wikidata record for this person.</p>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section><section id="aio-08_publication"><p>Content from <a href="08_publication.html">Publish your Linked Data</a></p>
 <hr>
 <p>Last updated on 2026-05-27 |
 
@@ -2334,8 +2849,8 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/linked-open-data-humanities/aio.html",
   "identifier": "https://HERMES-DKZ.github.io/linked-open-data-humanities/aio.html",
   "dateCreated": "2025-02-04",
-  "dateModified": "2026-06-09",
-  "datePublished": "2026-06-09"
+  "dateModified": "2026-06-12",
+  "datePublished": "2026-06-12"
 }
 
   </script><script>

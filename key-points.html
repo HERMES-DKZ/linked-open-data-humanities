@@ -426,7 +426,22 @@ structure RDF triples.</li>
 <ul>
 <li>keypoint1</li>
 </ul></section><section id="06_creation"><h2 class="section-heading"><a href="06_creation.html">From Model to Data</a></h2>
-<hr class="half-width"></section><section id="07_reconciliation"><h2 class="section-heading"><a href="07_reconciliation.html">Reconciliation</a></h2>
+<hr class="half-width">
+<ul>
+<li>
+<strong>OpenRefine</strong> with RDF-Transform turns a tabular
+mapping into RDF automatically, applying it to every row in the
+dataset.</li>
+<li>IRIs for entities should be constructed from stable column values,
+not row indices, this ensures that the same real-world entity always
+gets the same IRI across rows.</li>
+<li>A <strong>root node</strong> represents a subject entity; properties
+attached to it become predicates, and their values become objects,
+directly mirroring the triple structure.</li>
+<li>The same RDF graph can be exported in multiple serialization
+formats; Turtle is readable and compact, JSON-LD integrates with web
+development workflows.</li>
+</ul></section><section id="07_reconciliation"><h2 class="section-heading"><a href="07_reconciliation.html">Reconciliation</a></h2>
 <hr class="half-width"></section><section id="08_publication"><h2 class="section-heading"><a href="08_publication.html">Publish your Linked Data</a></h2>
 <hr class="half-width"></section><section id="09_sparql"><h2 class="section-heading"><a href="09_sparql.html">Query Linked Data with SPARQL</a></h2>
 <hr class="half-width"></section>
@@ -479,8 +494,8 @@ structure RDF triples.</li>
   "url": "https://HERMES-DKZ.github.io/linked-open-data-humanities/key-points.html",
   "identifier": "https://HERMES-DKZ.github.io/linked-open-data-humanities/key-points.html",
   "dateCreated": "2025-02-04",
-  "dateModified": "2026-06-09",
-  "datePublished": "2026-06-09"
+  "dateModified": "2026-06-12",
+  "datePublished": "2026-06-12"
 }
 
   </script><script>
