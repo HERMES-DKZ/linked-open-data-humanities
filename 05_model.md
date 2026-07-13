@@ -28,40 +28,87 @@ exercises: 2
 
 ## Planning the Data Model
 
-Before we can create a whole RDF dataset, we need to decide what our data should look like. A flat table is not flat data, it contains information about several different things at once. Each row in our dataset describes not just one object, but also other entities.
+After exploring the basic concepts and syntax of Linked Open Data, we will now work with a tabular museum dataset containing information about artworks from the Metropolitan Museum of Art.
+
+Before we can create an RDF dataset, we first need to understand the structure of the data. Although the dataset is presented as a table, each row contains information about several different entities at once.
+
+Our task is to identify these entities and the relationships between them, and gradually transform the tabular data into an RDF data model.
 
 
 :::instructor
 
-In the Github Repository you can find a [markdown representation](https://github.com/HERMES-DKZ/linked-open-data-humanities/blob/main/episodes/data/met-dataset-50.md) and a [html representation](https://github.com/HERMES-DKZ/linked-open-data-humanities/blob/main/episodes/data/met-dataset-50.html) of the dataset. 
+The lesson repository contains both a markdown and an HTML representation of the dataset:
+
+- [markdown representation](https://github.com/HERMES-DKZ/linked-open-data-humanities/blob/main/episodes/data/met-dataset-50.md)
+
+- [html representation](https://github.com/HERMES-DKZ/linked-open-data-humanities/blob/main/episodes/data/met-dataset-50.html) 
+
+Depending on the size of the group, learners can either inspect the table individually or work in small groups.
 
 :::::
 
 
+::::::::::::::::::::::::::::::::::::: discussion
+
+Look at the dataset as a group.
+
+What kinds of things are represented in the table?
+
+Which columns appear to describe the same entity, and which columns describe different entities?
+
+
+:::::::::::::::::::::::::::::::::::::
+
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Create a Mind Map out of the Dataset
+## Create a Mind Map out of the Tabular Dataset
 
 Form groups and look at the column headings and pick a row of data in the table. 
+
 1. Try to convert the information of one data row into a mind-map (with nodes and connections) using the (Excalidraw)[https://excalidraw.com/] tool.
-2. Identify central nodes.
+
+2. Think about what central nodes can be identified in the mind map.
+
 3. How are the nodes interconnected with the table header?
-4. Name the relationships between the nodes by assigning labels to them.
+
+4. Name the relationships between the central nodes by assigning labels to the connections. Pay attention to the direction of the arrows.
 
 
 :::::::::::::::: solution
 
 TODO: Add image of mindmap 
+1. TODO: Image of possible mind map.
 
-Central nodes are the ones with the objectIDs, artist, department and museum. Modeling decisions are subjective.
+2. Central nodes are the ones where the most other nodes cluster around: objectIDs, artist, department or museum. Keep in mind: Modeling decisions are subjective.
 
+3. The column headings provide context for the values in the table. For example, without the column heading, an ObjectID would simply be a number. The column heading tells us that the number refers to an artwork. Similarly, the value in the Photographer column only becomes meaningful when we know that it refers to the creator of the artwork.
+
+4. Possible relationship labels include:
+
+- Museum → owns → Artwork
+- Department → manages → Artwork
+- Artist → created → Artwork
+
+Other valid relationships may be possible depending on how the data is interpreted.
 :::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Resources and Concepts
 
-Difference between individual things and abstract concepts.
-(rdf:type)
+The mind map already contains several interconnected nodes. We can now add another layer of meaning to the model.
+
+The ObjectID does not simply represent a number. It refers to a specific artwork. Likewise, an artist name refers to a specific person.
+
+In RDF, we call these identifiable things resources.
+
+Resources can also belong to broader categories. For example:
+
+```text
+ObjectID1234 rdf:type Object
+````
+The artwork represented by ObjectID1234 is an individual resource, while Object represents a more abstract concept or class.
+
+This distinction between individual resources and abstract concepts is an important part of RDF modeling.
 
 ::::::::::::::::::::::::::::::::::::: challenge
 ## Challenge
@@ -74,9 +121,15 @@ Difference between individual things and abstract concepts.
 
 ## RDF Schema
 
-RDF Schema is an extension of the basic RDF vocabulary, you already know from before. It provides a way to describe / define the structure of the RDF data, a **vocabulary on data-modelling**. 
-You can always go to the published (RDF Schema Vocabulary file)[https://www.w3.org/TR/rdf11-schema/] and look up the the terms, meanings and rules.
+RDF Schema (RDFS) extends the basic RDF vocabulary. It provides terms that help describe the structure of RDF data.
 
+You can think of RDF Schema as a vocabulary for describing data models.
+
+The official RDF Schema specification is available at:
+
+https://www.w3.org/TR/rdf11-schema/
+
+Some commonly used RDFS terms include:
 
 * Classes
     * rdfs:Resource
@@ -90,9 +143,17 @@ You can always go to the published (RDF Schema Vocabulary file)[https://www.w3.o
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Challenge
+## Classify the nodes in the model
 
+Look at the nodes in your data model.
 
+For each node, decide whether it represents:
+
+- a resource,
+- a literal,
+- or a class.
+
+Discuss your reasoning with your group.
 
 :::::::::::::::: solution
 

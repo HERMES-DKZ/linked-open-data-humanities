@@ -13,7 +13,7 @@ The Dataset we will use in this lesson is a simplified subset from the Collectio
 
 ### Details
 
-The only software you need for doing this workshop is Open Refine with the extension `rdf-transform`. OpenRefine is actually a tool for data cleaning. However, with various extensions, the tool can be customised and extended to convert data into other formats just as easily. If you are interested in the other functionalities of Open Refine, tere are also lessons dedicated entirely to the topic of Open Refine.
+The only software you need for doing this workshop is Open Refine with the extension `rdf-transform`. OpenRefine is actually a tool for data cleaning. However, with various extensions, the tool can be customised and extended to convert data into other formats just as easily. If you are interested in the other functionalities of Open Refine, there are also lessons dedicated entirely to the topic of Open Refine.
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::
 
