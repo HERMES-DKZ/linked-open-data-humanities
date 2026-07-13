@@ -349,7 +349,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Model with Ontologies and Vocabularies</h1>
-        <p>Last updated on 2026-06-01 |
+        <p>Last updated on 2026-07-13 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/05_model.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -397,39 +397,70 @@ datamodel?</li>
 </div>
 </div>
 <section><h2 class="section-heading" id="planning-the-data-model">Planning the Data Model<a class="anchor" aria-label="anchor" href="#planning-the-data-model"></a></h2>
-<hr class="half-width"><p>Before we can create a whole RDF dataset, we need to decide what our
-data should look like. A flat table is not flat data, it contains
-information about several different things at once. Each row in our
-dataset describes not just one object, but also other entities.</p>
+<hr class="half-width"><p>After exploring the basic concepts and syntax of Linked Open Data, we
+will now work with a tabular museum dataset containing information about
+artworks from the Metropolitan Museum of Art.</p>
+<p>Before we can create an RDF dataset, we first need to understand the
+structure of the data. Although the dataset is presented as a table,
+each row contains information about several different entities at
+once.</p>
+<p>Our task is to identify these entities and the relationships between
+them, and gradually transform the tabular data into an RDF data
+model.</p>
 <div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
-<p>In the Github Repository you can find a <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/blob/main/episodes/data/met-dataset-50.md" class="external-link">markdown
-representation</a> and a <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/blob/main/episodes/data/met-dataset-50.html" class="external-link">html
-representation</a> of the dataset.</p>
+<p>The lesson repository contains both a markdown and an HTML
+representation of the dataset:</p>
+<ul><li><p><a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/blob/main/episodes/data/met-dataset-50.md" class="external-link">markdown
+representation</a></p></li>
+<li><p><a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/blob/main/episodes/data/met-dataset-50.html" class="external-link">html
+representation</a></p></li>
+</ul><p>Depending on the size of the group, learners can either inspect the
+table individually or work in small groups.</p>
 </div>
 </div>
 </div>
 </div>
-<div id="create-a-mind-map-out-of-the-dataset" class="callout challenge">
+<div id="discussion1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<span class="callout-header">Discussion</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>Look at the dataset as a group.</p>
+<p>What kinds of things are represented in the table?</p>
+<p>Which columns appear to describe the same entity, and which columns
+describe different entities?</p>
+</div>
+</div>
+</div>
+<div id="create-a-mind-map-out-of-the-tabular-dataset" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="create-a-mind-map-out-of-the-dataset" class="callout-inner">
-<h3 class="callout-title">Create a Mind Map out of the Dataset</h3>
+<div id="create-a-mind-map-out-of-the-tabular-dataset" class="callout-inner">
+<h3 class="callout-title">Create a Mind Map out of the Tabular
+Dataset</h3>
 <div class="callout-content">
 <p>Form groups and look at the column headings and pick a row of data in
-the table. 1. Try to convert the information of one data row into a
-mind-map (with nodes and connections) using the (Excalidraw)[<a href="https://excalidraw.com/" class="external-link uri">https://excalidraw.com/</a>]
-tool. 2. Identify central nodes. 3. How are the nodes interconnected
-with the table header? 4. Name the relationships between the nodes by
-assigning labels to them.</p>
-</div>
+the table.</p>
+<ol style="list-style-type: decimal"><li><p>Try to convert the information of one data row into a mind-map
+(with nodes and connections) using the (Excalidraw)[<a href="https://excalidraw.com/" class="external-link uri">https://excalidraw.com/</a>]
+tool.</p></li>
+<li><p>Think about what central nodes can be identified in the mind
+map.</p></li>
+<li><p>How are the nodes interconnected with the table header?</p></li>
+<li><p>Name the relationships between the central nodes by assigning
+labels to the connections. Pay attention to the direction of the
+arrows.</p></li>
+</ol></div>
 </div>
 </div>
 <div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
@@ -437,18 +468,41 @@ assigning labels to them.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<p>TODO: Add image of mindmap</p>
-<p>Central nodes are the ones with the objectIDs, artist, department and
-museum. Modeling decisions are subjective.</p>
+<p>TODO: Add image of mindmap 1. TODO: Image of possible mind map.</p>
+<ol start="2" style="list-style-type: decimal"><li><p>Central nodes are the ones where the most other nodes cluster
+around: objectIDs, artist, department or museum. Keep in mind: Modeling
+decisions are subjective.</p></li>
+<li><p>The column headings provide context for the values in the table.
+For example, without the column heading, an ObjectID would simply be a
+number. The column heading tells us that the number refers to an
+artwork. Similarly, the value in the Photographer column only becomes
+meaningful when we know that it refers to the creator of the
+artwork.</p></li>
+<li><p>Possible relationship labels include:</p></li>
+</ol><ul><li>Museum → owns → Artwork</li>
+<li>Department → manages → Artwork</li>
+<li>Artist → created → Artwork</li>
+</ul><p>Other valid relationships may be possible depending on how the data
+is interpreted.</p>
 </div>
 </div>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="resources-and-concepts">Resources and Concepts<a class="anchor" aria-label="anchor" href="#resources-and-concepts"></a></h2>
-<hr class="half-width"><p>Difference between individual things and abstract concepts.
-(rdf:type)</p>
+<hr class="half-width"><p>The mind map already contains several interconnected nodes. We can
+now add another layer of meaning to the model.</p>
+<p>The ObjectID does not simply represent a number. It refers to a
+specific artwork. Likewise, an artist name refers to a specific
+person.</p>
+<p>In RDF, we call these identifiable things resources.</p>
+<p>Resources can also belong to broader categories. For example:</p>
+<pre class="text"><code>ObjectID1234 rdf:type Object</code></pre>
+<p>The artwork represented by ObjectID1234 is an individual resource,
+while Object represents a more abstract concept or class.</p>
+<p>This distinction between individual resources and abstract concepts
+is an important part of RDF modeling.</p>
 <div id="challenge" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -466,7 +520,7 @@ museum. Modeling decisions are subjective.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 
 </div>
@@ -474,11 +528,13 @@ museum. Modeling decisions are subjective.</p>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="rdf-schema">RDF Schema<a class="anchor" aria-label="anchor" href="#rdf-schema"></a></h2>
-<hr class="half-width"><p>RDF Schema is an extension of the basic RDF vocabulary, you already
-know from before. It provides a way to describe / define the structure
-of the RDF data, a <strong>vocabulary on data-modelling</strong>. You
-can always go to the published (RDF Schema Vocabulary file)[<a href="https://www.w3.org/TR/rdf11-schema/" class="external-link uri">https://www.w3.org/TR/rdf11-schema/</a>] and look up the the
-terms, meanings and rules.</p>
+<hr class="half-width"><p>RDF Schema (RDFS) extends the basic RDF vocabulary. It provides terms
+that help describe the structure of RDF data.</p>
+<p>You can think of RDF Schema as a vocabulary for describing data
+models.</p>
+<p>The official RDF Schema specification is available at:</p>
+<p><a href="https://www.w3.org/TR/rdf11-schema/" class="external-link uri">https://www.w3.org/TR/rdf11-schema/</a></p>
+<p>Some commonly used RDFS terms include:</p>
 <ul><li>Classes
 <ul><li>rdfs:Resource</li>
 <li>rdfs:Class</li>
@@ -490,15 +546,20 @@ terms, meanings and rules.</p>
 <li>rdfs:subClassOf</li>
 <li>rdfs:label</li>
 </ul></li>
-</ul><div id="challenge-1" class="callout challenge">
+</ul><div id="classify-the-nodes-in-the-model" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
+<div id="classify-the-nodes-in-the-model" class="callout-inner">
+<h3 class="callout-title">Classify the nodes in the model</h3>
 <div class="callout-content">
-
+<p>Look at the nodes in your data model.</p>
+<p>For each node, decide whether it represents:</p>
+<ul><li>a resource,</li>
+<li>a literal,</li>
+<li>or a class.</li>
+</ul><p>Discuss your reasoning with your group.</p>
 </div>
 </div>
 </div>
@@ -507,7 +568,7 @@ terms, meanings and rules.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 
 </div>
@@ -536,7 +597,7 @@ vacabularies</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 
 </div>
@@ -588,7 +649,7 @@ any links that you are not going to use.
         | <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
         | <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/" class="external-link">Source</a></p>
         <p>
-        <a href="../citation.html">Cite</a>
+        <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/blob/main/" class="external-link">Cite</a>
         | <a href="mailto:julia.tolksdorf@hs-mainz.de,%20robert.zwick@hs-mainz.de">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 		</div>
 		<div class="col-md-6">
@@ -618,8 +679,8 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/05_model.html",
   "identifier": "https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/05_model.html",
   "dateCreated": "2025-02-04",
-  "dateModified": "2026-06-01",
-  "datePublished": "2026-07-07"
+  "dateModified": "2026-07-13",
+  "datePublished": "2026-07-13"
 }
 
   </script><script>
