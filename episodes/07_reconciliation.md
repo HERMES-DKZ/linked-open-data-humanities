@@ -125,8 +125,6 @@ The local IRI remains the subject. The `schema:sameAs` link connects it to the W
 
 ## Going Further: Adding Another Reconciliation Service
 
-In the previous example, we used the built-in Wikidata reconciliation service. However, Wikidata is only one of many authority files that can be used with OpenRefine. Many libraries, museums, and research institutions provide their own reconciliation services. Once a service has been added t## Going Further: Adding Another Reconciliation Service
-
 In the previous example, we used the built-in Wikidata reconciliation service. However, Wikidata is only one of many authority files that can be used with OpenRefine. Many libraries, museums, and research institutions provide their own reconciliation services. Once a service has been added to OpenRefine, it can be used just like Wikidata.
 
 As an example, we will add another reconciliation service and use it to reconcile the `country` column.
@@ -142,18 +140,40 @@ The reconciliation dialog opens. You will see a list of available reconciliation
 
 1. In the reconciliation dialog, click **Add Standard Service...**
 2. A new window opens asking for a **Service URL**.
-3. If you already know your URL paste it inside. If not click "Cancel" and then **"Discover services..."** in the reconciliation window
-4. A new window opens with services supported by OpenRefine. Search for "GeoNames", copy the URL, go back to OpenRefine an click **Add Standard Service...** again.
-5. Copy the Service URL and paste it into the input field in OpenRefine.
+3. If you already know the Service URL, paste it into the input field. If not, click **Cancel** and then **Discover services...** in the reconciliation window.
+4. A new window opens showing services supported by OpenRefine. Search for **GeoNames**, copy the Service URL, return to OpenRefine, and click **Add Standard Service...** again.
+5. Paste the copied Service URL into the input field.
 6. Click **Add Service**.
 
 The new service is now available in the list of reconciliation services. You only need to add it once. It will remain available in future OpenRefine projects.
+
+:::::::::::::::::::::::::::::::::::::: callout
+
+### Common Authority Files in the Digital Humanities
+
+There is no single authority file that covers every type of entity. Different authority files have different strengths and are used by different communities.
+
+Some of the most commonly used authority files in the Digital Humanities include:
+
+| Authority file | Best suited for |
+|----------------|-----------------|
+| **Wikidata** | General-purpose knowledge graph covering people, places, organisations, events, works, concepts, and many other entity types. |
+| **GeoNames** | Geographic entities such as countries, cities, mountains, rivers, and other places. |
+| **GND (Integrated Authority File)** | Persons, organisations, places, works, and subjects. Widely used by libraries in German-speaking countries. |
+| **Getty ULAN** | Artists, architects, and other creators. Commonly used by museums and art history projects. |
+| **Getty AAT** | Concepts such as materials, techniques, object types, styles, and periods. |
+| **Getty TGN** | Geographic names and historical places, especially for cultural heritage collections. |
+| **VIAF (Virtual International Authority File)** | Links together person and corporate body identifiers from many national libraries worldwide. |
+
+When choosing a reconciliation service, consider which authority file best matches the type of data in your column. For example, **GeoNames** is a good choice for countries and cities, while **ULAN** is better suited for artists and **AAT** for concepts such as materials or object types.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Step 3: Reconcile the Column
 
 1. Select the newly added reconciliation service.
 2. Click **Next**.
-3. If the service lets you choose an entity type, select the most appropriate one, in our case it should be **Concept**.
+3. If the service lets you choose an entity type, select the most appropriate one, in our case **Concept**.
 4. Click **Start reconciling**.
 
 OpenRefine now compares every unique value in the `country` column with the entries in the selected authority file.
@@ -200,104 +220,9 @@ The workflow is always the same:
 
 :::::::::::::::::::::::::::::::::::::: challenge
 
-## Exercise: Reconcile Another Column
-
-Repeat the reconciliation workflow using the `nationality` column.
-
-1. Add a new reconciliation service by entering its Service URL.
-2. Reconcile the `nationality` column.
-3. Review at least three suggested matches.
-4. Create a new column named `nationalitySameAs` containing the matched URLs.
-5. Compare this workflow with the reconciliation of the `artist` column.
-
-Which steps were exactly the same? Which information changed?
-
-:::::::::::::::: solution
-
-The workflow is identical regardless of which authority file is used:
-
-- select a column,
-- choose or add a reconciliation service,
-- reconcile the values,
-- review the proposed matches,
-- create a column containing the matched identifiers.
-
-Only the authority file and the returned identifiers change. The overall reconciliation workflow in OpenRefine remains the same.
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::o OpenRefine, it can be used just like Wikidata.
-
-As an example, we will add another reconciliation service and use it to reconcile the `country` column.
-
-### Step 1: Open the Reconciliation Dialog
-
-1. Click the dropdown arrow of the `country` column.
-2. Select **Reconcile → Start reconciling...**
-
-The reconciliation dialog opens. You will see a list of available reconciliation services. Wikidata is already included, but you can also add additional services.
-
-### Step 2: Add a New Reconciliation Service
-
-1. In the reconciliation dialog, click **Add Standard Service...**
-2. A new window opens asking for a **Service URL**.
-3. If you already know your URL paste it inside. If not click "Cancel" and then **"Discover services..."** in the reconciliation window
-4. A new window opens with services supported by OpenRefine. Search for "GeoNames", copy the URL, go back to OpenRefine an click **Add Standard Service...** again.
-5. Copy the Service URL and paste it into the input field in OpenRefine.
-6. Click **Add Service**.
-
-The new service is now available in the list of reconciliation services. You only need to add it once. It will remain available in future OpenRefine projects.
-
-:::::::::::::::::::::::::::::::::::::: callout
-
-### Common Authority Files in the Digital Humanities
-
-There is no single authority file that covers every type of entity. Different authority files have different strengths and are used by different communities.
-
-Some of the most commonly used authority files in the Digital Humanities include:
-
-| Authority file | Best suited for |
-|----------------|-----------------|
-| **Wikidata** | General-purpose knowledge graph covering people, places, organisations, events, works, concepts, and many other entity types. |
-| **GeoNames** | Geographic entities such as countries, cities, mountains, rivers, and other places. |
-| **GND (Integrated Authority File)** | Persons, organisations, places, works, and subjects. Widely used by libraries in German-speaking countries. |
-| **Getty ULAN** | Artists, architects, and other creators. Commonly used by museums and art history projects. |
-| **Getty AAT** | Concepts such as materials, techniques, object types, styles, and periods. |
-| **Getty TGN** | Geographic names and historical places, especially for cultural heritage collections. |
-| **VIAF (Virtual International Authority File)** | Links together person and corporate body identifiers from many national libraries worldwide. |
-
-When choosing a reconciliation service, consider which authority file best matches the type of data in your column. For example, **GeoNames** is a good choice for countries and cities, while **ULAN** is better suited for artists and **AAT** for concepts such as materials or object types.
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-### Step 3: Reconcile the Column
-
-1. Select the newly added reconciliation service.
-2. Click **Next**.
-3. If the service lets you choose an entity type, select the most appropriate one, in our case it should be **Concept**.
-4. Click **Start reconciling**.
-
-OpenRefine now compares every unique value in the `country` column with the entries in the selected authority file.
-
-### Step 4: Review the Suggested Matches
-
-As before, OpenRefine proposes one or more possible matches for each value. Review the suggestions carefully before accepting them. It is still your responsibility to decide whether the suggested entity is correct. If you are unsure, it is better to leave a value unreconciled than to create an incorrect link.
-
-### Step 5: Store the Matched Identifiers
-
-After the reconciliation has finished, you can create a new column containing the identifiers of the matched entities.
-
-1. Click the dropdown arrow of the `country` column.
-2. Select **Reconcile → Add column with URLs of matched entities**.
-3. Name the new column `countrySameAs`.
-
-The new column now contains the authority identifiers returned by the reconciliation service. You can use these identifiers in your RDF mapping in exactly the same way as the `artistSameAs` column created earlier.
-
-
-:::::::::::::::::::::::::::::::::::::: challenge
-
-## Exercise: Reconcile Another Column
+## Exercise: Reconcile the Country Column
 
 Repeat the reconciliation workflow using the `city` column.
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
