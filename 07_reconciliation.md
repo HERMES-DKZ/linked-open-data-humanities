@@ -15,7 +15,7 @@ exercises: 1
 ::::::::::::::::::::::::::::::::::::: objectives
 
 - Explain what reconciliation is and why it is a key step in creating Linked Open Data.
-- Reconcile the `artist` column against Wikidata in OpenRefine.
+- Reconcile columns against Wikidata in OpenRefine.
 - Review, accept, and reject candidate matches.
 - Add `schema:sameAs` links to the Person entity using the reconciled Wikidata IRIs.
 
@@ -33,6 +33,19 @@ This is the gap between a local RDF dataset and genuine **Linked Open Data**. To
 The process of establishing these connections is called **reconciliation**.
 
 
+:::::::::::::::::::::::::::::::::::::: callout
+
+### Why Authority Files?
+
+An **authority file** is a curated, maintained list of entities, for example persons, places, organisations, each with a stable identifier and a canonical form of the name. Authority files are maintained by libraries, archives, research institutions, or other communities. They exist precisely to solve the problem of ambiguous or inconsistent names.
+
+Wikidata is the largest openly accessible authority file and covers an enormous range of entities. **ULAN** (Union List of Artist Names, Getty Research Institute) is a domain-specific authority for artists and architects. Both are widely used in the cultural heritage sector.
+
+When you reconcile against these sources, your data gains a connection to a global knowledge network and any other dataset that has reconciled against the same source is now implicitly connected to yours.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
 ### What Is Reconciliation?
 
 Reconciliation means matching the values in a column against the entities in an external authority file and finding the best correspondence for each value.
@@ -40,18 +53,6 @@ Reconciliation means matching the values in a column against the entities in an 
 In practice: you take the text "Surugue, Louis" and ask Wikidata: *is there an entity in your system that matches this name?* Wikidata returns one or more candidates with confidence scores. You review them, confirm the correct match, and the local text value is now linked to a globally recognised IRI: `https://www.wikidata.org/wiki/Q5981497`.
 
 This is not about replacing your local data. The local placeholder IRI remains the subject of your RDF graph. What reconciliation adds is a link to the same entity in another dataset. Any system following that link can retrieve everything the other dataset, in our example Wikidata, knows about the person without you having to include it yourself.
-
-:::::::::::::::::::::::::::::::::::::: callout
-
-### Why Authority Files?
-
-An **authority file** is a curated, maintained list of entities — persons, places, organisations, concepts — each with a stable identifier and a canonical form of the name. Authority files are maintained by libraries, archives, research institutions, or other communities. They exist precisely to solve the problem of ambiguous or inconsistent names.
-
-Wikidata is the largest openly accessible authority file and covers an enormous range of entities. **ULAN** (Union List of Artist Names, Getty Research Institute) is a domain-specific authority for artists and architects. Both are widely used in the cultural heritage sector.
-
-When you reconcile against these sources, your data gains a connection to a global knowledge network and any other dataset that has reconciled against the same source is now implicitly connected to yours.
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 ## Reconciling Against Wikidata
@@ -80,14 +81,14 @@ In other cases, various entities are displayed from which you must choose. In ou
 
 ### Not every match will succeed
 
-For well-known artists — Rembrandt, Dürer, Hokusai — Wikidata will typically return a confident single match. For lesser-known, historical, or ambiguously named artists, the match may be uncertain or absent. This is expected. Reconciliation improves data quality where it can; it does not require perfection to be useful. Even a partial reconciliation, covering 60 % of artists, significantly increases the connectedness of the dataset. However, reconciliation always requires expertise and domain knowledge. In our example, it is already clear that some decisions cannot be made without further research.
+For "well-known" artists Wikidata will typically return a confident single match. For "lesser-known", historical, or ambiguously named artists, the match may be uncertain or absent. This is expected. Reconciliation improves data quality where it can; it does not require perfection to be useful. Even a partial reconciliation, covering 60 % of artists, significantly increases the connectedness of the dataset. However, reconciliation always requires expertise and domain knowledge. In our example, it is already clear that some decisions cannot be made without further research.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 As mentioned earlier, we have only created a link within Open Refine so far. If we want to supplement the underlying data with the new information, we need to add a new column containing that information:
 
-1. Click the droptdown arrow in the `artist` column again
+1. Click the dropdown arrow in the `artist` column again
 2. **Reconcile** -> **Add column with URLs of matched entities**
 3. Enter **artistSameAs** as column name
 
@@ -122,3 +123,106 @@ The local IRI remains the subject. The `schema:sameAs` link connects it to the W
 
 
 
+## Going Further: Adding Another Reconciliation Service
+
+In the previous example, we used the built-in Wikidata reconciliation service. However, Wikidata is only one of many authority files that can be used with OpenRefine. Many libraries, museums, and research institutions provide their own reconciliation services. Once a service has been added to OpenRefine, it can be used just like Wikidata.
+
+As an example, we will add another reconciliation service and use it to reconcile the `country` column.
+
+### Step 1: Open the Reconciliation Dialog
+
+1. Click the dropdown arrow of the `country` column.
+2. Select **Reconcile → Start reconciling...**
+
+The reconciliation dialog opens. You will see a list of available reconciliation services. Wikidata is already included, but you can also add additional services.
+
+### Step 2: Add a New Reconciliation Service
+
+1. In the reconciliation dialog, click **Add Standard Service...**
+2. A new window opens asking for a **Service URL**.
+3. If you already know the Service URL, paste it into the input field. If not, click **Cancel** and then **Discover services...** in the reconciliation window.
+4. A new window opens showing services supported by OpenRefine. Search for **GeoNames**, copy the Service URL, return to OpenRefine, and click **Add Standard Service...** again.
+5. Paste the copied Service URL into the input field.
+6. Click **Add Service**.
+
+The new service is now available in the list of reconciliation services. You only need to add it once. It will remain available in future OpenRefine projects.
+
+:::::::::::::::::::::::::::::::::::::: callout
+
+### Common Authority Files in the Digital Humanities
+
+There is no single authority file that covers every type of entity. Different authority files have different strengths and are used by different communities.
+
+Some of the most commonly used authority files in the Digital Humanities include:
+
+| Authority file | Best suited for |
+|----------------|-----------------|
+| **Wikidata** | General-purpose knowledge graph covering people, places, organisations, events, works, concepts, and many other entity types. |
+| **GeoNames** | Geographic entities such as countries, cities, mountains, rivers, and other places. |
+| **GND (Integrated Authority File)** | Persons, organisations, places, works, and subjects. Widely used by libraries in German-speaking countries. |
+| **Getty ULAN** | Artists, architects, and other creators. Commonly used by museums and art history projects. |
+| **Getty AAT** | Concepts such as materials, techniques, object types, styles, and periods. |
+| **Getty TGN** | Geographic names and historical places, especially for cultural heritage collections. |
+| **VIAF (Virtual International Authority File)** | Links together person and corporate body identifiers from many national libraries worldwide. |
+
+When choosing a reconciliation service, consider which authority file best matches the type of data in your column. For example, **GeoNames** is a good choice for countries and cities, while **ULAN** is better suited for artists and **AAT** for concepts such as materials or object types.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+### Step 3: Reconcile the Column
+
+1. Select the newly added reconciliation service.
+2. Click **Next**.
+3. If the service lets you choose an entity type, select the most appropriate one, in our case **Concept**.
+4. Click **Start reconciling**.
+
+OpenRefine now compares every unique value in the `country` column with the entries in the selected authority file.
+
+### Step 4: Review the Suggested Matches
+
+As before, OpenRefine proposes one or more possible matches for each value. Review the suggestions carefully before accepting them. It is still your responsibility to decide whether the suggested entity is correct. If you are unsure, it is better to leave a value unreconciled than to create an incorrect link.
+
+### Step 5: Store the Matched Identifiers
+
+After the reconciliation has finished, you can create a new column containing the identifiers of the matched entities.
+
+1. Click the dropdown arrow of the `country` column.
+2. Select **Reconcile → Add column with URLs of matched entities**.
+3. Name the new column `countrySameAs`.
+
+The new column now contains the authority identifiers returned by the reconciliation service. You can use these identifiers in your RDF mapping in exactly the same way as the `artistSameAs` column created earlier.
+
+:::::::::::::::::::::::::::::::::::::: callout
+
+### Reconciliation Works for Many Types of Data
+
+Reconciliation is not limited to people.
+
+You can reconcile many different kinds of entities, including:
+
+- people
+- places
+- organisations
+- countries
+- concepts
+- materials
+- object types
+
+The workflow is always the same:
+
+1. Choose a column.
+2. Select a reconciliation service.
+3. Review the suggested matches.
+4. Accept the correct matches.
+5. Use the resulting identifiers in your RDF mapping.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::: challenge
+
+## Exercise: Reconcile the Country Column
+
+Repeat the reconciliation workflow using the `city` column.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
