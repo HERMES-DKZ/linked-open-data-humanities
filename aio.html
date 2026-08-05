@@ -397,7 +397,7 @@
         
 <section id="aio-01_introduction"><p>Content from <a href="01_introduction.html">Introduction to Linked Open Data in the Humanities</a></p>
 <hr>
-<p>Last updated on 2026-05-21 |
+<p>Last updated on 2026-08-05 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/01_introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -413,8 +413,6 @@
 <ul>
 <li>What is Linked Open Data, and how does it differ from other data
 models?</li>
-<li>Why are standardized identifiers (e.g., URIs) essential for
-LOD?</li>
 <li>How can the subject-predicate-object model be used to describe
 LOD?</li>
 <li>What are real-world examples of Linked Open Data in the
@@ -431,8 +429,6 @@ humanities?</li>
 <li>Explain the concept of Linked Open Data (LOD) in your own
 words.</li>
 <li>Distinguish between “Linked Data” and “Linked Open Data”.</li>
-<li>Describe the importance of standardized identifiers (e.g., URIs) for
-linking data.</li>
 <li>Represent simple relationships using the subject-predicate-object
 model.</li>
 </ul>
@@ -881,7 +877,7 @@ addresses this problem?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p><strong>Wikidata IRI</strong>:
 <code>https://www.wikidata.org/wiki/Q5582</code> Namespace:
@@ -1811,7 +1807,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-05_model"><p>Content from <a href="05_model.html">Model with Ontologies and Vocabularies</a></p>
 <hr>
-<p>Last updated on 2026-07-13 |
+<p>Last updated on 2026-08-05 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/05_model.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1859,15 +1855,98 @@ datamodel?</li>
 <hr class="half-width">
 <p>After exploring the basic concepts and syntax of Linked Open Data, we
 will now work with a tabular museum dataset containing information about
-artworks from the Metropolitan Museum of Art.</p>
+artworks from the Metropolitan Museum of Art (the Met).</p>
 <p>Before we can create an RDF dataset, we first need to understand the
-structure of the data. Although the dataset is presented as a table,
-each row contains information about several different entities at
+structure of the data and build a conceptual data model (decide how the
+underlying data model will look). Although the dataset is presented as a
+table, each row contains information about several different entities at
 once.</p>
-<p>Our task is to identify these entities and the relationships between
-them, and gradually transform the tabular data into an RDF data
-model.</p>
-
+<p>Our task is to identify these entities, the relationships between
+them as well as the attributes of the entities, and gradually transform
+the tabular data into a RDF data model.</p>
+<table class="table">
+<colgroup>
+<col width="5%">
+<col width="5%">
+<col width="5%">
+<col width="5%">
+<col width="5%">
+<col width="5%">
+<col width="13%">
+<col width="5%">
+<col width="5%">
+<col width="5%">
+<col width="5%">
+<col width="5%">
+<col width="5%">
+<col width="5%">
+<col width="5%">
+<col width="5%">
+<col width="5%">
+</colgroup>
+<thead><tr>
+<th>objectID</th>
+<th>museum</th>
+<th>department</th>
+<th>departmentID</th>
+<th>accessionYear</th>
+<th>objectName</th>
+<th>title</th>
+<th>artistRole</th>
+<th>artistDisplayBio</th>
+<th>artist</th>
+<th>objectDate</th>
+<th>city</th>
+<th>country</th>
+<th>classification</th>
+<th>linkResource</th>
+<th>tags</th>
+<th>tag1</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>693151</td>
+<td>Metropolitan Museum of Art</td>
+<td>Drawings and Prints</td>
+<td>3</td>
+<td>1978</td>
+<td>Print</td>
+<td>The Dismissed Servant</td>
+<td>Publisher</td>
+<td>French, Paris ca. 1686–1762 Grand Vaux</td>
+<td>Surugue, Louis</td>
+<td>ca. 1749</td>
+<td>Berlin</td>
+<td></td>
+<td>Prints</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/693151" class="external-link uri">http://www.metmuseum.org/art/collection/search/693151</a></td>
+<td>Women|Servants</td>
+<td>woman</td>
+</tr>
+<tr>
+<td>708926</td>
+<td>Metropolitan Museum of Art</td>
+<td>Arts of Africa, Oceania, and the Americas</td>
+<td>2</td>
+<td>2015</td>
+<td>Photograph</td>
+<td>Woman outdoors – Ewe kente skirt, headtie and blouse</td>
+<td>Photographer</td>
+<td>Togolese, Kedzi 1880–1975 Lomé</td>
+<td>Acolatse, Alex Agbaglo</td>
+<td>1975</td>
+<td>Lomé</td>
+<td>Togo</td>
+<td>Photographs</td>
+<td><a href="http://www.metmuseum.org/art/collection/search/708926" class="external-link uri">http://www.metmuseum.org/art/collection/search/708926</a></td>
+<td>Portraits|Women</td>
+<td>Portraits</td>
+</tr>
+</tbody>
+</table>
+<div class="section level3">
+<h3 id="entities-and-attibutes">Entities and Attibutes<a class="anchor" aria-label="anchor" href="#entities-and-attibutes"></a>
+</h3>
 <div id="discussion1" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -1875,13 +1954,44 @@ model.</p>
 <span class="callout-header">Discussion</span>
 <div class="callout-inner">
 <div class="callout-content">
-<p>Look at the dataset as a group.</p>
-<p>What kinds of things are represented in the table?</p>
-<p>Which columns appear to describe the same entity, and which columns
-describe different entities?</p>
+<p>Look at the dataset as a group, especially pay attention to the
+coloum headers.</p>
+<p>Which different kinds of entities are described in the table? Which
+columns seem to describe the same entities?</p>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<p>The table contains information on three main entities. If we take the
+coloum headers these could be: museum, artworks and artists. The museum
+could include <code>museum</code>, <code>department</code> and
+<code>departmentID</code> or department could be seen as an indepentant
+entity; the artists includes <code>artist</code> <code>artist bio</code>
+and <code>artistrole</code>; and the artworks include, for example,
+<code>objectid</code>, <code>classification</code>, <code>title</code>
+and <code>tags</code>.</p>
+<p>However, there are also columns that cannot be clearly assigned. For
+example, <code>city</code> and <code>country</code> may also refer to
+the artist or the artwork or could be seen as independant entities,
+whilst <code>accession year</code> only makes sense in relation to the
+artwork and the museum, and <code>artist role</code> in relation to both
+the artwork and the artist.</p>
+<p>As always, modelling decisions are heavily influenced by
+interpretation.</p>
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<p>We took the first step to identify the key entities in our dataset
+and started with distinguishing between entities and attributes,
+describing these.</p>
+<p>TODO: Add description of attriubutes.</p>
 <div id="create-a-mind-map-out-of-the-tabular-dataset" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -1891,54 +2001,67 @@ describe different entities?</p>
 <h3 class="callout-title">Create a Mind Map out of the Tabular
 Dataset</h3>
 <div class="callout-content">
-<p>Form groups and look at the column headings and pick a row of data in
-the table.</p>
+<p>Work in small groups and choose one row from the dataset. Use
+Excalidraw (<a href="https://excalidraw.com/" class="external-link uri">https://excalidraw.com/</a>) or a sheet of paper to build a
+mind map step by step.</p>
 <ol style="list-style-type: decimal">
-<li><p>Try to convert the information of one data row into a mind-map
-(with nodes and connections) using the (Excalidraw)[<a href="https://excalidraw.com/" class="external-link uri">https://excalidraw.com/</a>]
-tool.</p></li>
-<li><p>Think about what central nodes can be identified in the mind
-map.</p></li>
-<li><p>How are the nodes interconnected with the table header?</p></li>
+<li><p>Think about what entities we identified earlier. Draw nodes for
+these entities and think about which table cell could represent
+them.</p></li>
+<li><p>Cluster the informations in the other table cells around
+these.</p></li>
+<li><p>How are the central nodes interconnected with the coloumn header?
+The column headers help you interpret the values. Use them to decide
+what the values represent.</p></li>
 <li><p>Name the relationships between the central nodes by assigning
 labels to the connections. Pay attention to the direction of the
 arrows.</p></li>
 </ol>
-</div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
-<div class="accordion-body">
-<p>TODO: Add image of mindmap 1. TODO: Image of possible mind map.</p>
-<ol start="2" style="list-style-type: decimal">
+<p>Tip: Do not try to model everything at once. Start by identifying the
+main entities, then gradually add more detail. ::: solution TODO: Add
+image of mindmap</p>
+<ol style="list-style-type: decimal">
 <li><p>Central nodes are the ones where the most other nodes cluster
-around: objectIDs, artist, department or museum. Keep in mind: Modeling
-decisions are subjective.</p></li>
+around. For example: objectID, artist, department or museum. Keep in
+mind – Modeling decisions are subjective.</p></li>
 <li><p>The column headings provide context for the values in the table.
-For example, without the column heading, an ObjectID would simply be a
-number. The column heading tells us that the number refers to an
-artwork. Similarly, the value in the Photographer column only becomes
-meaningful when we know that it refers to the creator of the
-artwork.</p></li>
+For example, without the column header, an ObjectID would simply be a
+number. The column header tells us that the number refers to an artwork
+like <code>708926</code> → is a <code>ObjectID</code> in the context of
+our artwork. You can expand this process with the other coloumns as
+well: Similarly, the value “Photographer” in the <code>artistrole</code>
+column only becomes meaningful when we know that it refers to the
+creator of the artwork. The <code>Acolatse, Alex Agbaglo</code> is the
+<code>Photoprapher</code> of the artwork.</p></li>
 <li><p>Possible relationship labels include:</p></li>
 </ol>
 <ul>
-<li>Museum → owns → Artwork</li>
-<li>Department → manages → Artwork</li>
-<li>Artist → created → Artwork</li>
+<li>Museum → owns → ObjectID</li>
+<li>Department → manages → ObjectID</li>
+<li>Artist → created → ObjectID</li>
 </ul>
+</div>
+</div>
+</div>
+
+<div id="create-a-mind-map-out-of-the-tabular-dataset" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<span class="callout-header">Discussion</span>
+<div id="create-a-mind-map-out-of-the-tabular-dataset" class="callout-inner">
+<h3 class="callout-title">Create a Mind Map out of the Tabular
+Dataset<em> (continued)</em>
+</h3>
+<div class="callout-content">
 <p>Other valid relationships may be possible depending on how the data
 is interpreted.</p>
 </div>
 </div>
 </div>
+<p>::::</p>
 </div>
-</section><section><h2 class="section-heading" id="resources-and-concepts">Resources and Concepts<a class="anchor" aria-label="anchor" href="#resources-and-concepts"></a>
+</section><section><h2 class="section-heading" id="resources-and-classes">Resources and Classes<a class="anchor" aria-label="anchor" href="#resources-and-classes"></a>
 </h2>
 <hr class="half-width">
 <p>The mind map already contains several interconnected nodes. We can
@@ -1946,13 +2069,19 @@ now add another layer of meaning to the model.</p>
 <p>The ObjectID does not simply represent a number. It refers to a
 specific artwork. Likewise, an artist name refers to a specific
 person.</p>
-<p>In RDF, we call these identifiable things resources.</p>
-<p>Resources can also belong to broader categories. For example:</p>
+<p>In RDF, we call these identifiable things resources. Resources can
+also belong to broader categories.</p>
 <pre class="text"><code>ObjectID1234 rdf:type Object</code></pre>
-<p>The artwork represented by ObjectID1234 is an individual resource,
-while Object represents a more abstract concept or class.</p>
-<p>This distinction between individual resources and abstract concepts
-is an important part of RDF modeling.</p>
+<p>The artwork represented by ObjectID <code>693151</code> is an
+individual resource, while <code>Object</code> represents a more
+abstract concept the ressource belongs to called a class.</p>
+<p>This distinction between individual resources and classes is an
+important part of RDF modeling.</p>
+<ul>
+<li>Museum → owns → Artwork</li>
+<li>Department → manages → Artwork</li>
+<li>Artist → created → Artwork</li>
+</ul>
 <div id="challenge" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -1981,18 +2110,16 @@ is an important part of RDF modeling.</p>
 </h2>
 <hr class="half-width">
 <p>RDF Schema (RDFS) extends the basic RDF vocabulary. It provides terms
-that help describe the structure of RDF data.</p>
-<p>You can think of RDF Schema as a vocabulary for describing data
-models.</p>
-<p>The official RDF Schema specification is available at:</p>
+that help describe the structure of RDF data. You can think of RDF
+Schema as a vocabulary for describing data models. The official RDF
+Schema specification is available at:</p>
 <p><a href="https://www.w3.org/TR/rdf11-schema/" class="external-link uri">https://www.w3.org/TR/rdf11-schema/</a></p>
 <p>Some commonly used RDFS terms include:</p>
 <ul>
 <li>Classes
 <ul>
-<li>rdfs:Resource</li>
 <li>rdfs:Class</li>
-<li>rdfs:Literal</li>
+<li>rdf:Property</li>
 </ul>
 </li>
 <li>Properties
@@ -2001,6 +2128,7 @@ models.</p>
 <li>rdfs:range</li>
 <li>rdfs:subClassOf</li>
 <li>rdfs:label</li>
+<li>rdf:type</li>
 </ul>
 </li>
 </ul>
@@ -2038,17 +2166,21 @@ models.</p>
 </section><section><h2 class="section-heading" id="vocabularies-and-ontologies">Vocabularies and Ontologies<a class="anchor" aria-label="anchor" href="#vocabularies-and-ontologies"></a>
 </h2>
 <hr class="half-width">
+<p>TODO</p>
+<p>Different projects could invent different names for the same
+property.</p>
 <p>Vocabularies provide shared meaning and terms across data models.
-They promote interoperability.</p>
-<p>Frequent vocabularies, where to find them and how to read them.</p>
-<div id="extend-the-data-model-by-the-use-of-vacabularies" class="callout challenge">
+They promote interoperability. So reuse existing vocabularies.</p>
+<p>Frequent vocabularies, where can you find them and how can you read
+them.</p>
+<div id="extend-the-data-model-by-the-use-of-vocabularies" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="extend-the-data-model-by-the-use-of-vacabularies" class="callout-inner">
+<div id="extend-the-data-model-by-the-use-of-vocabularies" class="callout-inner">
 <h3 class="callout-title">Extend the data model by the use of
-vacabularies</h3>
+vocabularies</h3>
 <div class="callout-content">
 
 </div>
@@ -3108,8 +3240,8 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/linked-open-data-humanities/aio.html",
   "identifier": "https://HERMES-DKZ.github.io/linked-open-data-humanities/aio.html",
   "dateCreated": "2025-02-04",
-  "dateModified": "2026-08-04",
-  "datePublished": "2026-08-04"
+  "dateModified": "2026-08-05",
+  "datePublished": "2026-08-05"
 }
 
   </script><script>
