@@ -7,7 +7,6 @@ exercises: 2
 :::::::::::::::::::::::::::::::::::::: questions 
 
 - What is Linked Open Data, and how does it differ from other data models?
-- Why are standardized identifiers (e.g., URIs) essential for LOD?
 - How can the subject-predicate-object model be used to describe LOD?
 - What are real-world examples of Linked Open Data in the humanities?
 
@@ -17,7 +16,6 @@ exercises: 2
 
 - Explain the concept of Linked Open Data (LOD) in your own words.
 - Distinguish between "Linked Data" and "Linked Open Data".
-- Describe the importance of standardized identifiers (e.g., URIs) for linking data.
 - Represent simple relationships using the subject-predicate-object model.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
