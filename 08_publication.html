@@ -118,7 +118,7 @@
     <a id="search-button" class="btn btn-primary" href="aio.html" role="button" aria-label="Search the All In One page">Search the All In One page</a>
   </div><!--/div.container-fluid -->
 </nav><aside class="col-md-12 lesson-progress"><div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 86%" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson Progress">86%</div>
+    <div class="progress-bar incubator" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson Progress">85%</div>
   </div>
 </aside><div class="container">
       <div class="row">
@@ -262,12 +262,20 @@
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         8. Publish your Linked Data
         </span>
-      
+      </button>
     </div><!--/div.accordion-header-->
+
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
+      <div class="accordion-body">
+        <ul><li><a href="#from-a-private-model-to-linked-open-data">From a private model to Linked <em>Open</em> Data</a></li>
+<li><a href="#publishing-with-github">Publishing with GitHub</a></li>
+        </ul></div><!--/div.accordion-body-->
+    </div><!--/div.accordion-collapse-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -339,7 +347,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Publish your Linked Data</h1>
-        <p>Last updated on 2026-05-27 |
+        <p>Last updated on 2026-08-13 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/08_publication.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -358,7 +366,10 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>How do I publish my linked data?</li>
+<ul><li>Why does Linked Open Data only reach its full value once it is
+published?</li>
+<li>What is a simple way to publish RDF data online?</li>
+<li>What should we keep in mind when publishing data on GitHub?</li>
 </ul></div>
 </div>
 </div>
@@ -366,20 +377,183 @@
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>Publish linked data with github.</li>
+<ul><li>Explain why publishing is a core part of Linked Open Data, not an
+optional extra step</li>
+<li>Describe how to publish an RDF file so that it has a stable,
+resolvable URL</li>
+<li>Name basic good practices for publishing data on GitHub</li>
 </ul></div>
 </div>
 </div>
+</div>
+</div>
+<section><h2 class="section-heading" id="from-a-private-model-to-linked-open-data">From a private model to Linked <em>Open</em> Data<a class="anchor" aria-label="anchor" href="#from-a-private-model-to-linked-open-data"></a></h2>
+<hr class="half-width"><p>So far, everything we built, from our first mind map to the Turtle
+and JSON-LD files we exported from OpenRefine and enriched through
+reconciliation, has stayed on our own computer. That is completely fine
+for learning and practicing, but it means our data is not yet
+<strong>Linked Open Data</strong> in any meaningful sense.</p>
+<ul><li>
+<strong>Open</strong> means that our data is actually accessible to
+others. Anyone should be able to find it, fetch it, and (legally) reuse
+it.</li>
+<li>
+<strong>Linked</strong> means that our IRIs actually connect to
+something. Other datasets can point to our resources, and our resources
+can point to theirs.</li>
+</ul><p>Neither of these is possible as long as our data only exists on our
+own laptop. An IRI like <code>ex:SurugueLouis</code> is not truly linked
+to anything if nobody else can ever look it up. Publishing is what turns
+a private model into part of the wider Web of Data.</p>
+<div id="star-open-data" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="star-open-data" class="callout-inner">
+<h3 class="callout-title">5-star Open Data</h3>
+<div class="callout-content">
+<p>A well-known way to visualise the concept of LOD is the
+<strong>5-star Open Data scheme</strong>, originally proposed by Tim
+Berners-Lee:</p>
+<ul><li>★ data is available on the web, in any format, under an open
+license</li>
+<li>★★ it is available as structured data (e.g. a table, not a scanned
+image)</li>
+<li>★★★ it uses a non-proprietary format (e.g. CSV instead of
+Excel)</li>
+<li>★★★★ it uses IRIs, so that people can point at your individual
+data</li>
+<li>★★★★★ it is linked to other people’s data, to provide context</li>
+</ul></div>
+</div>
+</div>
+<p>By the time we reach this episode, our RDF model already fulfils
+several of these stars. It uses IRIs, and, once we reuse vocabularies,
+it links to other data. But without the first star, actually publishing
+it openly on the web, none of that matters yet.</p>
+</section><section><h2 class="section-heading" id="publishing-with-github">Publishing with GitHub<a class="anchor" aria-label="anchor" href="#publishing-with-github"></a></h2>
+<hr class="half-width"><p>There are many ways to publish Linked Open Data (dedicated triple
+stores, SPARQL endpoints, data portals). For getting started, we do not
+need any of that. A free GitHub account and repository is enough to give
+our data a real, stable, and citable place on the web.</p>
+<div id="what-is-github" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="what-is-github" class="callout-inner">
+<h3 class="callout-title">What is GitHub?</h3>
+<div class="callout-content">
+<p><a href="https://github.com" class="external-link">GitHub</a> is a web platform for hosting
+and sharing files under version control, most commonly used for software
+code, but just as suitable for datasets. A <strong>repository</strong>
+(“repo”) is simply a folder of files with a history of changes. A
+repository can be <strong>public</strong> (visible and downloadable by
+anyone) or <strong>private</strong> (visible only to people you invite).
+For our purposes, a public repository is what turns a file on our
+computer into something the whole web can reach.</p>
+</div>
+</div>
+</div>
+<p>Let’s do this with the file we actually produced. We already exported
+our OpenRefine mapping as Turtle, and after reconciliation, that export
+also carries <code>schema:sameAs</code> links to Wikidata. A block of
+it, for a single artist, looks like this:</p>
+<pre class="turtle"><code>@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix schema: &lt;https://schema.org/&gt; .
+
+&lt;http://example.org/person/Surugue%2C+Louis&gt;
+    a schema:Person ;
+    rdfs:label "Surugue, Louis"@en ;
+    schema:description "French, Paris ca. 1686–1762 Grand Vaux" ;
+    schema:sameAs &lt;https://www.wikidata.org/wiki/Q5981497&gt; .</code></pre>
+<p>This one exported file, let’s call it <code>met-dataset.ttl</code>,
+already carries the result of everything we did in the previous
+chapters: the entities and relationships we modelled, the vocabularies
+we reused, and the authority links we added through reconciliation.
+Publishing it is the last step that turns it into genuine Linked
+<em>Open</em> Data.</p>
+<p><strong>1. Create a GitHub account, if you do not already have
+one</strong></p>
+<p>Go to <a href="https://github.com/join" class="external-link">github.com/join</a>, choose a
+username, and sign up with an email address. A free account is enough
+for everything we do in this lesson.</p>
+<p><strong>2. Create a new public repository</strong></p>
+<ol style="list-style-type: decimal"><li>Once logged in, click the <strong>+</strong> icon in the top right
+corner of any GitHub page and select <strong>New repository</strong> (or
+go directly to <a href="https://github.com/new" class="external-link">github.com/new</a>).</li>
+<li>Give it a name, for example <code>met-collection-lod</code>.</li>
+<li>Under <em>Visibility</em>, make sure <strong>Public</strong> is
+selected. A private repository is not open data, no matter how
+well-modelled it is.</li>
+<li>Click <strong>Create repository</strong>.</li>
+</ol><p><strong>3. Add <code>met-dataset.ttl</code> to the
+repository</strong></p>
+<ol style="list-style-type: decimal"><li>On the new repository’s page, click <strong>Add file</strong> →
+<strong>Upload files</strong>.</li>
+<li>Drag <code>met-dataset.ttl</code> into the browser window, or click
+<em>choose your files</em> to select it from your computer. You can add
+the JSON-LD export alongside it, as an alternative serialization of the
+same graph.</li>
+<li>Scroll down and click <strong>Commit changes</strong>.</li>
+</ol><p><strong>4. Add a license file</strong></p>
+<ol style="list-style-type: decimal"><li>On the repository’s main page, click <strong>Add file</strong> →
+<strong>Create new file</strong>.</li>
+<li>Name the file <code>LICENSE</code>. GitHub recognises this filename
+and shows a <strong>Choose a license template</strong> link, click
+it.</li>
+<li>Pick a license, for example <a href="https://creativecommons.org/publicdomain/zero/1.0/" class="external-link">CC0 1.0</a> to
+place the data fully in the public domain, or <a href="https://creativecommons.org/licenses/by/4.0/" class="external-link">CC-BY 4.0</a> to
+require attribution. If you are unsure which one fits, <a href="https://choosealicense.com/" class="external-link">choosealicense.com</a> is a good
+reference.</li>
+<li>Commit the new file.</li>
+</ol><p>Without a license, nobody can be legally sure they are allowed to
+reuse the data, even once they can technically access it.</p>
+<p><strong>5. Add a short README</strong></p>
+<ol style="list-style-type: decimal"><li>Click <strong>Add file</strong> → <strong>Create new file</strong>
+again and name it <code>README.md</code>.</li>
+<li>Describe what the dataset contains, which vocabularies it uses
+(schema.org), and how it was produced (OpenRefine and RDF-Transform,
+reconciled against Wikidata). A few sentences are enough.</li>
+<li>Commit the new file.</li>
+</ol><p><strong>6. Get the file’s stable URL</strong></p>
+<ol style="list-style-type: decimal"><li>Click on <code>met-dataset.ttl</code> in the repository’s file list
+to open it.</li>
+<li>Click the <strong>Raw</strong> button above the file content.</li>
+<li>The address now shown in your browser is the file’s permanent,
+fetchable URL, for our example something like:</li>
+</ol><pre class="text"><code>https://raw.githubusercontent.com/your-username/met-collection-lod/main/met-dataset.ttl</code></pre>
+<p>Anyone, a person in a browser, or an RDF tool, can now fetch this
+exact URL and get our data back. Opening it shows the plain content of
+the Turtle file, exactly what an RDF tool would retrieve as well. This
+is what makes the data “open” in the first-star sense above: it is
+genuinely available on the web, to anyone, without asking us for a
+copy.</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul><li>Linked Open Data only reaches its full value once it is actually
+published and can be accessed by others.</li>
+<li>The 5-star Open Data scheme shows that being “open” (available,
+licensed) is the foundation everything else builds on.</li>
+<li>A public GitHub repository is a simple way to give an RDF file a
+stable, fetchable URL.</li>
+<li>An open license and a short README turn a published file into data
+that others can confidently find and reuse.</li>
+</ul></div>
 </div>
 </div>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-
-
-
-      </div> <!-- / div.lesson-content -->
+</section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter Bottom"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="07_reconciliation.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="09_sparql.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
@@ -439,8 +613,8 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/linked-open-data-humanities/08_publication.html",
   "identifier": "https://HERMES-DKZ.github.io/linked-open-data-humanities/08_publication.html",
   "dateCreated": "2025-02-04",
-  "dateModified": "2026-05-27",
-  "datePublished": "2026-08-11"
+  "dateModified": "2026-08-13",
+  "datePublished": "2026-08-13"
 }
 
   </script><script>

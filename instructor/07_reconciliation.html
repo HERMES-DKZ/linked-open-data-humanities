@@ -118,7 +118,7 @@
     <a id="search-button" class="btn btn-primary" href="../instructor/aio.html" role="button" aria-label="Search the All In One page">Search the All In One page</a>
   </div><!--/div.container-fluid -->
 </nav><aside class="col-md-12 lesson-progress"><div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 69%" aria-valuenow="69" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson Progress">69%</div>
+    <div class="progress-bar incubator" role="progressbar" style="width: 68%" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson Progress">68%</div>
   </div>
 </aside><div class="container">
       <div class="row">
@@ -349,7 +349,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Reconciliation</h1>
-        <p>Last updated on 2026-07-24 |
+        <p>Last updated on 2026-08-13 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/07_reconciliation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -371,6 +371,8 @@
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul><li>What is reconciliation and why does it matter for Linked Data?</li>
+<li>How do authority files relate to the vocabularies and ontologies we
+reused earlier?</li>
 <li>How do I reconcile a column against Wikidata in OpenRefine?</li>
 <li>How do I use reconciled values to add authority IRIs to my RDF
 mapping?</li>
@@ -383,6 +385,8 @@ mapping?</li>
 <h3 class="card-title">Objectives</h3>
 <ul><li>Explain what reconciliation is and why it is a key step in creating
 Linked Open Data.</li>
+<li>Explain how authority files relate to the vocabularies and
+ontologies introduced earlier.</li>
 <li>Reconcile columns against Wikidata in OpenRefine.</li>
 <li>Review, accept, and reject candidate matches.</li>
 <li>Add <code>schema:sameAs</code> links to the Person entity using the
@@ -392,6 +396,14 @@ reconciled Wikidata IRIs.</li>
 </div>
 </div>
 </div>
+<p>In the model chapter, we reused vocabularies and ontologies, such as
+Dublin Core, FOAF, or schema.org, so that our classes and properties
+would mean the same thing across different projects. That solved the
+problem of <em>classes and properties</em>: two datasets that both use
+<code>foaf:Person</code> clearly mean the same <em>kind</em> of thing.
+It did not yet solve a related problem: knowing that two datasets both
+describe <em>a</em> person does not tell us whether they describe the
+<em>same</em> person.</p>
 <section><h2 class="section-heading" id="from-placeholders-to-real-identifiers">From Placeholders to Real Identifiers<a class="anchor" aria-label="anchor" href="#from-placeholders-to-real-identifiers"></a></h2>
 <hr class="half-width"><p>In the previous chapter, we created a Person entity for each artist
 in our dataset. The subject IRI was constructed from the artist’s name —
@@ -424,6 +436,16 @@ identifier and a canonical form of the name. Authority files are
 maintained by libraries, archives, research institutions, or other
 communities. They exist precisely to solve the problem of ambiguous or
 inconsistent names.</p>
+<p>That “stable identifier” is exactly the kind of IRI we met earlier: a
+namespace (e.g. <code>https://www.wikidata.org/wiki/</code>) combined
+with an ID (e.g. <code>Q5981497</code>), globally unique and resolvable,
+so the same entity can be referenced unambiguously from anywhere on the
+web. An authority file is, in a sense, simply a large, curated
+collection of such IRIs, one per real-world entity, rather than one per
+class or property.</p>
+<p>You can think of an authority file as a vocabulary too, just of a
+different kind: instead of standardising what “creator” means, it
+standardises <em>who</em> a specific creator is.</p>
 <p>Wikidata is the largest openly accessible authority file and covers
 an enormous range of entities. <strong>ULAN</strong> (Union List of
 Artist Names, Getty Research Institute) is a domain-specific authority
@@ -531,6 +553,12 @@ corresponding Wikidata entity.</p>
 exported RDF, we still need to tell RDF-Transform to use the reconciled
 Wikidata IRI. We do this by adding a <code>schema:sameAs</code> property
 to the Person root node.</p>
+<p>Note that <code>schema:sameAs</code> is not a new mechanism, it is
+simply another property from the schema.org vocabulary we already used
+for <code>schema:Person</code> and <code>schema:description</code>.
+Reconciliation does not require its own special vocabulary, it reuses
+the vocabularies we already know to state one more kind of fact: that
+two IRIs refer to the same real-world entity.</p>
 <ol style="list-style-type: decimal"><li>Open the RDF-Transform panel (<em>RDF Transform</em> → <em>Edit RDF
 Transform…</em>).</li>
 <li>Find the Person root node.</li>
@@ -595,9 +623,11 @@ future OpenRefine projects.</p>
 <h3 class="callout-title">Common Authority Files in the Digital
 Humanities</h3>
 <div class="callout-content">
-<p>There is no single authority file that covers every type of entity.
-Different authority files have different strengths and are used by
-different communities.</p>
+<p>Just like the general-purpose vocabularies we compared in the model
+chapter (Dublin Core, FOAF, schema.org, CIDOC CRM), authority files
+differ in scope and level of formality. There is no single authority
+file that covers every type of entity, so different communities maintain
+different ones.</p>
 <p>Some of the most commonly used authority files in the Digital
 Humanities include:</p>
 <table class="table"><colgroup><col width="48%"><col width="51%"></colgroup><thead><tr><th>Authority file</th>
@@ -691,17 +721,41 @@ Data</h3>
 </ol></div>
 </div>
 </div>
-<div id="exercise-reconcile-the-country-column" class="callout discussion">
+<div id="exercise-reconcile-the-city-column" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <span class="callout-header">Discussion</span>
-<div id="exercise-reconcile-the-country-column" class="callout-inner">
-<h3 class="callout-title">Exercise: Reconcile the Country Column</h3>
+<div id="exercise-reconcile-the-city-column" class="callout-inner">
+<h3 class="callout-title">Exercise: Reconcile the City Column</h3>
 <div class="callout-content">
 <p>Repeat the reconciliation workflow using the <code>city</code>
 column.</p>
 </div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul><li>Vocabularies and ontologies standardise shared classes and
+properties; authority files (Wikidata, ULAN, GND, VIAF, GeoNames, …)
+standardise identifiers for individual, real-world entities.</li>
+<li>Reconciliation matches a local value against the entities in an
+authority file and connects it to the resulting identifier, without
+replacing the local IRI.</li>
+<li>OpenRefine’s built-in reconciliation client can query many different
+reconciliation services, not only Wikidata.</li>
+<li>Reconciled identifiers are added to the RDF mapping using ordinary
+vocabulary terms such as <code>schema:sameAs</code>, reused from the
+vocabularies already applied in the model and creation chapters.</li>
+<li>Reconciliation is rarely complete or fully automatic; reviewing
+candidate matches carefully remains the responsibility of the data
+creator.</li>
+</ul></div>
 </div>
 </div>
 <!--
@@ -769,8 +823,8 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/07_reconciliation.html",
   "identifier": "https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/07_reconciliation.html",
   "dateCreated": "2025-02-04",
-  "dateModified": "2026-07-24",
-  "datePublished": "2026-08-11"
+  "dateModified": "2026-08-13",
+  "datePublished": "2026-08-13"
 }
 
   </script><script>

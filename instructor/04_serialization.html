@@ -347,7 +347,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Serialization</h1>
-        <p>Last updated on 2026-05-27 |
+        <p>Last updated on 2026-08-13 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/04_serialization.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -382,8 +382,8 @@
 <ul><li>Explain the purpose of serialization formats</li>
 <li>Identify common serialization formats</li>
 <li>Read and write RDF in Turtle syntax</li>
-<li>Explain the purpose of namspaces and prefixes</li>
-<li>Identify namspaces and prefixes in a RDF file</li>
+<li>Explain the purpose of namespaces and prefixes</li>
+<li>Identify namespaces and prefixes in a RDF file</li>
 </ul></div>
 </div>
 </div>
@@ -448,7 +448,10 @@ help you.</p>
 <p>Below you will find several RDF statements written either as natural
 language sentences or in N-Triples format. Rewrite them in Turtle syntax
 using a text editor.</p>
-<p>TODO</p>
+<pre><code>Claude Monet was born in Paris.
+Claude Monet created Water Lilies.
+Claude Monet created Woman with a Parasol.
+Woman with a Parasol was created in year 1875.</code></pre>
 </div>
 </div>
 </div>
@@ -457,10 +460,14 @@ using a text editor.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<pre><code>TODO
-Valid turtle.</code></pre>
+<pre class="turtle"><code>&lt;http://example.org/ClaudeMonet&gt;
+    &lt;http://example.org/wasBornIn&gt; &lt;http://example.org/Paris&gt; ;
+    &lt;http://example.org/hasCreated&gt; &lt;http://example.org/WaterLilies&gt;, &lt;http://example.org/WomanwithaParasol&gt; .
+
+&lt;http://example.org/WomanwithaParasol&gt;
+    &lt;http://example.org/hasCreationYear&gt; "1875" .</code></pre>
 </div>
 </div>
 </div>
@@ -471,38 +478,38 @@ Valid turtle.</code></pre>
 <p>Other common serialization formats are RDF/XML and JSON-LD. Although
 these formats look different, they all represent the same RDF graph.</p>
 <p>Example in JSON-LD and RDF/XML</p>
-<div class="codewrapper sourceCode" id="cb4">
+<div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a><span class="er">//</span> <span class="er">Vincent</span> <span class="er">van</span> <span class="er">Gogh</span> <span class="er">created</span> <span class="er">Starry</span> <span class="er">Night</span> <span class="er">and</span> <span class="er">Wheatfield</span> <span class="er">with</span> <span class="er">Cypresses.</span> <span class="er">He</span> <span class="er">was</span> <span class="er">born</span> <span class="er">in</span> <span class="er">Zundert.</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1" aria-label="code-block-4-2"></a><span class="fu">{</span></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1" aria-label="code-block-4-3"></a>  <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://example.org/VincentVanGogh"</span><span class="fu">,</span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1" aria-label="code-block-4-4"></a>  <span class="dt">"http://example.org/hasCreated"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1" aria-label="code-block-4-5"></a>    <span class="fu">{</span></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1" aria-label="code-block-4-6"></a>      <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://example.org/StarryNight"</span></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1" aria-label="code-block-4-7"></a>    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1" aria-label="code-block-4-8"></a>    <span class="fu">{</span></span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1" aria-label="code-block-4-9"></a>      <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://example.org/WheatfieldwithCypresses"</span></span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1" aria-label="code-block-4-10"></a>    <span class="fu">}</span></span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1" aria-label="code-block-4-11"></a>  <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1" aria-label="code-block-4-12"></a>  <span class="dt">"http://example.org/wasBornIn"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb4-13"><a href="#cb4-13" tabindex="-1" aria-label="code-block-4-13"></a>    <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://example.org/Zundert"</span></span>
-<span id="cb4-14"><a href="#cb4-14" tabindex="-1" aria-label="code-block-4-14"></a>  <span class="fu">}</span></span>
-<span id="cb4-15"><a href="#cb4-15" tabindex="-1" aria-label="code-block-4-15"></a><span class="fu">}</span></span></code></pre>
+<pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a><span class="er">//</span> <span class="er">Vincent</span> <span class="er">van</span> <span class="er">Gogh</span> <span class="er">created</span> <span class="er">Starry</span> <span class="er">Night</span> <span class="er">and</span> <span class="er">Wheatfield</span> <span class="er">with</span> <span class="er">Cypresses.</span> <span class="er">He</span> <span class="er">was</span> <span class="er">born</span> <span class="er">in</span> <span class="er">Zundert.</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1" aria-label="code-block-5-2"></a><span class="fu">{</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1" aria-label="code-block-5-3"></a>  <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://example.org/VincentVanGogh"</span><span class="fu">,</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1" aria-label="code-block-5-4"></a>  <span class="dt">"http://example.org/hasCreated"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1" aria-label="code-block-5-5"></a>    <span class="fu">{</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1" aria-label="code-block-5-6"></a>      <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://example.org/StarryNight"</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1" aria-label="code-block-5-7"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1" aria-label="code-block-5-8"></a>    <span class="fu">{</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1" aria-label="code-block-5-9"></a>      <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://example.org/WheatfieldwithCypresses"</span></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1" aria-label="code-block-5-10"></a>    <span class="fu">}</span></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1" aria-label="code-block-5-11"></a>  <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1" aria-label="code-block-5-12"></a>  <span class="dt">"http://example.org/wasBornIn"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1" aria-label="code-block-5-13"></a>    <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://example.org/Zundert"</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1" aria-label="code-block-5-14"></a>  <span class="fu">}</span></span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1" aria-label="code-block-5-15"></a><span class="fu">}</span></span></code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb5">
+<div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">XML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode xml" tabindex="0"><code class="sourceCode xml"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a> <span class="co">&lt;!-- Vincent van Gogh created Starry Night and Wheatfield with Cypresses. He was born in Zundert. --&gt;</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1" aria-label="code-block-5-2"></a>&lt;<span class="kw">rdf:Description</span> <span class="ot">rdf:about=</span><span class="st">"http://example.org/VincentVanGogh"</span>&gt;</span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1" aria-label="code-block-5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1" aria-label="code-block-5-4"></a>  &lt;<span class="kw">hasCreated</span> <span class="ot">rdf:resource=</span><span class="st">"http://example.org/StarryNight"</span>/&gt;</span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1" aria-label="code-block-5-5"></a></span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1" aria-label="code-block-5-6"></a>  &lt;<span class="kw">hasCreated</span> <span class="ot">rdf:resource=</span><span class="st">"http://example.org/WheatfieldwithCypresses"</span>/&gt;</span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1" aria-label="code-block-5-7"></a></span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1" aria-label="code-block-5-8"></a>  &lt;<span class="kw">wasBornIn</span> <span class="ot">rdf:resource=</span><span class="st">"http://example.org/Zundert"</span>/&gt;</span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1" aria-label="code-block-5-9"></a></span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1" aria-label="code-block-5-10"></a>&lt;/<span class="kw">rdf:Description</span>&gt;</span></code></pre>
+<pre class="sourceCode xml" tabindex="0"><code class="sourceCode xml"><span id="cb6-1"><a href="#cb6-1" tabindex="-1" aria-label="code-block-6-1"></a> <span class="co">&lt;!-- Vincent van Gogh created Starry Night and Wheatfield with Cypresses. He was born in Zundert. --&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1" aria-label="code-block-6-2"></a>&lt;<span class="kw">rdf:Description</span> <span class="ot">rdf:about=</span><span class="st">"http://example.org/VincentVanGogh"</span>&gt;</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1" aria-label="code-block-6-3"></a></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1" aria-label="code-block-6-4"></a>  &lt;<span class="kw">hasCreated</span> <span class="ot">rdf:resource=</span><span class="st">"http://example.org/StarryNight"</span>/&gt;</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1" aria-label="code-block-6-5"></a></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1" aria-label="code-block-6-6"></a>  &lt;<span class="kw">hasCreated</span> <span class="ot">rdf:resource=</span><span class="st">"http://example.org/WheatfieldwithCypresses"</span>/&gt;</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1" aria-label="code-block-6-7"></a></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1" aria-label="code-block-6-8"></a>  &lt;<span class="kw">wasBornIn</span> <span class="ot">rdf:resource=</span><span class="st">"http://example.org/Zundert"</span>/&gt;</span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1" aria-label="code-block-6-9"></a></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1" aria-label="code-block-6-10"></a>&lt;/<span class="kw">rdf:Description</span>&gt;</span></code></pre>
 </div>
 <p>All RDF serialization formats are plain text formats and can be
 opened with any text editor.</p>
@@ -529,8 +536,8 @@ such as people, places, or concepts.</p>
 used repeatedly in an RDF file. To make RDF easier to write and
 understand, we can define a short abbreviation for a namespace. This
 abbreviation is called a <strong>prefix</strong>.</p>
-<p>Namspaces and prefixes are declared at the beginning of a Turtle file
-using the <code>@prefix</code> keyword:</p>
+<p>Namespaces and prefixes are declared at the beginning of a Turtle
+file using the <code>@prefix</code> keyword:</p>
 <pre class="turtle"><code>@prefix wd: &lt;https://www.wikidata.org/wiki/&gt; .</code></pre>
 <p>For example, the following triple written with full IRIs:</p>
 <pre class="turtle"><code>&lt;https://www.wikidata.org/wiki/Q5582&gt;
@@ -610,7 +617,7 @@ errors.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>There are 9 mistakes in the Turtle file:</p>
 <ul><li>Missing prefix declaration:
@@ -779,8 +786,8 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/04_serialization.html",
   "identifier": "https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/04_serialization.html",
   "dateCreated": "2025-02-04",
-  "dateModified": "2026-05-27",
-  "datePublished": "2026-08-11"
+  "dateModified": "2026-08-13",
+  "datePublished": "2026-08-13"
 }
 
   </script><script>

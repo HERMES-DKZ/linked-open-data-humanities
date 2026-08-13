@@ -118,7 +118,7 @@
     <a id="search-button" class="btn btn-primary" href="aio.html" role="button" aria-label="Search the All In One page">Search the All In One page</a>
   </div><!--/div.container-fluid -->
 </nav><aside class="col-md-12 lesson-progress"><div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 33%" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson Progress">33%</div>
+    <div class="progress-bar incubator" role="progressbar" style="width: 32%" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson Progress">32%</div>
   </div>
 </aside><div class="container">
       <div class="row">
@@ -349,7 +349,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Model with Ontologies and Vocabularies</h1>
-        <p>Last updated on 2026-08-05 |
+        <p>Last updated on 2026-08-13 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/05_model.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -575,25 +575,63 @@ specific artwork. Likewise, an artist name refers to a specific
 person.</p>
 <p>In RDF, we call these identifiable things resources. Resources can
 also belong to broader categories.</p>
-<pre class="text"><code>ObjectID1234 rdf:type Object</code></pre>
+<pre class="text"><code>ObjectID693151 rdf:type Artwork</code></pre>
 <p>The artwork represented by ObjectID <code>693151</code> is an
-individual resource, while <code>Object</code> represents a more
-abstract concept the ressource belongs to called a class.</p>
+individual resource, while <code>Artwork</code> represents a more
+abstract concept the ressource belongs to, called a class.</p>
 <p>This distinction between individual resources and classes is an
 important part of RDF modeling.</p>
-<ul><li>Museum → owns → Artwork</li>
-<li>Department → manages → Artwork</li>
-<li>Artist → created → Artwork</li>
-</ul><div id="challenge" class="callout challenge">
+<p>Think of <code>rdf:type</code> like a sticker or a name tag: it
+doesn’t change the thing it’s stuck on, it just tells whoever looks at
+it which drawer the thing belongs in. <code>ObjectID693151</code> stays
+exactly the artwork it was, but with a <code>rdf:type Artwork</code>
+sticker on it, everyone (and every machine) reading our data instantly
+knows: “ah, this one goes in the ‘Artwork’ drawer.”</p>
+<p><code>rdf:type</code> is not something we had to invent ourselves, it
+already comes built into RDF, so every RDF tool understands it in
+exactly the same way, everywhere. That is the whole benefit: instead of
+everyone coming up with their own way of saying “this is a kind of
+that”, there is exactly one standard sticker for it, and we can start
+using it immediately.</p>
+<p>What does this actually buy us? Once things are sorted into drawers
+like this, we can start asking useful questions of our data: “show me
+everything in the Artwork drawer”, or “show me everything in the Person
+drawer” - without writing any special code for it. The sorting itself
+already contains that information.</p>
+<p>Not everything in our table refers to an identifiable thing, though.
+Values such as a date, a height in centimeters, or a free-text
+description are simply data values, there is nothing further we could
+point to or describe. In RDF, such values are called
+<strong>literals</strong>. A literal has no identity of its own; it is a
+plain piece of information attached to a resource, for example:</p>
+<pre class="text"><code>ObjectID693151 hasTitle "The Dismissed Servant"</code></pre>
+<p>So when we look at the nodes in our data model, each one is one of
+the following:</p>
+<ul><li>a <strong>resource</strong> - an identifiable thing (an artwork, an
+artist, a museum),</li>
+<li>a <strong>literal</strong> - a plain value (a date, a number, a
+string), or</li>
+<li>a <strong>class</strong> - a category that resources belong to
+(Artwork, Person, Museum).</li>
+</ul><div id="type-your-resources" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
+<div id="type-your-resources" class="callout-inner">
+<h3 class="callout-title">Type your resources</h3>
 <div class="callout-content">
-
-</div>
+<p>Go back to the mind map you sketched earlier.</p>
+<ol style="list-style-type: decimal"><li>Pick three or four nodes from your mind map that you would classify
+as resources.</li>
+<li>For each resource, write one simple triple that states which class
+it belongs to, using <code>rdf:type</code>. We have not reused any
+external vocabulary yet, so simply invent short placeholder terms of
+your own (e.g. <code>ex:Artwork</code>, <code>ex:Person</code>,
+<code>ex:Museum</code>).</li>
+<li>Compare your triples with another group. Did you choose the same
+classes for the same kind of node?</li>
+</ol></div>
 </div>
 </div>
 <div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
@@ -603,30 +641,78 @@ important part of RDF modeling.</p>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
-
+<p>Possible triples for our example object <code>693151</code>:</p>
+<pre class="text"><code>ex:ObjectID693151 rdf:type ex:Artwork
+ex:SurugueLouis rdf:type ex:Person
+ex:MetMuseum rdf:type ex:Museum
+ex:DrawingsAndPrints rdf:type ex:Department</code></pre>
+<p>Different groups may pick different class names or a different level
+of detail (e.g. <code>ex:Artist</code> instead of
+<code>ex:Person</code>). This is completely normal. Modelling always
+involves choices and there is rarely a single correct answer.</p>
 </div>
 </div>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="rdf-schema">RDF Schema<a class="anchor" aria-label="anchor" href="#rdf-schema"></a></h2>
-<hr class="half-width"><p>RDF Schema (RDFS) extends the basic RDF vocabulary. It provides terms
-that help describe the structure of RDF data. You can think of RDF
-Schema as a vocabulary for describing data models. The official RDF
-Schema specification is available at:</p>
-<p><a href="https://www.w3.org/TR/rdf11-schema/" class="external-link uri">https://www.w3.org/TR/rdf11-schema/</a></p>
-<p>Some commonly used RDFS terms include:</p>
-<ul><li>Classes
-<ul><li>rdfs:Class</li>
-<li>rdf:Property</li>
-</ul></li>
-<li>Properties
-<ul><li>rdfs:domain</li>
-<li>rdfs:range</li>
-<li>rdfs:subClassOf</li>
-<li>rdfs:label</li>
-<li>rdf:type</li>
-</ul></li>
-</ul><div id="classify-the-nodes-in-the-model" class="callout challenge">
+<hr class="half-width"><p>With <code>rdf:type</code> alone, we can already sort our resources
+into drawers: an “Artwork” drawer, a “Person” drawer, a “Museum” drawer.
+But nothing yet stops us from putting the wrong thing into the wrong
+drawer. RDF itself would not complain if we accidentally wrote
+<code>ex:MetMuseum rdf:type ex:Person</code>, a museum sorted into the
+“Person” drawer. RDF has no way to say what may go into a drawer, or
+what a drawer even means. That is the gap RDF Schema (RDFS) closes.</p>
+<p>You can picture RDFS as the label and instruction sheet on each
+drawer: it doesn’t add any new artworks or people to our data, it
+explains what each drawer is for, what is allowed to go into it, and how
+the drawers relate to one another (for example, that the “Print” drawer
+sits inside the bigger “Artwork” drawer).</p>
+<p>RDFS is, just like RDF, its own small vocabulary, it simply lives
+under its own prefix, <code>rdfs:</code>. The official specification is
+available at <a href="https://www.w3.org/TR/rdf11-schema/" class="external-link uri">https://www.w3.org/TR/rdf11-schema/</a>. It adds only a
+handful of terms, and they do two jobs.</p>
+<p><strong>1. Naming and describing the drawers themselves</strong></p>
+<ul><li>
+<code>rdfs:Class</code> - marks something as being a drawer (a
+class) at all, rather than an individual item.
+<code>ex:Artwork rdf:type rdfs:Class</code> says: “ex:Artwork is a
+drawer you can sort things into.”</li>
+<li>
+<code>rdfs:Resource</code> - the biggest drawer of all; literally
+everything in RDF fits into it.</li>
+<li>
+<code>rdfs:Literal</code> - the drawer for plain values, like text,
+numbers, or dates.</li>
+</ul><p><strong>2. Writing rules for our properties</strong></p>
+<ul><li>
+<code>rdfs:domain</code> - “who is allowed to use this connector?”
+E.g. <code>ex:createdBy rdfs:domain ex:Artwork</code> says only things
+from the Artwork drawer may have a creator.</li>
+<li>
+<code>rdfs:range</code> - “what is allowed on the other end of this
+connector?” E.g. <code>ex:createdBy rdfs:range ex:Person</code> says the
+creator must come from the Person drawer.</li>
+<li>
+<code>rdfs:subClassOf</code> - “this drawer sits inside a bigger
+drawer.” E.g. <code>ex:Print rdfs:subClassOf ex:Artwork</code> means
+everything in the Print drawer automatically also counts as being in the
+Artwork drawer.</li>
+<li>
+<code>rdfs:label</code> - a friendly, readable name for a technical
+term, e.g. <code>ex:Artwork rdfs:label "Artwork"</code>.</li>
+</ul><p>What do we actually gain from this? Once we write
+<code>ex:createdBy rdfs:domain ex:Artwork</code> and
+<code>rdfs:range ex:Person</code>, a tool reading our data can
+automatically check whether it still makes sense. For example, flagging
+it if a museum, rather than a person, is ever entered as a creator. Just
+as importantly, anyone else picking up our data - a colleague, a reused
+dataset, another tool - can immediately see what each drawer and each
+connector is meant to be used for, without having to ask us. RDFS turns
+a private collection of guesses into a documented, shareable, checkable
+model.</p>
+<p>The following challenges apply this in exactly this order: first
+sorting things into drawers, then writing the rules for the drawers.</p>
+<div id="classify-the-nodes-in-the-model" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
@@ -634,7 +720,13 @@ Schema specification is available at:</p>
 <div id="classify-the-nodes-in-the-model" class="callout-inner">
 <h3 class="callout-title">Classify the nodes in the model</h3>
 <div class="callout-content">
-<p>Look at the nodes in your data model.</p>
+<p>This challenge focuses on <code>rdfs:Resource</code>,
+<code>rdfs:Class</code>, and <code>rdfs:Literal</code>, deciding what
+<em>kind</em> of thing each node in your model is.</p>
+<p>Look at the model you have built so far: the entities from your mind
+map, the classes you assigned to them with <code>rdf:type</code> in
+<em>Type your resources</em>, and any literals you have written down
+along the way (such as a title or a date).</p>
 <p>For each node, decide whether it represents:</p>
 <ul><li>a resource,</li>
 <li>a literal,</li>
@@ -650,30 +742,58 @@ Schema specification is available at:</p>
 </button>
 <div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
-
+<p>For our example object <code>693151</code>, a possible classification
+looks like this:</p>
+<table class="table"><thead><tr><th>Node</th>
+<th>Type</th>
+</tr></thead><tbody><tr><td><code>ex:ObjectID693151</code></td>
+<td>resource (an individual artwork)</td>
+</tr><tr><td><code>ex:Artwork</code></td>
+<td>class</td>
+</tr><tr><td><code>ex:SurugueLouis</code></td>
+<td>resource (an individual person)</td>
+</tr><tr><td><code>ex:Person</code></td>
+<td>class</td>
+</tr><tr><td><code>"The Dismissed Servant"</code></td>
+<td>literal (a title)</td>
+</tr><tr><td><code>"ca. 1749"</code></td>
+<td>literal (a date)</td>
+</tr><tr><td><code>ex:MetMuseum</code></td>
+<td>resource (an individual museum)</td>
+</tr></tbody></table><p>A useful rule of thumb: if you could imagine writing further facts
+about a node (its birth date, its location, its opening hours), it is
+probably a resource. If a value simply <em>is</em> the fact, and cannot
+be described any further, it is a literal.</p>
 </div>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="vocabularies-and-ontologies">Vocabularies and Ontologies<a class="anchor" aria-label="anchor" href="#vocabularies-and-ontologies"></a></h2>
-<hr class="half-width"><p>TODO</p>
-<p>Different projects could invent different names for the same
-property.</p>
-<p>Vocabularies provide shared meaning and terms across data models.
-They promote interoperability. So reuse existing vocabularies.</p>
-<p>Frequent vocabularies, where can you find them and how can you read
-them.</p>
-<div id="extend-the-data-model-by-the-use-of-vocabularies" class="callout challenge">
+<div id="from-rdftype-to-a-full-rdfs-model" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="extend-the-data-model-by-the-use-of-vocabularies" class="callout-inner">
-<h3 class="callout-title">Extend the data model by the use of
-vocabularies</h3>
+<div id="from-rdftype-to-a-full-rdfs-model" class="callout-inner">
+<h3 class="callout-title">From rdf:type to a full RDFS model</h3>
 <div class="callout-content">
-
-</div>
+<p>This challenge focuses on <code>rdfs:domain</code>,
+<code>rdfs:range</code>, <code>rdfs:subClassOf</code>, and
+<code>rdfs:label</code>, the rules and labels attached to our
+drawers.</p>
+<p>Now extend the model you built with <code>rdf:type</code> in <em>Type
+your resources</em>, using RDF Schema.</p>
+<ol style="list-style-type: decimal"><li>Pick one property that connects two of your resources, for example
+the relationship between an artwork and its creator. Give it a name,
+e.g. <code>ex:createdBy</code>.</li>
+<li>Use <code>rdfs:domain</code> and <code>rdfs:range</code> to state
+which class of resource can be the subject and which can be the object
+of that property.</li>
+<li>If you have two related classes (e.g. <code>ex:Print</code> and
+<code>ex:Artwork</code>), connect them with
+<code>rdfs:subClassOf</code>.</li>
+<li>Add an <code>rdfs:label</code> to at least one class or property, so
+it has a human-readable name.</li>
+</ol></div>
 </div>
 </div>
 <div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
@@ -683,11 +803,114 @@ vocabularies</h3>
 </button>
 <div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
+<pre class="text"><code>ex:createdBy rdfs:domain ex:Artwork
+ex:createdBy rdfs:range ex:Person
 
+ex:Print rdfs:subClassOf ex:Artwork
+
+ex:Artwork rdfs:label "Artwork"</code></pre>
+<p>With these additional statements we are no longer only listing
+individual facts, as we did with <code>rdf:type</code>. We are now
+describing rules about how our drawers and connectors relate to each
+other - what plain RDF alone could not do. This is exactly the purpose
+of RDF Schema: it lets us describe the <em>shape</em> of our data, not
+just individual data points.</p>
 </div>
 </div>
 </div>
 </div>
+</section><section><h2 class="section-heading" id="vocabularies-and-ontologies">Vocabularies and Ontologies<a class="anchor" aria-label="anchor" href="#vocabularies-and-ontologies"></a></h2>
+<hr class="half-width"><p>So far we have been inventing our own terms, such as
+<code>ex:Artwork</code> or <code>ex:createdBy</code>. This is fine for
+practicing, but it creates a problem: if every project invents its own
+classes and properties, we cannot easily tell that two datasets are
+talking about the same kind of thing. Imagine two museums publishing
+data about their collections. One uses <code>ex:createdBy</code>, the
+other uses <code>museum:artist</code>. A computer reading both datasets
+has no way of knowing that these two properties mean the same thing,
+unless both museums agree to use the same, shared term.</p>
+<p>This is exactly what <strong>vocabularies</strong> and
+<strong>ontologies</strong> provide: a shared set of classes and
+properties, each with its own carefully chosen, permanent IRI, that
+anyone can reuse instead of inventing their own.</p>
+<ul><li>A <strong>vocabulary</strong> is usually a lightweight set of terms,
+with a short description of what each one means.</li>
+<li>An <strong>ontology</strong> is a more formal, detailed vocabulary
+that also defines rules and relationships between its terms, for example
+that “print” is always a subclass of “artwork”.</li>
+</ul><p>In practice, the two words are often used interchangeably, and the
+boundary between them is not always sharp.</p>
+<p>Some vocabularies and ontologies frequently used in cultural heritage
+and the humanities:</p>
+<ul><li>
+<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/" class="external-link">Dublin
+Core (dc/dcterms)</a> - general-purpose terms such as
+<code>dc:creator</code>, <code>dc:title</code>, or
+<code>dc:date</code>.</li>
+<li>
+<a href="https://schema.org" class="external-link">schema.org</a> - a broad vocabulary
+with terms for people, places, and creative works.</li>
+<li>
+<a href="http://xmlns.com/foaf/spec/" class="external-link">FOAF (Friend of a Friend)</a>
+- describes people, e.g. <code>foaf:Person</code>,
+<code>foaf:name</code>.</li>
+<li>
+<a href="https://www.cidoc-crm.org/" class="external-link">CIDOC CRM</a> - a detailed
+ontology for describing museum and cultural heritage information.</li>
+<li>
+<a href="https://www.w3.org/2004/02/skos/" class="external-link">SKOS</a> - a vocabulary
+for thesauri and classification systems.</li>
+</ul><p>You rarely need to memorise these. Tools such as <a href="https://lov.linkeddata.es/dataset/lov/" class="external-link">Linked Open Vocabularies
+(LOV)</a> or <a href="https://prefix.cc/" class="external-link">prefix.cc</a> let you search
+for existing, reusable terms instead of inventing your own.</p>
+<div id="a-first-look-at-reusing-a-vocabulary" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="a-first-look-at-reusing-a-vocabulary" class="callout-inner">
+<h3 class="callout-title">A first look at reusing a vocabulary</h3>
+<div class="callout-content">
+<p>Go back to the small model you built with your own <code>ex:</code>
+terms in the previous challenges.</p>
+<ol style="list-style-type: decimal"><li>Search FOAF or Dublin Core for a term that could replace one of your
+<code>ex:</code> classes or properties, for example a class for “person”
+or a property for “creator”.</li>
+<li>Rewrite one of your triples using the term you found instead of your
+own <code>ex:</code> term.</li>
+</ol></div>
+</div>
+</div>
+<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
+  <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
+</button>
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div class="accordion-body">
+<p>For our example object <code>693151</code>,
+<code>ex:SurugueLouis rdf:type ex:Person</code> could become
+<code>ex:SurugueLouis rdf:type foaf:Person</code>, and
+<code>ex:ObjectID693151 hasCreator ex:SurugueLouis</code> could become
+<code>ex:ObjectID693151 dc:creator ex:SurugueLouis</code>.</p>
+<p>Not every term has a good match: none of these general vocabularies
+has an exact term for “artwork” in a museum context, this is where a
+more specialised ontology such as CIDOC CRM would come in. It is common,
+and completely fine, for a real data model to combine several existing
+vocabularies with a few custom terms for anything specific to the
+dataset.</p>
+</div>
+</div>
+</div>
+</div>
+<p>Vocabularies like these standardise shared <em>classes and
+properties</em> - the general shape of a description. There is a related
+but different idea: standardising identifiers for <em>individual,
+real-world entities</em> - a specific person, place, or organisation -
+so that the same entity is recognised across many datasets, not just the
+same kind of entity. We will explore this idea, and put it to practical
+use, when we reconcile our dataset against authority files such as
+Wikidata in a later chapter.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -695,7 +918,25 @@ vocabularies</h3>
 <span class="callout-header">Key Points</span>
 <div class="callout-inner">
 <div class="callout-content">
-<ul><li>keypoint1</li>
+<ul><li>A data model describes which entities exist in a dataset, how they
+relate, and how they should be described, before creating RDF.</li>
+<li>Resources are identifiable things; literals are plain values;
+classes describe categories that resources belong to.</li>
+<li>
+<code>rdf:type</code> links a resource to the class it belongs
+to.</li>
+<li>RDF Schema (RDFS) adds vocabulary for describing data models,
+e.g. <code>rdfs:domain</code>, <code>rdfs:range</code>,
+<code>rdfs:subClassOf</code>, and <code>rdfs:label</code>.</li>
+<li>Vocabularies and ontologies provide shared, reusable terms so that
+data models from different projects can be understood by machines and
+combined with each other.</li>
+<li>Reusing existing vocabularies (e.g. Dublin Core, FOAF, schema.org,
+CIDOC CRM) instead of inventing new terms improves
+interoperability.</li>
+<li>Vocabularies standardise shared classes and properties; authority
+files do the same for individual, real-world entities, this is what
+reconciliation, covered in a later chapter, connects our model to.</li>
 </ul></div>
 </div>
 </div>
@@ -763,8 +1004,8 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/linked-open-data-humanities/05_model.html",
   "identifier": "https://HERMES-DKZ.github.io/linked-open-data-humanities/05_model.html",
   "dateCreated": "2025-02-04",
-  "dateModified": "2026-08-05",
-  "datePublished": "2026-08-11"
+  "dateModified": "2026-08-13",
+  "datePublished": "2026-08-13"
 }
 
   </script><script>

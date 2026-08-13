@@ -397,7 +397,15 @@
         
 <section id="01_introduction"><h2 class="section-heading"><a href="01_introduction.html">Introduction to Linked Open Data in the Humanities</a></h2>
 <hr class="half-width"></section><section id="02_iris"><h2 class="section-heading"><a href="02_iris.html">The concept of IRIs</a></h2>
-<hr class="half-width"></section><section id="03_rdf"><h2 class="section-heading"><a href="03_rdf.html">Introduction to RDF and Basic Modeling</a></h2>
+<hr class="half-width">
+<ul>
+<li>IRIs (Internationalized Resource Identifiers) are used to prevent
+ambiguities when identifying resources.</li>
+<li>An IRI needs to be defined and resolvable on the web.</li>
+<li>Subjects, predicates, and non-literal objects are identified with
+IRIs.</li>
+<li>An IRI is created from a namespace in combination with an ID.</li>
+</ul></section><section id="03_rdf"><h2 class="section-heading"><a href="03_rdf.html">Introduction to RDF and Basic Modeling</a></h2>
 <hr class="half-width">
 <ul>
 <li>
@@ -424,7 +432,25 @@ structure RDF triples.</li>
 </ul></section><section id="05_model"><h2 class="section-heading"><a href="05_model.html">Model with Ontologies and Vocabularies</a></h2>
 <hr class="half-width">
 <ul>
-<li>keypoint1</li>
+<li>A data model describes which entities exist in a dataset, how they
+relate, and how they should be described, before creating RDF.</li>
+<li>Resources are identifiable things; literals are plain values;
+classes describe categories that resources belong to.</li>
+<li>
+<code>rdf:type</code> links a resource to the class it belongs
+to.</li>
+<li>RDF Schema (RDFS) adds vocabulary for describing data models,
+e.g. <code>rdfs:domain</code>, <code>rdfs:range</code>,
+<code>rdfs:subClassOf</code>, and <code>rdfs:label</code>.</li>
+<li>Vocabularies and ontologies provide shared, reusable terms so that
+data models from different projects can be understood by machines and
+combined with each other.</li>
+<li>Reusing existing vocabularies (e.g. Dublin Core, FOAF, schema.org,
+CIDOC CRM) instead of inventing new terms improves
+interoperability.</li>
+<li>Vocabularies standardise shared classes and properties; authority
+files do the same for individual, real-world entities, this is what
+reconciliation, covered in a later chapter, connects our model to.</li>
 </ul></section><section id="06_creation"><h2 class="section-heading"><a href="06_creation.html">From Model to Data</a></h2>
 <hr class="half-width">
 <ul>
@@ -442,8 +468,34 @@ directly mirroring the triple structure.</li>
 formats; Turtle is readable and compact, JSON-LD integrates with web
 development workflows.</li>
 </ul></section><section id="07_reconciliation"><h2 class="section-heading"><a href="07_reconciliation.html">Reconciliation</a></h2>
-<hr class="half-width"></section><section id="08_publication"><h2 class="section-heading"><a href="08_publication.html">Publish your Linked Data</a></h2>
-<hr class="half-width"></section><section id="09_sparql"><h2 class="section-heading"><a href="09_sparql.html">Query Linked Data with SPARQL</a></h2>
+<hr class="half-width">
+<ul>
+<li>Vocabularies and ontologies standardise shared classes and
+properties; authority files (Wikidata, ULAN, GND, VIAF, GeoNames, …)
+standardise identifiers for individual, real-world entities.</li>
+<li>Reconciliation matches a local value against the entities in an
+authority file and connects it to the resulting identifier, without
+replacing the local IRI.</li>
+<li>OpenRefine’s built-in reconciliation client can query many different
+reconciliation services, not only Wikidata.</li>
+<li>Reconciled identifiers are added to the RDF mapping using ordinary
+vocabulary terms such as <code>schema:sameAs</code>, reused from the
+vocabularies already applied in the model and creation chapters.</li>
+<li>Reconciliation is rarely complete or fully automatic; reviewing
+candidate matches carefully remains the responsibility of the data
+creator.</li>
+</ul></section><section id="08_publication"><h2 class="section-heading"><a href="08_publication.html">Publish your Linked Data</a></h2>
+<hr class="half-width">
+<ul>
+<li>Linked Open Data only reaches its full value once it is actually
+published and can be accessed by others.</li>
+<li>The 5-star Open Data scheme shows that being “open” (available,
+licensed) is the foundation everything else builds on.</li>
+<li>A public GitHub repository is a simple way to give an RDF file a
+stable, fetchable URL.</li>
+<li>An open license and a short README turn a published file into data
+that others can confidently find and reuse.</li>
+</ul></section><section id="09_sparql"><h2 class="section-heading"><a href="09_sparql.html">Query Linked Data with SPARQL</a></h2>
 <hr class="half-width"></section>
 </div>
     </main>
@@ -494,8 +546,8 @@ development workflows.</li>
   "url": "https://HERMES-DKZ.github.io/linked-open-data-humanities/key-points.html",
   "identifier": "https://HERMES-DKZ.github.io/linked-open-data-humanities/key-points.html",
   "dateCreated": "2025-02-04",
-  "dateModified": "2026-08-11",
-  "datePublished": "2026-08-11"
+  "dateModified": "2026-08-13",
+  "datePublished": "2026-08-13"
 }
 
   </script><script>

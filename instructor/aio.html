@@ -399,7 +399,7 @@
         
 <section id="aio-01_introduction"><p>Content from <a href="01_introduction.html">Introduction to Linked Open Data in the Humanities</a></p>
 <hr>
-<p>Last updated on 2026-08-05 |
+<p>Last updated on 2026-08-13 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/01_introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -508,7 +508,9 @@ next.</p>
 <h3 class="callout-title">Discussion: What requirements should data
 fulfil?</h3>
 <div class="callout-content">
-
+<p>Thinking about the examples above: what would you need to know about
+a letter, a coin, or a painting to make it truly useful for someone
+else’s research, not just your own?</p>
 </div>
 </div>
 </div>
@@ -521,7 +523,8 @@ fulfil?</h3>
 <h3 class="callout-title">Discussion: What data modelling options do you
 know?</h3>
 <div class="callout-content">
-
+<p>Have you already worked with structured data? What did that structure
+look like, and what did it make easy or hard to do?</p>
 </div>
 </div>
 </div>
@@ -629,9 +632,9 @@ a much larger mind map with significantly more information. This could
 reveal connections between people that were previously invisible.
 Furthermore, if researchers from different locations collaborate on such
 a mind map, additional insights and knowledge can be discovered. In a
-very theorital and ideal scenario it would be possible to draw a mindmap
-with every information in the world to find a connection from you to
-Bill Gates.</p>
+very theoretical and ideal scenario it would be possible to draw a
+mindmap with every information in the world to find a connection from
+you to Bill Gates.</p>
 <p>In essence, we are working with graphs, more specifically, directed
 graphs that follow a particular reading direction. Each connection has a
 clear subject, predicate, and object, forming what’s known as a
@@ -686,7 +689,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-02_iris"><p>Content from <a href="02_iris.html">The concept of IRIs</a></p>
 <hr>
-<p>Last updated on 2026-05-22 |
+<p>Last updated on 2026-08-13 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/02_iris.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -881,7 +884,7 @@ addresses this problem?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p><strong>Wikidata IRI</strong>:
 <code>https://www.wikidata.org/wiki/Q5582</code> Namespace:
@@ -914,19 +917,20 @@ structure of these identifiers and understanding the role of namespaces,
 we see how ambiguity is resolved. This system not only enhances clarity
 but also fosters global collaboration and deeper insights in
 research.</p>
-<div id="internationalized-resource-identifier" class="callout keypoints">
+<div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <span class="callout-header">Key Points</span>
-<div id="internationalized-resource-identifier" class="callout-inner">
-<h3 class="callout-title">Internationalized Resource Identifier</h3>
+<div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>Used to prevent ambiguities</li>
-<li>Needs to be defined and saved open in the Internet</li>
-<li>Are neccesary for Objects and Predicates</li>
-<li>Are created from a namespace in combination with an ID</li>
+<li>IRIs (Internationalized Resource Identifiers) are used to prevent
+ambiguities when identifying resources.</li>
+<li>An IRI needs to be defined and resolvable on the web.</li>
+<li>Subjects, predicates, and non-literal objects are identified with
+IRIs.</li>
+<li>An IRI is created from a namespace in combination with an ID.</li>
 </ul>
 </div>
 </div>
@@ -1430,7 +1434,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-04_serialization"><p>Content from <a href="04_serialization.html">Serialization</a></p>
 <hr>
-<p>Last updated on 2026-05-27 |
+<p>Last updated on 2026-08-13 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/04_serialization.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -1461,8 +1465,8 @@ any links that you are not going to use.
 <li>Explain the purpose of serialization formats</li>
 <li>Identify common serialization formats</li>
 <li>Read and write RDF in Turtle syntax</li>
-<li>Explain the purpose of namspaces and prefixes</li>
-<li>Identify namspaces and prefixes in a RDF file</li>
+<li>Explain the purpose of namespaces and prefixes</li>
+<li>Identify namespaces and prefixes in a RDF file</li>
 </ul>
 </div>
 </div>
@@ -1533,7 +1537,10 @@ help you.</p>
 <p>Below you will find several RDF statements written either as natural
 language sentences or in N-Triples format. Rewrite them in Turtle syntax
 using a text editor.</p>
-<p>TODO</p>
+<pre><code>Claude Monet was born in Paris.
+Claude Monet created Water Lilies.
+Claude Monet created Woman with a Parasol.
+Woman with a Parasol was created in year 1875.</code></pre>
 </div>
 </div>
 </div>
@@ -1542,10 +1549,14 @@ using a text editor.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<pre><code>TODO
-Valid turtle.</code></pre>
+<pre class="turtle"><code>&lt;http://example.org/ClaudeMonet&gt;
+    &lt;http://example.org/wasBornIn&gt; &lt;http://example.org/Paris&gt; ;
+    &lt;http://example.org/hasCreated&gt; &lt;http://example.org/WaterLilies&gt;, &lt;http://example.org/WomanwithaParasol&gt; .
+
+&lt;http://example.org/WomanwithaParasol&gt;
+    &lt;http://example.org/hasCreationYear&gt; "1875" .</code></pre>
 </div>
 </div>
 </div>
@@ -1557,38 +1568,38 @@ Valid turtle.</code></pre>
 <p>Other common serialization formats are RDF/XML and JSON-LD. Although
 these formats look different, they all represent the same RDF graph.</p>
 <p>Example in JSON-LD and RDF/XML</p>
-<div class="codewrapper sourceCode" id="cb4">
+<div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a><span class="er">//</span> <span class="er">Vincent</span> <span class="er">van</span> <span class="er">Gogh</span> <span class="er">created</span> <span class="er">Starry</span> <span class="er">Night</span> <span class="er">and</span> <span class="er">Wheatfield</span> <span class="er">with</span> <span class="er">Cypresses.</span> <span class="er">He</span> <span class="er">was</span> <span class="er">born</span> <span class="er">in</span> <span class="er">Zundert.</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1" aria-label="code-block-4-2"></a><span class="fu">{</span></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1" aria-label="code-block-4-3"></a>  <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://example.org/VincentVanGogh"</span><span class="fu">,</span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1" aria-label="code-block-4-4"></a>  <span class="dt">"http://example.org/hasCreated"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1" aria-label="code-block-4-5"></a>    <span class="fu">{</span></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1" aria-label="code-block-4-6"></a>      <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://example.org/StarryNight"</span></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1" aria-label="code-block-4-7"></a>    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1" aria-label="code-block-4-8"></a>    <span class="fu">{</span></span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1" aria-label="code-block-4-9"></a>      <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://example.org/WheatfieldwithCypresses"</span></span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1" aria-label="code-block-4-10"></a>    <span class="fu">}</span></span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1" aria-label="code-block-4-11"></a>  <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1" aria-label="code-block-4-12"></a>  <span class="dt">"http://example.org/wasBornIn"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb4-13"><a href="#cb4-13" tabindex="-1" aria-label="code-block-4-13"></a>    <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://example.org/Zundert"</span></span>
-<span id="cb4-14"><a href="#cb4-14" tabindex="-1" aria-label="code-block-4-14"></a>  <span class="fu">}</span></span>
-<span id="cb4-15"><a href="#cb4-15" tabindex="-1" aria-label="code-block-4-15"></a><span class="fu">}</span></span></code></pre>
+<pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a><span class="er">//</span> <span class="er">Vincent</span> <span class="er">van</span> <span class="er">Gogh</span> <span class="er">created</span> <span class="er">Starry</span> <span class="er">Night</span> <span class="er">and</span> <span class="er">Wheatfield</span> <span class="er">with</span> <span class="er">Cypresses.</span> <span class="er">He</span> <span class="er">was</span> <span class="er">born</span> <span class="er">in</span> <span class="er">Zundert.</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1" aria-label="code-block-5-2"></a><span class="fu">{</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1" aria-label="code-block-5-3"></a>  <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://example.org/VincentVanGogh"</span><span class="fu">,</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1" aria-label="code-block-5-4"></a>  <span class="dt">"http://example.org/hasCreated"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1" aria-label="code-block-5-5"></a>    <span class="fu">{</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1" aria-label="code-block-5-6"></a>      <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://example.org/StarryNight"</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1" aria-label="code-block-5-7"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1" aria-label="code-block-5-8"></a>    <span class="fu">{</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1" aria-label="code-block-5-9"></a>      <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://example.org/WheatfieldwithCypresses"</span></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1" aria-label="code-block-5-10"></a>    <span class="fu">}</span></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1" aria-label="code-block-5-11"></a>  <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1" aria-label="code-block-5-12"></a>  <span class="dt">"http://example.org/wasBornIn"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1" aria-label="code-block-5-13"></a>    <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://example.org/Zundert"</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1" aria-label="code-block-5-14"></a>  <span class="fu">}</span></span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1" aria-label="code-block-5-15"></a><span class="fu">}</span></span></code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb5">
+<div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">XML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode xml" tabindex="0"><code class="sourceCode xml"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a> <span class="co">&lt;!-- Vincent van Gogh created Starry Night and Wheatfield with Cypresses. He was born in Zundert. --&gt;</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1" aria-label="code-block-5-2"></a>&lt;<span class="kw">rdf:Description</span> <span class="ot">rdf:about=</span><span class="st">"http://example.org/VincentVanGogh"</span>&gt;</span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1" aria-label="code-block-5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1" aria-label="code-block-5-4"></a>  &lt;<span class="kw">hasCreated</span> <span class="ot">rdf:resource=</span><span class="st">"http://example.org/StarryNight"</span>/&gt;</span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1" aria-label="code-block-5-5"></a></span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1" aria-label="code-block-5-6"></a>  &lt;<span class="kw">hasCreated</span> <span class="ot">rdf:resource=</span><span class="st">"http://example.org/WheatfieldwithCypresses"</span>/&gt;</span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1" aria-label="code-block-5-7"></a></span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1" aria-label="code-block-5-8"></a>  &lt;<span class="kw">wasBornIn</span> <span class="ot">rdf:resource=</span><span class="st">"http://example.org/Zundert"</span>/&gt;</span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1" aria-label="code-block-5-9"></a></span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1" aria-label="code-block-5-10"></a>&lt;/<span class="kw">rdf:Description</span>&gt;</span></code></pre>
+<pre class="sourceCode xml" tabindex="0"><code class="sourceCode xml"><span id="cb6-1"><a href="#cb6-1" tabindex="-1" aria-label="code-block-6-1"></a> <span class="co">&lt;!-- Vincent van Gogh created Starry Night and Wheatfield with Cypresses. He was born in Zundert. --&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1" aria-label="code-block-6-2"></a>&lt;<span class="kw">rdf:Description</span> <span class="ot">rdf:about=</span><span class="st">"http://example.org/VincentVanGogh"</span>&gt;</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1" aria-label="code-block-6-3"></a></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1" aria-label="code-block-6-4"></a>  &lt;<span class="kw">hasCreated</span> <span class="ot">rdf:resource=</span><span class="st">"http://example.org/StarryNight"</span>/&gt;</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1" aria-label="code-block-6-5"></a></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1" aria-label="code-block-6-6"></a>  &lt;<span class="kw">hasCreated</span> <span class="ot">rdf:resource=</span><span class="st">"http://example.org/WheatfieldwithCypresses"</span>/&gt;</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1" aria-label="code-block-6-7"></a></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1" aria-label="code-block-6-8"></a>  &lt;<span class="kw">wasBornIn</span> <span class="ot">rdf:resource=</span><span class="st">"http://example.org/Zundert"</span>/&gt;</span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1" aria-label="code-block-6-9"></a></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1" aria-label="code-block-6-10"></a>&lt;/<span class="kw">rdf:Description</span>&gt;</span></code></pre>
 </div>
 <p>All RDF serialization formats are plain text formats and can be
 opened with any text editor.</p>
@@ -1617,8 +1628,8 @@ such as people, places, or concepts.</p>
 used repeatedly in an RDF file. To make RDF easier to write and
 understand, we can define a short abbreviation for a namespace. This
 abbreviation is called a <strong>prefix</strong>.</p>
-<p>Namspaces and prefixes are declared at the beginning of a Turtle file
-using the <code>@prefix</code> keyword:</p>
+<p>Namespaces and prefixes are declared at the beginning of a Turtle
+file using the <code>@prefix</code> keyword:</p>
 <pre class="turtle"><code>@prefix wd: &lt;https://www.wikidata.org/wiki/&gt; .</code></pre>
 <p>For example, the following triple written with full IRIs:</p>
 <pre class="turtle"><code>&lt;https://www.wikidata.org/wiki/Q5582&gt;
@@ -1698,7 +1709,7 @@ errors.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>There are 9 mistakes in the Turtle file:</p>
 <ul>
@@ -1813,7 +1824,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-05_model"><p>Content from <a href="05_model.html">Model with Ontologies and Vocabularies</a></p>
 <hr>
-<p>Last updated on 2026-08-05 |
+<p>Last updated on 2026-08-13 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/05_model.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -2115,26 +2126,66 @@ specific artwork. Likewise, an artist name refers to a specific
 person.</p>
 <p>In RDF, we call these identifiable things resources. Resources can
 also belong to broader categories.</p>
-<pre class="text"><code>ObjectID1234 rdf:type Object</code></pre>
+<pre class="text"><code>ObjectID693151 rdf:type Artwork</code></pre>
 <p>The artwork represented by ObjectID <code>693151</code> is an
-individual resource, while <code>Object</code> represents a more
-abstract concept the ressource belongs to called a class.</p>
+individual resource, while <code>Artwork</code> represents a more
+abstract concept the ressource belongs to, called a class.</p>
 <p>This distinction between individual resources and classes is an
 important part of RDF modeling.</p>
+<p>Think of <code>rdf:type</code> like a sticker or a name tag: it
+doesn’t change the thing it’s stuck on, it just tells whoever looks at
+it which drawer the thing belongs in. <code>ObjectID693151</code> stays
+exactly the artwork it was, but with a <code>rdf:type Artwork</code>
+sticker on it, everyone (and every machine) reading our data instantly
+knows: “ah, this one goes in the ‘Artwork’ drawer.”</p>
+<p><code>rdf:type</code> is not something we had to invent ourselves, it
+already comes built into RDF, so every RDF tool understands it in
+exactly the same way, everywhere. That is the whole benefit: instead of
+everyone coming up with their own way of saying “this is a kind of
+that”, there is exactly one standard sticker for it, and we can start
+using it immediately.</p>
+<p>What does this actually buy us? Once things are sorted into drawers
+like this, we can start asking useful questions of our data: “show me
+everything in the Artwork drawer”, or “show me everything in the Person
+drawer” - without writing any special code for it. The sorting itself
+already contains that information.</p>
+<p>Not everything in our table refers to an identifiable thing, though.
+Values such as a date, a height in centimeters, or a free-text
+description are simply data values, there is nothing further we could
+point to or describe. In RDF, such values are called
+<strong>literals</strong>. A literal has no identity of its own; it is a
+plain piece of information attached to a resource, for example:</p>
+<pre class="text"><code>ObjectID693151 hasTitle "The Dismissed Servant"</code></pre>
+<p>So when we look at the nodes in our data model, each one is one of
+the following:</p>
 <ul>
-<li>Museum → owns → Artwork</li>
-<li>Department → manages → Artwork</li>
-<li>Artist → created → Artwork</li>
+<li>a <strong>resource</strong> - an identifiable thing (an artwork, an
+artist, a museum),</li>
+<li>a <strong>literal</strong> - a plain value (a date, a number, a
+string), or</li>
+<li>a <strong>class</strong> - a category that resources belong to
+(Artwork, Person, Museum).</li>
 </ul>
-<div id="challenge" class="callout challenge">
+<div id="type-your-resources" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
+<div id="type-your-resources" class="callout-inner">
+<h3 class="callout-title">Type your resources</h3>
 <div class="callout-content">
-
+<p>Go back to the mind map you sketched earlier.</p>
+<ol style="list-style-type: decimal">
+<li>Pick three or four nodes from your mind map that you would classify
+as resources.</li>
+<li>For each resource, write one simple triple that states which class
+it belongs to, using <code>rdf:type</code>. We have not reused any
+external vocabulary yet, so simply invent short placeholder terms of
+your own (e.g. <code>ex:Artwork</code>, <code>ex:Person</code>,
+<code>ex:Museum</code>).</li>
+<li>Compare your triples with another group. Did you choose the same
+classes for the same kind of node?</li>
+</ol>
 </div>
 </div>
 </div>
@@ -2145,7 +2196,15 @@ important part of RDF modeling.</p>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
-
+<p>Possible triples for our example object <code>693151</code>:</p>
+<pre class="text"><code>ex:ObjectID693151 rdf:type ex:Artwork
+ex:SurugueLouis rdf:type ex:Person
+ex:MetMuseum rdf:type ex:Museum
+ex:DrawingsAndPrints rdf:type ex:Department</code></pre>
+<p>Different groups may pick different class names or a different level
+of detail (e.g. <code>ex:Artist</code> instead of
+<code>ex:Person</code>). This is completely normal. Modelling always
+involves choices and there is rarely a single correct answer.</p>
 </div>
 </div>
 </div>
@@ -2153,29 +2212,67 @@ important part of RDF modeling.</p>
 </section><section><h2 class="section-heading" id="rdf-schema">RDF Schema<a class="anchor" aria-label="anchor" href="#rdf-schema"></a>
 </h2>
 <hr class="half-width">
-<p>RDF Schema (RDFS) extends the basic RDF vocabulary. It provides terms
-that help describe the structure of RDF data. You can think of RDF
-Schema as a vocabulary for describing data models. The official RDF
-Schema specification is available at:</p>
-<p><a href="https://www.w3.org/TR/rdf11-schema/" class="external-link uri">https://www.w3.org/TR/rdf11-schema/</a></p>
-<p>Some commonly used RDFS terms include:</p>
+<p>With <code>rdf:type</code> alone, we can already sort our resources
+into drawers: an “Artwork” drawer, a “Person” drawer, a “Museum” drawer.
+But nothing yet stops us from putting the wrong thing into the wrong
+drawer. RDF itself would not complain if we accidentally wrote
+<code>ex:MetMuseum rdf:type ex:Person</code>, a museum sorted into the
+“Person” drawer. RDF has no way to say what may go into a drawer, or
+what a drawer even means. That is the gap RDF Schema (RDFS) closes.</p>
+<p>You can picture RDFS as the label and instruction sheet on each
+drawer: it doesn’t add any new artworks or people to our data, it
+explains what each drawer is for, what is allowed to go into it, and how
+the drawers relate to one another (for example, that the “Print” drawer
+sits inside the bigger “Artwork” drawer).</p>
+<p>RDFS is, just like RDF, its own small vocabulary, it simply lives
+under its own prefix, <code>rdfs:</code>. The official specification is
+available at <a href="https://www.w3.org/TR/rdf11-schema/" class="external-link uri">https://www.w3.org/TR/rdf11-schema/</a>. It adds only a
+handful of terms, and they do two jobs.</p>
+<p><strong>1. Naming and describing the drawers themselves</strong></p>
 <ul>
-<li>Classes
+<li>
+<code>rdfs:Class</code> - marks something as being a drawer (a
+class) at all, rather than an individual item.
+<code>ex:Artwork rdf:type rdfs:Class</code> says: “ex:Artwork is a
+drawer you can sort things into.”</li>
+<li>
+<code>rdfs:Resource</code> - the biggest drawer of all; literally
+everything in RDF fits into it.</li>
+<li>
+<code>rdfs:Literal</code> - the drawer for plain values, like text,
+numbers, or dates.</li>
+</ul>
+<p><strong>2. Writing rules for our properties</strong></p>
 <ul>
-<li>rdfs:Class</li>
-<li>rdf:Property</li>
+<li>
+<code>rdfs:domain</code> - “who is allowed to use this connector?”
+E.g. <code>ex:createdBy rdfs:domain ex:Artwork</code> says only things
+from the Artwork drawer may have a creator.</li>
+<li>
+<code>rdfs:range</code> - “what is allowed on the other end of this
+connector?” E.g. <code>ex:createdBy rdfs:range ex:Person</code> says the
+creator must come from the Person drawer.</li>
+<li>
+<code>rdfs:subClassOf</code> - “this drawer sits inside a bigger
+drawer.” E.g. <code>ex:Print rdfs:subClassOf ex:Artwork</code> means
+everything in the Print drawer automatically also counts as being in the
+Artwork drawer.</li>
+<li>
+<code>rdfs:label</code> - a friendly, readable name for a technical
+term, e.g. <code>ex:Artwork rdfs:label "Artwork"</code>.</li>
 </ul>
-</li>
-<li>Properties
-<ul>
-<li>rdfs:domain</li>
-<li>rdfs:range</li>
-<li>rdfs:subClassOf</li>
-<li>rdfs:label</li>
-<li>rdf:type</li>
-</ul>
-</li>
-</ul>
+<p>What do we actually gain from this? Once we write
+<code>ex:createdBy rdfs:domain ex:Artwork</code> and
+<code>rdfs:range ex:Person</code>, a tool reading our data can
+automatically check whether it still makes sense. For example, flagging
+it if a museum, rather than a person, is ever entered as a creator. Just
+as importantly, anyone else picking up our data - a colleague, a reused
+dataset, another tool - can immediately see what each drawer and each
+connector is meant to be used for, without having to ask us. RDFS turns
+a private collection of guesses into a documented, shareable, checkable
+model.</p>
+<p>The following challenges apply this in exactly this order: first
+sorting things into drawers, then writing the rules for the drawers.</p>
 <div id="classify-the-nodes-in-the-model" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -2184,7 +2281,13 @@ Schema specification is available at:</p>
 <div id="classify-the-nodes-in-the-model" class="callout-inner">
 <h3 class="callout-title">Classify the nodes in the model</h3>
 <div class="callout-content">
-<p>Look at the nodes in your data model.</p>
+<p>This challenge focuses on <code>rdfs:Resource</code>,
+<code>rdfs:Class</code>, and <code>rdfs:Literal</code>, deciding what
+<em>kind</em> of thing each node in your model is.</p>
+<p>Look at the model you have built so far: the entities from your mind
+map, the classes you assigned to them with <code>rdf:type</code> in
+<em>Type your resources</em>, and any literals you have written down
+along the way (such as a title or a date).</p>
 <p>For each node, decide whether it represents:</p>
 <ul>
 <li>a resource,</li>
@@ -2202,31 +2305,79 @@ Schema specification is available at:</p>
 </button>
 <div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
-
+<p>For our example object <code>693151</code>, a possible classification
+looks like this:</p>
+<table class="table">
+<thead><tr>
+<th>Node</th>
+<th>Type</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><code>ex:ObjectID693151</code></td>
+<td>resource (an individual artwork)</td>
+</tr>
+<tr>
+<td><code>ex:Artwork</code></td>
+<td>class</td>
+</tr>
+<tr>
+<td><code>ex:SurugueLouis</code></td>
+<td>resource (an individual person)</td>
+</tr>
+<tr>
+<td><code>ex:Person</code></td>
+<td>class</td>
+</tr>
+<tr>
+<td><code>"The Dismissed Servant"</code></td>
+<td>literal (a title)</td>
+</tr>
+<tr>
+<td><code>"ca. 1749"</code></td>
+<td>literal (a date)</td>
+</tr>
+<tr>
+<td><code>ex:MetMuseum</code></td>
+<td>resource (an individual museum)</td>
+</tr>
+</tbody>
+</table>
+<p>A useful rule of thumb: if you could imagine writing further facts
+about a node (its birth date, its location, its opening hours), it is
+probably a resource. If a value simply <em>is</em> the fact, and cannot
+be described any further, it is a literal.</p>
 </div>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="vocabularies-and-ontologies">Vocabularies and Ontologies<a class="anchor" aria-label="anchor" href="#vocabularies-and-ontologies"></a>
-</h2>
-<hr class="half-width">
-<p>TODO</p>
-<p>Different projects could invent different names for the same
-property.</p>
-<p>Vocabularies provide shared meaning and terms across data models.
-They promote interoperability. So reuse existing vocabularies.</p>
-<p>Frequent vocabularies, where can you find them and how can you read
-them.</p>
-<div id="extend-the-data-model-by-the-use-of-vocabularies" class="callout challenge">
+<div id="from-rdftype-to-a-full-rdfs-model" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="extend-the-data-model-by-the-use-of-vocabularies" class="callout-inner">
-<h3 class="callout-title">Extend the data model by the use of
-vocabularies</h3>
+<div id="from-rdftype-to-a-full-rdfs-model" class="callout-inner">
+<h3 class="callout-title">From rdf:type to a full RDFS model</h3>
 <div class="callout-content">
-
+<p>This challenge focuses on <code>rdfs:domain</code>,
+<code>rdfs:range</code>, <code>rdfs:subClassOf</code>, and
+<code>rdfs:label</code>, the rules and labels attached to our
+drawers.</p>
+<p>Now extend the model you built with <code>rdf:type</code> in <em>Type
+your resources</em>, using RDF Schema.</p>
+<ol style="list-style-type: decimal">
+<li>Pick one property that connects two of your resources, for example
+the relationship between an artwork and its creator. Give it a name,
+e.g. <code>ex:createdBy</code>.</li>
+<li>Use <code>rdfs:domain</code> and <code>rdfs:range</code> to state
+which class of resource can be the subject and which can be the object
+of that property.</li>
+<li>If you have two related classes (e.g. <code>ex:Print</code> and
+<code>ex:Artwork</code>), connect them with
+<code>rdfs:subClassOf</code>.</li>
+<li>Add an <code>rdfs:label</code> to at least one class or property, so
+it has a human-readable name.</li>
+</ol>
 </div>
 </div>
 </div>
@@ -2237,11 +2388,122 @@ vocabularies</h3>
 </button>
 <div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
+<pre class="text"><code>ex:createdBy rdfs:domain ex:Artwork
+ex:createdBy rdfs:range ex:Person
 
+ex:Print rdfs:subClassOf ex:Artwork
+
+ex:Artwork rdfs:label "Artwork"</code></pre>
+<p>With these additional statements we are no longer only listing
+individual facts, as we did with <code>rdf:type</code>. We are now
+describing rules about how our drawers and connectors relate to each
+other - what plain RDF alone could not do. This is exactly the purpose
+of RDF Schema: it lets us describe the <em>shape</em> of our data, not
+just individual data points.</p>
 </div>
 </div>
 </div>
 </div>
+</section><section><h2 class="section-heading" id="vocabularies-and-ontologies">Vocabularies and Ontologies<a class="anchor" aria-label="anchor" href="#vocabularies-and-ontologies"></a>
+</h2>
+<hr class="half-width">
+<p>So far we have been inventing our own terms, such as
+<code>ex:Artwork</code> or <code>ex:createdBy</code>. This is fine for
+practicing, but it creates a problem: if every project invents its own
+classes and properties, we cannot easily tell that two datasets are
+talking about the same kind of thing. Imagine two museums publishing
+data about their collections. One uses <code>ex:createdBy</code>, the
+other uses <code>museum:artist</code>. A computer reading both datasets
+has no way of knowing that these two properties mean the same thing,
+unless both museums agree to use the same, shared term.</p>
+<p>This is exactly what <strong>vocabularies</strong> and
+<strong>ontologies</strong> provide: a shared set of classes and
+properties, each with its own carefully chosen, permanent IRI, that
+anyone can reuse instead of inventing their own.</p>
+<ul>
+<li>A <strong>vocabulary</strong> is usually a lightweight set of terms,
+with a short description of what each one means.</li>
+<li>An <strong>ontology</strong> is a more formal, detailed vocabulary
+that also defines rules and relationships between its terms, for example
+that “print” is always a subclass of “artwork”.</li>
+</ul>
+<p>In practice, the two words are often used interchangeably, and the
+boundary between them is not always sharp.</p>
+<p>Some vocabularies and ontologies frequently used in cultural heritage
+and the humanities:</p>
+<ul>
+<li>
+<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/" class="external-link">Dublin
+Core (dc/dcterms)</a> - general-purpose terms such as
+<code>dc:creator</code>, <code>dc:title</code>, or
+<code>dc:date</code>.</li>
+<li>
+<a href="https://schema.org" class="external-link">schema.org</a> - a broad vocabulary
+with terms for people, places, and creative works.</li>
+<li>
+<a href="http://xmlns.com/foaf/spec/" class="external-link">FOAF (Friend of a Friend)</a>
+- describes people, e.g. <code>foaf:Person</code>,
+<code>foaf:name</code>.</li>
+<li>
+<a href="https://www.cidoc-crm.org/" class="external-link">CIDOC CRM</a> - a detailed
+ontology for describing museum and cultural heritage information.</li>
+<li>
+<a href="https://www.w3.org/2004/02/skos/" class="external-link">SKOS</a> - a vocabulary
+for thesauri and classification systems.</li>
+</ul>
+<p>You rarely need to memorise these. Tools such as <a href="https://lov.linkeddata.es/dataset/lov/" class="external-link">Linked Open Vocabularies
+(LOV)</a> or <a href="https://prefix.cc/" class="external-link">prefix.cc</a> let you search
+for existing, reusable terms instead of inventing your own.</p>
+<div id="a-first-look-at-reusing-a-vocabulary" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="a-first-look-at-reusing-a-vocabulary" class="callout-inner">
+<h3 class="callout-title">A first look at reusing a vocabulary</h3>
+<div class="callout-content">
+<p>Go back to the small model you built with your own <code>ex:</code>
+terms in the previous challenges.</p>
+<ol style="list-style-type: decimal">
+<li>Search FOAF or Dublin Core for a term that could replace one of your
+<code>ex:</code> classes or properties, for example a class for “person”
+or a property for “creator”.</li>
+<li>Rewrite one of your triples using the term you found instead of your
+own <code>ex:</code> term.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
+  <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
+</button>
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div class="accordion-body">
+<p>For our example object <code>693151</code>,
+<code>ex:SurugueLouis rdf:type ex:Person</code> could become
+<code>ex:SurugueLouis rdf:type foaf:Person</code>, and
+<code>ex:ObjectID693151 hasCreator ex:SurugueLouis</code> could become
+<code>ex:ObjectID693151 dc:creator ex:SurugueLouis</code>.</p>
+<p>Not every term has a good match: none of these general vocabularies
+has an exact term for “artwork” in a museum context, this is where a
+more specialised ontology such as CIDOC CRM would come in. It is common,
+and completely fine, for a real data model to combine several existing
+vocabularies with a few custom terms for anything specific to the
+dataset.</p>
+</div>
+</div>
+</div>
+</div>
+<p>Vocabularies like these standardise shared <em>classes and
+properties</em> - the general shape of a description. There is a related
+but different idea: standardising identifiers for <em>individual,
+real-world entities</em> - a specific person, place, or organisation -
+so that the same entity is recognised across many datasets, not just the
+same kind of entity. We will explore this idea, and put it to practical
+use, when we reconcile our dataset against authority files such as
+Wikidata in a later chapter.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -2250,7 +2512,25 @@ vocabularies</h3>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>keypoint1</li>
+<li>A data model describes which entities exist in a dataset, how they
+relate, and how they should be described, before creating RDF.</li>
+<li>Resources are identifiable things; literals are plain values;
+classes describe categories that resources belong to.</li>
+<li>
+<code>rdf:type</code> links a resource to the class it belongs
+to.</li>
+<li>RDF Schema (RDFS) adds vocabulary for describing data models,
+e.g. <code>rdfs:domain</code>, <code>rdfs:range</code>,
+<code>rdfs:subClassOf</code>, and <code>rdfs:label</code>.</li>
+<li>Vocabularies and ontologies provide shared, reusable terms so that
+data models from different projects can be understood by machines and
+combined with each other.</li>
+<li>Reusing existing vocabularies (e.g. Dublin Core, FOAF, schema.org,
+CIDOC CRM) instead of inventing new terms improves
+interoperability.</li>
+<li>Vocabularies standardise shared classes and properties; authority
+files do the same for individual, real-world entities, this is what
+reconciliation, covered in a later chapter, connects our model to.</li>
 </ul>
 </div>
 </div>
@@ -2261,7 +2541,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-06_creation"><p>Content from <a href="06_creation.html">From Model to Data</a></p>
 <hr>
-<p>Last updated on 2026-06-12 |
+<p>Last updated on 2026-08-13 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/06_creation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 52 minutes</p>
@@ -2307,6 +2587,11 @@ dataset: we identified the entities, chose classes and properties from
 shared vocabularies, and planned how the columns of the table map to RDF
 triples. We know <em>what</em> we want to produce. Now we need a way to
 actually produce it.</p>
+<p>The previous chapter’s challenges already worked with the printmaker
+Louis Surugue, one of the real artists in our dataset. From here on, we
+work directly with this same real data in OpenRefine, so our examples
+continue to follow whichever artist, object, or place actually turns up
+in the row we are looking at.</p>
 <p>Writing RDF by hand works well for a handful of triples, but becomes
 impractical quickly. A dataset with 50 rows and multiple properties per
 entity would require hundreds of triples, each written out. The tool we
@@ -2517,7 +2802,7 @@ IRI]</p>
 <div class="section level3">
 <h3 id="adding-properties">Adding Properties<a class="anchor" aria-label="anchor" href="#adding-properties"></a>
 </h3>
-<p>Now we have already created our root, but the Preview is still emtpy.
+<p>Now we have already created our root, but the Preview is still empty.
 We need to add properties to create a full triple.</p>
 <p><strong>Type</strong></p>
 <ol style="list-style-type: decimal">
@@ -2601,8 +2886,8 @@ finding the one correct solution, it is about making the best decision
 given the available data, the intended use, and the constraints of the
 project. The result may not be textbook-perfect, but it can still be
 consistent, meaningful, and useful. Reconciliation, which we will cover
-later, is one way to compensate: it replaces a fragile text-based IRI
-with a stable, authoritative one after the fact.</p>
+later, is one way to compensate: it links our fragile text-based IRI to
+a stable, authoritative one after the fact.</p>
 </div>
 </div>
 </div>
@@ -2652,7 +2937,7 @@ the department name.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p><strong>Department root node:</strong> - Base IRI:
 <code>http://example.org/department/</code>, column:
@@ -2758,7 +3043,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-07_reconciliation"><p>Content from <a href="07_reconciliation.html">Reconciliation</a></p>
 <hr>
-<p>Last updated on 2026-07-24 |
+<p>Last updated on 2026-08-13 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/07_reconciliation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 31 minutes</p>
@@ -2774,6 +3059,8 @@ any links that you are not going to use.
 <h3 class="card-title">Questions</h3>
 <ul>
 <li>What is reconciliation and why does it matter for Linked Data?</li>
+<li>How do authority files relate to the vocabularies and ontologies we
+reused earlier?</li>
 <li>How do I reconcile a column against Wikidata in OpenRefine?</li>
 <li>How do I use reconciled values to add authority IRIs to my RDF
 mapping?</li>
@@ -2788,6 +3075,8 @@ mapping?</li>
 <ul>
 <li>Explain what reconciliation is and why it is a key step in creating
 Linked Open Data.</li>
+<li>Explain how authority files relate to the vocabularies and
+ontologies introduced earlier.</li>
 <li>Reconcile columns against Wikidata in OpenRefine.</li>
 <li>Review, accept, and reject candidate matches.</li>
 <li>Add <code>schema:sameAs</code> links to the Person entity using the
@@ -2798,6 +3087,14 @@ reconciled Wikidata IRIs.</li>
 </div>
 </div>
 </div>
+<p>In the model chapter, we reused vocabularies and ontologies, such as
+Dublin Core, FOAF, or schema.org, so that our classes and properties
+would mean the same thing across different projects. That solved the
+problem of <em>classes and properties</em>: two datasets that both use
+<code>foaf:Person</code> clearly mean the same <em>kind</em> of thing.
+It did not yet solve a related problem: knowing that two datasets both
+describe <em>a</em> person does not tell us whether they describe the
+<em>same</em> person.</p>
 <section><h2 class="section-heading" id="from-placeholders-to-real-identifiers">From Placeholders to Real Identifiers<a class="anchor" aria-label="anchor" href="#from-placeholders-to-real-identifiers"></a>
 </h2>
 <hr class="half-width">
@@ -2832,6 +3129,16 @@ identifier and a canonical form of the name. Authority files are
 maintained by libraries, archives, research institutions, or other
 communities. They exist precisely to solve the problem of ambiguous or
 inconsistent names.</p>
+<p>That “stable identifier” is exactly the kind of IRI we met earlier: a
+namespace (e.g. <code>https://www.wikidata.org/wiki/</code>) combined
+with an ID (e.g. <code>Q5981497</code>), globally unique and resolvable,
+so the same entity can be referenced unambiguously from anywhere on the
+web. An authority file is, in a sense, simply a large, curated
+collection of such IRIs, one per real-world entity, rather than one per
+class or property.</p>
+<p>You can think of an authority file as a vocabulary too, just of a
+different kind: instead of standardising what “creator” means, it
+standardises <em>who</em> a specific creator is.</p>
 <p>Wikidata is the largest openly accessible authority file and covers
 an enormous range of entities. <strong>ULAN</strong> (Union List of
 Artist Names, Getty Research Institute) is a domain-specific authority
@@ -2949,6 +3256,12 @@ corresponding Wikidata entity.</p>
 exported RDF, we still need to tell RDF-Transform to use the reconciled
 Wikidata IRI. We do this by adding a <code>schema:sameAs</code> property
 to the Person root node.</p>
+<p>Note that <code>schema:sameAs</code> is not a new mechanism, it is
+simply another property from the schema.org vocabulary we already used
+for <code>schema:Person</code> and <code>schema:description</code>.
+Reconciliation does not require its own special vocabulary, it reuses
+the vocabularies we already know to state one more kind of fact: that
+two IRIs refer to the same real-world entity.</p>
 <ol style="list-style-type: decimal">
 <li>Open the RDF-Transform panel (<em>RDF Transform</em> → <em>Edit RDF
 Transform…</em>).</li>
@@ -3023,9 +3336,11 @@ future OpenRefine projects.</p>
 <h3 class="callout-title">Common Authority Files in the Digital
 Humanities</h3>
 <div class="callout-content">
-<p>There is no single authority file that covers every type of entity.
-Different authority files have different strengths and are used by
-different communities.</p>
+<p>Just like the general-purpose vocabularies we compared in the model
+chapter (Dublin Core, FOAF, schema.org, CIDOC CRM), authority files
+differ in scope and level of formality. There is no single authority
+file that covers every type of entity, so different communities maintain
+different ones.</p>
 <p>Some of the most commonly used authority files in the Digital
 Humanities include:</p>
 <table class="table">
@@ -3154,16 +3469,42 @@ Data</h3>
 </div>
 </div>
 </div>
-<div id="exercise-reconcile-the-country-column" class="callout discussion">
+<div id="exercise-reconcile-the-city-column" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <span class="callout-header">Discussion</span>
-<div id="exercise-reconcile-the-country-column" class="callout-inner">
-<h3 class="callout-title">Exercise: Reconcile the Country Column</h3>
+<div id="exercise-reconcile-the-city-column" class="callout-inner">
+<h3 class="callout-title">Exercise: Reconcile the City Column</h3>
 <div class="callout-content">
 <p>Repeat the reconciliation workflow using the <code>city</code>
 column.</p>
+</div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>Vocabularies and ontologies standardise shared classes and
+properties; authority files (Wikidata, ULAN, GND, VIAF, GeoNames, …)
+standardise identifiers for individual, real-world entities.</li>
+<li>Reconciliation matches a local value against the entities in an
+authority file and connects it to the resulting identifier, without
+replacing the local IRI.</li>
+<li>OpenRefine’s built-in reconciliation client can query many different
+reconciliation services, not only Wikidata.</li>
+<li>Reconciled identifiers are added to the RDF mapping using ordinary
+vocabulary terms such as <code>schema:sameAs</code>, reused from the
+vocabularies already applied in the model and creation chapters.</li>
+<li>Reconciliation is rarely complete or fully automatic; reviewing
+candidate matches carefully remains the responsibility of the data
+creator.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -3174,10 +3515,10 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-08_publication"><p>Content from <a href="08_publication.html">Publish your Linked Data</a></p>
 <hr>
-<p>Last updated on 2026-05-27 |
+<p>Last updated on 2026-08-13 |
 
         <a href="https://github.com/HERMES-DKZ/linked-open-data-humanities/edit/main/episodes/08_publication.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 15 minutes</p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -3189,7 +3530,10 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How do I publish my linked data?</li>
+<li>Why does Linked Open Data only reach its full value once it is
+published?</li>
+<li>What is a simple way to publish RDF data online?</li>
+<li>What should we keep in mind when publishing data on GitHub?</li>
 </ul>
 </div>
 </div>
@@ -3199,13 +3543,204 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Publish linked data with github.</li>
+<li>Explain why publishing is a core part of Linked Open Data, not an
+optional extra step</li>
+<li>Describe how to publish an RDF file so that it has a stable,
+resolvable URL</li>
+<li>Name basic good practices for publishing data on GitHub</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
-</div></section><section id="aio-09_sparql"><p>Content from <a href="09_sparql.html">Query Linked Data with SPARQL</a></p>
+</div>
+<section><h2 class="section-heading" id="from-a-private-model-to-linked-open-data">From a private model to Linked <em>Open</em> Data<a class="anchor" aria-label="anchor" href="#from-a-private-model-to-linked-open-data"></a>
+</h2>
+<hr class="half-width">
+<p>So far, everything we built, from our first mind map to the Turtle
+and JSON-LD files we exported from OpenRefine and enriched through
+reconciliation, has stayed on our own computer. That is completely fine
+for learning and practicing, but it means our data is not yet
+<strong>Linked Open Data</strong> in any meaningful sense.</p>
+<ul>
+<li>
+<strong>Open</strong> means that our data is actually accessible to
+others. Anyone should be able to find it, fetch it, and (legally) reuse
+it.</li>
+<li>
+<strong>Linked</strong> means that our IRIs actually connect to
+something. Other datasets can point to our resources, and our resources
+can point to theirs.</li>
+</ul>
+<p>Neither of these is possible as long as our data only exists on our
+own laptop. An IRI like <code>ex:SurugueLouis</code> is not truly linked
+to anything if nobody else can ever look it up. Publishing is what turns
+a private model into part of the wider Web of Data.</p>
+<div id="star-open-data" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="star-open-data" class="callout-inner">
+<h3 class="callout-title">5-star Open Data</h3>
+<div class="callout-content">
+<p>A well-known way to visualise the concept of LOD is the
+<strong>5-star Open Data scheme</strong>, originally proposed by Tim
+Berners-Lee:</p>
+<ul>
+<li>★ data is available on the web, in any format, under an open
+license</li>
+<li>★★ it is available as structured data (e.g. a table, not a scanned
+image)</li>
+<li>★★★ it uses a non-proprietary format (e.g. CSV instead of
+Excel)</li>
+<li>★★★★ it uses IRIs, so that people can point at your individual
+data</li>
+<li>★★★★★ it is linked to other people’s data, to provide context</li>
+</ul>
+</div>
+</div>
+</div>
+<p>By the time we reach this episode, our RDF model already fulfils
+several of these stars. It uses IRIs, and, once we reuse vocabularies,
+it links to other data. But without the first star, actually publishing
+it openly on the web, none of that matters yet.</p>
+</section><section><h2 class="section-heading" id="publishing-with-github">Publishing with GitHub<a class="anchor" aria-label="anchor" href="#publishing-with-github"></a>
+</h2>
+<hr class="half-width">
+<p>There are many ways to publish Linked Open Data (dedicated triple
+stores, SPARQL endpoints, data portals). For getting started, we do not
+need any of that. A free GitHub account and repository is enough to give
+our data a real, stable, and citable place on the web.</p>
+<div id="what-is-github" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="what-is-github" class="callout-inner">
+<h3 class="callout-title">What is GitHub?</h3>
+<div class="callout-content">
+<p><a href="https://github.com" class="external-link">GitHub</a> is a web platform for hosting
+and sharing files under version control, most commonly used for software
+code, but just as suitable for datasets. A <strong>repository</strong>
+(“repo”) is simply a folder of files with a history of changes. A
+repository can be <strong>public</strong> (visible and downloadable by
+anyone) or <strong>private</strong> (visible only to people you invite).
+For our purposes, a public repository is what turns a file on our
+computer into something the whole web can reach.</p>
+</div>
+</div>
+</div>
+<p>Let’s do this with the file we actually produced. We already exported
+our OpenRefine mapping as Turtle, and after reconciliation, that export
+also carries <code>schema:sameAs</code> links to Wikidata. A block of
+it, for a single artist, looks like this:</p>
+<pre class="turtle"><code>@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix schema: &lt;https://schema.org/&gt; .
+
+&lt;http://example.org/person/Surugue%2C+Louis&gt;
+    a schema:Person ;
+    rdfs:label "Surugue, Louis"@en ;
+    schema:description "French, Paris ca. 1686–1762 Grand Vaux" ;
+    schema:sameAs &lt;https://www.wikidata.org/wiki/Q5981497&gt; .</code></pre>
+<p>This one exported file, let’s call it <code>met-dataset.ttl</code>,
+already carries the result of everything we did in the previous
+chapters: the entities and relationships we modelled, the vocabularies
+we reused, and the authority links we added through reconciliation.
+Publishing it is the last step that turns it into genuine Linked
+<em>Open</em> Data.</p>
+<p><strong>1. Create a GitHub account, if you do not already have
+one</strong></p>
+<p>Go to <a href="https://github.com/join" class="external-link">github.com/join</a>, choose a
+username, and sign up with an email address. A free account is enough
+for everything we do in this lesson.</p>
+<p><strong>2. Create a new public repository</strong></p>
+<ol style="list-style-type: decimal">
+<li>Once logged in, click the <strong>+</strong> icon in the top right
+corner of any GitHub page and select <strong>New repository</strong> (or
+go directly to <a href="https://github.com/new" class="external-link">github.com/new</a>).</li>
+<li>Give it a name, for example <code>met-collection-lod</code>.</li>
+<li>Under <em>Visibility</em>, make sure <strong>Public</strong> is
+selected. A private repository is not open data, no matter how
+well-modelled it is.</li>
+<li>Click <strong>Create repository</strong>.</li>
+</ol>
+<p><strong>3. Add <code>met-dataset.ttl</code> to the
+repository</strong></p>
+<ol style="list-style-type: decimal">
+<li>On the new repository’s page, click <strong>Add file</strong> →
+<strong>Upload files</strong>.</li>
+<li>Drag <code>met-dataset.ttl</code> into the browser window, or click
+<em>choose your files</em> to select it from your computer. You can add
+the JSON-LD export alongside it, as an alternative serialization of the
+same graph.</li>
+<li>Scroll down and click <strong>Commit changes</strong>.</li>
+</ol>
+<p><strong>4. Add a license file</strong></p>
+<ol style="list-style-type: decimal">
+<li>On the repository’s main page, click <strong>Add file</strong> →
+<strong>Create new file</strong>.</li>
+<li>Name the file <code>LICENSE</code>. GitHub recognises this filename
+and shows a <strong>Choose a license template</strong> link, click
+it.</li>
+<li>Pick a license, for example <a href="https://creativecommons.org/publicdomain/zero/1.0/" class="external-link">CC0 1.0</a> to
+place the data fully in the public domain, or <a href="https://creativecommons.org/licenses/by/4.0/" class="external-link">CC-BY 4.0</a> to
+require attribution. If you are unsure which one fits, <a href="https://choosealicense.com/" class="external-link">choosealicense.com</a> is a good
+reference.</li>
+<li>Commit the new file.</li>
+</ol>
+<p>Without a license, nobody can be legally sure they are allowed to
+reuse the data, even once they can technically access it.</p>
+<p><strong>5. Add a short README</strong></p>
+<ol style="list-style-type: decimal">
+<li>Click <strong>Add file</strong> → <strong>Create new file</strong>
+again and name it <code>README.md</code>.</li>
+<li>Describe what the dataset contains, which vocabularies it uses
+(schema.org), and how it was produced (OpenRefine and RDF-Transform,
+reconciled against Wikidata). A few sentences are enough.</li>
+<li>Commit the new file.</li>
+</ol>
+<p><strong>6. Get the file’s stable URL</strong></p>
+<ol style="list-style-type: decimal">
+<li>Click on <code>met-dataset.ttl</code> in the repository’s file list
+to open it.</li>
+<li>Click the <strong>Raw</strong> button above the file content.</li>
+<li>The address now shown in your browser is the file’s permanent,
+fetchable URL, for our example something like:</li>
+</ol>
+<pre class="text"><code>https://raw.githubusercontent.com/your-username/met-collection-lod/main/met-dataset.ttl</code></pre>
+<p>Anyone, a person in a browser, or an RDF tool, can now fetch this
+exact URL and get our data back. Opening it shows the plain content of
+the Turtle file, exactly what an RDF tool would retrieve as well. This
+is what makes the data “open” in the first-star sense above: it is
+genuinely available on the web, to anyone, without asking us for a
+copy.</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>Linked Open Data only reaches its full value once it is actually
+published and can be accessed by others.</li>
+<li>The 5-star Open Data scheme shows that being “open” (available,
+licensed) is the foundation everything else builds on.</li>
+<li>A public GitHub repository is a simple way to give an RDF file a
+stable, fetchable URL.</li>
+<li>An open license and a short README turn a published file into data
+that others can confidently find and reuse.</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section><section id="aio-09_sparql"><p>Content from <a href="09_sparql.html">Query Linked Data with SPARQL</a></p>
 <hr>
 <p>Last updated on 2026-05-28 |
 
@@ -3288,8 +3823,8 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/aio.html",
   "identifier": "https://HERMES-DKZ.github.io/linked-open-data-humanities/instructor/aio.html",
   "dateCreated": "2025-02-04",
-  "dateModified": "2026-08-11",
-  "datePublished": "2026-08-11"
+  "dateModified": "2026-08-13",
+  "datePublished": "2026-08-13"
 }
 
   </script><script>
