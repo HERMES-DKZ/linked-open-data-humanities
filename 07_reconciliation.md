@@ -7,6 +7,7 @@ exercises: 1
 :::::::::::::::::::::::::::::::::::::: questions 
 
 - What is reconciliation and why does it matter for Linked Data?
+- How do authority files relate to the vocabularies and ontologies we reused earlier?
 - How do I reconcile a column against Wikidata in OpenRefine?
 - How do I use reconciled values to add authority IRIs to my RDF mapping?
 
@@ -15,12 +16,15 @@ exercises: 1
 ::::::::::::::::::::::::::::::::::::: objectives
 
 - Explain what reconciliation is and why it is a key step in creating Linked Open Data.
+- Explain how authority files relate to the vocabularies and ontologies introduced earlier.
 - Reconcile columns against Wikidata in OpenRefine.
 - Review, accept, and reject candidate matches.
 - Add `schema:sameAs` links to the Person entity using the reconciled Wikidata IRIs.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+
+In the model chapter, we reused vocabularies and ontologies, such as Dublin Core, FOAF, or schema.org, so that our classes and properties would mean the same thing across different projects. That solved the problem of *classes and properties*: two datasets that both use `foaf:Person` clearly mean the same *kind* of thing. It did not yet solve a related problem: knowing that two datasets both describe *a* person does not tell us whether they describe the *same* person.
 
 ## From Placeholders to Real Identifiers
 
@@ -38,6 +42,10 @@ The process of establishing these connections is called **reconciliation**.
 ### Why Authority Files?
 
 An **authority file** is a curated, maintained list of entities, for example persons, places, organisations, each with a stable identifier and a canonical form of the name. Authority files are maintained by libraries, archives, research institutions, or other communities. They exist precisely to solve the problem of ambiguous or inconsistent names.
+
+That "stable identifier" is exactly the kind of IRI we met earlier: a namespace (e.g. `https://www.wikidata.org/wiki/`) combined with an ID (e.g. `Q5981497`), globally unique and resolvable, so the same entity can be referenced unambiguously from anywhere on the web. An authority file is, in a sense, simply a large, curated collection of such IRIs, one per real-world entity, rather than one per class or property.
+
+You can think of an authority file as a vocabulary too, just of a different kind: instead of standardising what "creator" means, it standardises *who* a specific creator is.
 
 Wikidata is the largest openly accessible authority file and covers an enormous range of entities. **ULAN** (Union List of Artist Names, Getty Research Institute) is a domain-specific authority for artists and architects. Both are widely used in the cultural heritage sector.
 
@@ -100,6 +108,8 @@ Now you can see a new column in your data linking the artist to the correspondin
 
 Confirming a match in OpenRefine does not automatically change the exported RDF, we still need to tell RDF-Transform to use the reconciled Wikidata IRI. We do this by adding a `schema:sameAs` property to the Person root node.
 
+Note that `schema:sameAs` is not a new mechanism, it is simply another property from the schema.org vocabulary we already used for `schema:Person` and `schema:description`. Reconciliation does not require its own special vocabulary, it reuses the vocabularies we already know to state one more kind of fact: that two IRIs refer to the same real-world entity.
+
 1. Open the RDF-Transform panel (*RDF Transform* → *Edit RDF Transform...*).
 2. Find the Person root node.
 3. Add a new property: `schema:sameAs`.
@@ -151,7 +161,7 @@ The new service is now available in the list of reconciliation services. You onl
 
 ### Common Authority Files in the Digital Humanities
 
-There is no single authority file that covers every type of entity. Different authority files have different strengths and are used by different communities.
+Just like the general-purpose vocabularies we compared in the model chapter (Dublin Core, FOAF, schema.org, CIDOC CRM), authority files differ in scope and level of formality. There is no single authority file that covers every type of entity, so different communities maintain different ones.
 
 Some of the most commonly used authority files in the Digital Humanities include:
 
@@ -220,9 +230,19 @@ The workflow is always the same:
 
 :::::::::::::::::::::::::::::::::::::: challenge
 
-## Exercise: Reconcile the Country Column
+## Exercise: Reconcile the City Column
 
 Repeat the reconciliation workflow using the `city` column.
 
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+:::::::::::::::::::::::::::::::::::::: keypoints
+
+- Vocabularies and ontologies standardise shared classes and properties; authority files (Wikidata, ULAN, GND, VIAF, GeoNames, ...) standardise identifiers for individual, real-world entities.
+- Reconciliation matches a local value against the entities in an authority file and connects it to the resulting identifier, without replacing the local IRI.
+- OpenRefine's built-in reconciliation client can query many different reconciliation services, not only Wikidata.
+- Reconciled identifiers are added to the RDF mapping using ordinary vocabulary terms such as `schema:sameAs`, reused from the vocabularies already applied in the model and creation chapters.
+- Reconciliation is rarely complete or fully automatic; reviewing candidate matches carefully remains the responsibility of the data creator.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::

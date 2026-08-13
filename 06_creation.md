@@ -26,6 +26,8 @@ exercises: 2
 
 In the previous chapter, we designed a data model for our Met dataset: we identified the entities, chose classes and properties from shared vocabularies, and planned how the columns of the table map to RDF triples. We know *what* we want to produce. Now we need a way to actually produce it.
 
+The previous chapter's challenges already worked with the printmaker Louis Surugue, one of the real artists in our dataset. From here on, we work directly with this same real data in OpenRefine, so our examples continue to follow whichever artist, object, or place actually turns up in the row we are looking at.
+
 Writing RDF by hand works well for a handful of triples, but becomes impractical quickly. A dataset with 50 rows and multiple properties per entity would require hundreds of triples, each written out. The tool we will use to automate this transforming process is **OpenRefine** with the **RDF-Transform** extension.
 
 
@@ -152,7 +154,7 @@ The prefix `schema` should now appear in the namespace bar alongside the pre-loa
 
 ### Adding Properties
 
-Now we have already created our root, but the Preview is still emtpy. We need to add properties to create a full triple. 
+Now we have already created our root, but the Preview is still empty. We need to add properties to create a full triple. 
 
 
 **Type**
@@ -204,7 +206,7 @@ You will notice that in the preview some persons appear multiple times, once for
 
 When constructing IRIs from column values, a good rule of thumb is to prefer **stable identifiers** over text strings. The `artist` column is a text string, names can be spelled differently, contain typos, or change. A numeric ID column (like `departmentID`) is a more reliable IRI source: it is assigned once, does not change, and is not affected by language or formatting differences.
 
-For the Person entity we have no choice but to use the name string, since the dataset does not include a separate artist ID. This is a common situation in real projects: the data you have rarely matches the ideal you would design from scratch. Data modelling is seldom about finding the one correct solution, it is about making the best decision given the available data, the intended use, and the constraints of the project. The result may not be textbook-perfect, but it can still be consistent, meaningful, and useful. Reconciliation, which we will cover later, is one way to compensate: it replaces a fragile text-based IRI with a stable, authoritative one after the fact.
+For the Person entity we have no choice but to use the name string, since the dataset does not include a separate artist ID. This is a common situation in real projects: the data you have rarely matches the ideal you would design from scratch. Data modelling is seldom about finding the one correct solution, it is about making the best decision given the available data, the intended use, and the constraints of the project. The result may not be textbook-perfect, but it can still be consistent, meaningful, and useful. Reconciliation, which we will cover later, is one way to compensate: it links our fragile text-based IRI to a stable, authoritative one after the fact.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
