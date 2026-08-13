@@ -54,11 +54,15 @@ Now that we understand what data is, we want to look at how it can be captured a
 
 ### Discussion: What requirements should data fulfil?
 
+Thinking about the examples above: what would you need to know about a letter, a coin, or a painting to make it truly useful for someone else's research, not just your own?
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::: discussion
 
 ### Discussion: What data modelling options do you know?
+
+Have you already worked with structured data? What did that structure look like, and what did it make easy or hard to do?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -126,7 +130,7 @@ Each of these connections expands the **knowledge network**—a simple version o
 ![](fig/mind_map_example.png)
 
 
-By visualizing the data, it becomes easier to see why this way of storing and structuring knowledge is so efficient and valuable. Imagine a much larger mind map with significantly more information. This could reveal connections between people that were previously invisible. Furthermore, if researchers from different locations collaborate on such a mind map, additional insights and knowledge can be discovered. In a very theorital and ideal scenario it would be possible to draw a mindmap with every information in the world to find a connection from you to Bill Gates.
+By visualizing the data, it becomes easier to see why this way of storing and structuring knowledge is so efficient and valuable. Imagine a much larger mind map with significantly more information. This could reveal connections between people that were previously invisible. Furthermore, if researchers from different locations collaborate on such a mind map, additional insights and knowledge can be discovered. In a very theoretical and ideal scenario it would be possible to draw a mindmap with every information in the world to find a connection from you to Bill Gates.
 
 In essence, we are working with graphs, more specifically, directed graphs that follow a particular reading direction. Each connection has a clear subject, predicate, and object, forming what’s known as a triple. 
 

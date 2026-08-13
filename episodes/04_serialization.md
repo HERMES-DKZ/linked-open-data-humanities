@@ -19,8 +19,8 @@ exercises: 2
 - Explain the purpose of serialization formats
 - Identify common serialization formats
 - Read and write RDF in Turtle syntax
-- Explain the purpose of namspaces and prefixes
-- Identify namspaces and prefixes in a RDF file
+- Explain the purpose of namespaces and prefixes
+- Identify namespaces and prefixes in a RDF file
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -71,14 +71,22 @@ Each RDF serialization format has its own syntax and grammar rules. You can find
 
 Below you will find several RDF statements written either as natural language sentences or in N-Triples format. Rewrite them in Turtle syntax using a text editor.
 
-TODO
+```
+Claude Monet was born in Paris.
+Claude Monet created Water Lilies.
+Claude Monet created Woman with a Parasol.
+Woman with a Parasol was created in year 1875.
+```
 
 :::::::::::::::: solution
 
+```turtle
+<http://example.org/ClaudeMonet>
+    <http://example.org/wasBornIn> <http://example.org/Paris> ;
+    <http://example.org/hasCreated> <http://example.org/WaterLilies>, <http://example.org/WomanwithaParasol> .
 
-```
-TODO
-Valid turtle.
+<http://example.org/WomanwithaParasol>
+    <http://example.org/hasCreationYear> "1875" .
 ```
 
 :::::::::::::::::::::::::
@@ -138,7 +146,7 @@ Namespaces help make RDF data unambiguous and interoperable. As introduced in th
 
 However, full IRIs can become very long and difficult to read when used repeatedly in an RDF file. To make RDF easier to write and understand, we can define a short abbreviation for a namespace. This abbreviation is called a **prefix**.
 
-Namspaces and prefixes are declared at the beginning of a Turtle file using the `@prefix` keyword:
+Namespaces and prefixes are declared at the beginning of a Turtle file using the `@prefix` keyword:
 
 ```turtle
 @prefix wd: <https://www.wikidata.org/wiki/> .

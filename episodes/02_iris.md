@@ -116,11 +116,9 @@ URIs and IRIs form the bedrock of Linked Open Data by ensuring that every digita
 
 :::::::::::::::::::::::::::::::::::::: keypoints
 
-### Internationalized Resource Identifier
-
-* Used to prevent ambiguities
-* Needs to be defined and saved open in the Internet
-* Are neccesary for Objects and Predicates
-* Are created from a namespace in combination with an ID
+- IRIs (Internationalized Resource Identifiers) are used to prevent ambiguities when identifying resources.
+- An IRI needs to be defined and resolvable on the web.
+- Subjects, predicates, and non-literal objects are identified with IRIs.
+- An IRI is created from a namespace in combination with an ID.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::

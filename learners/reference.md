@@ -37,3 +37,7 @@ title: 'Reference'
 - **Resource**: Any entity described in RDF, identified by a URI, IRI, or blank node.
 
 - **Serialization**: A specific syntax used to encode RDF data for storage or exchange, such as Turtle, JSON-LD, or RDF/XML.
+
+- **Authority File**: A curated, maintained list of entities (e.g. persons, places, organisations), each with a stable identifier and a canonical name, such as Wikidata, GND, or VIAF.
+
+- **Reconciliation**: The process of matching a local value against the entities in an authority file and connecting it to the resulting identifier.
